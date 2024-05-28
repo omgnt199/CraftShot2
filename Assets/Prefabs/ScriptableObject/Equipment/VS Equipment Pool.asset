@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8b6b0da72275994097def352808b2be, type: 3}
+  m_Name: VS Equipment Pool
+  m_EditorClassIdentifier: 
+  EquipmentList:
+  - {fileID: 11400000, guid: c2bfda7b7de723145ab0b7ff43ad74d1, type: 2}
+  - {fileID: 11400000, guid: a97cf1d69dadc0449b0c6623d381c873, type: 2}
+  - {fileID: 11400000, guid: c15120da32f5b67409b9ba638da64eed, type: 2}
+  - {fileID: 11400000, guid: 4eecfc680ed7c1647b68ef0cfd709d0b, type: 2}
+  - {fileID: 11400000, guid: 58a3cbf8ffab81449a950fcc166cc230, type: 2}
+  - {fileID: 11400000, guid: 0c92cb2ef3e4e654fbf61ef8b5d9856b, type: 2}
+  - {fileID: 11400000, guid: 53ea437681cb19b499ae9e490b1778ca, type: 2}
+  - {fileID: 11400000, guid: 4f643ab86b0f1f24fb2d2677e2569ee0, type: 2}
+  - {fileID: 11400000, guid: 87b105a7c6a6a3c46acb8327adc950a0, type: 2}
+  - {fileID: 11400000, guid: 9ba5a9ceed8627b4cb6ba1242400834a, type: 2}
+  - {fileID: 11400000, guid: b9193249243297d42a710fa28a23206c, type: 2}
+  - {fileID: 11400000, guid: 88b966b08d49e6449aded9189923aaa0, type: 2}

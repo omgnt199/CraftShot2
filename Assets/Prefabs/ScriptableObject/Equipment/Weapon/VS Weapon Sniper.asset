@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29923e7e63c6eb7429f9a8920e76bf36, type: 3}
+  m_Name: VS Weapon Sniper
+  m_EditorClassIdentifier: 
+  Type: 0
+  ID: VSP-05
+  Name: SniperRifle
+  Icon: {fileID: 0}
+  Model: {fileID: 919132149155446097, guid: c2447bbbe50b545419fae88347221be2, type: 3}
+  Priority: 0
+  Magazine: 5
+  TotalAmmo: 25
+  FirePower: 500
+  FireSpeed: 2
+  TimeReload: 2.5
+  RecoilAmountX: 5
+  RecoilAmountY: 0
+  CrossHair: 1
+  DamageToHead: 200
+  DamageToBody: 80
+  DamageToHandLeg: 50
+  GunKillIcon: {fileID: 21300000, guid: 9cf13237815d73c4b9e566e7661901ae, type: 3}
+  TimeBulletTrail: 0.2
+  TrailMinVertextDistance: 0
+  TrailGradientColor:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  BulletParticle: {fileID: 0}
+  BulletRadius: 0.02

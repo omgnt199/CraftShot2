@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a662500f1aae9824bbe8ef7cfe604ac8, type: 3}
+  m_Name: Eagle Kill Task
+  m_EditorClassIdentifier: 
+  ID: T-04
+  TaskInfo: Get kills with "Desert Eagle"
+  RewardType: 1
+  RewardValue: 200
+  GoalValue: 6
+  AchivedValue: 0
+  IsCompleted: 0
+  EventName: KillByGun
+  Gun: {fileID: 11400000, guid: 4eecfc680ed7c1647b68ef0cfd709d0b, type: 2}

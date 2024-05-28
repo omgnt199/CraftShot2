@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Barrier
+  - Traffic
+  - Rock
+  - Tree
+  - Road
+  - Item
+  - Enemy
+  - Railway
+  - Grass
+  - Leaf
+  - Water
+  - Wood
+  - Bot
+  - TrafficLight
+  - Block
+  - ItemPower
+  - Smoke
+  - MapBorder
+  - Missile
+  - Zone
+  - WindStorm
+  - Coin
+  - Ground
+  - Body
+  - Hand
+  - Leg
+  - Head
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Ground
+  - Water
+  - UI
+  - Player
+  - PreviewImageOnly
+  - GuideBox
+  - InteractLayer
+  - ObstacleLayer
+  - Mob
+  - DebugSystem
+  - Border
+  - Barrier
+  - ItemPower
+  - Traffic
+  - Item
+  - UICamera
+  - Weapon
+  - Enemy
+  - Bullet
+  - BodyPart
+  - Zone
+  - Aimed
+  - Radar
+  - Effect
+  - Other
+  - WeaponLayer
+  - Smoke
+  - LineSpeed
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

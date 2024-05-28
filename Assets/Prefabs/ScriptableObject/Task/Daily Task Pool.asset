@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b9feae41b5460945ac4c18a99ec547a, type: 3}
+  m_Name: Daily Task Pool
+  m_EditorClassIdentifier: 
+  DailyTaskPool:
+  - {fileID: 11400000, guid: 9d45bbf637d1e2341af4ffe886fae8a5, type: 2}
+  - {fileID: 11400000, guid: 73c07a3790c1d994882fabb1975ef40f, type: 2}
+  - {fileID: 11400000, guid: dbe8405ad5da32c439346b2246d2dde8, type: 2}
+  - {fileID: 11400000, guid: 9f0efe3e0d80d204393cb1dbdb79e7db, type: 2}
+  - {fileID: 11400000, guid: 4e2d4619ddabd4f41a0e375b45e66c88, type: 2}
+  - {fileID: 11400000, guid: c7bc48597c96c6547a8e125d80463a50, type: 2}
