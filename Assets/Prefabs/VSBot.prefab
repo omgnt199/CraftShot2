@@ -519,6 +519,7 @@ GameObject:
   - component: {fileID: 2522842911650384762}
   - component: {fileID: 5789476629672288458}
   - component: {fileID: 6231998974748332249}
+  - component: {fileID: 5358044429965139817}
   m_Layer: 20
   m_Name: VSBot
   m_TagString: Bot
@@ -693,6 +694,22 @@ MonoBehaviour:
   Cam: {fileID: 0}
   ModelAnimator: {fileID: 690254708900716149}
   WeaponAnimator: {fileID: 4180224485934183114}
+--- !u!114 &5358044429965139817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4234918950707732626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ad17d9145d7784585937869a43ed60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthConfig: {fileID: 11400000, guid: 5aa4637fcbd566949a568d3f2d0b86d1, type: 2}
+  _currentHealth: {fileID: 0}
+  _updateHealthUI: {fileID: 0}
+  _deathEvent: {fileID: 11400000, guid: 4e018668e74c3c84294451d762741d31, type: 2}
 --- !u!1 &4705384782424375049
 GameObject:
   m_ObjectHideFlags: 0
