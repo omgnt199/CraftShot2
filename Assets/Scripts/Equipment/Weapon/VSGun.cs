@@ -22,10 +22,5 @@ public class VSGun : VSEquipment
     public int DamageToBody;
     public int DamageToHandLeg;
     public Sprite GunKillIcon;
-    public float TimeBulletTrail;
-    [Range(0, 1f)]
-    public float TrailMinVertextDistance;
-    public Gradient TrailGradientColor;
-    public GameObject BulletParticle;
-    public float BulletRadius;
+    public BulletSO Bullet;
 }

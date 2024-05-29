@@ -154,7 +154,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3983308455106110031}
-  - component: {fileID: 7568875394084023280}
+  - component: {fileID: 3725769949564350750}
   - component: {fileID: 8957291466935825063}
   - component: {fileID: 2630218406178438168}
   m_Layer: 21
@@ -180,8 +180,8 @@ Transform:
   - {fileID: 6451569794234865169}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &7568875394084023280
-SphereCollider:
+--- !u!136 &3725769949564350750
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -198,8 +198,10 @@ SphereCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.01
+  serializedVersion: 2
+  m_Radius: 0.2
+  m_Height: 1
+  m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8957291466935825063
 Rigidbody:
@@ -241,7 +243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WhoShoot: {fileID: 0}
-  rbody: {fileID: 8957291466935825063}
+  Rb: {fileID: 8957291466935825063}
   lifeTime: 5
   BulletDecal: {fileID: 1936032059195924, guid: e5448bf09bf80c84683234d05d3ccf91,
     type: 3}

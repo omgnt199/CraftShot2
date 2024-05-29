@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public GameObject WhoShoot;
-    public Rigidbody rbody;
+    public Rigidbody Rb;
     public float lifeTime;
     public GameObject BulletDecal;
     public TrailRenderer BulletTrail;
@@ -13,26 +13,29 @@ public class Bullet : MonoBehaviour
     private void Awake()
     {
     }
-    public void Activate(GameObject whoShoot,VSGun gun,Vector3 position, Vector3 velocity)
+    public void Activate(GameObject whoShoot,VSGun gun,Vector3 muzzlePos, Vector3 velocity)
     {
         WhoShoot = whoShoot;
         //Set trail
-        BulletTrail.time = gun.TimeBulletTrail;
-        BulletTrail.minVertexDistance = gun.TrailMinVertextDistance;
-        BulletTrail.colorGradient = gun.TrailGradientColor;
-        if (gun.BulletParticle != null)
+        if (gun.Bullet.BulletTrail != null)
         {
-            _bulletParticle = Instantiate(gun.BulletParticle, transform);
+            BulletTrail.time = gun.Bullet.BulletTrail.LifeTime;
+            BulletTrail.minVertexDistance = gun.Bullet.BulletTrail.TrailMinVertextDistance;
+            BulletTrail.colorGradient = gun.Bullet.BulletTrail.TrailGradientColor;
+        }
+        if (gun.Bullet.Particle != null)
+        {
+            _bulletParticle = Instantiate(gun.Bullet.Particle, transform);
             _bulletParticle.SetActive(true);
             BulletTrail.gameObject.SetActive(false);
         }
         else BulletTrail.gameObject.SetActive(true);
         //
-        GetComponent<SphereCollider>().radius = gun.BulletRadius;
+        GetComponent<CapsuleCollider>().radius = gun.Bullet.Radius;
         //
-        transform.position = position;
+        transform.position = muzzlePos;
         transform.forward = velocity;
-        rbody.velocity = velocity;
+        Rb.velocity = velocity;
         gameObject.SetActive(true);
         StartCoroutine(Decay());
     }
@@ -48,41 +51,6 @@ public class Bullet : MonoBehaviour
         gameObject.SetActive(false);
         if (_bulletParticle != null) _bulletParticle.SetActive(false);
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        //Debug.Log("Bullet Trigger");
-        //if(LayerMask.LayerToName(other.gameObject.layer) == "BodyPart")
-        //{
-        //    VSPlayerInfo victim = other.gameObject.GetComponentInParent<VSPlayerInfo>();
-        //    if(WhoShoot.GetComponent<VSPlayerInfo>().Team != victim.Team)
-        //    {
-        //        VSGun GunUsing = WhoShoot.GetComponent<VSPlayerControlWeapon>().GunUsing;
-        //        VSPlayerInfo playerinfo = WhoShoot.GetComponent<VSPlayerInfo>();
-        //        //Calculate damage
-        //        int dam = 0;
-        //        if (other.gameObject.CompareTag(VSBodyPart.Body.ToString())) dam = GunUsing.DamageToBody;
-        //        else if (other.gameObject.CompareTag(VSBodyPart.Leg.ToString()) || other.gameObject.CompareTag(VSBodyPart.Hand.ToString())) dam = GunUsing.DamageToHandLeg;
-        //        else dam = GunUsing.DamageToHead;
-        //        victim.UpdateHP(-dam);
-        //        if (victim.HP <= 0)
-        //        {
-        //            //Update player's kills
-        //            playerinfo.Kills++;
-        //            //Show kill report
-        //            KillType killType = KillType.None;
-        //            if (other.gameObject.CompareTag(VSBodyPart.Head.ToString())) killType = KillType.HeadShot;
-        //            VSInGameUIScript.instance.ShowKillReport(playerinfo.Name, playerinfo.Team.TeamSide, victim.Name, victim.Team.TeamSide, GunUsing.GunKillIcon, killType);
-        //            victim.OnDeath();
-        //            //'Kill' Event trigger
-        //            Kill(killType);
-        //        }
-        //        //Show damage UI
-        //        VSInGameUIScript.instance.ShowDamgeScore(dam);
-        //    }
-        //}
-        //Deactive();
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         if (LayerMask.LayerToName(collision.gameObject.layer) == "BodyPart")
