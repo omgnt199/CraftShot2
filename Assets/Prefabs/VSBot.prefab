@@ -47,8 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _recoilX: 2.5
   _recoilY: 2
-  _Snappiness: 4
-  _returnSpeed: 4
+  _Snappiness: 3
+  _returnSpeed: 2
 --- !u!1 &2145793954949675904
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,6 +709,7 @@ MonoBehaviour:
   _healthConfig: {fileID: 11400000, guid: 5aa4637fcbd566949a568d3f2d0b86d1, type: 2}
   _currentHealth: {fileID: 0}
   _updateHealthUI: {fileID: 0}
+  _takeDamageUI: {fileID: 0}
   _deathEvent: {fileID: 11400000, guid: 4e018668e74c3c84294451d762741d31, type: 2}
 --- !u!1 &4705384782424375049
 GameObject:
@@ -1360,6 +1361,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2595468585022523137, guid: bde265079d60299449fd2dcc9b4bb5ce,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.02017
+      objectReference: {fileID: 0}
     - target: {fileID: 2674390481129249894, guid: bde265079d60299449fd2dcc9b4bb5ce,
         type: 3}
       propertyPath: m_Layer
@@ -1378,7 +1384,7 @@ PrefabInstance:
     - target: {fileID: 2698985513973021972, guid: bde265079d60299449fd2dcc9b4bb5ce,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.11
+      value: -0.55
       objectReference: {fileID: 0}
     - target: {fileID: 2698985513973021972, guid: bde265079d60299449fd2dcc9b4bb5ce,
         type: 3}

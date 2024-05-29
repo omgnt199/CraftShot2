@@ -88,8 +88,7 @@ public class VSPlayerMovement : MonoBehaviour
             velocity.y = -2f;
             _isJumping = false;
         }
-        //Dash?
-        if(_isDashing) HandleDash();
+
         //Fly?
         if (_isFly) HandleFLy();
         else
@@ -97,8 +96,16 @@ public class VSPlayerMovement : MonoBehaviour
             Gravity = Mathf.Lerp(Gravity, -19.87f, Time.deltaTime * 2f);
             MoveSpeed = Mathf.Lerp(MoveSpeed, WalkSpeed, Time.deltaTime * 2f);
         }
-        //
+        //Dash?
+        if (_isDashing) HandleDash();
+
         characterController.Move(_moveInput * MoveSpeed * Time.deltaTime);
+
+        //SuperJump
+        if(Input.GetKeyDown(KeyCode.G))
+        {
+            velocity.y = Mathf.Sqrt(jumpHeight * 30f * -2f * Gravity);
+        }
         // Add Gravity
         velocity.y += Gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
@@ -144,6 +151,8 @@ public class VSPlayerMovement : MonoBehaviour
 
     void HandleFLy()
     {
+        Gravity = 0f;
+        MoveSpeed = FlySpeed;
         _flyMotion = MainCamera.transform.forward * 2.5f;
         _moveInput = _flyMotion;
     }
@@ -160,7 +169,8 @@ public class VSPlayerMovement : MonoBehaviour
     void HandleDash()
     {
         _dashTimer += Time.deltaTime;
-        _moveInput = _dashMotion;
+        if (!_isFly) _moveInput = _dashMotion;
+        else _moveInput += _dashMotion;
         if (_dashTimer >= DashTime)
         {
             LineSpeedVfx.SendEvent("OnStop");
@@ -204,11 +214,6 @@ public class VSPlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             _isFly = !_isFly;
-            if (_isFly)
-            {
-                Gravity = 0f;
-                MoveSpeed = FlySpeed;
-            }
         }
     }
     void OnCrouch()

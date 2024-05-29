@@ -25,8 +25,8 @@ public class VSGameManager : MonoBehaviour
     public Transform TeamASpawn;
     public Transform TeamBSpawn;
     public Transform DeathMatchSpawn;
-    private VSTeam _teamAlly;
-    private VSTeam _teamEnemy;
+    private Team _teamAlly;
+    private Team _teamEnemy;
     private const int _teamMembers = 5;
     private const int _deathMatchMembers = 10;
 
@@ -54,8 +54,8 @@ public class VSGameManager : MonoBehaviour
     //Getter/Setter
     public List<GameObject> PlayerList { get => _playerList;}
     public bool IsEndGame { get => _isEndGame; }
-    public VSTeam TeamAlly { get => _teamAlly; }
-    public VSTeam TeamEnmey { get => _teamEnemy; }
+    public Team TeamAlly { get => _teamAlly; }
+    public Team TeamEnmey { get => _teamEnemy; }
     private void Awake()
     {
         Instance = this;
@@ -85,8 +85,8 @@ public class VSGameManager : MonoBehaviour
     void Init()
     {
         _playerList = new List<GameObject>();
-        _teamAlly = new VSTeam(VSTeamSide.TeamAlly, 5, 0);
-        _teamEnemy = new VSTeam(VSTeamSide.TeamEnemy, 5, 0);
+        _teamAlly = new Team(VSTeamSide.TeamAlly, 5, 0);
+        _teamEnemy = new Team(VSTeamSide.TeamEnemy, 5, 0);
         PlayerEventListener.MainPlayer = _mainPlayer;
     }
     void UpdateGameState(VSGameState newState)
@@ -122,6 +122,8 @@ public class VSGameManager : MonoBehaviour
             case "Deathmatch":
 
                 break;
+            case "Adventure":
+                break;
         }
     }
     void EnterMode(string mode)
@@ -142,6 +144,8 @@ public class VSGameManager : MonoBehaviour
                 _mapPick.DeactiveZone();
                 VSInGameUIScript.instance.LoadUIDeathMatchMode();
                 break;
+            case "Adventure":
+                break;
         }
 
         //GlobalData.Instance.TimePlayManager.VoxelStrikeTimePlayMgr.MarkTimeStart();
@@ -160,7 +164,7 @@ public class VSGameManager : MonoBehaviour
     }
     void SpawnDeathMatch()
     {
-        VSTeam teamDeathmatch = new VSTeam(VSTeamSide.NoSide, 10, 0);
+        Team teamDeathmatch = new Team(VSTeamSide.NoSide, 10, 0);
         _mainPlayer.transform.position = DeathMatchSpawn.GetChild(UnityEngine.Random.Range(0, DeathMatchSpawn.childCount)).position;
         _playerList.Add(_mainPlayer);
         teamDeathmatch.AddMember(_mainPlayer);

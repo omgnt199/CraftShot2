@@ -24,7 +24,7 @@ public class VSBotController : MonoBehaviour
     public float sightDistance;
     private float fireSpeed = 0.3f;
     private float fireTimer = 0f;
-    private float timeCheckAttack = 3f;
+    private float timeCheckAttack = 4f;
     private bool isAlreadyAttack = false;
     public GameObject BulletDecalPrefab;
 
@@ -176,7 +176,8 @@ public class VSBotController : MonoBehaviour
 
         firePower = gun.FirePower;
         fireSpeed = gun.FireSpeed;
-        
+        WeaponRecoil.SetRecoil(1f, 6f);
+        firePoint = GetComponentInChildren<VSMuzzle>().transform;
     }
     public void SearchWalkPoint()
     {

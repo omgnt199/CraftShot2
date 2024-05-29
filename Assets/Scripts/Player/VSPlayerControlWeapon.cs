@@ -101,6 +101,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
 #if UNITY_EDITOR
         MyInput();
 #endif
@@ -141,6 +142,13 @@ public class VSPlayerControlWeapon : MonoBehaviour
             ThrowGrenade();
         }
         if (Input.GetKey(KeyCode.Z)) _isAutoAimMode = !_isAutoAimMode;
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Physics.Raycast(_fpCamera.position, _fpCamera.transform.forward, out RaycastHit hit, Mathf.Infinity, _aimMask);
+            Debug.Log(hit.point);
+            GetComponent<FireCurveProjectile>().Fire(hit.point);
+        }
     }
 
     public void SetAttackState(VSAttackState state) => _attackState = state;

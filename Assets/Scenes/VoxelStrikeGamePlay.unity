@@ -26583,6 +26583,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0be099b83d8b63c41a9aa9dfdd62e7c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _takeDamageUI: {fileID: 11400000, guid: 8515644aa8694674bb2a044788c4bf93, type: 2}
+  BloodImg: {fileID: 1321632319}
 --- !u!1 &1331025425
 GameObject:
   m_ObjectHideFlags: 0
@@ -50980,7 +50982,7 @@ PrefabInstance:
     - target: {fileID: 6000339658557898321, guid: 65d540ebe4f283949b2e6f48ae2a37c9,
         type: 3}
       propertyPath: FlySpeed
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6000339658557898321, guid: 65d540ebe4f283949b2e6f48ae2a37c9,
         type: 3}
@@ -51030,7 +51032,7 @@ PrefabInstance:
     - target: {fileID: 7133921856918908878, guid: 65d540ebe4f283949b2e6f48ae2a37c9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7133921856918908878, guid: 65d540ebe4f283949b2e6f48ae2a37c9,
         type: 3}
@@ -51162,6 +51164,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8664938659990914930}
+    - targetCorrespondingSourceObject: {fileID: 8375641506832452399, guid: 65d540ebe4f283949b2e6f48ae2a37c9,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8664938659990914931}
   m_SourcePrefab: {fileID: 100100000, guid: 65d540ebe4f283949b2e6f48ae2a37c9, type: 3}
 --- !u!143 &5414613179768656502 stripped
 CharacterController:
@@ -51184,6 +51190,12 @@ MonoBehaviour:
 --- !u!4 &5414613179768656504 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3941150496290647198, guid: 65d540ebe4f283949b2e6f48ae2a37c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 5414613179768656501}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5414613179768656505 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5718630944376936585, guid: 65d540ebe4f283949b2e6f48ae2a37c9,
     type: 3}
   m_PrefabInstance: {fileID: 5414613179768656501}
   m_PrefabAsset: {fileID: 0}
@@ -56748,7 +56760,23 @@ MonoBehaviour:
   _healthConfig: {fileID: 11400000, guid: e187a5b0f10d1ef49abac3acb9df9aa0, type: 2}
   _currentHealth: {fileID: 11400000, guid: c3996ccd06dca69498e23e729f000ef4, type: 2}
   _updateHealthUI: {fileID: 11400000, guid: ca07657a6c956f44bad22b0074bca458, type: 2}
+  _takeDamageUI: {fileID: 11400000, guid: 8515644aa8694674bb2a044788c4bf93, type: 2}
   _deathEvent: {fileID: 11400000, guid: b2615a51a412b07468286997d1073956, type: 2}
+--- !u!114 &8664938659990914931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3015110916475421629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c23e7fb1613cda247846b4eb5f3ac4e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Muzzle: {fileID: 5414613179768656505}
+  ProjectilePrefab: {fileID: 5276977868126341288, guid: 62a952fd8f468084e9aacc2beb4a6d53,
+    type: 3}
 --- !u!1 &8677959441194173662
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class Damageable : MonoBehaviour
     [SerializeField] private HealthSO _currentHealth;
 
     [SerializeField] private VoidEventChannelSO _updateHealthUI = default;
+    [SerializeField] private VoidEventChannelSO _takeDamageUI = default;
     [SerializeField] private VoidEventChannelSO _deathEvent = default;
 
     public bool IsDead { get; set; }
@@ -25,11 +26,14 @@ public class Damageable : MonoBehaviour
         _currentHealth.SetCurrentHealth(_healthConfig.InitialHealth);
     }
 
-    void ReceiveDamage(int damage)
+    public void ReceiveDamage(int damage)
     {
+        if (IsDead) return;
+        GetHit = true;
+
         _currentHealth.InflictDamage(damage);
-        if (_updateHealthUI != null)
-            _updateHealthUI.RaiseEvent();
+        if (_updateHealthUI != null) _updateHealthUI.RaiseEvent();
+        if(_takeDamageUI != null) _takeDamageUI.RaiseEvent();
 
         if (_currentHealth.CurrentHeath <= 0)
         {
@@ -41,7 +45,15 @@ public class Damageable : MonoBehaviour
             if (_deathEvent != null)
                 _deathEvent.RaiseEvent();
 
+        }
+    }
+    void Revive()
+    {
+        if (_currentHealth != null)
+        {
             _currentHealth.SetCurrentHealth(_healthConfig.InitialHealth);
         }
+        if (_updateHealthUI != null) _updateHealthUI.RaiseEvent();
+        IsDead = false;
     }
 }

@@ -49,7 +49,7 @@ public class Bullet : MonoBehaviour
         BulletPool.instance.AddToPool(this);
         StopAllCoroutines();
         gameObject.SetActive(false);
-        if (_bulletParticle != null) _bulletParticle.SetActive(false);
+        if (_bulletParticle != null) Destroy(_bulletParticle);
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -59,8 +59,7 @@ public class Bullet : MonoBehaviour
             if (WhoShoot.GetComponent<VSPlayerInfo>().Team != victim.Team)
             {
                 VSGun gunUsing = null;
-                if (WhoShoot.GetComponent<VSPlayerControlWeapon>() != null)
-                    gunUsing = WhoShoot.GetComponent<VSPlayerControlWeapon>().GunUsing;
+                if (WhoShoot.GetComponent<VSPlayerControlWeapon>() != null) gunUsing = WhoShoot.GetComponent<VSPlayerControlWeapon>().GunUsing;
                 else gunUsing = WhoShoot.GetComponent<VSBotController>().GunUsing;
                 VSPlayerInfo playerinfo = WhoShoot.GetComponent<VSPlayerInfo>();
                 //Calculate damage
@@ -68,7 +67,7 @@ public class Bullet : MonoBehaviour
                 if (collision.gameObject.CompareTag(VSBodyPart.Body.ToString())) dam = gunUsing.DamageToBody;
                 else if (collision.gameObject.CompareTag(VSBodyPart.Leg.ToString()) || collision.gameObject.CompareTag(VSBodyPart.Hand.ToString())) dam = gunUsing.DamageToHandLeg;
                 else dam = gunUsing.DamageToHead;
-
+                //victim.GetComponent<Damageable>().ReceiveDamage(dam);
                 if (victim.gameObject.CompareTag("Player"))
                     VSInGameUIScript.instance.ShowTakeDamagePopUp((transform.position - victim.transform.position).normalized);
                 victim.UpdateHP(-dam);

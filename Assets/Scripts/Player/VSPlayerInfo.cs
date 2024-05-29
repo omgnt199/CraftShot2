@@ -14,7 +14,7 @@ public class VSPlayerInfo : MonoBehaviour
     public int Points = 0;
     [Header("Team Info")]
     public TextMeshProUGUI NameTxt;
-    public VSTeam Team;
+    public Team Team;
     public Image TeamArrow;
     public Sprite TeamAlly_Arrow_Sprite;
     public Sprite TeamEnemy_Arrow_Sprite;
@@ -38,7 +38,7 @@ public class VSPlayerInfo : MonoBehaviour
     {
         
     }
-    public void SetTeam(VSTeam team)
+    public void SetTeam(Team team)
     {
         Team = team;
         //TeamName.text = team.ToString();
