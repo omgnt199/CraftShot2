@@ -16,5 +16,7 @@ public class FireCurveProjectile : MonoBehaviour
     {
         GameObject projectile = Instantiate(ProjectilePrefab, Muzzle.transform.position, Quaternion.identity);
         projectile.GetComponent<CurveProjectile>().targetPosition = position;
+        projectile.transform.forward = Muzzle.forward;
+        projectile.GetComponent<Rigidbody>().velocity = Muzzle.forward * 20f;
     }
 }
