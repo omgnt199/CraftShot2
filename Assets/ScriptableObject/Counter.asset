@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0128f20d21aadef4bb8d69264cdef4a8, type: 3}
   m_Name: Counter
   m_EditorClassIdentifier: 
-  _initialTime: 0
+  _initialTime: 180
   _currentTime: 0

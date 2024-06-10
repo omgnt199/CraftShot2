@@ -69,6 +69,6 @@ public class VSPlayerInfo : MonoBehaviour
     public void OnDeath()
     {
         Deaths++;
-        VSGameManager.Instance.OnOnePlayerDead(gameObject);
+        GameManager.Instance.OnOnePlayerDead(gameObject);
     }
 }

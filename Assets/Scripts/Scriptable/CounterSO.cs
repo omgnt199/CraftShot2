@@ -11,5 +11,5 @@ public class CounterSO : ScriptableObject
 
     public void SetInitialTime(int value) => _initialTime = value;
     public void SetCurrentTime(int value) => _currentTime = value;
-    public void UpdateCurrenTime(int delta) => _currentTime -= delta;
+    public void UpdateCurrentTime(int delta) => _currentTime -= delta;
 }

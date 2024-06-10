@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class VSZoneController : MonoBehaviour
 {
-    public DominationModeSO DominationMode;
     public VSTeamSide TeamOccupying;
     //public float timeToOcuppyZone = 5f;
     private bool isOccppied = false;
@@ -26,6 +25,8 @@ public class VSZoneController : MonoBehaviour
     public GameObject ZoneTeamAllyEffect;
     public GameObject ZoneTeamEnemyEffect;
     private GameObject _currentZoneEffect;
+
+    [SerializeField] private DominationModeSO _dominationMode;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +39,7 @@ public class VSZoneController : MonoBehaviour
     void Update()
     {
         //Debug.Log("Members A :" + MembersAInZone.Count + ", Members B :" + MembersBInZone.Count);
-        if (!VSGameManager.Instance.IsEndGame)
+        if (!GameManager.Instance.IsEndGame)
         {
             //Caculate score (different score team) each team to occupy this zone
             scoreOccupyTeamAlly += Time.deltaTime * Mathf.Min(3, (MembersAllyInZone.Count - MembersEnemyInZone.Count)) * 10f;
@@ -76,7 +77,7 @@ public class VSZoneController : MonoBehaviour
                 zoneTimer += Time.deltaTime;
                 if (zoneTimer >= 1f)
                 {
-                    VSGameManager.Instance.UpdateTeamScore(TeamOccupying, scorePerSecond);
+                    _dominationMode.OnUpdateTeamScore?.Invoke(TeamOccupying, scorePerSecond);
                     if (TeamOccupying == VSTeamSide.TeamAlly)
                     {
                         foreach (var member in MembersAllyInZone)

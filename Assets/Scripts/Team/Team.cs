@@ -8,14 +8,18 @@ public class Team
     public int Size;
     public int Score;
     public List<GameObject> MemberList { get; set; }
-    public Team(VSTeamSide team,int size, int score)
+    public Team()
+    {
+
+    }
+    public Team(VSTeamSide team, int size, int score)
     {
         TeamSide = team;
         Size = size;
         Score = score;
         MemberList = new List<GameObject>();
     }
-    public Team(VSTeamSide team,int size, int score, List<GameObject> memberList)
+    public Team(VSTeamSide team, int size, int score, List<GameObject> memberList)
     {
         TeamSide = team;
         Size = size;

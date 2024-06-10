@@ -11,9 +11,9 @@ public enum VSGameState
     Lose
 }
 
-public class VSGameManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    public static VSGameManager Instance;
+    public static GameManager Instance;
     [Header("Script")]
     public MapPool s_MapPool;
     [Header("Player")]
@@ -54,6 +54,7 @@ public class VSGameManager : MonoBehaviour
     private bool _isEndGame = false;
 
     //Getter/Setter
+    public GameObject MainPlayer => _mainPlayer;
     public List<GameObject> PlayerList { get => _playerList; }
     public bool IsEndGame { get => _isEndGame; }
     public Map MapPick => _mapPick;
@@ -72,7 +73,7 @@ public class VSGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HandleMode(Mode);
+        _currentMode.UpdateMode();
     }
     private void OnApplicationQuit()
     {
@@ -89,6 +90,8 @@ public class VSGameManager : MonoBehaviour
         _teamAlly = new Team(VSTeamSide.TeamAlly, 5, 0);
         _teamEnemy = new Team(VSTeamSide.TeamEnemy, 5, 0);
         PlayerEventListener.MainPlayer = _mainPlayer;
+
+        _playerList.Add(_mainPlayer);
     }
     void UpdateGameState(VSGameState newState)
     {
@@ -97,6 +100,7 @@ public class VSGameManager : MonoBehaviour
         {
             case VSGameState.Enter:
                 LoadPlayerEquipment();
+                SetUpMapPick();
                 EnterMode(VSGlobals.MODE);
                 break;
             case VSGameState.Victory:
@@ -107,40 +111,19 @@ public class VSGameManager : MonoBehaviour
         OnGameStateChange?.Invoke(newState);
     }
 
-    void HandleMode(string mode)
-    {
-        switch (mode)
-        {
-            case "Domination":
-                if (!_isEndGame)
-                {
-                    if (_teamAlly.Score >= VSGlobals.DOMINATION_MAX_SCORE || _teamEnemy.Score >= VSGlobals.DOMINATION_MAX_SCORE)
-                    {
-                        OnEndGame();
-                    }
-                }
-                break;
-            case "Deathmatch":
-
-                break;
-            case "Adventure":
-                break;
-        }
-    }
     void EnterMode(string mode)
     {
         Mode = mode;
-        SetUpMapPick();
         _currentMode = ModePool.GetGameModeByName(mode);
         _currentMode.EnterMode();
         //Load Player
         switch (mode)
         {
             case "Domination":
-                SpawnTeamAlly();
-                SpawnTeamEnemy();
-                _mapPick.ActiveZone();
-                VSInGameUIScript.instance.LoadUIDominationMode();
+                //SpawnTeamAlly();
+                //SpawnTeamEnemy();
+                //_mapPick.ActiveZone();
+                //VSInGameUIScript.instance.LoadUIDominationMode();
                 break;
             case "Deathmatch":
                 SpawnDeathMatch();
@@ -165,7 +148,7 @@ public class VSGameManager : MonoBehaviour
         LargeMapCamera.orthographicSize = _mapPick.LargeMapCameraSize;
         VSInGameUIScript.instance.SetLargeMapImage(_mapPick.LargeMapSprite);
     }
-    void SpawnDeathMatch()
+    public void SpawnDeathMatch()
     {
         Team teamDeathmatch = new Team(VSTeamSide.NoSide, 10, 0);
         _mainPlayer.transform.position = DeathMatchSpawn.GetChild(UnityEngine.Random.Range(0, DeathMatchSpawn.childCount)).position;
@@ -178,10 +161,9 @@ public class VSGameManager : MonoBehaviour
             teamDeathmatch.AddMember(bot);
         }
     }
-    void SpawnTeamAlly()
+    public void SpawnTeamAlly()
     {
         _teamAlly.AddMember(_mainPlayer);
-        _playerList.Add(_mainPlayer);
         _mainPlayer.transform.position = TeamASpawn.transform.GetChild(0).position;
         for (int i = 1; i <= _teamAlly.Size - 1; i++)
         {
@@ -192,7 +174,7 @@ public class VSGameManager : MonoBehaviour
         }
     }
 
-    void SpawnTeamEnemy()
+    public void SpawnTeamEnemy()
     {
         for (int i = 0; i < _teamEnemy.Size; i++)
         {

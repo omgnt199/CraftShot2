@@ -93,7 +93,6 @@
     <Compile Include="Assets\Epic Toon FX\Scripts\ETFXRotation.cs" />
     <Compile Include="Assets\Scripts\Character\Damageable.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
-    <Compile Include="Assets\Scripts\VSGameManager.cs" />
     <Compile Include="Assets\Scripts\TestEffect.cs" />
     <Compile Include="Assets\Scripts\Effect\VSFootStep.cs" />
     <Compile Include="Assets\Scripts\Scriptable\TimeTrack\TimePlayMgr.cs" />
@@ -235,6 +234,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\Scripts\Equipment\Weapon\VSSmokeHandle.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
+    <Compile Include="Assets\Scripts\Event\EventChanelSO.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerSoundManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
@@ -245,6 +245,7 @@
     <Compile Include="Assets\Scripts\Equipment\Weapon\VSNadeHandle.cs" />
     <Compile Include="Assets\Scripts\Equipment\Character\VSCharacter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\NameTag.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerGlobalInfo.cs" />
     <Compile Include="Assets\Scripts\Equipment\VSEquipment.cs" />

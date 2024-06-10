@@ -127,7 +127,7 @@ public class VSInGameUIScript : MonoBehaviour
     public void HideEndLeaderBoardPopUp()
     {
         LeaderBoardPopUp.SetActive(false);
-        if (VSGameManager.Instance.IsEndGame)
+        if (GameManager.Instance.IsEndGame)
         {
             //ServiceManager.ShowInter();
             SceneManager.LoadScene("VoxelStrikeGamePlay");

@@ -47,7 +47,7 @@ public class VSScoreBoardUI : MonoBehaviour
     {
         if (Instance == null) Instance = this;
 
-        _Mode = VSGameManager.Instance.Mode;
+        _Mode = GameManager.Instance.Mode;
         if (_Mode == "Domination")
         {
             TabText.text = "Team";
@@ -59,7 +59,7 @@ public class VSScoreBoardUI : MonoBehaviour
             _rightTeamBarImg.sprite = _allyTeamBarSprite;
         }
 
-        foreach(var player in VSGameManager.Instance.PlayerList)
+        foreach(var player in GameManager.Instance.PlayerList)
         {
             PlayerList.Add(player.GetComponent<VSPlayerInfo>());
             if (player.GetComponent<VSPlayerInfo>().Team.TeamSide == VSTeamSide.TeamAlly) PlayersTeamA.Add(player.GetComponent<VSPlayerInfo>());
@@ -184,14 +184,14 @@ public class VSScoreBoardUI : MonoBehaviour
         if(_Mode == "Domination")
         {
             WinLose.SetActive(true);
-            if (VSGameManager.Instance.Teamwin.TeamSide == VSTeamSide.TeamAlly)
+            if (GameManager.Instance.Teamwin.TeamSide == VSTeamSide.TeamAlly)
             {
                 WinLoseTxt.text = "VICTORY";
                 WinLoseTxt.color = new Color32(0, 209, 255, 255);
                 CoinRewardTxt.text = "+150";
                 //CurrencyData.UpdateCurrency(Currency.Coin, 150);
             }
-            else if (VSGameManager.Instance.Teamwin.TeamSide == VSTeamSide.TeamEnemy)
+            else if (GameManager.Instance.Teamwin.TeamSide == VSTeamSide.TeamEnemy)
             {
                 WinLoseTxt.text = "LOSE";
                 WinLoseTxt.color = new Color32(200, 93, 84, 255);

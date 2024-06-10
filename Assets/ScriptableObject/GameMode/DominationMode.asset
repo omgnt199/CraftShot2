@@ -23,6 +23,8 @@ MonoBehaviour:
     Size: 5
     Score: 0
   TargetScore: 500
+  BotPrefab: {fileID: 4234918950707732626, guid: 8741ae9390f93df48960c10e48057bed,
+    type: 3}
   _Counter: {fileID: 11400000, guid: a994b01bda0de4043a4b3509a140b15d, type: 2}
   _updateCounterUIEvent: {fileID: 11400000, guid: 4efcdd165d30f79439b2e1f25f4b7576,
     type: 2}

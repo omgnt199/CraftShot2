@@ -6,5 +6,5 @@ public class GameModePoolSO : ScriptableObject
 {
     public List<GameModeSO> GameModeList;
 
-    public GameModeSO GetGameModeByName(string name) => GameModeList.Find(mode => mode.name == name);
+    public GameModeSO GetGameModeByName(string name) => GameModeList.Find(mode => mode.ModeName == name);
 }

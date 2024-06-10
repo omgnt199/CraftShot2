@@ -20,11 +20,11 @@ public class VSClockInGameUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!VSGameManager.Instance.IsEndGame)
+        if (!GameManager.Instance.IsEndGame)
         {
             if (GameTime == 0)
             {
-                VSGameManager.Instance.OnEndGame();
+                GameManager.Instance.OnEndGame();
                 isTimeout = true;
             }
             if (!isTimeout)
