@@ -184,14 +184,14 @@ public class VSScoreBoardUI : MonoBehaviour
         if(_Mode == "Domination")
         {
             WinLose.SetActive(true);
-            if (VSGameManager.Instance.Teamwin == VSTeamSide.TeamAlly)
+            if (VSGameManager.Instance.Teamwin.TeamSide == VSTeamSide.TeamAlly)
             {
                 WinLoseTxt.text = "VICTORY";
                 WinLoseTxt.color = new Color32(0, 209, 255, 255);
                 CoinRewardTxt.text = "+150";
                 //CurrencyData.UpdateCurrency(Currency.Coin, 150);
             }
-            else if (VSGameManager.Instance.Teamwin == VSTeamSide.TeamEnemy)
+            else if (VSGameManager.Instance.Teamwin.TeamSide == VSTeamSide.TeamEnemy)
             {
                 WinLoseTxt.text = "LOSE";
                 WinLoseTxt.color = new Color32(200, 93, 84, 255);

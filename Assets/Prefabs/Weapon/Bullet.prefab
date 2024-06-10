@@ -84,7 +84,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.6
+        value: 0.3
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -93,7 +93,7 @@ TrailRenderer:
         outWeight: 0
       - serializedVersion: 3
         time: 1
-        value: 0.101486206
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -245,6 +245,5 @@ MonoBehaviour:
   WhoShoot: {fileID: 0}
   Rb: {fileID: 8957291466935825063}
   lifeTime: 5
-  BulletDecal: {fileID: 1936032059195924, guid: e5448bf09bf80c84683234d05d3ccf91,
-    type: 3}
+  BulletDecal: {fileID: 0}
   BulletTrail: {fileID: 8090644257513980328}

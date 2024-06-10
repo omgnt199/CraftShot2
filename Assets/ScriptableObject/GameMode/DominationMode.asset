@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c330fc506fef4a42b7630d9835098ae, type: 3}
+  m_Name: DominationMode
+  m_EditorClassIdentifier: 
+  ModeName: Domination
+  ModeTime: 180
+  TeamAlly:
+    TeamSide: 0
+    Size: 5
+    Score: 0
+  TeamEnemy:
+    TeamSide: 1
+    Size: 5
+    Score: 0
+  TargetScore: 500
+  _Counter: {fileID: 11400000, guid: a994b01bda0de4043a4b3509a140b15d, type: 2}
+  _updateCounterUIEvent: {fileID: 11400000, guid: 4efcdd165d30f79439b2e1f25f4b7576,
+    type: 2}

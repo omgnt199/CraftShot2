@@ -22,9 +22,9 @@ public class VSGameManager : MonoBehaviour
     [Header("Prefab")]
     public GameObject BotPrefab;
     [Header("Team")]
-    public Transform TeamASpawn;
-    public Transform TeamBSpawn;
-    public Transform DeathMatchSpawn;
+    [HideInInspector] public Transform TeamASpawn;
+    [HideInInspector] public Transform TeamBSpawn;
+    [HideInInspector] public Transform DeathMatchSpawn;
     private Team _teamAlly;
     private Team _teamEnemy;
     private const int _teamMembers = 5;
@@ -41,21 +41,22 @@ public class VSGameManager : MonoBehaviour
     [HideInInspector] VSGameState GameState;
     public static event Action<VSGameState> OnGameStateChange;
     //Mode
+    public GameModePoolSO ModePool;
+    private GameModeSO _currentMode;
     public string Mode;
 
     //Equipemnent
     public VSEquipmentPool EquipmentPool;
-    public VSTeamSide Teamwin;
+    public Team Teamwin;
     //
     private float _reviveDelayTime = 3f;
     //Bools
     private bool _isEndGame = false;
 
     //Getter/Setter
-    public List<GameObject> PlayerList { get => _playerList;}
+    public List<GameObject> PlayerList { get => _playerList; }
     public bool IsEndGame { get => _isEndGame; }
-    public Team TeamAlly { get => _teamAlly; }
-    public Team TeamEnmey { get => _teamEnemy; }
+    public Map MapPick => _mapPick;
     private void Awake()
     {
         Instance = this;
@@ -130,6 +131,8 @@ public class VSGameManager : MonoBehaviour
     {
         Mode = mode;
         SetUpMapPick();
+        _currentMode = ModePool.GetGameModeByName(mode);
+        _currentMode.EnterMode();
         //Load Player
         switch (mode)
         {
@@ -180,7 +183,7 @@ public class VSGameManager : MonoBehaviour
         _teamAlly.AddMember(_mainPlayer);
         _playerList.Add(_mainPlayer);
         _mainPlayer.transform.position = TeamASpawn.transform.GetChild(0).position;
-        for(int i = 1; i <= _teamAlly.Size - 1; i++)
+        for (int i = 1; i <= _teamAlly.Size - 1; i++)
         {
             GameObject bot = Instantiate(BotPrefab, TeamASpawn.transform.GetChild(i).position, Quaternion.identity);
             bot.GetComponent<VSBotController>().ZonePoints = new List<Transform>(_mapPick.ZonesPositionDominationMode);
@@ -270,10 +273,6 @@ public class VSGameManager : MonoBehaviour
     {
         _isEndGame = true;
         DeathCamera.SetActive(true);
-        if (Mode == "Domination")
-        {
-            Teamwin = _teamAlly.Score >= _teamEnemy.Score ? VSTeamSide.TeamAlly : VSTeamSide.TeamEnemy;
-        }
 
         //Deactive player
         foreach (var player in _playerList) player.SetActive(false);

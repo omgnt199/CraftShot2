@@ -23,6 +23,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
     [SerializeField] private VSPlayerInfo _playerInfo;
     [SerializeField] private MouseLookAround _mls;
     [SerializeField] private VSTouchLookAround _tla;
+    [SerializeField] private PlayerSoundManager _playerSoundManager;
     [Header("Setting Fire")]
     public VSGun GunUsing;
     [SerializeField] private Transform _fpCamera;
@@ -206,8 +207,9 @@ public class VSPlayerControlWeapon : MonoBehaviour
             VSInGameUIScript.instance.UpdateAmmoUI(_currentMagazine, _currentAmmo);
             //Recoil
             Recoil_Script.Recoil();
-            //Shoot vfx
+            //Shoot vfx sfx
             Vfx_shoot.GetComponent<VSShootVfx>().Spawn();
+            _playerSoundManager.EnableBulletSound(GunUsing.Bullet.BulletSound);
             ////Check Raycast hit
             LayerMask mask = LayerMask.GetMask("BodyPart", "Barrier", "Ground", "ObstacleLayer");
             Vector3 startPosition = _fpCamera.transform.position;
@@ -266,12 +268,6 @@ public class VSPlayerControlWeapon : MonoBehaviour
         if (type != KillType.None) PlayerEventListener.InvokeSpecialKillEvent(type);
         PlayerEventListener.InvokeKillByEvent();
     }
-    private void SpawnDecal(RaycastHit hit)
-    {
-        GameObject decal = Instantiate(BulletDecalVfx, hit.point, Quaternion.LookRotation(hit.normal));
-        decal.transform.position += 0.02f * hit.normal;
-    }
-
     public void KnifeAttack()
     {
         controlAnimator.Knife();
@@ -280,6 +276,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
         Vector3 startPosition = _fpCamera.transform.position;
         if (Physics.Raycast(startPosition, _fpCamera.transform.forward, out RaycastHit hit, 1f, mask))
         {
+            if (hit.collider.gameObject.Equals(gameObject)) return;
             VSPlayerInfo victim = hit.collider.gameObject.GetComponent<VSPlayerInfo>();
             if (victim.Team != _playerInfo.Team)
             {
@@ -336,7 +333,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
         isAim = true;
         controlAnimator.OnAim();
         Crosshair.RifleAim();
-        GetComponentInParent<VSPlayerMovement>().SpeedOnAiming();
+        _playerMovement.SpeedOnAiming();
         _fpCamera.GetComponent<Camera>().fieldOfView = AIM_FOV;
         _mls.sensitivity = 0.3f;
         _tla.cameraSensitivity = 7f;
@@ -347,7 +344,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
         isAim = false;
         controlAnimator.OffAim();
         Crosshair.RifleNotAim();
-        GetComponentInParent<VSPlayerMovement>().SpeedOnWalking();
+        _playerMovement.SpeedOnWalking();
         _fpCamera.GetComponent<Camera>().fieldOfView = DEFEAULT_FOV;
         _mls.sensitivity = 1f;
         _tla.cameraSensitivity = 14f;
@@ -522,7 +519,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
             point.y = startPosition.y + startVelocity.y * time + (Physics.gravity.y / 2f * time * time);
             ProjectileTrajectoryNade.SetPosition(i, point);
 
-            LayerMask mask = LayerMask.GetMask("Ground", "Barrier", "ObstacleLayer");
+            LayerMask mask = LayerMask.GetMask("Ground", "Barrier", "ObstacleLayer", "Floor");
             Vector3 lastPosition = ProjectileTrajectoryNade.GetPosition(i - 1);
             if (Physics.Raycast(lastPosition, (point - lastPosition).normalized,out RaycastHit hit, (point - lastPosition).magnitude, mask))
             {

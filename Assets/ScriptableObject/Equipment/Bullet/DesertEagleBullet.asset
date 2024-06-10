@@ -15,3 +15,6 @@ MonoBehaviour:
   BulletTrail: {fileID: 11400000, guid: c62f44f1982a8d24d8e663876f52e12a, type: 2}
   Radius: 0.02
   Particle: {fileID: 0}
+  BulletDecal: {fileID: 1936032059195924, guid: e5448bf09bf80c84683234d05d3ccf91,
+    type: 3}
+  BulletSound: {fileID: 8300000, guid: 321feb9f51af885488e5ed433aecd467, type: 3}

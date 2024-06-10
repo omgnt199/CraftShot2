@@ -7,4 +7,6 @@ public class BulletSO : ScriptableObject
     public TrailSO BulletTrail;
     public float Radius;
     public GameObject Particle;
+    public GameObject BulletDecal;
+    public AudioClip BulletSound;
 }

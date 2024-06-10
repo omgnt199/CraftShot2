@@ -69,8 +69,10 @@
     <Compile Include="Assets\Scripts\GridMapManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Scripts\Team\TeamConfigSO.cs" />
+    <Compile Include="Assets\Scripts\Scriptable\CounterSO.cs" />
     <Compile Include="Assets\Scripts\Equipment\Weapon\VSWeaponAmmoInfoIngame.cs" />
     <Compile Include="Assets\Scripts\Inventory\VSEquipmentPool.cs" />
+    <Compile Include="Assets\Scripts\GameMode\IModeState.cs" />
     <Compile Include="Assets\Scripts\AnimatorUtility.cs" />
     <Compile Include="Assets\Scripts\MiniGamesSettingPopUpUI.cs" />
     <Compile Include="Assets\Scripts\UI\MainUI.cs" />
@@ -81,6 +83,7 @@
     <Compile Include="Assets\Scripts\MiniGameController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Scripts\Equipment\Weapon\VSGrenadeHanle.cs" />
+    <Compile Include="Assets\Scripts\UI\CounterUI.cs" />
     <Compile Include="Assets\Scripts\Camera\VSDeathCamera.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
@@ -119,7 +122,6 @@
     <Compile Include="Assets\Scripts\UI\VSEndGameUI.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXSceneManager.cs" />
     <Compile Include="Assets\Scripts\Player\VSTouchLookAround.cs" />
-    <Compile Include="Assets\Scripts\Player\VSPlayerSound.cs" />
     <Compile Include="Assets\Scripts\LockFps.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustUtils.cs" />
     <Compile Include="Assets\Scripts\Equipment\SupportWeapon\VSSupportWeapon.cs" />
@@ -129,6 +131,7 @@
     <Compile Include="Assets\Scripts\Scriptable\GlobalStaticMethod.cs" />
     <Compile Include="Assets\Adjust\Windows\AdjustWindows.cs" />
     <Compile Include="Assets\Scripts\LeaderBoardController.cs" />
+    <Compile Include="Assets\Scripts\GameMode\GameModeSO.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXMouseOrbit.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustAttribution.cs" />
     <Compile Include="Assets\Scripts\Inventory\VSInventoryUIController.cs" />
@@ -174,6 +177,7 @@
     <Compile Include="Assets\#NVJOB Name Generator\Examples\Example 1\TextMeshName.cs" />
     <Compile Include="Assets\Scripts\Currency\CurrencyVisualizer.cs" />
     <Compile Include="Assets\Scripts\Player\ImovementInput.cs" />
+    <Compile Include="Assets\Scripts\GameMode\GameModePoolSO.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustPlayStoreSubscription.cs" />
     <Compile Include="Assets\Pixel Arsenal\Demo\Scripts\PixelArsenalBeamScript.cs" />
     <Compile Include="Assets\Scripts\GlobalData.cs" />
@@ -226,10 +230,12 @@
     <Compile Include="Assets\Scripts\VSEnum.cs" />
     <Compile Include="Assets\Scripts\DailyTask\VSHeadShotTask.cs" />
     <Compile Include="Assets\Scripts\FireCurveProjectile.cs" />
+    <Compile Include="Assets\Scripts\GameMode\DominationModeSO.cs" />
     <Compile Include="Assets\Scripts\Scriptable\GlobalSoundMethod.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\Scripts\Equipment\Weapon\VSSmokeHandle.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerSoundManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\Scriptable\TimeTrack\TimePlayManager.cs" />
@@ -273,6 +279,7 @@
     <Compile Include="Assets\Scripts\UI\GameModeUI.cs" />
     <Compile Include="Assets\#NVJOB Name Generator\Name Generator\NVJOBNameGen.cs" />
     <Compile Include="Assets\Pixel Arsenal\Scripts\PixelArsenalRotation.cs" />
+    <Compile Include="Assets\Scripts\GameMode\DeathMatchModeSO.cs" />
     <Compile Include="Assets\Scripts\Bullet\TrailSO.cs" />
     <Compile Include="Assets\Scripts\Cube.cs" />
     <Compile Include="Assets\Scripts\DailyTask\VSGunKillTask.cs" />

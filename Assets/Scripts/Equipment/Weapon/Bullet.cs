@@ -23,6 +23,7 @@ public class Bullet : MonoBehaviour
             BulletTrail.minVertexDistance = gun.Bullet.BulletTrail.TrailMinVertextDistance;
             BulletTrail.colorGradient = gun.Bullet.BulletTrail.TrailGradientColor;
         }
+
         if (gun.Bullet.Particle != null)
         {
             _bulletParticle = Instantiate(gun.Bullet.Particle, transform);
@@ -30,6 +31,9 @@ public class Bullet : MonoBehaviour
             BulletTrail.gameObject.SetActive(false);
         }
         else BulletTrail.gameObject.SetActive(true);
+
+        if (gun.Bullet.BulletDecal != null) BulletDecal = gun.Bullet.BulletDecal;
+        else BulletDecal = null;
         //
         GetComponent<CapsuleCollider>().radius = gun.Bullet.Radius;
         //
@@ -81,13 +85,17 @@ public class Bullet : MonoBehaviour
                     VSInGameUIScript.instance.ShowKillReport(playerinfo.Name, playerinfo.Team.TeamSide, victim.Name, victim.Team.TeamSide, gunUsing.GunKillIcon, killType);
                     victim.OnDeath();
                     //'Kill' Event trigger
-                    if(WhoShoot.gameObject.CompareTag("Player")) Kill(killType);
+                    if (WhoShoot.gameObject.CompareTag("Player")) Kill(killType);
                 }
                 //Show damage UI
                 if (WhoShoot.CompareTag("Player")) VSInGameUIScript.instance.ShowDamgeScore(dam);
             }
         }
-
+        else
+        {
+            if (BulletDecal != null)
+                SpawnDecal(collision.contacts[0]);
+        }
 
         Deactive();
     }

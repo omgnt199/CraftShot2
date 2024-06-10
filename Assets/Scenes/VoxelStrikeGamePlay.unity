@@ -2288,12 +2288,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 125450275}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &125450277 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7063424800449703130, guid: f9980e36e37511f40aa323d7a59473a8,
-    type: 3}
-  m_PrefabInstance: {fileID: 125450275}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &132418123
 GameObject:
   m_ObjectHideFlags: 0
@@ -4627,12 +4621,6 @@ PrefabInstance:
 --- !u!4 &307072347 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6393852125573790719, guid: 5c46a1c3c8b102a4ba49c9ab0906b760,
-    type: 3}
-  m_PrefabInstance: {fileID: 307072346}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &307072348 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 954614572918986643, guid: 5c46a1c3c8b102a4ba49c9ab0906b760,
     type: 3}
   m_PrefabInstance: {fileID: 307072346}
   m_PrefabAsset: {fileID: 0}
@@ -7956,18 +7944,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ea1b030e114cf4e89d181333f9b9a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DominationMode: {fileID: 0}
   TeamOccupying: 2
-  MembersAInZone: []
-  MembersBInZone: []
-  ZoneImgTeamA:
-  - {fileID: 1853079734}
-  - {fileID: 135708203}
-  ZoneImgTeamB:
-  - {fileID: 1158615466}
-  - {fileID: 484638533}
+  MembersAllyInZone: []
+  MembersEnemyInZone: []
+  ZoneImgTeamAlly: []
+  ZoneImgTeamEnemy: []
   ZoneNoTeamEffect: {fileID: 1180452615}
-  ZoneTeamAEffect: {fileID: 125450277}
-  ZoneTeamBEffect: {fileID: 2040749330}
+  ZoneTeamAllyEffect: {fileID: 0}
+  ZoneTeamEnemyEffect: {fileID: 0}
 --- !u!54 &504334964
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9351,12 +9336,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2026716114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &655679839 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7063424800449703130, guid: f9980e36e37511f40aa323d7a59473a8,
-    type: 3}
-  m_PrefabInstance: {fileID: 2940724487666729514}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &655679840 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6502691729156706840, guid: f9980e36e37511f40aa323d7a59473a8,
@@ -11723,7 +11702,7 @@ PrefabInstance:
     - target: {fileID: -8551654070373378105, guid: 8cca5a99c6dca4c46ae34bad89cd866b,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8551654070373378105, guid: 8cca5a99c6dca4c46ae34bad89cd866b,
         type: 3}
@@ -13948,7 +13927,7 @@ PrefabInstance:
     - target: {fileID: -1558721567721526513, guid: 8cca5a99c6dca4c46ae34bad89cd866b,
         type: 3}
       propertyPath: m_Layer
-      value: 13
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: -1558721567721526513, guid: 8cca5a99c6dca4c46ae34bad89cd866b,
         type: 3}
@@ -15011,7 +14990,7 @@ PrefabInstance:
     - target: {fileID: 1835210009659533079, guid: 8cca5a99c6dca4c46ae34bad89cd866b,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1835210009659533079, guid: 8cca5a99c6dca4c46ae34bad89cd866b,
         type: 3}
@@ -15671,7 +15650,7 @@ PrefabInstance:
     - target: {fileID: 3710241737484193376, guid: 8cca5a99c6dca4c46ae34bad89cd866b,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3710241737484193376, guid: 8cca5a99c6dca4c46ae34bad89cd866b,
         type: 3}
@@ -16311,7 +16290,7 @@ PrefabInstance:
     - target: {fileID: 6014503084441653313, guid: 8cca5a99c6dca4c46ae34bad89cd866b,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6014503084441653313, guid: 8cca5a99c6dca4c46ae34bad89cd866b,
         type: 3}
@@ -16861,7 +16840,7 @@ PrefabInstance:
     - target: {fileID: 7532602345600580386, guid: 8cca5a99c6dca4c46ae34bad89cd866b,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7532602345600580386, guid: 8cca5a99c6dca4c46ae34bad89cd866b,
         type: 3}
@@ -19410,12 +19389,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 910215347}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &910215349 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 954614572918986643, guid: 5c46a1c3c8b102a4ba49c9ab0906b760,
-    type: 3}
-  m_PrefabInstance: {fileID: 910215347}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &912099075
 GameObject:
   m_ObjectHideFlags: 0
@@ -19773,18 +19746,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ea1b030e114cf4e89d181333f9b9a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DominationMode: {fileID: 0}
   TeamOccupying: 2
-  MembersAInZone: []
-  MembersBInZone: []
-  ZoneImgTeamA:
-  - {fileID: 780294239}
-  - {fileID: 4904107}
-  ZoneImgTeamB:
-  - {fileID: 254699764}
-  - {fileID: 401642267}
+  MembersAllyInZone: []
+  MembersEnemyInZone: []
+  ZoneImgTeamAlly: []
+  ZoneImgTeamEnemy: []
   ZoneNoTeamEffect: {fileID: 1446304536}
-  ZoneTeamAEffect: {fileID: 1306628307}
-  ZoneTeamBEffect: {fileID: 307072348}
+  ZoneTeamAllyEffect: {fileID: 0}
+  ZoneTeamEnemyEffect: {fileID: 0}
 --- !u!54 &931996956
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26440,12 +26410,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1306628305}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1306628307 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7063424800449703130, guid: f9980e36e37511f40aa323d7a59473a8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1306628305}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1309855165
 GameObject:
   m_ObjectHideFlags: 0
@@ -28410,12 +28374,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1385119127}
   m_CullTransparentMesh: 1
---- !u!1 &1386368041 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 954614572918986643, guid: 5c46a1c3c8b102a4ba49c9ab0906b760,
-    type: 3}
-  m_PrefabInstance: {fileID: 9137641769328284829}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1386368042 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6393852125573790719, guid: 5c46a1c3c8b102a4ba49c9ab0906b760,
@@ -28840,12 +28798,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423128194}
   m_CullTransparentMesh: 1
---- !u!1 &1424826282 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7063424800449703130, guid: f9980e36e37511f40aa323d7a59473a8,
-    type: 3}
-  m_PrefabInstance: {fileID: 753147410308329006}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1424826283 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6502691729156706840, guid: f9980e36e37511f40aa323d7a59473a8,
@@ -29112,12 +29064,6 @@ PrefabInstance:
 --- !u!4 &1441286327 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6502691729156706840, guid: f9980e36e37511f40aa323d7a59473a8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1441286326}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1441286328 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7063424800449703130, guid: f9980e36e37511f40aa323d7a59473a8,
     type: 3}
   m_PrefabInstance: {fileID: 1441286326}
   m_PrefabAsset: {fileID: 0}
@@ -32520,9 +32466,13 @@ MonoBehaviour:
   - {fileID: 0}
   DeathCamera: {fileID: 1361994763}
   LargeMapCamera: {fileID: 1955139477}
+  ModePool: {fileID: 11400000, guid: 45603781e4fe3f74bb114fea440f2be9, type: 2}
   Mode: 
   EquipmentPool: {fileID: 11400000, guid: a868d2e5287e24a41bc4bfb4c18d30f1, type: 2}
-  Teamwin: 2
+  Teamwin:
+    TeamSide: 0
+    Size: 0
+    Score: 0
 --- !u!1 &1704381653
 GameObject:
   m_ObjectHideFlags: 0
@@ -32595,18 +32545,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ea1b030e114cf4e89d181333f9b9a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DominationMode: {fileID: 0}
   TeamOccupying: 2
-  MembersAInZone: []
-  MembersBInZone: []
-  ZoneImgTeamA:
-  - {fileID: 704619173}
-  - {fileID: 1823390716}
-  ZoneImgTeamB:
-  - {fileID: 69567037}
-  - {fileID: 444584095}
+  MembersAllyInZone: []
+  MembersEnemyInZone: []
+  ZoneImgTeamAlly: []
+  ZoneImgTeamEnemy: []
   ZoneNoTeamEffect: {fileID: 59103498}
-  ZoneTeamAEffect: {fileID: 1441286328}
-  ZoneTeamBEffect: {fileID: 910215349}
+  ZoneTeamAllyEffect: {fileID: 0}
+  ZoneTeamEnemyEffect: {fileID: 0}
 --- !u!54 &1704381657
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -32831,12 +32778,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2026716114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1718305744 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 954614572918986643, guid: 5c46a1c3c8b102a4ba49c9ab0906b760,
-    type: 3}
-  m_PrefabInstance: {fileID: 4693744045281170012}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1718305745 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6393852125573790719, guid: 5c46a1c3c8b102a4ba49c9ab0906b760,
@@ -37381,12 +37322,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2040749328}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2040749330 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 954614572918986643, guid: 5c46a1c3c8b102a4ba49c9ab0906b760,
-    type: 3}
-  m_PrefabInstance: {fileID: 2040749328}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2055769177
 GameObject:
   m_ObjectHideFlags: 0
@@ -37764,12 +37699,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077815668}
   m_CullTransparentMesh: 1
---- !u!1 &2078393431 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 954614572918986643, guid: 5c46a1c3c8b102a4ba49c9ab0906b760,
-    type: 3}
-  m_PrefabInstance: {fileID: 6701346593383041839}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2078393432 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6393852125573790719, guid: 5c46a1c3c8b102a4ba49c9ab0906b760,
@@ -38148,12 +38077,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: d6a294bdf7386d64f8c846e5ac334ffa, type: 3}
---- !u!1 &2096008926 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7063424800449703130, guid: f9980e36e37511f40aa323d7a59473a8,
-    type: 3}
-  m_PrefabInstance: {fileID: 219743228706115271}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2096008927 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6502691729156706840, guid: f9980e36e37511f40aa323d7a59473a8,
@@ -41393,18 +41316,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ea1b030e114cf4e89d181333f9b9a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DominationMode: {fileID: 0}
   TeamOccupying: 2
-  MembersAInZone: []
-  MembersBInZone: []
-  ZoneImgTeamA:
-  - {fileID: 704619173}
-  - {fileID: 5021607944236991409}
-  ZoneImgTeamB:
-  - {fileID: 69567037}
-  - {fileID: 2420370813969016228}
+  MembersAllyInZone: []
+  MembersEnemyInZone: []
+  ZoneImgTeamAlly: []
+  ZoneImgTeamEnemy: []
   ZoneNoTeamEffect: {fileID: 1889725579}
-  ZoneTeamAEffect: {fileID: 1424826282}
-  ZoneTeamBEffect: {fileID: 1718305744}
+  ZoneTeamAllyEffect: {fileID: 0}
+  ZoneTeamEnemyEffect: {fileID: 0}
 --- !u!4 &924475438359658674
 Transform:
   m_ObjectHideFlags: 0
@@ -43138,18 +43058,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ea1b030e114cf4e89d181333f9b9a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DominationMode: {fileID: 0}
   TeamOccupying: 2
-  MembersAInZone: []
-  MembersBInZone: []
-  ZoneImgTeamA:
-  - {fileID: 1853079734}
-  - {fileID: 7934218322561265924}
-  ZoneImgTeamB:
-  - {fileID: 1158615466}
-  - {fileID: 8266279243639066050}
+  MembersAllyInZone: []
+  MembersEnemyInZone: []
+  ZoneImgTeamAlly: []
+  ZoneImgTeamEnemy: []
   ZoneNoTeamEffect: {fileID: 797182728}
-  ZoneTeamAEffect: {fileID: 655679839}
-  ZoneTeamBEffect: {fileID: 1386368041}
+  ZoneTeamAllyEffect: {fileID: 0}
+  ZoneTeamEnemyEffect: {fileID: 0}
 --- !u!114 &1817938208977564962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50879,6 +50796,11 @@ PrefabInstance:
       propertyPath: ModelAnimator
       value: 
       objectReference: {fileID: 228874096}
+    - target: {fileID: 1942128363756807801, guid: 65d540ebe4f283949b2e6f48ae2a37c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3435421491173063180, guid: 65d540ebe4f283949b2e6f48ae2a37c9,
         type: 3}
       propertyPath: m_Height
@@ -50904,6 +50826,11 @@ PrefabInstance:
       propertyPath: m_StepOffset
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3897134903087877397, guid: 65d540ebe4f283949b2e6f48ae2a37c9,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 71d54a8fd5a6bb94694aa25e2d64e139, type: 3}
     - target: {fileID: 4149009440107075307, guid: 65d540ebe4f283949b2e6f48ae2a37c9,
         type: 3}
       propertyPath: m_ClearFlags
@@ -50922,7 +50849,7 @@ PrefabInstance:
     - target: {fileID: 4149009440107075307, guid: 65d540ebe4f283949b2e6f48ae2a37c9,
         type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 637534175
+      value: 2785017823
       objectReference: {fileID: 0}
     - target: {fileID: 4193803023895677383, guid: 65d540ebe4f283949b2e6f48ae2a37c9,
         type: 3}
@@ -51022,7 +50949,7 @@ PrefabInstance:
     - target: {fileID: 6000339658557898321, guid: 65d540ebe4f283949b2e6f48ae2a37c9,
         type: 3}
       propertyPath: GroundMask.m_Bits
-      value: 25608
+      value: 2147509256
       objectReference: {fileID: 0}
     - target: {fileID: 6000339658557898321, guid: 65d540ebe4f283949b2e6f48ae2a37c9,
         type: 3}
@@ -51128,7 +51055,7 @@ PrefabInstance:
     - target: {fileID: 8786875116098635446, guid: 65d540ebe4f283949b2e6f48ae2a37c9,
         type: 3}
       propertyPath: _aimMask.m_Bits
-      value: 541090824
+      value: 2688574472
       objectReference: {fileID: 0}
     - target: {fileID: 8786875116098635446, guid: 65d540ebe4f283949b2e6f48ae2a37c9,
         type: 3}
@@ -51147,6 +51074,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5173673423035226878, guid: 65d540ebe4f283949b2e6f48ae2a37c9, type: 3}
+    - {fileID: 7365773042538749208, guid: 65d540ebe4f283949b2e6f48ae2a37c9, type: 3}
     m_RemovedGameObjects:
     - {fileID: -5329539311113673105, guid: 65d540ebe4f283949b2e6f48ae2a37c9, type: 3}
     - {fileID: 1271652592404898216, guid: 65d540ebe4f283949b2e6f48ae2a37c9, type: 3}
@@ -52808,18 +52736,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ea1b030e114cf4e89d181333f9b9a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DominationMode: {fileID: 0}
   TeamOccupying: 2
-  MembersAInZone: []
-  MembersBInZone: []
-  ZoneImgTeamA:
-  - {fileID: 780294239}
-  - {fileID: 2754313464340655845}
-  ZoneImgTeamB:
-  - {fileID: 254699764}
-  - {fileID: 4252541594539699775}
+  MembersAllyInZone: []
+  MembersEnemyInZone: []
+  ZoneImgTeamAlly: []
+  ZoneImgTeamEnemy: []
   ZoneNoTeamEffect: {fileID: 697134080}
-  ZoneTeamAEffect: {fileID: 2096008926}
-  ZoneTeamBEffect: {fileID: 2078393431}
+  ZoneTeamAllyEffect: {fileID: 0}
+  ZoneTeamEnemyEffect: {fileID: 0}
 --- !u!1 &6254006343212652237
 GameObject:
   m_ObjectHideFlags: 0
@@ -56745,6 +56670,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FootStepSound: {fileID: 1900061737}
   JumpDownSound: {fileID: 1092883202}
+  DashSound: {fileID: 0}
+  BulletSound: {fileID: 0}
 --- !u!114 &8664938659990914930
 MonoBehaviour:
   m_ObjectHideFlags: 0

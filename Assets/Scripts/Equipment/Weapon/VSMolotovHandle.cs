@@ -77,7 +77,7 @@ public class VSMolotovHandle : VSNadeHandle
             Explosion();
             _hitPoint = collision.contacts[0].point;
             Destroy(gameObject.GetComponent<Rigidbody>());
-            Destroy(gameObject.GetComponent<MeshRenderer>());
+            gameObject.GetComponent<MeshRenderer>().enabled = false;
         }
     }
 }

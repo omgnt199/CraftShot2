@@ -12,7 +12,7 @@ public class VSPlayerMovement : MonoBehaviour
     public GameObject SkinModel;
     public Camera MainCamera;
     public Transform Weapon;
-    public VSPlayerSound PlayerSound;
+    public PlayerSoundManager SoundManager;
     [Header("Movement")]
     public FixedJoystick joystick;
     public float MoveSpeed;
@@ -80,8 +80,8 @@ public class VSPlayerMovement : MonoBehaviour
         //Check ground
         _isGrounded = Physics.CheckSphere(GroundCheck.position, GroundDistance, GroundMask);
 
-        if (!_isGrounded) PlayerSound.DisableFootStep();
-        if (_isGrounded && !_isSpacing) PlayerSound.EnableJumpDown();
+        if (!_isGrounded) SoundManager.DisableFootStepSound();
+        if (_isGrounded && !_isSpacing) SoundManager.EnableJumpDownSound();
 
         if (_isGrounded && velocity.y < 0)
         {
@@ -115,14 +115,14 @@ public class VSPlayerMovement : MonoBehaviour
             
             MainCamera.transform.localPosition = Vector3.Lerp(MainCamera.transform.localPosition, new Vector3(MainCamera.transform.localPosition.x, _cameraYDefault, MainCamera.transform.localPosition.z), Time.deltaTime * 12f);
             controlAnimator.Idle();
-            PlayerSound.DisableFootStep();
+            SoundManager.DisableFootStepSound();
         }
         else
         {
 
             if (_isGrounded)
             {
-                PlayerSound.EnableFootStep();
+                SoundManager.EnableFootStepSound();
                 if (!_isCapAboveVibrateLimit)
                 {
                     MainCamera.transform.localPosition = Vector3.Lerp(MainCamera.transform.localPosition, new Vector3(MainCamera.transform.localPosition.x, _cameraYDefault + _cameraVibrateDelta, MainCamera.transform.localPosition.z), Time.deltaTime * 12f);
@@ -158,6 +158,7 @@ public class VSPlayerMovement : MonoBehaviour
     }
     void EnterDashMode()
     {
+        SoundManager.EnableDashSound();
         _isDashing = true;
         LineSpeedVfx.SendEvent("OnPlay");
         DOTween.To(() => characterController.height, height => characterController.height = height, DEFAULT_CHARACTER_HEIGHT / 2f, DashTime);
@@ -226,6 +227,7 @@ public class VSPlayerMovement : MonoBehaviour
         SkinModel.transform.localScale = skinModelScaleStart;
         characterController.height =  DEFAULT_CHARACTER_HEIGHT;
     }
+    public void SetMoveSpeed(float value) => MoveSpeed = value; 
     public void SpeedOnWalking()
     {
         MoveSpeed = WalkSpeed;

@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[System.Serializable]
 public class Team
 {
     public VSTeamSide TeamSide;
-    public int Size { get; set; }
-    public int Score { get; set; }
+    public int Size;
+    public int Score;
     public List<GameObject> MemberList { get; set; }
     public Team(VSTeamSide team,int size, int score)
     {

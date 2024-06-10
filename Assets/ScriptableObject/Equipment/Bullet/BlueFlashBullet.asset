@@ -16,3 +16,6 @@ MonoBehaviour:
   Radius: 0.2
   Particle: {fileID: 5369876835521012010, guid: 6f228de5c700af947923825c6c199981,
     type: 3}
+  BulletDecal: {fileID: 2646975360060698831, guid: c2bf593cd349748488f8269c9c063f26,
+    type: 3}
+  BulletSound: {fileID: 8300000, guid: 97a93348ae9ec424a9b78f55944f74b0, type: 3}

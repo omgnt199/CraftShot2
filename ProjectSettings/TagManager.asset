@@ -63,7 +63,7 @@ TagManager:
   - WeaponLayer
   - Smoke
   - LineSpeed
-  - 
+  - Floor
   m_SortingLayers:
   - name: Default
     uniqueID: 0
