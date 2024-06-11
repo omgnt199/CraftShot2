@@ -99,6 +99,7 @@ public class VSPlayerController : MonoBehaviour
 
         //Nade Setup
         PCW.Nadeusing = _nadeInfo;
+        PCW.NadeAmount = PCW.Nadeusing.Quantity;
         //Knife Setup
         PCW.KnifeUsing = _supportWeaponInfo;
     }
@@ -114,7 +115,7 @@ public class VSPlayerController : MonoBehaviour
         sWPAmmoIngame.Magazine = _secondaryWeaponInfo.Magazine;
         sWPAmmoIngame.CurrentMagazine = sWPAmmoIngame.Magazine;
         sWPAmmoIngame.CurrentAmmo = _secondaryWeaponInfo.TotalAmmo - _secondaryWeaponInfo.Magazine;
-        PCW.NadeAmount = 3;
+        PCW.NadeAmount = PCW.Nadeusing.Quantity;
         SelectPrimaryWeapon();
         Anim.WeaponAnimator = PrimaryWeapon.GetComponentInChildren<Animator>();
         PCW.OnSwitchWeapon();

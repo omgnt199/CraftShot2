@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65d86ba52c5aeb7438b3d63747e492c4, type: 3}
+  m_Name: FullHealthItemPower
+  m_EditorClassIdentifier: 
+  Name: HealthPower
+  Prefab: {fileID: 2940086539418916113, guid: f1a2968c0fb9777428c08ebeb51c4019, type: 3}
+  RestoreAmount: 100

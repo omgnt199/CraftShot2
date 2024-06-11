@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
 
     //Equipemnent
     public VSEquipmentPool EquipmentPool;
+    public ItemPowerPoolSO PowerPool;
     public Team Teamwin;
     //
     private float _reviveDelayTime = 3f;
@@ -101,7 +102,7 @@ public class GameManager : MonoBehaviour
             case VSGameState.Enter:
                 LoadPlayerEquipment();
                 SetUpMapPick();
-                EnterMode(VSGlobals.MODE);
+                LoadMode(VSGlobals.MODE);
                 break;
             case VSGameState.Victory:
                 break;
@@ -111,29 +112,11 @@ public class GameManager : MonoBehaviour
         OnGameStateChange?.Invoke(newState);
     }
 
-    void EnterMode(string mode)
+    void LoadMode(string mode)
     {
         Mode = mode;
         _currentMode = ModePool.GetGameModeByName(mode);
         _currentMode.EnterMode();
-        //Load Player
-        switch (mode)
-        {
-            case "Domination":
-                //SpawnTeamAlly();
-                //SpawnTeamEnemy();
-                //_mapPick.ActiveZone();
-                //VSInGameUIScript.instance.LoadUIDominationMode();
-                break;
-            case "Deathmatch":
-                SpawnDeathMatch();
-                _mapPick.DeactiveZone();
-                VSInGameUIScript.instance.LoadUIDeathMatchMode();
-                break;
-            case "Adventure":
-                break;
-        }
-
         //GlobalData.Instance.TimePlayManager.VoxelStrikeTimePlayMgr.MarkTimeStart();
         //GlobalData.Instance.TimePlayManager.VoxelStrikeTimePlayMgr.TimePlayModeDict[Mode]++;
     }
@@ -161,29 +144,29 @@ public class GameManager : MonoBehaviour
             teamDeathmatch.AddMember(bot);
         }
     }
-    public void SpawnTeamAlly()
-    {
-        _teamAlly.AddMember(_mainPlayer);
-        _mainPlayer.transform.position = TeamASpawn.transform.GetChild(0).position;
-        for (int i = 1; i <= _teamAlly.Size - 1; i++)
-        {
-            GameObject bot = Instantiate(BotPrefab, TeamASpawn.transform.GetChild(i).position, Quaternion.identity);
-            bot.GetComponent<VSBotController>().ZonePoints = new List<Transform>(_mapPick.ZonesPositionDominationMode);
-            _teamAlly.AddMember(bot);
-            _playerList.Add(bot);
-        }
-    }
+    //public void SpawnTeamAlly()
+    //{
+    //    _teamAlly.AddMember(_mainPlayer);
+    //    _mainPlayer.transform.position = TeamASpawn.transform.GetChild(0).position;
+    //    for (int i = 1; i <= _teamAlly.Size - 1; i++)
+    //    {
+    //        GameObject bot = Instantiate(BotPrefab, TeamASpawn.transform.GetChild(i).position, Quaternion.identity);
+    //        bot.GetComponent<VSBotController>().ZonePoints = new List<Transform>(_mapPick.ZonesPositionDominationMode);
+    //        _teamAlly.AddMember(bot);
+    //        _playerList.Add(bot);
+    //    }
+    //}
 
-    public void SpawnTeamEnemy()
-    {
-        for (int i = 0; i < _teamEnemy.Size; i++)
-        {
-            GameObject bot = Instantiate(BotPrefab, TeamBSpawn.transform.GetChild(i).position, Quaternion.identity);
-            bot.GetComponent<VSBotController>().ZonePoints = new List<Transform>(_mapPick.ZonesPositionDominationMode);
-            _teamEnemy.AddMember(bot);
-            _playerList.Add(bot);
-        }
-    }
+    //public void SpawnTeamEnemy()
+    //{
+    //    for (int i = 0; i < _teamEnemy.Size; i++)
+    //    {
+    //        GameObject bot = Instantiate(BotPrefab, TeamBSpawn.transform.GetChild(i).position, Quaternion.identity);
+    //        bot.GetComponent<VSBotController>().ZonePoints = new List<Transform>(_mapPick.ZonesPositionDominationMode);
+    //        _teamEnemy.AddMember(bot);
+    //        _playerList.Add(bot);
+    //    }
+    //}
     public void LoadPlayerEquipment()
     {
         string primaryWPName = PlayerPrefs.GetString("VSPrimaryWeaponUsing");
@@ -226,13 +209,17 @@ public class GameManager : MonoBehaviour
             DeathCamera.SetActive(true);
             VSInGameUIScript.instance.LoadPLayerDeadUI();
         }
+        else
+        {
+            Instantiate(PowerPool.GetRandomItemPower().Prefab, player.transform.position + new Vector3(0, 1f, 0), Quaternion.LookRotation(Vector3.up));
+        }
         yield return new WaitForSeconds(_reviveDelayTime);
         if (Mode == "Domination")
         {
-            if (player.GetComponent<VSPlayerInfo>().Team.TeamSide == VSTeamSide.TeamAlly) player.transform.position = TeamASpawn.GetChild(UnityEngine.Random.Range(0, _teamMembers)).position;
-            else player.transform.position = TeamBSpawn.GetChild(UnityEngine.Random.Range(0, _teamMembers)).position;
+            if (player.GetComponent<VSPlayerInfo>().Team.TeamSide == VSTeamSide.TeamAlly) player.transform.position = _mapPick.FirstTeamSpawn.GetChild(UnityEngine.Random.Range(0, _teamMembers)).position;
+            else player.transform.position = _mapPick.SecondTeamSpawn.GetChild(UnityEngine.Random.Range(0, _teamMembers)).position;
         }
-        else player.transform.position = DeathMatchSpawn.GetChild(UnityEngine.Random.Range(0, DeathMatchSpawn.childCount)).position;
+        else player.transform.position = _mapPick.DeathmatchSpawn.GetChild(UnityEngine.Random.Range(0, _mapPick.DeathmatchSpawn.childCount)).position;
         player.SetActive(true);
         player.GetComponent<VSPlayerInfo>().HP = 100;
         player.GetComponent<CharacterController>().height = 3f;

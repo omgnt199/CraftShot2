@@ -41,6 +41,8 @@ public class VSScoreBoardUI : MonoBehaviour
     private string _Mode;
     private int _playerRankInDeathmatchMode;
 
+
+
     bool isShowing = false;
     private string _typeSorting = "Kills";
     private void Awake()
@@ -85,8 +87,6 @@ public class VSScoreBoardUI : MonoBehaviour
 
         _playerValue = new Dictionary<VSPlayerInfo, int>();
         _playerTeamAValue = new Dictionary<VSPlayerInfo, int>();
-        _playerTeamBValue = new Dictionary<VSPlayerInfo, int>();
-
         _playerTeamBValue = new Dictionary<VSPlayerInfo, int>();
         switch (_Mode)
         {

@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c739f97b1397eb44e99380e0b8006574, type: 3}
-  m_Name: VS Molotov
+  m_Name: Molotov
   m_EditorClassIdentifier: 
   Type: 2
-  ID: VSN-03
   Name: Molotov
   Icon: {fileID: 21300000, guid: f689bc1417ffa60469af403d14f65440, type: 3}
   Model: {fileID: 6234304446030230178, guid: 79a5999e4d1753249b810515970697af, type: 3}
@@ -23,5 +22,5 @@ MonoBehaviour:
   Maxdamage: 0
   Mindamage: 0
   DamageOverTime: 10
-  Quantity: 3
+  Quantity: 100
   NadeKillIcon: {fileID: 21300000, guid: 34876a4f2d7ea514d8f87845c82a6b05, type: 3}

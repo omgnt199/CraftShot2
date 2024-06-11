@@ -13,6 +13,7 @@ public class VSBotController : MonoBehaviour
     [Header("Scripts")]
     public VSPlayerInfo PlayerInfo;
     public VSWeaponRecoil WeaponRecoil;
+    public PlayerSoundManager SoundManager;
     [Header("AI")]
     public float TimeReact;
     private float _timerReact;
@@ -240,6 +241,7 @@ public class VSBotController : MonoBehaviour
     {
         //Shoot bullet
         shootVfx.Spawn();
+        SoundManager.EnableBulletSound(GunUsing.Bullet.BulletSound);
         //Recoil
         WeaponRecoil.Recoil();
         //Check Raycast hit

@@ -1133,7 +1133,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -2056,6 +2056,10 @@ MonoBehaviour:
   Deaths: 0
   Points: 0
   NameTxt: {fileID: 0}
+  Team:
+    TeamSide: 0
+    Size: 0
+    Score: 0
   TeamArrow: {fileID: 0}
   TeamAlly_Arrow_Sprite: {fileID: 0}
   TeamEnemy_Arrow_Sprite: {fileID: 0}

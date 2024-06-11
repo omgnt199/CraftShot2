@@ -72,7 +72,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
     public VSSupportWeapon KnifeUsing;
     private float _knifeAttackDelay = 0.5f;
     private float _knifeAttackTimer = 0;
-    
+
     //Constt
     private const float DEFEAULT_FOV = 60f;
     private const float AIM_FOV = 45f;
@@ -106,6 +106,15 @@ public class VSPlayerControlWeapon : MonoBehaviour
 #if UNITY_EDITOR
         MyInput();
 #endif
+        if (Physics.Raycast(_fpCamera.position, _fpCamera.transform.forward, out RaycastHit hit, Mathf.Infinity, _aimMask))
+        {
+            if (LayerMask.LayerToName(hit.collider.gameObject.layer) == "BodyPart")
+            {
+                CrossHairUI.color = Color.red;
+            }
+            else CrossHairUI.color = Color.white;
+        }
+        else CrossHairUI.color = Color.white;
         //Auto aim with rifle gun
         if (_attackState == VSAttackState.Shoot && GunUsing.CrossHair == VSCrossHair.Rifle && _isAutoAimMode) HandleAutoAim();
         //AttackTimer which count time(s) delay between 2 consecutive attacks
@@ -181,7 +190,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
     public void StopAttack()
     {
         _isAttackPressed = false;
-        if(_attackState == VSAttackState.Shoot)
+        if (_attackState == VSAttackState.Shoot)
         {
             _isShooting = false;
             if (_fireSpeed == 0)
@@ -216,9 +225,9 @@ public class VSPlayerControlWeapon : MonoBehaviour
             Physics.Raycast(startPosition, _fpCamera.transform.forward, out RaycastHit hit, Mathf.Infinity, mask);
             //Cheat Bullet's velocity = Vector between RaycastHit's point and FirePoint
             Vector3 bulletVelocity;
-            if (hit.point != Vector3.zero) bulletVelocity = (hit.point -_firePoint.position).normalized * _firePower;
+            if (hit.point != Vector3.zero) bulletVelocity = (hit.point - _firePoint.position).normalized * _firePower;
             else bulletVelocity = _fpCamera.forward * _firePower;
-            BulletPool.instance.PickFromPool(gameObject,GunUsing, _firePoint.position, bulletVelocity);
+            BulletPool.instance.PickFromPool(gameObject, GunUsing, _firePoint.position, bulletVelocity);
             //Is Sniper?
             if (CrossHairUsing == VSCrossHair.Sniper)
             {
@@ -226,7 +235,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
             }
         }
         //Out of ammo
-        if(_currentMagazine == 0 && _currentAmmo > 0)
+        if (_currentMagazine == 0 && _currentAmmo > 0)
         {
             controlAnimator.WeaponAnimator.SetBool("IsShoot", false);
             controlAnimator.WeaponAnimator.SetFloat("Spray", 0f);
@@ -317,7 +326,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
     }
     public void HandleAim()
     {
-        switch(CrossHairUsing)
+        switch (CrossHairUsing)
         {
             case VSCrossHair.Rifle:
                 HandleRifleAim();
@@ -326,7 +335,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
                 HandleSniperAim();
                 break;
         }
-            
+
     }
     void OnRifleAim()
     {
@@ -521,7 +530,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
 
             LayerMask mask = LayerMask.GetMask("Ground", "Barrier", "ObstacleLayer", "Floor");
             Vector3 lastPosition = ProjectileTrajectoryNade.GetPosition(i - 1);
-            if (Physics.Raycast(lastPosition, (point - lastPosition).normalized,out RaycastHit hit, (point - lastPosition).magnitude, mask))
+            if (Physics.Raycast(lastPosition, (point - lastPosition).normalized, out RaycastHit hit, (point - lastPosition).magnitude, mask))
             {
                 ProjectileTrajectoryNade.SetPosition(i, hit.point);
                 ProjectileTrajectoryNade.positionCount = i + 1;

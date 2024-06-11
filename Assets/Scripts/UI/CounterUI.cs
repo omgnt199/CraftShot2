@@ -16,6 +16,10 @@ public class CounterUI : MonoBehaviour
     {
         _updateCounterUI.OnEventRaised += UpdateCounter;
     }
+    private void OnDisable()
+    {
+        _updateCounterUI.OnEventRaised -= UpdateCounter;
+    }
     void UpdateCounter()
     {
         m = _counter.CurrentTime / 60;

@@ -13,5 +13,5 @@ public class PlayerSoundManager : MonoBehaviour
     public void DisableFootStepSound() => FootStepSound.enabled = false;
     public void EnableJumpDownSound() => JumpDownSound.Play();
     public void EnableDashSound() => DashSound.Play();
-    public void EnableBulletSound(AudioClip bulletSound) => DashSound.PlayOneShot(bulletSound);
+    public void EnableBulletSound(AudioClip bulletSound) => BulletSound.PlayOneShot(bulletSound);
 }

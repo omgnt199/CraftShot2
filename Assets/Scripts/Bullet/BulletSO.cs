@@ -8,5 +8,14 @@ public class BulletSO : ScriptableObject
     public float Radius;
     public GameObject Particle;
     public GameObject BulletDecal;
+    public GameObject BulletExplosion;
     public AudioClip BulletSound;
+    public BulletInteractType InteractType;
+    //Only ExplosionInteract
+    public float ExplosionRadius;
+}
+public enum BulletInteractType
+{
+    Direct,
+    Explosion
 }

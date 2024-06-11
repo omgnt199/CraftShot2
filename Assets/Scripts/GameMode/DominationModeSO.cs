@@ -18,22 +18,24 @@ public class DominationModeSO : GameModeSO
     private Team _teamWin;
     private float timer = 0;
 
-    private UnityAction<VSTeamSide, int> _OnUpdateTeamScore;
-    public UnityAction<VSTeamSide, int> OnUpdateTeamScore => _OnUpdateTeamScore;
+    public UnityAction<VSTeamSide, int> OnUpdateTeamScore;
 
     public override void EnterMode()
     {
-        _OnUpdateTeamScore += UpdateTeamScore;
+        OnUpdateTeamScore += UpdateTeamScore;
         _mainPlayer = GameManager.Instance.MainPlayer;
         _mapPick = GameManager.Instance.MapPick;
 
+        TeamAlly = new Team(VSTeamSide.TeamAlly, 5, 0);
+        TeamEnemy = new Team(VSTeamSide.TeamEnemy, 5, 0);
         _teamWin = null;
-        _Counter.SetInitialTime(ModeTime);
-        _Counter.SetCurrentTime(ModeTime);
 
         SpawnTeamAlly();
         SpawnTeamEnemy();
         _mapPick.ActiveZone();
+
+        _Counter.SetInitialTime(ModeTime);
+        _Counter.SetCurrentTime(ModeTime);
         VSInGameUIScript.instance.LoadUIDominationMode();
     }
     public override void UpdateMode()
@@ -60,6 +62,7 @@ public class DominationModeSO : GameModeSO
 
     public override void EndMode()
     {
+        OnUpdateTeamScore -= UpdateTeamScore;
         GameManager.Instance.OnEndGame();
     }
     void UpdateCounter()

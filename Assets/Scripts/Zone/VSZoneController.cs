@@ -69,8 +69,8 @@ public class VSZoneController : MonoBehaviour
                 _currentZoneEffect = ZoneTeamEnemyEffect;
             }
             //Update UI
-            foreach (var zoneimg in ZoneImgTeamAlly) zoneimg.fillAmount = scoreOccupyTeamAlly / scoreToOccupyZone;
-            foreach (var zoneimg in ZoneImgTeamEnemy) zoneimg.fillAmount = scoreOccupyTeamEnemy / scoreToOccupyZone;
+            foreach (Image zoneimg in ZoneImgTeamAlly) zoneimg.fillAmount = scoreOccupyTeamAlly / scoreToOccupyZone;
+            foreach (Image zoneimg in ZoneImgTeamEnemy) zoneimg.fillAmount = scoreOccupyTeamEnemy / scoreToOccupyZone;
             //Calculate member's point
             if (isOccppied)
             {

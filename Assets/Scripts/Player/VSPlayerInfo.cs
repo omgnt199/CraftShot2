@@ -66,6 +66,14 @@ public class VSPlayerInfo : MonoBehaviour
             VSInGameUIScript.instance.UpdatePlayerHPUI(HP);
         }
     }
+    public void SetCurrentHP(int value)
+    {
+        HP = value;
+        if (gameObject.CompareTag("Player"))
+        {
+            VSInGameUIScript.instance.UpdatePlayerHPUI(HP);
+        }
+    }
     public void OnDeath()
     {
         Deaths++;

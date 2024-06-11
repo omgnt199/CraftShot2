@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c739f97b1397eb44e99380e0b8006574, type: 3}
-  m_Name: VS Grenade
+  m_Name: Grenade
   m_EditorClassIdentifier: 
   Type: 2
-  ID: VSN-01
   Name: Grenade
   Icon: {fileID: 21300000, guid: f689bc1417ffa60469af403d14f65440, type: 3}
   Model: {fileID: 3226073448848400265, guid: 56173f5895406cf44917694a3be3ebf8, type: 3}
   NadeType: 0
   ExplosionRadius: 4
+  Duration: 0
   Maxdamage: 80
   Mindamage: 40
   DamageOverTime: 0
-  Quantity: 3
+  Quantity: 100
   NadeKillIcon: {fileID: 21300000, guid: 34876a4f2d7ea514d8f87845c82a6b05, type: 3}

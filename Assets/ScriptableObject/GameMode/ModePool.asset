@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameModeList:
   - {fileID: 11400000, guid: 46d95ff9077dac74d82d727d375abeb6, type: 2}
+  - {fileID: 11400000, guid: a3d610f7072bf104db162b4e02ee95c4, type: 2}
