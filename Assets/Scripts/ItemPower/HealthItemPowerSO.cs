@@ -9,4 +9,9 @@ public class HealthItemPowerSO : ItemPowerSO
     {
         Player.GetComponent<VSPlayerInfo>().SetCurrentHP(RestoreAmount);
     }
+
+    public override void Deactive()
+    {
+
+    }
 }

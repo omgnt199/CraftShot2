@@ -13,13 +13,12 @@ public class BulletDirectInteract : BulletInteract
         if (LayerMask.LayerToName(collision.gameObject.layer) == "BodyPart")
         {
             VSPlayerInfo victim = collision.gameObject.GetComponentInParent<VSPlayerInfo>();
+            VSPlayerInfo whoShootInfo = WhoShoot.GetComponent<VSPlayerInfo>();
             VSGun gunUsing;
-            if (WhoShoot.GetComponent<VSPlayerInfo>().Team != victim.Team)
+            if (whoShootInfo.Team != victim.Team)
             {
                 if (WhoShoot.GetComponent<VSPlayerControlWeapon>() != null) gunUsing = WhoShoot.GetComponent<VSPlayerControlWeapon>().GunUsing;
                 else gunUsing = WhoShoot.GetComponent<VSBotController>().GunUsing;
-                VSPlayerInfo playerinfo = WhoShoot.GetComponent<VSPlayerInfo>();
-
 
                 //Calculate damage
                 int dam = 0;
@@ -33,14 +32,18 @@ public class BulletDirectInteract : BulletInteract
                 if (victim.HP <= 0)
                 {
                     //Update player's kills
-                    playerinfo.Kills++;
+                    whoShootInfo.Kills++;
                     //Show kill report
                     KillType killType = KillType.None;
                     if (collision.gameObject.CompareTag(VSBodyPart.Head.ToString())) killType = KillType.HeadShot;
-                    VSInGameUIScript.instance.ShowKillReport(playerinfo.Name, playerinfo.Team.TeamSide, victim.Name, victim.Team.TeamSide, gunUsing.GunKillIcon, killType);
+                    VSInGameUIScript.instance.ShowKillReport(whoShootInfo.Name, whoShootInfo.Team.TeamSide, victim.Name, victim.Team.TeamSide, gunUsing.GunKillIcon, killType);
                     victim.OnDeath();
                     //'Kill' Event trigger
-                    if (WhoShoot.gameObject.CompareTag("Player")) _Bullet.KillEvent(killType);
+                    if (WhoShoot.gameObject.CompareTag("Player"))
+                    {
+                        if (killType != KillType.None) PlayerEventListener.RaiseSpecialKillEvent(killType);
+                        else PlayerEventListener.RaiseKillByEvent();
+                    }
                 }
                 //Show damage UI
                 if (WhoShoot.CompareTag("Player")) VSInGameUIScript.instance.ShowDamgeScore(dam);

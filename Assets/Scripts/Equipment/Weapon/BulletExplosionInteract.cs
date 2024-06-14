@@ -22,25 +22,30 @@ public class BulletExplosionInteract : BulletInteract
 
         foreach (var hit in hitcolliders)
         {
+            //if (WhoShoot.Equals(hit.gameObject)) continue;
+            VSPlayerInfo whoShootInfo = WhoShoot.GetComponent<VSPlayerInfo>();
             GameObject victim = hit.gameObject;
             VSPlayerInfo victimInfo = victim.GetComponent<VSPlayerInfo>();
-            int damage = 0;
-            float distanceFromVictimToExplosion = Vector3.Distance(victim.transform.position, transform.position);
-            if (distanceFromVictimToExplosion <= gunUsing.Bullet.ExplosionRadius && distanceFromVictimToExplosion > gunUsing.Bullet.ExplosionRadius / 2f) damage = 30;
-            else if (distanceFromVictimToExplosion <= 2) damage = 50;
-            victimInfo.UpdateHP(-damage);
-            if (victimInfo.HP <= 0)
+            if (victimInfo.Team != whoShootInfo.Team)
             {
-                victimInfo.OnDeath();
-                VSPlayerInfo whoShootInfo = WhoShoot.GetComponent<VSPlayerInfo>();
-                VSInGameUIScript.instance.ShowKillReport(whoShootInfo.Name, whoShootInfo.Team.TeamSide, victimInfo.Name, victimInfo.Team.TeamSide, gunUsing.GunKillIcon, KillType.None);
-                if (whoShootInfo.Team == victimInfo.Team) whoShootInfo.Kills--;
-                else whoShootInfo.Kills++;
-                //'Kill' Event trigger
-                if (WhoShoot.gameObject.CompareTag("Player")) _Bullet.KillEvent(KillType.None);
+                int damage = 0;
+                float distanceFromVictimToExplosion = Vector3.Distance(victim.transform.position, transform.position);
+                if (distanceFromVictimToExplosion <= gunUsing.Bullet.ExplosionRadius && distanceFromVictimToExplosion > gunUsing.Bullet.ExplosionRadius / 2f) damage = 30;
+                else if (distanceFromVictimToExplosion <= 2) damage = 50;
+                victimInfo.UpdateHP(-damage);
+                if (victimInfo.HP <= 0)
+                {
+                    victimInfo.OnDeath();
+
+                    VSInGameUIScript.instance.ShowKillReport(whoShootInfo.Name, whoShootInfo.Team.TeamSide, victimInfo.Name, victimInfo.Team.TeamSide, gunUsing.GunKillIcon, KillType.None);
+                    if (whoShootInfo.Team == victimInfo.Team) whoShootInfo.Kills--;
+                    else whoShootInfo.Kills++;
+                    //'Kill' Event trigger
+                    if (WhoShoot.gameObject.CompareTag("Player")) PlayerEventListener.RaiseKillByEvent();
+                }
+                if (damage > 0 && WhoShoot.gameObject.CompareTag("Player")) VSInGameUIScript.instance.ShowDamgeScore(damage);
+                else if (damage > 0 && victim.CompareTag("Player")) VSInGameUIScript.instance.ShowTakeDamagePopUp((victim.transform.position - WhoShoot.transform.position).normalized);
             }
-            if (damage > 0 && WhoShoot.gameObject.CompareTag("Player")) VSInGameUIScript.instance.ShowDamgeScore(damage);
-            else if (damage > 0 && victim.CompareTag("Player")) VSInGameUIScript.instance.ShowTakeDamagePopUp((victim.transform.position - WhoShoot.transform.position).normalized);
         }
 
         Destroy(GetComponent<BulletExplosionInteract>());

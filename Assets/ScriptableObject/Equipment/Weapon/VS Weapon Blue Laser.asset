@@ -19,7 +19,7 @@ MonoBehaviour:
   Priority: 0
   Magazine: 30
   TotalAmmo: 600
-  FirePower: 150
+  FirePower: 250
   FireSpeed: 0.15
   TimeReload: 2
   RecoilAmountX: 3

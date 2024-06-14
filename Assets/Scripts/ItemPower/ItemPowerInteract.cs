@@ -11,15 +11,14 @@ public class ItemPowerInteract : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             _itemPower.Apply(other.gameObject);
-            Destroy(gameObject);
+            StartCoroutine(WaitForPowerFinish());
         }
     }
-    private void OnCollisionEnter(Collision collision)
+    IEnumerator WaitForPowerFinish()
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            _itemPower.Apply(collision.gameObject);
-            Destroy(gameObject);
-        }
+        transform.position += new Vector3(0, 1000f, 0);
+        yield return new WaitForSeconds(_itemPower.Duration);
+        _itemPower.Deactive();
+        Destroy(gameObject);
     }
 }

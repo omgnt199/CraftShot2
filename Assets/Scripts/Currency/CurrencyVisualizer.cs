@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -21,7 +22,9 @@ public class CurrencyVisualizer : MonoBehaviour
     }
     public void OnChangeCurrency()
     {
-        Coin.text = CurrencyData.GetCurrencyValue(CurrencyType.Coin).ToString();
-        Diamond.text = CurrencyData.GetCurrencyValue(CurrencyType.Diamond).ToString();
+        int coinValue = CurrencyData.GetCurrencyValue(CurrencyType.Coin);
+        int diamondValue = CurrencyData.GetCurrencyValue(CurrencyType.Diamond);
+        DOTween.To(() => int.Parse(Coin.text), coin => Coin.text = coin.ToString(), coinValue, 0.5f);
+        DOTween.To(() => int.Parse(Diamond.text), diamond => Diamond.text = diamond.ToString(), diamondValue, 0.5f);
     }
 }

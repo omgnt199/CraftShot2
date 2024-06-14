@@ -8,14 +8,13 @@ public static class PlayerEventListener
 {
     public static GameObject MainPlayer;
     public static Dictionary<string, UnityAction> DictEvent = new Dictionary<string, UnityAction>();
-    public static UnityAction PlayerEvent;
 
     public static void RegisterEvent(string eventName, UnityAction action)
     {
         DictEvent[eventName] = action;
     }
     public static void RemoveEvent(string eventName) => DictEvent.Remove(eventName);
-    public static void InvokeSpecialKillEvent(KillType type)
+    public static void RaiseSpecialKillEvent(KillType type)
     {
         foreach (var it in DictEvent)
         {
@@ -23,7 +22,7 @@ public static class PlayerEventListener
                 it.Value?.Invoke();
         }
     }
-    public static void InvokeKillByEvent()
+    public static void RaiseKillByEvent()
     {
         foreach (var it in DictEvent)
         {

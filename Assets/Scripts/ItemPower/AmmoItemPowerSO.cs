@@ -8,4 +8,9 @@ public class AmmoItemPowerSO : ItemPowerSO
     {
         Player.GetComponent<VSPlayerController>().ResetWeapon();
     }
+
+    public override void Deactive()
+    {
+
+    }
 }

@@ -18,7 +18,6 @@ public class VSPlayerMovement : MonoBehaviour
     public float MoveSpeed;
     public float AccelerationSpeed;
     public float Gravity = -9.81f;
-    private float startMoveSpeed;
     public float WalkSpeed;
     public float CrouchSpeed;
     public float AimingSpeed;
@@ -61,10 +60,8 @@ public class VSPlayerMovement : MonoBehaviour
     void Start()
     {
         _cameraYDefault = MainCamera.transform.localPosition.y;
-        startMoveSpeed = MoveSpeed;
-        _currentSpeed = MoveSpeed;
         skinModelScaleStart = SkinModel.transform.localScale;
-
+        _currentSpeed = MoveSpeed;
         LineSpeedVfx.SendEvent("OnStop");
     }
 
@@ -93,8 +90,8 @@ public class VSPlayerMovement : MonoBehaviour
         if (_isFly) HandleFLy();
         else
         {
-            Gravity = Mathf.Lerp(Gravity, -19.87f, Time.deltaTime * 2f);
-            MoveSpeed = Mathf.Lerp(MoveSpeed, WalkSpeed, Time.deltaTime * 2f);
+            //Gravity = Mathf.Lerp(Gravity, -19.87f, Time.deltaTime * 2f);
+            //MoveSpeed = Mathf.Lerp(MoveSpeed, WalkSpeed, Time.deltaTime * 2f);
         }
         //Dash?
         if (_isDashing) HandleDash();
@@ -104,7 +101,7 @@ public class VSPlayerMovement : MonoBehaviour
         //SuperJump
         if(Input.GetKeyDown(KeyCode.G))
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * 30f * -2f * Gravity);
+            SuperJump();
         }
         // Add Gravity
         velocity.y += Gravity * Time.deltaTime;
@@ -140,6 +137,13 @@ public class VSPlayerMovement : MonoBehaviour
 
         }
     }
+
+    public void SuperJump()
+    {
+        _isJumping = true;
+        velocity.y = Mathf.Sqrt(jumpHeight * 30f * -2f * Gravity);
+    }
+
     public void Jump()
     {
         if(!_isJumping)

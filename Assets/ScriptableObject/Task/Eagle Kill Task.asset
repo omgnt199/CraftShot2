@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a662500f1aae9824bbe8ef7cfe604ac8, type: 3}
   m_Name: Eagle Kill Task
   m_EditorClassIdentifier: 
-  ID: T-04
   TaskInfo: Get kills with "Desert Eagle"
   RewardType: 1
   RewardValue: 200
   GoalValue: 6
-  AchivedValue: 0
-  IsCompleted: 0
+  AchivedValue: 6
+  IsCompleted: 1
+  IsClaimed: 1
   EventName: KillByGun
   Gun: {fileID: 11400000, guid: 4eecfc680ed7c1647b68ef0cfd709d0b, type: 2}

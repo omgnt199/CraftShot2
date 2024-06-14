@@ -194,6 +194,7 @@ public class GameManager : MonoBehaviour
         else nadeWP = (VSNade)EquipmentPool.GetEquipmentByName(nadeName);
 
         _mainPlayer.GetComponent<VSPlayerController>().SetUpWeapon(primaryWP, secondaryWP, supportWP, nadeWP);
+
     }
     public void OnOnePlayerDead(GameObject player)
     {

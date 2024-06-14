@@ -5,17 +5,18 @@ using UnityEngine;
 public class SpeedItemPowerSO : ItemPowerSO
 {
     public float SpeedMutiply;
-    public float Duration;
-    public override void Apply(GameObject Player)
+    private VSPlayerMovement _playerMovement;
+    public override void Apply(GameObject player)
     {
-        Player.GetComponent<VSPlayerMovement>().MoveSpeed *= SpeedMutiply;
-        Player.GetComponent<VSPlayerMovement>().LineSpeedVfx.Play();
+        _playerMovement = player.GetComponent<VSPlayerMovement>();
+        _playerMovement.MoveSpeed = _playerMovement.WalkSpeed * SpeedMutiply;
+        _playerMovement.LineSpeedVfx.Play();
     }
 
-    IEnumerator WaitForPowerFinish(float duration, GameObject player)
+    public override void Deactive()
     {
-        yield return new WaitForSeconds(duration);
-        player.GetComponent<VSPlayerMovement>().MoveSpeed /= SpeedMutiply;
-        player.GetComponent<VSPlayerMovement>().LineSpeedVfx.Stop();
+        _playerMovement.SpeedOnWalking();
+        _playerMovement.LineSpeedVfx.Stop();
     }
+
 }

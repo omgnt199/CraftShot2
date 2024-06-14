@@ -274,8 +274,8 @@ public class VSPlayerControlWeapon : MonoBehaviour
     }
     void Kill(KillType type)
     {
-        if (type != KillType.None) PlayerEventListener.InvokeSpecialKillEvent(type);
-        PlayerEventListener.InvokeKillByEvent();
+        if (type != KillType.None) PlayerEventListener.RaiseSpecialKillEvent(type);
+        PlayerEventListener.RaiseKillByEvent();
     }
     public void KnifeAttack()
     {
@@ -498,7 +498,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
             {
                 CrossHairUI.color = Color.red;
                 GameObject hitCharacter = hit.collider.gameObject;
-                if (_playerInfo.Team != hitCharacter.GetComponentInParent<VSPlayerInfo>().Team)
+                if (_playerInfo.Team != hitCharacter.GetComponentInParent<VSPlayerInfo>().Team && !hitCharacter.GetComponentInParent<VSPlayerInfo>().gameObject.CompareTag("Player"))
                 {
                     if (!_isAttackPressed) OnAutoAim();
                     else Recoil_Script.OffAim();

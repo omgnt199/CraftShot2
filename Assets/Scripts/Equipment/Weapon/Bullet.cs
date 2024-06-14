@@ -110,12 +110,6 @@ public class Bullet : MonoBehaviour
 
         //Deactive();
     }
-
-    public void KillEvent(KillType type)
-    {
-        if (type != KillType.None) PlayerEventListener.InvokeSpecialKillEvent(type);
-        PlayerEventListener.InvokeKillByEvent();
-    }
     public void SpawnDecal(ContactPoint hit)
     {
         GameObject decal = Instantiate(BulletDecal, hit.point, Quaternion.LookRotation(hit.normal));
