@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0fa07505ce2f6f43b2b4568bfccca25, type: 3}
+  m_Name: Equipment Karambit
+  m_EditorClassIdentifier: 
+  Type: 1
+  ID: VSSP-01
+  Name: Karambit
+  Icon: {fileID: 21300000, guid: b32cf80e013eb1b49ad476e6836276af, type: 3}
+  Model: {fileID: 4473037104878192143, guid: fb18e31a8cbbec8459bcc12ede195f07, type: 3}
+  Info: The "Karambit" is believed to have originally been weaponized among the "Minangkabau"
+    people, it was inspired by the claws of a tiger.
+  KnifeKillIcon: {fileID: 21300000, guid: c2582b4a2eddb214e8232e06942f0079, type: 3}
+  DamageFace: 25
+  DamageBack: 100

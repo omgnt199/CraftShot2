@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a9af0a029a62c645aad79afdab38e77, type: 3}
+  m_Name: SymbolBullet
+  m_EditorClassIdentifier: 
+  BulletTrail: {fileID: 0}
+  Radius: 0.2
+  Particle: {fileID: 112246, guid: 0badbb577e321ff41857e14eff51adf7, type: 3}
+  BulletDecal: {fileID: 156742, guid: 320fa7a07c5532145ab6bc43005b4d2e, type: 3}
+  BulletExplosion: {fileID: 156742, guid: 320fa7a07c5532145ab6bc43005b4d2e, type: 3}
+  BulletSound: {fileID: 8300000, guid: 564dd651105e488408ce694c513b389e, type: 3}
+  InteractType: 1
+  ExplosionRadius: 3

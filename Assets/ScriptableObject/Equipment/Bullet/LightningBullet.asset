@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a9af0a029a62c645aad79afdab38e77, type: 3}
+  m_Name: LightningBullet
+  m_EditorClassIdentifier: 
+  BulletTrail: {fileID: 0}
+  Radius: 0.2
+  Particle: {fileID: 163948, guid: 153ff601b9ac43240921bf65f009e220, type: 3}
+  BulletDecal: {fileID: 175370, guid: ff1be2a5e0cf31245886a7668b0b993c, type: 3}
+  BulletExplosion: {fileID: 175370, guid: ff1be2a5e0cf31245886a7668b0b993c, type: 3}
+  BulletSound: {fileID: 8300000, guid: 0bab18109cc0d434fa35ed3a525ef1e2, type: 3}
+  InteractType: 1
+  ExplosionRadius: 3
