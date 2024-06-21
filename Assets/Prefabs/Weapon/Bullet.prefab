@@ -244,6 +244,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WhoShoot: {fileID: 0}
   Rb: {fileID: 8957291466935825063}
-  lifeTime: 5
+  lifeTime: 3
   BulletDecal: {fileID: 0}
   BulletTrail: {fileID: 8090644257513980328}

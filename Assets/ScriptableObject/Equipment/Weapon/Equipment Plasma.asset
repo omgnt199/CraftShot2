@@ -10,23 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29923e7e63c6eb7429f9a8920e76bf36, type: 3}
-  m_Name: VS Weapon Frost Gun
+  m_Name: Equipment Plasma
   m_EditorClassIdentifier: 
+  Pool: {fileID: 11400000, guid: a868d2e5287e24a41bc4bfb4c18d30f1, type: 2}
   Type: 0
-  Name: FrostGun
+  Name: Plasma
   Icon: {fileID: 21300000, guid: 78de094888b241e448b8b29858704d85, type: 3}
-  Model: {fileID: 8159709313725625536, guid: cd2a60447e24e6b46bbdaeb32578de92, type: 3}
+  Model: {fileID: 8159709313725625536, guid: 82495baaedb27624e92953771b86677e, type: 3}
   Priority: 0
   Magazine: 30
   TotalAmmo: 600
-  FirePower: 150
-  FireSpeed: 0.2
+  FirePower: 200
+  FireSpeed: 0.15
   TimeReload: 2
-  RecoilAmountX: 2
-  RecoilAmountY: 1.5
+  RecoilAmountX: 3
+  RecoilAmountY: 2
   CrossHair: 0
   DamageToHead: 60
   DamageToBody: 30
   DamageToHandLeg: 15
   GunKillIcon: {fileID: 21300000, guid: ccf91a9d1baf7d744a44ff0f534d6c71, type: 3}
-  Bullet: {fileID: 11400000, guid: 23163dca255b9ef49915b775a8b22e3f, type: 2}
+  Bullet: {fileID: 11400000, guid: 4a7e0428fd63ba345aa7ed52b6c8cb80, type: 2}
