@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a9af0a029a62c645aad79afdab38e77, type: 3}
   m_Name: LaserBullet
   m_EditorClassIdentifier: 
+  InteractType: 0
   BulletTrail: {fileID: 0}
-  Radius: 0.2
+  BulletRadius: 0.1
   Particle: {fileID: 102434, guid: dcc5e8eb79dcc7040a9d10c102eecfae, type: 3}
   BulletDecal: {fileID: 1901793388993434, guid: 3c25751d0d939b948b4b2bcc2a9c3128,
     type: 3}
   BulletExplosion: {fileID: 0}
-  BulletSound: {fileID: 8300000, guid: 63fdd226143a14849a56391907c62105, type: 3}
-  InteractType: 0
   ExplosionRadius: 0
+  BulletSound: {fileID: 8300000, guid: 63fdd226143a14849a56391907c62105, type: 3}

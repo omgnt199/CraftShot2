@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a9af0a029a62c645aad79afdab38e77, type: 3}
   m_Name: RocketBullet
   m_EditorClassIdentifier: 
+  InteractType: 1
   BulletTrail: {fileID: 0}
-  Radius: 0.2
+  BulletRadius: 0.1
   Particle: {fileID: 123432, guid: 81ba803537470cd478e76c5d33b7e81e, type: 3}
   BulletDecal: {fileID: 8346318383932438173, guid: afb916b2caa080443842e75ac5787b72,
     type: 3}
   BulletExplosion: {fileID: 8346318383932438173, guid: afb916b2caa080443842e75ac5787b72,
     type: 3}
-  BulletSound: {fileID: 8300000, guid: 31d4354cef3a92a4481b8c1464e22afd, type: 3}
-  InteractType: 1
   ExplosionRadius: 4
+  BulletSound: {fileID: 8300000, guid: 31d4354cef3a92a4481b8c1464e22afd, type: 3}

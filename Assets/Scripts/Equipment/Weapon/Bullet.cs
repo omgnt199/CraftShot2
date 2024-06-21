@@ -38,7 +38,7 @@ public class Bullet : MonoBehaviour
         if (gun.Bullet.BulletExplosion != null) _bulletExplosionPrefab = gun.Bullet.BulletExplosion;
         else _bulletExplosionPrefab = null;
         //
-        GetComponent<CapsuleCollider>().radius = gun.Bullet.Radius;
+        GetComponent<CapsuleCollider>().radius = gun.Bullet.BulletRadius;
         //
         if (gun.Bullet.InteractType == BulletInteractType.Direct) gameObject.AddComponent<BulletDirectInteract>();
         else if(gun.Bullet.InteractType == BulletInteractType.Explosion) gameObject.AddComponent<BulletExplosionInteract>();

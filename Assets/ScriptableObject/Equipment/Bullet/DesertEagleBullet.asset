@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a9af0a029a62c645aad79afdab38e77, type: 3}
   m_Name: DesertEagleBullet
   m_EditorClassIdentifier: 
+  InteractType: 0
   BulletTrail: {fileID: 11400000, guid: c62f44f1982a8d24d8e663876f52e12a, type: 2}
-  Radius: 0.02
+  BulletRadius: 0.02
   Particle: {fileID: 0}
   BulletDecal: {fileID: 1936032059195924, guid: e5448bf09bf80c84683234d05d3ccf91,
     type: 3}
+  BulletExplosion: {fileID: 0}
+  ExplosionRadius: 0
   BulletSound: {fileID: 8300000, guid: 321feb9f51af885488e5ed433aecd467, type: 3}

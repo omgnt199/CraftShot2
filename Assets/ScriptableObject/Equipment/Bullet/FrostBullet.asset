@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a9af0a029a62c645aad79afdab38e77, type: 3}
   m_Name: FrostBullet
   m_EditorClassIdentifier: 
+  InteractType: 0
   BulletTrail: {fileID: 0}
-  Radius: 0.2
+  BulletRadius: 0.1
   Particle: {fileID: 6018208206366089757, guid: 3aec43c9a663e2b4182a52f1a622c982,
     type: 3}
   BulletDecal: {fileID: 136350, guid: 472eeebb80696f842a773476a3c15722, type: 3}
   BulletExplosion: {fileID: 136350, guid: 472eeebb80696f842a773476a3c15722, type: 3}
+  ExplosionRadius: 0
   BulletSound: {fileID: 8300000, guid: 12bc2273bdb3e7549af1ffb9ee9044eb, type: 3}
