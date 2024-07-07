@@ -16,7 +16,6 @@ public class VSPlayerMovement : MonoBehaviour
     [Header("Movement")]
     public FixedJoystick joystick;
     public float MoveSpeed;
-    public float AccelerationSpeed;
     public float Gravity = -9.81f;
     public float WalkSpeed;
     public float CrouchSpeed;
@@ -51,6 +50,8 @@ public class VSPlayerMovement : MonoBehaviour
     public float FlySpeed;
     private Vector3 _flyMotion;
     private bool _isFly = false;
+
+
     private const float DEFAULT_CHARACTER_HEIGHT = 2.6f;
     private const float DEFAULT_FOV = 60f;
     private const float RUNNING_FOV = 65f;
