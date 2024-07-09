@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: f50d3ea267b5a384a9024fd5e0bec26d
+guid: 8cc2b6d546089c142bcfcd51ddeffcde
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thief
+    second: {fileID: 2100000, guid: 8ffe4d09ec1f88a47b3d62e232abd9e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: face
+    second: {fileID: 2100000, guid: 8cbb240e740f55446a5c009be45e0046, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: police1
+    second: {fileID: 2100000, guid: fcadd696aa7f27b43a0a926f2bc625c3, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -41,10 +56,10 @@ ModelImporter:
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importPhysicalCameras: 1
-    importVisibility: 1
+    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
