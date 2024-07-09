@@ -994,6 +994,7 @@ MonoBehaviour:
   m_LastProjectPath: C:\Unity\Project\CraftShot
   m_LockTracker:
     m_IsLocked: 1
+    m_IsLocked: 1
   m_FolderTreeState:
     scrollPos: {x: 0, y: 1049}
     m_SelectedIDs: 34d00000
@@ -1286,6 +1287,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
+    m_ScrollPosition: {x: 0, y: 0}
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 16
   m_SkipHiddenPackages: 0

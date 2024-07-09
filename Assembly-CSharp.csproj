@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{E6A97134-DE17-BE1E-BB66-D4755EE24D8D}</ProjectGuid>
+    <ProjectGuid>{FDDB5B04-1655-330E-8832-714ACCD37453}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -95,6 +95,7 @@
     <Compile Include="Assets\Epic Toon FX\Scripts\ETFXRotation.cs" />
     <Compile Include="Assets\Scripts\Character\Damageable.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
+    <Compile Include="Assets\Scripts\Bullet\Bullet.cs" />
     <Compile Include="Assets\Scripts\TestEffect.cs" />
     <Compile Include="Assets\Scripts\Effect\VSFootStep.cs" />
     <Compile Include="Assets\Scripts\Scriptable\TimeTrack\TimePlayMgr.cs" />
@@ -130,7 +131,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Scripts\DailyTask\VSDailyTask.cs" />
     <Compile Include="Assets\Scripts\Player\FirstPersonController.cs" />
-    <Compile Include="Assets\Scripts\Equipment\Weapon\BulletExplosionInteract.cs" />
     <Compile Include="Assets\Scripts\Scriptable\GlobalStaticMethod.cs" />
     <Compile Include="Assets\Adjust\Windows\AdjustWindows.cs" />
     <Compile Include="Assets\Scripts\LeaderBoardController.cs" />
@@ -146,7 +146,6 @@
     <Compile Include="Assets\Scripts\Character\HealthSO.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Scripts\Currency\CurrencyData.cs" />
-    <Compile Include="Assets\Scripts\Equipment\Weapon\BulletDirectInteract.cs" />
     <Compile Include="Assets\Scripts\CraftWorldEnum.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\VFX Library\PEButtonScript.cs" />
     <Compile Include="Assets\Scripts\Player\VSPlayerController.cs" />
@@ -183,6 +182,7 @@
     <Compile Include="Assets\Adjust\Unity\AdjustEnvironment.cs" />
     <Compile Include="Assets\Scripts\Camera\LargeMapNavCam.cs" />
     <Compile Include="Assets\Scripts\Effect\VSTrail.cs" />
+    <Compile Include="Assets\Scripts\Bullet\BulletInteract.cs" />
     <Compile Include="Assets\#NVJOB Name Generator\Examples\Example 1\TextMeshName.cs" />
     <Compile Include="Assets\Scripts\Currency\CurrencyVisualizer.cs" />
     <Compile Include="Assets\Scripts\Player\ImovementInput.cs" />
@@ -212,7 +212,6 @@
     <Compile Include="Assets\Scripts\VSGlobals.cs" />
     <Compile Include="Assets\Scripts\Enemy\Bot\VSBotController.cs" />
     <Compile Include="Assets\Scripts\VSLookAtCamera.cs" />
-    <Compile Include="Assets\Scripts\Equipment\Weapon\Bullet.cs" />
     <Compile Include="Assets\Scripts\Equipment\Nade\VSNade.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustSessionSuccess.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovementAdvanced.cs" />
@@ -230,7 +229,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\Scripts\SetUpCamera.cs" />
     <Compile Include="Assets\Scripts\UI\VSDailyTaskPopUpUI.cs" />
-    <Compile Include="Assets\Scripts\Equipment\Weapon\BulletInteract.cs" />
     <Compile Include="Assets\Scripts\UserData\MiniGameUserData.cs" />
     <Compile Include="Assets\Scripts\SettingPopUpUIScript.cs" />
     <Compile Include="Assets\Scripts\ItemPower\HealthItemPowerSO.cs" />
@@ -246,6 +244,7 @@
     <Compile Include="Assets\Scripts\FPSDisplay.cs" />
     <Compile Include="Assets\Scripts\Scriptable\GlobalSoundMethod.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
+    <Compile Include="Assets\Scripts\Bullet\BulletDirectInteract.cs" />
     <Compile Include="Assets\Scripts\Equipment\Weapon\VSSmokeHandle.cs" />
     <Compile Include="Assets\MT Assets\Easy Mesh Combiner\DemoScene\Scripts\CombineInRuntimeDemo.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
@@ -276,9 +275,9 @@
     <Compile Include="Assets\Scripts\CountDown.cs" />
     <Compile Include="Assets\Scripts\VerticalContentScrollViewAutoSize.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
-    <Compile Include="Assets\Scripts\Equipment\Weapon\BulletPool.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
+    <Compile Include="Assets\Scripts\Bullet\BulletExplosionInteract.cs" />
     <Compile Include="Assets\Scripts\VSMiniMap.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXButtonScript.cs" />
     <Compile Include="Assets\Scripts\Portal\SuperJumpAura.cs" />
@@ -294,6 +293,7 @@
     <Compile Include="Assets\Scripts\UI\VSKillReportUI.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXProjectileScript.cs" />
     <Compile Include="Assets\#NVJOB Name Generator\Examples\Example 0\RotateNameExample.cs" />
+    <Compile Include="Assets\Scripts\Bullet\BulletPool.cs" />
     <Compile Include="Assets\Scripts\Player\VSPlayerInput.cs" />
     <Compile Include="Assets\Scripts\UI\GameModeUI.cs" />
     <Compile Include="Assets\#NVJOB Name Generator\Name Generator\NVJOBNameGen.cs" />
@@ -714,14 +714,6 @@
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Android.Types">
@@ -1595,19 +1587,19 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{06A0E5E4-BC07-655E-32C5-AEA01F10EED2}</Project>
+      <Project>{5DE84A35-B411-E4C0-2DE4-8DF7C8315001}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
     <ProjectReference Include="AttributesSamples.csproj">
-      <Project>{5DCA6400-64CB-6C04-33C3-8A7FD937A49F}</Project>
+      <Project>{13515719-7254-386E-7E7E-909AE6D80E58}</Project>
       <Name>AttributesSamples</Name>
     </ProjectReference>
     <ProjectReference Include="EditorAttributes.Editor.csproj">
-      <Project>{3D815281-A0A6-01A3-6167-0088E9A77570}</Project>
+      <Project>{CBD4CC1D-499C-F698-6BE7-90C3D2F2DF01}</Project>
       <Name>EditorAttributes.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="EditorAttributes.csproj">
-      <Project>{FA14F52F-60BB-1B3B-57ED-EFACDD645FB6}</Project>
+      <Project>{BA9F285E-8E58-1D69-0592-2FBA5F55A9DE}</Project>
       <Name>EditorAttributes</Name>
     </ProjectReference>
   </ItemGroup>
