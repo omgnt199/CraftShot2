@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c739f97b1397eb44e99380e0b8006574, type: 3}
   m_Name: Equipment Molotov
   m_EditorClassIdentifier: 
-  Type: 2
+  Pool: {fileID: 11400000, guid: a868d2e5287e24a41bc4bfb4c18d30f1, type: 2}
+  Type: 3
   Name: Molotov
   Icon: {fileID: 21300000, guid: f689bc1417ffa60469af403d14f65440, type: 3}
   Model: {fileID: 6234304446030230178, guid: 79a5999e4d1753249b810515970697af, type: 3}

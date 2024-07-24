@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,6 +12,8 @@ public class Damageable : MonoBehaviour
     [SerializeField] private VoidEventChannelSO _updateHealthUI = default;
     [SerializeField] private VoidEventChannelSO _takeDamageUI = default;
     [SerializeField] private VoidEventChannelSO _deathEvent = default;
+
+    [SerializeField] private GameObject _takeDamageVFX;
 
     public bool IsDead { get; set; }
     public bool GetHit {  get; set; }
@@ -55,5 +58,10 @@ public class Damageable : MonoBehaviour
         }
         if (_updateHealthUI != null) _updateHealthUI.RaiseEvent();
         IsDead = false;
+    }
+
+    public void SpawnTakeDamageVFX(ContactPoint hitPoint)
+    {
+        Instantiate(_takeDamageVFX, hitPoint.point, Quaternion.LookRotation(hitPoint.normal));
     }
 }

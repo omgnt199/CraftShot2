@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BulletInteract : MonoBehaviour
 {
-    protected Bullet _Bullet;
+    protected BulletSpawner _Bullet;
     protected GameObject WhoShoot;
     public virtual void Awake()
     {
-        _Bullet = GetComponent<Bullet>();
+        _Bullet = GetComponent<BulletSpawner>();
         WhoShoot = _Bullet.WhoShoot;
     }
 }

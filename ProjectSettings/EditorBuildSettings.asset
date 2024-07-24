@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/LoadingScene.unity
+    guid: 0f7085567be94584d8fc37b0bb00b1a9
+  - enabled: 1
     path: Assets/Scenes/VoxelStrikeHome.unity
     guid: 7d370488708b7f9459744addc21da49a
   - enabled: 1

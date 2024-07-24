@@ -17,37 +17,39 @@ public class VSEquipmentCard : MonoBehaviour
 
     private List<VSStatics> _statics = new List<VSStatics>();
     private string _Info;
+    public Button MainButton;
+    public List<VSStatics> Statics => _statics;
 
     public void Set(VSEquipment equipment)
     {
         Equipment = equipment;
-        Name.text = Equipment.Name;
-        Icon.sprite = Equipment.Icon;
+        Name.text = equipment.Name;
+        Icon.sprite = equipment.Icon;
         Icon.SetNativeSize();
 
-        if (equipment.Type == VSEquipmentType.Weapon)
+        if (equipment.Type == VSEquipmentType.PrimaryWeapon || equipment.Type == VSEquipmentType.SecondaryWeapon)
         {
             _statics.Add(new VSStatics("Damage", ((VSGun)equipment).DamageToHead.ToString(), ((VSGun)equipment).DamageToHead / 100f));
             _statics.Add(new VSStatics("Fire rate", ((VSGun)equipment).FireSpeed.ToString() + "/s", 1f / ((VSGun)equipment).FireSpeed / 10f));
             _statics.Add(new VSStatics("Reload time", ((VSGun)equipment).TimeReload.ToString() + "s", 1f / ((VSGun)equipment).TimeReload / 2f));
             if (equipment.Name == PlayerPrefs.GetString("VSPrimaryWeaponUsing")) Equipped.SetActive(true);
             else if (equipment.Name == PlayerPrefs.GetString("VSSecondaryWeaponUsing")) Equipped.SetActive(true);
-            GetComponent<Button>().onClick.AddListener(() => VSEquipmentStatUI.Instance.Show(Equipment, _statics));
+            MainButton.onClick.AddListener(() => VSInventoryUIController.Instance.EquipmentStatUI.Show(Equipment, _statics));
         }
-        else if(equipment.Type == VSEquipmentType.Nade)
+        else if (equipment.Type == VSEquipmentType.Nade)
         {
             _statics.Add(new VSStatics("Radius", ((VSNade)equipment).ExplosionRadius.ToString(), ((VSNade)equipment).ExplosionRadius / 5f));
             _statics.Add(new VSStatics("Damage", ((VSNade)equipment).Maxdamage.ToString(), ((VSNade)equipment).Maxdamage / 100f));
 
             if (equipment.Name == PlayerPrefs.GetString("VSNadeUsing")) Equipped.SetActive(true);
-            GetComponent<Button>().onClick.AddListener(() => VSEquipmentStatUI.Instance.Show(Equipment, _statics));
+            MainButton.onClick.AddListener(() => VSInventoryUIController.Instance.EquipmentStatUI.Show(Equipment, _statics));
         }
-        else if(equipment.Type == VSEquipmentType.SupportWeapon)
+        else if (equipment.Type == VSEquipmentType.SupportWeapon)
         {
             _Info = ((VSSupportWeapon)equipment).Info;
 
             if (equipment.Name == PlayerPrefs.GetString("VSSupportWeaponUsing")) Equipped.SetActive(true);
-            GetComponent<Button>().onClick.AddListener(() => VSEquipmentStatUI.Instance.Show(equipment,_Info));
+            MainButton.onClick.AddListener(() => VSInventoryUIController.Instance.EquipmentStatUI.Show(equipment,_Info));
         }
     }
 

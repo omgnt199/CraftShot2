@@ -7,7 +7,7 @@ public class BulletPool : MonoBehaviour
     public static BulletPool instance;
     public GameObject BulletPrefab;
     public int PoolSize;
-    private List<Bullet> availableBullets;
+    private List<BulletSpawner> availableBullets;
     private void Awake()
     {
         instance = this;
@@ -15,10 +15,10 @@ public class BulletPool : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        availableBullets = new List<Bullet>();
+        availableBullets = new List<BulletSpawner>();
         for(int i = 1; i <= PoolSize; i++)
         {
-            Bullet b = Instantiate(BulletPrefab, transform).GetComponent<Bullet>();
+            BulletSpawner b = Instantiate(BulletPrefab, transform).GetComponent<BulletSpawner>();
             b.gameObject.SetActive(false);
             availableBullets.Add(b);
         }
@@ -31,7 +31,7 @@ public class BulletPool : MonoBehaviour
         availableBullets[0].Activate(whoShoot, gun, position, velocity);
         availableBullets.RemoveAt(0);
     }
-    public void AddToPool(Bullet bullet)
+    public void AddToPool(BulletSpawner bullet)
     {
         if (!availableBullets.Contains(bullet)) availableBullets.Add(bullet);
     }

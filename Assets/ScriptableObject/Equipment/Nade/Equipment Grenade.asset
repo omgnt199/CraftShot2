@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c739f97b1397eb44e99380e0b8006574, type: 3}
   m_Name: Equipment Grenade
   m_EditorClassIdentifier: 
-  Type: 2
+  Pool: {fileID: 11400000, guid: a868d2e5287e24a41bc4bfb4c18d30f1, type: 2}
+  Type: 3
   Name: Grenade
   Icon: {fileID: 21300000, guid: f689bc1417ffa60469af403d14f65440, type: 3}
   Model: {fileID: 3226073448848400265, guid: 56173f5895406cf44917694a3be3ebf8, type: 3}

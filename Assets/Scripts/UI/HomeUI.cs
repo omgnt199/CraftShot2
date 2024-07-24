@@ -25,7 +25,7 @@ public class HomeUI : MonoBehaviour,IPopUp
     }
     public void HidePopUp(string popupName)
     {
-        var popup = Instance._dictPopUpName[popupName];
+        var popup = _dictPopUpName[popupName];
         popup.SetActive(false);
     }
 

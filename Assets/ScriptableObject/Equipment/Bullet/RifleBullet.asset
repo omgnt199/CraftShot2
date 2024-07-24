@@ -16,7 +16,7 @@ MonoBehaviour:
   BulletTrail: {fileID: 11400000, guid: 6e5249359d2e42e43a5b4684f2e7a357, type: 2}
   BulletRadius: 0.02
   Particle: {fileID: 0}
-  BulletDecal: {fileID: 6793201760751594863, guid: 0165a93ae2cb40144a3f65fb2cce6628,
+  BulletDecal: {fileID: 1936032059195924, guid: e5448bf09bf80c84683234d05d3ccf91,
     type: 3}
   BulletExplosion: {fileID: 0}
   ExplosionRadius: 0

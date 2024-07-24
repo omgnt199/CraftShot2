@@ -18,11 +18,11 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 78de094888b241e448b8b29858704d85, type: 3}
   Model: {fileID: 8159709313725625536, guid: 82495baaedb27624e92953771b86677e, type: 3}
   Priority: 0
-  Magazine: 10
+  Magazine: 30
   TotalAmmo: 600
-  FirePower: 100
-  FireSpeed: 1
-  TimeReload: 2
+  FirePower: 150
+  FireSpeed: 0.2
+  TimeReload: 1
   RecoilAmountX: 3
   RecoilAmountY: 2
   CrossHair: 0

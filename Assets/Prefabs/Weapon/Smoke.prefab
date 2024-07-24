@@ -133,7 +133,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 1
 --- !u!114 &1802828594942523591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,6 +150,4 @@ MonoBehaviour:
   WhoThrow: {fileID: 0}
   VfxPrefab: {fileID: 2295984869308603759, guid: 81552115a75ae9346a3d3bf3820e25d4,
     type: 3}
-  NadeKill_Sprite: {fileID: 0}
   DelayTimeExplosion: 3
-  Duration: 5

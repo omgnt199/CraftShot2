@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{FDDB5B04-1655-330E-8832-714ACCD37453}</ProjectGuid>
+    <ProjectGuid>{E6A97134-DE17-BE1E-BB66-D4755EE24D8D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -23,7 +23,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>UNITY_2022_3_22;UNITY_2022_3;UNITY_2022;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_2022_1_OR_NEWER;UNITY_2022_2_OR_NEWER;UNITY_2022_3_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_EDITOR_GAME_SERVICES;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_RUNTIME_PERMISSIONS;ENABLE_ENGINE_CODE_STRIPPING;ENABLE_ONSCREEN_KEYBOARD;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;ENABLE_NAVIGATION_PACKAGE_DEBUG_VISUALIZATION;ENABLE_NAVIGATION_HEIGHTMESH_RUNTIME_SUPPORT;ENABLE_NAVIGATION_UI_REQUIRES_PACKAGE;PLATFORM_ANDROID;TEXTCORE_1_0_OR_NEWER;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;UNITY_CAN_SHOW_SPLASH_SCREEN;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO;ENABLE_SPATIALTRACKING;ENABLE_ETC_COMPRESSION;PLATFORM_EXTENDS_VULKAN_DEVICE;PLATFORM_HAS_MULTIPLE_SWAPCHAINS;UNITY_ANDROID_SUPPORTS_SHADOWFILES;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_4_6;NET_UNITY_4_8;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;DOTWEEN;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>UNITY_2022_3_22;UNITY_2022_3;UNITY_2022;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_2022_1_OR_NEWER;UNITY_2022_2_OR_NEWER;UNITY_2022_3_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_EDITOR_GAME_SERVICES;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_RUNTIME_PERMISSIONS;ENABLE_ENGINE_CODE_STRIPPING;ENABLE_ONSCREEN_KEYBOARD;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;ENABLE_NAVIGATION_PACKAGE_DEBUG_VISUALIZATION;ENABLE_NAVIGATION_HEIGHTMESH_RUNTIME_SUPPORT;ENABLE_NAVIGATION_UI_REQUIRES_PACKAGE;PLATFORM_ANDROID;TEXTCORE_1_0_OR_NEWER;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;UNITY_CAN_SHOW_SPLASH_SCREEN;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO;ENABLE_SPATIALTRACKING;ENABLE_ETC_COMPRESSION;PLATFORM_EXTENDS_VULKAN_DEVICE;PLATFORM_HAS_MULTIPLE_SWAPCHAINS;UNITY_ANDROID_SUPPORTS_SHADOWFILES;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_4_6;NET_UNITY_4_8;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;DOTWEEN;CROSS_PLATFORM_INPUT;MOBILE_INPUT;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169;USG0001</NoWarn>
@@ -62,12 +62,16 @@
   <ItemGroup>
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Scripts\UI\HomeUI.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\FPSCounter.cs" />
     <Compile Include="Assets\Scripts\Currency\Currency.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXEffectController.cs" />
     <Compile Include="Assets\#NVJOB Name Generator\Examples\Example 0\OneNameExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Cameras\Scripts\PivotBasedCameraRig.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\SimpleMouseRotator.cs" />
     <Compile Include="Assets\Scripts\GridMapManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Scripts\Laser.cs" />
     <Compile Include="Assets\Scripts\Team\TeamConfigSO.cs" />
     <Compile Include="Assets\Scripts\Scriptable\CounterSO.cs" />
     <Compile Include="Assets\Scripts\Equipment\Weapon\VSWeaponAmmoInfoIngame.cs" />
@@ -76,29 +80,39 @@
     <Compile Include="Assets\Scripts\GameMode\IModeState.cs" />
     <Compile Include="Assets\Scripts\AnimatorUtility.cs" />
     <Compile Include="Assets\Scripts\MiniGamesSettingPopUpUI.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
     <Compile Include="Assets\Scripts\UI\MainUI.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\ObjectResetter.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustEventFailure.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\Scripts\Bullet\BulletSO.cs" />
     <Compile Include="Assets\Adjust\Unity\Adjust.cs" />
     <Compile Include="Assets\Scripts\MiniGameController.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\TimedObjectDestructor.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\Scripts\AfterburnerPhysicsForce.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Scripts\Equipment\Weapon\VSGrenadeHanle.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\2D\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\UI\CounterUI.cs" />
     <Compile Include="Assets\Scripts\ItemPower\AmmoItemPowerSO.cs" />
     <Compile Include="Assets\Scripts\Camera\VSDeathCamera.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\Scripts\Explosive.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\Scripts\DailyTask\DailyTaskObserver.cs" />
     <Compile Include="Assets\Scripts\Zone\VSZoneManager.cs" />
     <Compile Include="Assets\Epic Toon FX\Scripts\ETFXRotation.cs" />
     <Compile Include="Assets\Scripts\Character\Damageable.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
-    <Compile Include="Assets\Scripts\Bullet\Bullet.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\Scripts\ExplosionFireAndDebris.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\FOVKick.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Scripts\Health.cs" />
+    <Compile Include="Assets\Scripts\UI\LoadOutUI.cs" />
     <Compile Include="Assets\Scripts\TestEffect.cs" />
     <Compile Include="Assets\Scripts\Effect\VSFootStep.cs" />
     <Compile Include="Assets\Scripts\Scriptable\TimeTrack\TimePlayMgr.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustConfig.cs" />
     <Compile Include="Assets\Scripts\UI\VSTaskUI.cs" />
     <Compile Include="Assets\Scripts\Zone\VSZoneTrigger.cs" />
@@ -106,18 +120,25 @@
     <Compile Include="Assets\Pixel Arsenal\Scripts\PixelArsenalLightFade.cs" />
     <Compile Include="Assets\Scripts\UI\VSTakeDamageUI.cs" />
     <Compile Include="Assets\Scripts\BarSetting.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Scripts\Weapon.cs" />
     <Compile Include="Assets\Scripts\Data\DataManager.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Cameras\Scripts\ProtectCameraFromWallClip.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\CrossPlatformInput\Scripts\TiltInput.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Scripts\HiResRecorder.cs" />
     <Compile Include="Assets\Scripts\Singleton.cs" />
     <Compile Include="Assets\Scripts\Inventory\VSStaticCard.cs" />
     <Compile Include="Assets\Scripts\PlayerScoreRow.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\TimedObjectActivator.cs" />
     <Compile Include="Assets\Scripts\Player\MouseLookAround.cs" />
     <Compile Include="Assets\Scripts\MiniGameEnum.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\ForcedReset.cs" />
     <Compile Include="Assets\Scripts\Camera\VSWeaponCameraBehavior.cs" />
     <Compile Include="Assets\Scripts\Inventory\VSStatics.cs" />
     <Compile Include="Assets\MT Assets\Easy Mesh Combiner\DemoScene\Scripts\EnviromentMovement.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Scripts\EventListener.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\VFX Library\ParticleEffectsLibrary.cs" />
@@ -125,17 +146,25 @@
     <Compile Include="Assets\Scripts\UI\VSEndGameUI.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXSceneManager.cs" />
     <Compile Include="Assets\Scripts\Player\VSTouchLookAround.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\DynamicShadowSettings.cs" />
     <Compile Include="Assets\Scripts\LockFps.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustUtils.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
     <Compile Include="Assets\Scripts\Equipment\SupportWeapon\VSSupportWeapon.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Scripts\Add.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Scripts\DailyTask\VSDailyTask.cs" />
     <Compile Include="Assets\Scripts\Player\FirstPersonController.cs" />
     <Compile Include="Assets\Scripts\Scriptable\GlobalStaticMethod.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\CrossPlatformInput\Scripts\InputAxisScrollbar.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />
     <Compile Include="Assets\Adjust\Windows\AdjustWindows.cs" />
     <Compile Include="Assets\Scripts\LeaderBoardController.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\CurveControlledBob.cs" />
     <Compile Include="Assets\Scripts\GameMode\GameModeSO.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\Scripts\ExplosionPhysicsForce.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXMouseOrbit.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\2D\Scripts\Restarter.cs" />
     <Compile Include="Assets\Scripts\Portal\Portal.cs" />
     <Compile Include="Assets\MT Assets\Easy Mesh Combiner\Scripts\CombinedMeshesManager.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustAttribution.cs" />
@@ -143,6 +172,7 @@
     <Compile Include="Assets\Pixel Arsenal\Demo\Scripts\PixelArsenalSceneSelect.cs" />
     <Compile Include="Assets\Scripts\UI\VSZoneUIOverlay.cs" />
     <Compile Include="Assets\Pixel Arsenal\Demo\Scripts\PixelArsenalDragMouseOrbit.cs" />
+    <Compile Include="Assets\Scripts\Common\Commons.cs" />
     <Compile Include="Assets\Scripts\Character\HealthSO.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Scripts\Currency\CurrencyData.cs" />
@@ -153,40 +183,54 @@
     <Compile Include="Assets\Adjust\Unity\AdjustEvent.cs" />
     <Compile Include="Assets\Scripts\CurveProjectile.cs" />
     <Compile Include="Assets\Epic Toon FX\Scripts\ETFXLightFade.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\ParticleSystemDestroyer.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\ItemPower\ItemPowerInteract.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\Scripts\FireLight.cs" />
     <Compile Include="Assets\Scripts\GlobalSound.cs" />
     <Compile Include="Assets\MT Assets\Easy Mesh Combiner\Libraries\MTAssets Editor UI\MTAssetsEditorUi.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustUrlStrategy.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXEffectControllerPooled.cs" />
     <Compile Include="Assets\Scripts\Player\VSCrossHairController.cs" />
     <Compile Include="Assets\Scripts\Character\HealthConfigSO.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\Scripts\Hose.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
     <Compile Include="Assets\Scripts\Zone\VSZoneController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Pixel Arsenal\Demo\Scripts\PixelArsenalButtonScript.cs" />
     <Compile Include="Assets\Scripts\ItemPower\ItemPowerPoolSO.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Characters\RollerBall\Scripts\BallUserControl.cs" />
     <Compile Include="Assets\Scripts\Counter.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Cameras\Scripts\AutoCam.cs" />
     <Compile Include="Assets\Scripts\MiniGameVersionUpdate.cs" />
     <Compile Include="Assets\Scripts\Scriptable\SerializableScriptableObject.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerEventListener.cs" />
     <Compile Include="Assets\Scripts\Event\VoidEventChanelSO.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\2D\Scripts\Platformer2DUserControl.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonUserControl.cs" />
     <Compile Include="Assets\Scripts\Enemy\Bot\VSBotControlWeapon.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Scripts\MiniGamesMoneyUIScript.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Cameras\Scripts\TargetFieldOfView.cs" />
     <Compile Include="Assets\Adjust\Android\AdjustAndroid.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustThirdPartySharing.cs" />
     <Compile Include="Assets\Scripts\Equipment\Weapon\VSGun.cs" />
     <Compile Include="Assets\Epic Toon FX\Scripts\ETFXPitchRandomizer.cs" />
     <Compile Include="Assets\Scripts\Equipment\Weapon\VSShootVfx.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustEnvironment.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\Scripts\SmokeParticles.cs" />
     <Compile Include="Assets\Scripts\Camera\LargeMapNavCam.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Cameras\Scripts\HandHeldCam.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\FollowTarget.cs" />
     <Compile Include="Assets\Scripts\Effect\VSTrail.cs" />
     <Compile Include="Assets\Scripts\Bullet\BulletInteract.cs" />
     <Compile Include="Assets\#NVJOB Name Generator\Examples\Example 1\TextMeshName.cs" />
     <Compile Include="Assets\Scripts\Currency\CurrencyVisualizer.cs" />
     <Compile Include="Assets\Scripts\Player\ImovementInput.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Cameras\Scripts\AbstractTargetFollower.cs" />
     <Compile Include="Assets\Scripts\GameMode\GameModePoolSO.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\WaypointCircuit.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustPlayStoreSubscription.cs" />
     <Compile Include="Assets\Pixel Arsenal\Demo\Scripts\PixelArsenalBeamScript.cs" />
     <Compile Include="Assets\Scripts\GlobalData.cs" />
@@ -197,6 +241,7 @@
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXFireProjectile.cs" />
     <Compile Include="Assets\Scripts\Enemy\Zombie.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\AutoMoveAndRotate.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\Pixel Arsenal\Scripts\PixelArsenalLightFlicker.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustPurchaseVerificationInfo.cs" />
@@ -204,6 +249,7 @@
     <Compile Include="Assets\Scripts\UI\GlobalUI.cs" />
     <Compile Include="Assets\Scripts\DelayDestroyObject.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
+    <Compile Include="Assets\Scripts\UI\ArmoryPopUpUI.cs" />
     <Compile Include="Assets\Scripts\Inventory\VSEquipmentCard.cs" />
     <Compile Include="Assets\Scripts\Player\VSPlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Player\VSPlayerInfo.cs" />
@@ -211,8 +257,12 @@
     <Compile Include="Assets\Scripts\Inventory\VSEquipmentStatUI.cs" />
     <Compile Include="Assets\Scripts\VSGlobals.cs" />
     <Compile Include="Assets\Scripts\Enemy\Bot\VSBotController.cs" />
+    <Compile Include="Assets\Scripts\UI\SkinSpinUI.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\EventSystemChecker.cs" />
     <Compile Include="Assets\Scripts\VSLookAtCamera.cs" />
+    <Compile Include="Assets\Scripts\LoadingScene.cs" />
     <Compile Include="Assets\Scripts\Equipment\Nade\VSNade.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Characters\ThirdPersonCharacter\Scripts\AICharacterControl.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustSessionSuccess.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovementAdvanced.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
@@ -225,12 +275,16 @@
     <Compile Include="Assets\MT Assets\Easy Mesh Combiner\Scripts\RuntimeMeshCombiner.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\Adjust\ExampleGUI\ExampleGUI.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\DragRigidbody.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\SmoothFollow.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\Scripts\WaterHoseParticles.cs" />
     <Compile Include="Assets\Scripts\SetUpCamera.cs" />
     <Compile Include="Assets\Scripts\UI\VSDailyTaskPopUpUI.cs" />
     <Compile Include="Assets\Scripts\UserData\MiniGameUserData.cs" />
     <Compile Include="Assets\Scripts\SettingPopUpUIScript.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Cameras\Scripts\FreeLookCam.cs" />
     <Compile Include="Assets\Scripts\ItemPower\HealthItemPowerSO.cs" />
     <Compile Include="Assets\Scripts\Map\Map.cs" />
     <Compile Include="Assets\Scripts\Equipment\Weapon\VSMolotovHandle.cs" />
@@ -241,10 +295,13 @@
     <Compile Include="Assets\Scripts\DailyTask\VSHeadShotTask.cs" />
     <Compile Include="Assets\Scripts\FireCurveProjectile.cs" />
     <Compile Include="Assets\Scripts\GameMode\DominationModeSO.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\MobileInput.cs" />
     <Compile Include="Assets\Scripts\FPSDisplay.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Cameras\Scripts\LookatTarget.cs" />
     <Compile Include="Assets\Scripts\Scriptable\GlobalSoundMethod.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\Bullet\BulletDirectInteract.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\Scripts\Equipment\Weapon\VSSmokeHandle.cs" />
     <Compile Include="Assets\MT Assets\Easy Mesh Combiner\DemoScene\Scripts\CombineInRuntimeDemo.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
@@ -252,39 +309,58 @@
     <Compile Include="Assets\Scripts\Player\PlayerSoundManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\ActivateTrigger.cs" />
     <Compile Include="Assets\Scripts\Scriptable\TimeTrack\TimePlayManager.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustAdRevenue.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXEffectCycler.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustEventSuccess.cs" />
     <Compile Include="Assets\Scripts\Equipment\Weapon\VSNadeHandle.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\PlatformSpecificContent.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\Scripts\ExtinguishableParticleSystem.cs" />
     <Compile Include="Assets\Scripts\Equipment\Character\VSCharacter.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Scripts\WpnHolder.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Characters\RollerBall\Scripts\Ball.cs" />
     <Compile Include="Assets\Scripts\NameTag.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerGlobalInfo.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\AlphaButtonClickMask.cs" />
     <Compile Include="Assets\Scripts\Equipment\VSEquipment.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\WaypointProgressTracker.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustSessionFailure.cs" />
     <Compile Include="Assets\Scripts\AutoSizeBoxCollider.cs" />
     <Compile Include="Assets\Adjust\3rd Party\SimpleJSON.cs" />
     <Compile Include="Assets\Scripts\ItemPower\ItemPowerSO.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCharacter.cs" />
     <Compile Include="Assets\Pixel Arsenal\Demo\Scripts\PixelArsenalProjectileScript.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Scripts\HUD.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustAppStorePurchase.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Pixel Arsenal\Demo\Scripts\PixelArsenalFireProjectile.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\CameraRefocus.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\CrossPlatformInput\Scripts\ButtonHandler.cs" />
     <Compile Include="Assets\Scripts\UI\VSClockInGameUI.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\LerpControlledBob.cs" />
     <Compile Include="Assets\Scripts\CountDown.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\CrossPlatformInput\Scripts\TouchPad.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\CrossPlatformInput\Scripts\Joystick.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\AutoMobileShaderSwitch.cs" />
     <Compile Include="Assets\Scripts\VerticalContentScrollViewAutoSize.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Scripts\Bullet\BulletExplosionInteract.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\2D\Scripts\PlatformerCharacter2D.cs" />
     <Compile Include="Assets\Scripts\VSMiniMap.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXButtonScript.cs" />
     <Compile Include="Assets\Scripts\Portal\SuperJumpAura.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Scripts\UI\VSReloadingTextEffect.cs" />
     <Compile Include="Assets\Scripts\ItemPower\SpeedItemPowerSO.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\Scripts\ParticleSystemMultiplier.cs" />
     <Compile Include="Assets\Scripts\Team\Team.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
     <Compile Include="Assets\Scripts\Equipment\Weapon\VSWeaponRecoil.cs" />
     <Compile Include="Assets\Pixel Arsenal\Scripts\PixelArsenalBeamStatic.cs" />
     <Compile Include="Assets\Scripts\VSMuzzle.cs" />
@@ -293,65 +369,91 @@
     <Compile Include="Assets\Scripts\UI\VSKillReportUI.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXProjectileScript.cs" />
     <Compile Include="Assets\#NVJOB Name Generator\Examples\Example 0\RotateNameExample.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Scripts\DataBase.cs" />
     <Compile Include="Assets\Scripts\Bullet\BulletPool.cs" />
     <Compile Include="Assets\Scripts\Player\VSPlayerInput.cs" />
     <Compile Include="Assets\Scripts\UI\GameModeUI.cs" />
     <Compile Include="Assets\#NVJOB Name Generator\Name Generator\NVJOBNameGen.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\CrossPlatformInput\Scripts\MobileControlRig.cs" />
     <Compile Include="Assets\Pixel Arsenal\Scripts\PixelArsenalRotation.cs" />
     <Compile Include="Assets\Scripts\GameMode\DeathMatchModeSO.cs" />
     <Compile Include="Assets\Scripts\Bullet\TrailSO.cs" />
     <Compile Include="Assets\Scripts\Cube.cs" />
     <Compile Include="Assets\Scripts\DailyTask\VSGunKillTask.cs" />
     <Compile Include="Assets\Scripts\UI\VSScoreBoardUI.cs" />
+    <Compile Include="Assets\Scripts\Bullet\BulletSpawner.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Characters\FirstPersonCharacter\Scripts\RigidbodyFirstPersonController.cs" />
     <Compile Include="Assets\Scripts\UI\HealthBarUI.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustAppStoreSubscription.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\2D\Scripts\Camera2DFollow.cs" />
     <Compile Include="Assets\Pixel Arsenal\Scripts\PixelArsenalLoopScript.cs" />
     <Compile Include="Assets\Scripts\UI\VSInGameUIScript.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\Adjust\Windows\WindowsUap.dll" />
     <None Include="Assets\Epic Toon FX\Prefabs\Environment\Environment FX.txt" />
     <None Include="Assets\Resources\Shader\RadialFill.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Pixel Arsenal\Demo\Scenes\README.txt" />
+    <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
+    <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Effects\Projectors\Shaders\ProjectorMultiply.shader" />
     <None Include="Assets\Epic Toon FX\Prefabs\Combat\Combat FX.txt" />
     <None Include="Assets\Adjust\Android\AdjustAndroidManifest.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\Epic Toon FX\Changelog.txt" />
     <None Include="Assets\Adjust\Windows\W81\Win81Interface.dll" />
+    <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Effects\Projectors\Guidelines.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
     <None Include="Assets\Adjust\Windows\WindowsPcl.dll" />
     <None Include="Assets\Adjust\Windows\Stubs\Win10Interface.dll" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
+    <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\Adjust\Windows\WS\AdjustWS.dll" />
     <None Include="Assets\Adjust\Windows\WU10\Win10Interface.dll" />
+    <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
     <None Include="Assets\Adjust\Windows\WS\WinWsInterface.dll" />
     <None Include="Assets\#NVJOB Name Generator\license_unity.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Cameras\CameraGuidelines.txt" />
     <None Include="Assets\MT Assets\Easy Mesh Combiner\List Of Changes.txt" />
+    <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
+    <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Test\TestPattern.shader" />
     <None Include="Assets\#NVJOB Name Generator\Examples\Example 1\People Avatars\Designed by.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\Adjust\Windows\Stubs\WinWsInterface.dll" />
     <None Include="Assets\Epic Toon FX\Prefabs\Interactive\Interactive FX.txt" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
     <None Include="Assets\Free Stylized Skybox\ReadMe.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
+    <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularSmooth.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
     <None Include="Assets\SimpleSky\ReadMe.txt" />
     <None Include="Assets\Epic Toon FX\Upgrade\URP Compatibility.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\#NVJOB Name Generator\license_nvjob.txt" />
+    <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
     <None Include="Assets\Adjust\Windows\Stubs\Win81Interface.dll" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\Adjust\Windows\WU10\AdjustUAP10.dll" />
+    <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Effects\ImageEffects\Readme.txt" />
+    <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
+    <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
+    <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
+    <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
     <None Include="Assets\MT Assets\Easy Mesh Combiner\Third-Party Assets.txt" />
     <None Include="Assets\Adjust\Windows\Newtonsoft.Json.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
@@ -360,7 +462,9 @@
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\Pixel Arsenal\Pixel Arsenal - Readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Fonts\OpenSans\License!.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -714,6 +818,14 @@
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Android.Types">
@@ -1587,19 +1699,19 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{5DE84A35-B411-E4C0-2DE4-8DF7C8315001}</Project>
+      <Project>{06A0E5E4-BC07-655E-32C5-AEA01F10EED2}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
     <ProjectReference Include="AttributesSamples.csproj">
-      <Project>{13515719-7254-386E-7E7E-909AE6D80E58}</Project>
+      <Project>{5DCA6400-64CB-6C04-33C3-8A7FD937A49F}</Project>
       <Name>AttributesSamples</Name>
     </ProjectReference>
     <ProjectReference Include="EditorAttributes.Editor.csproj">
-      <Project>{CBD4CC1D-499C-F698-6BE7-90C3D2F2DF01}</Project>
+      <Project>{3D815281-A0A6-01A3-6167-0088E9A77570}</Project>
       <Name>EditorAttributes.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="EditorAttributes.csproj">
-      <Project>{BA9F285E-8E58-1D69-0592-2FBA5F55A9DE}</Project>
+      <Project>{FA14F52F-60BB-1B3B-57ED-EFACDD645FB6}</Project>
       <Name>EditorAttributes</Name>
     </ProjectReference>
   </ItemGroup>

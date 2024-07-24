@@ -23,6 +23,11 @@ public class GlobalData : Singleton<GlobalData>
     }
     void LoadData()
     {
+        if (PlayerPrefs.GetInt("FirstOpenApp") != 1)
+        {
+            LoadEquipmentOnFirstOpen();
+            PlayerPrefs.SetInt("FirstOpenApp", 1);
+        }
 
         CheckNewDay();
         if(IsNewDay) LoadDataOnNewDay();
@@ -57,6 +62,14 @@ public class GlobalData : Singleton<GlobalData>
     void LoadDataOnNewDay()
     {
         DailyTaskManager.RegisterNewDailyTasks(_dailyTaskAmount);
+    }
+
+    void LoadEquipmentOnFirstOpen()
+    {
+        PlayerPrefs.SetString("VSPrimaryWeaponUsing", "Scar");
+        PlayerPrefs.SetString("VSSecondaryWeaponUsing", "Desert Eagle");
+        PlayerPrefs.SetString("VSSupportWeaponUsing", "Karambit");
+        PlayerPrefs.SetString("VSNadeUsing", "Grenade");
     }
 
 }

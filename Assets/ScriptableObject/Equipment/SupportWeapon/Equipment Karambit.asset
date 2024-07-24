@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0fa07505ce2f6f43b2b4568bfccca25, type: 3}
   m_Name: Equipment Karambit
   m_EditorClassIdentifier: 
-  Type: 1
-  ID: VSSP-01
+  Pool: {fileID: 11400000, guid: a868d2e5287e24a41bc4bfb4c18d30f1, type: 2}
+  Type: 2
   Name: Karambit
   Icon: {fileID: 21300000, guid: b32cf80e013eb1b49ad476e6836276af, type: 3}
   Model: {fileID: 4473037104878192143, guid: fb18e31a8cbbec8459bcc12ede195f07, type: 3}

@@ -25,7 +25,7 @@ public class BulletDirectInteract : BulletInteract
                 if (collision.gameObject.CompareTag(VSBodyPart.Body.ToString())) dam = gunUsing.DamageToBody;
                 else if (collision.gameObject.CompareTag(VSBodyPart.Leg.ToString()) || collision.gameObject.CompareTag(VSBodyPart.Hand.ToString())) dam = gunUsing.DamageToHandLeg;
                 else dam = gunUsing.DamageToHead;
-                //victim.GetComponent<Damageable>().ReceiveDamage(dam);
+                victim.GetComponent<Damageable>().SpawnTakeDamageVFX(collision.contacts[0]);
                 if (victim.gameObject.CompareTag("Player"))
                     VSInGameUIScript.instance.ShowTakeDamagePopUp((transform.position - victim.transform.position).normalized);
                 victim.UpdateHP(-dam);

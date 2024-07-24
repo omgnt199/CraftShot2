@@ -11,7 +11,7 @@ public class VSSmokeHandle : VSNadeHandle
     }
     public override void Explosion()
     {
-        GetComponent<MeshRenderer>().enabled = false;
+        gameObject.SetActive(false);
         Vfx = Instantiate(VfxPrefab, transform.position, Quaternion.identity);
         Invoke(nameof(DeactiveSmoke), NadeUsing.Duration);
     }

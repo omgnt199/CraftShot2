@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class VSEquipmentStatUI : MonoBehaviour
 {
-    public static VSEquipmentStatUI Instance;
+
     public GameObject WeaponStat;
     public GameObject StatCardPrefab;
     public Button MainBtn;
@@ -14,10 +14,6 @@ public class VSEquipmentStatUI : MonoBehaviour
     public TextMeshProUGUI MoreInfo;
 
     private VSEquipment _currentEquipent;
-    private void Awake()
-    {
-        Instance = this;
-    }
 
     public void Show(VSEquipment equipment, List<VSStatics> statics)
     {
@@ -48,15 +44,15 @@ public class VSEquipmentStatUI : MonoBehaviour
 
     public void Equip()
     {
-        if (_currentEquipent.Type == VSEquipmentType.Weapon && ((VSGun)_currentEquipent).Priority == VSGunPriority.Primary)
-            PlayerPrefs.SetString("VSPrimaryWeaponUsing", _currentEquipent.Name);
-        else if (_currentEquipent.Type == VSEquipmentType.Weapon && ((VSGun)_currentEquipent).Priority == VSGunPriority.Secondary)
+        if (_currentEquipent.Type == VSEquipmentType.PrimaryWeapon)
+            PlayerPrefs.SetString("PrimaryWeaponUsing", _currentEquipent.Name);
+        else if (_currentEquipent.Type == VSEquipmentType.SecondaryWeapon)
             PlayerPrefs.SetString("VSSecondaryWeaponUsing", _currentEquipent.Name);
         else if (_currentEquipent.Type == VSEquipmentType.SupportWeapon)
             PlayerPrefs.SetString("VSSupportWeaponUsing", _currentEquipent.Name);
         else if (_currentEquipent.Type == VSEquipmentType.Nade)
             PlayerPrefs.SetString("VSNadeUsing", _currentEquipent.Name);
 
-        VSInventoryUIController.Instance.UpdateTabWhenEquip();
+        VSInventoryUIController.Instance.ReloadWhenEquip();
     }
 }

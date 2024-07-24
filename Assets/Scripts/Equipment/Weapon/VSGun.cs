@@ -9,7 +9,6 @@ public enum VSGunPriority
 [CreateAssetMenu(menuName = "VoxelStrikeEquipment/Weapon")]
 public class VSGun : VSEquipment
 {
-    public VSGunPriority Priority;
     public int Magazine;
     public int TotalAmmo;
     public float FirePower;
