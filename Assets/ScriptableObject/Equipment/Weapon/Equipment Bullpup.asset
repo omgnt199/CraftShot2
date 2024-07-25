@@ -17,7 +17,8 @@ MonoBehaviour:
   Name: Bullpup
   Icon: {fileID: 21300000, guid: 1539350544df13441bbe1922ab5fb944, type: 3}
   Model: {fileID: 1232396830896206336, guid: 428f9a27d5471094d9608d6efc2577ac, type: 3}
-  Priority: 0
+  Currency: 1
+  Price: 500
   Magazine: 30
   TotalAmmo: 300
   FirePower: 300

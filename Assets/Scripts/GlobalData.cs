@@ -23,18 +23,19 @@ public class GlobalData : Singleton<GlobalData>
     }
     void LoadData()
     {
+        PlayerGlobalInfo.Load();
         if (PlayerPrefs.GetInt("FirstOpenApp") != 1)
         {
             LoadEquipmentOnFirstOpen();
             PlayerPrefs.SetInt("FirstOpenApp", 1);
         }
+        PlayerEquipmentInfo.Load();
 
         CheckNewDay();
-        if(IsNewDay) LoadDataOnNewDay();
+        if (IsNewDay) LoadDataOnNewDay();
 
         DailyTaskManager.LoadDailyTaskToday();
 
-        PlayerGlobalInfo.Load();
         TimePlayManager.Initialize();
     }
     private void Update()
@@ -53,7 +54,7 @@ public class GlobalData : Singleton<GlobalData>
     void CheckNewDay()
     {
         DateTime date = DateTime.Now;
-        if(date.Day != PlayerPrefs.GetInt("d_Day"))
+        if (date.Day != PlayerPrefs.GetInt("d_Day"))
         {
             IsNewDay = true;
             PlayerPrefs.SetInt("d_Day", date.Day);
@@ -70,6 +71,14 @@ public class GlobalData : Singleton<GlobalData>
         PlayerPrefs.SetString("VSSecondaryWeaponUsing", "Desert Eagle");
         PlayerPrefs.SetString("VSSupportWeaponUsing", "Karambit");
         PlayerPrefs.SetString("VSNadeUsing", "Grenade");
+
+
+        PlayerEquipmentInfo.Add("Scar");
+        PlayerEquipmentInfo.Add("Desert Eagle");
+        PlayerEquipmentInfo.Add("Karambit");
+        PlayerEquipmentInfo.Add("Grenade");
+
+        PlayerEquipmentInfo.Save();
     }
 
 }

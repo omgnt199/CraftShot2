@@ -17,7 +17,8 @@ MonoBehaviour:
   Name: Scar
   Icon: {fileID: 21300000, guid: 1539350544df13441bbe1922ab5fb944, type: 3}
   Model: {fileID: 3332498432252782510, guid: bde265079d60299449fd2dcc9b4bb5ce, type: 3}
-  Priority: 0
+  Currency: 1
+  Price: 0
   Magazine: 30
   TotalAmmo: 300
   FirePower: 300

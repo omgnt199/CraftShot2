@@ -49,13 +49,13 @@ public class BulletDirectInteract : BulletInteract
                 if (WhoShoot.CompareTag("Player")) VSInGameUIScript.instance.ShowDamgeScore(dam);
             }
         }
-        //else
-        //{
-        //    if (_Bullet.BulletDecal != null)
-        //        _Bullet.SpawnDecal(collision.contacts[0]);
-        //}
-        if (_Bullet.BulletDecal != null)
-            _Bullet.SpawnDecal(collision.contacts[0]);
+        else
+        {
+            if (_Bullet.BulletDecal != null)
+                _Bullet.SpawnDecal(collision.contacts[0]);
+        }
+        //if (_Bullet.BulletDecal != null)
+        //    _Bullet.SpawnDecal(collision.contacts[0]);
 
         Destroy(GetComponent<BulletDirectInteract>());
         _Bullet.Deactive();

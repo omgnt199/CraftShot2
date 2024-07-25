@@ -17,7 +17,8 @@ MonoBehaviour:
   Name: Rocket
   Icon: {fileID: 21300000, guid: 78de094888b241e448b8b29858704d85, type: 3}
   Model: {fileID: 8159709313725625536, guid: 82495baaedb27624e92953771b86677e, type: 3}
-  Priority: 0
+  Currency: 2
+  Price: 100
   Magazine: 30
   TotalAmmo: 600
   FirePower: 150

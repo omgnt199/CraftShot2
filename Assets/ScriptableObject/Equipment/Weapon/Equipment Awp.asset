@@ -17,7 +17,8 @@ MonoBehaviour:
   Name: Awp
   Icon: {fileID: 21300000, guid: a4cb0cf067a65404fb733d60e51c8d52, type: 3}
   Model: {fileID: 8871522960157857234, guid: 7c7c934733626a745b6bb0e4600de963, type: 3}
-  Priority: 0
+  Currency: 1
+  Price: 0
   Magazine: 5
   TotalAmmo: 25
   FirePower: 400

@@ -17,6 +17,8 @@ MonoBehaviour:
   Name: Desert Eagle
   Icon: {fileID: 21300000, guid: 7f980fe62077cc24dafc1026526d69bd, type: 3}
   Model: {fileID: 4563763770096757383, guid: f47ec3de028c1e44c85fd4667237d829, type: 3}
+  Currency: 1
+  Price: 0
   Magazine: 7
   TotalAmmo: 28
   FirePower: 300

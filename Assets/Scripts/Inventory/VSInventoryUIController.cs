@@ -23,6 +23,8 @@ public class VSInventoryUIController : MonoBehaviour
     {
         Instance = this;
         _equipmentContentSizeDefault = EquipmentContent.GetComponent<RectTransform>().sizeDelta;
+        Vector2 rectSize = EquipmentContent.GetComponent<RectTransform>().rect.size;
+        EquipmentContent.GetComponent<GridLayoutGroup>().cellSize = new Vector2((rectSize.x - 50f - EquipmentContent.GetComponent<GridLayoutGroup>().spacing.x * 3) / 4f, EquipmentContent.GetComponent<GridLayoutGroup>().cellSize.y);
     }
     private void OnEnable()
     {
@@ -33,7 +35,10 @@ public class VSInventoryUIController : MonoBehaviour
     public void SetEquipementType(string equipementType) => _equipmentType = Commons.ToEnum<VSEquipmentType>(equipementType);
 
     public void ReloadWhenEquip() => LoadInventory(_equipmentType);
-    private List<VSEquipment> GetListEquipmentByType(VSEquipmentType type) => new List<VSEquipment>(EquipmentPool.GetEquipmentListByType(type));
+    private List<VSEquipment> GetListEquipmentByType(VSEquipmentType type)
+    {
+        return PlayerEquipmentInfo.GetListEquipmentByType(type);
+    }
 
     public void LoadInventory(VSEquipmentType type)
     {
@@ -46,20 +51,11 @@ public class VSInventoryUIController : MonoBehaviour
     {
         foreach (Transform card in EquipmentContent.transform) Destroy(card.gameObject);
         int rowAmount;
-        int cardAmount;
-        rowAmount = listEquipment.Count / MaxCardPerRow + 1;
-        cardAmount = listEquipment.Count;
-        for (int i = 0; i < rowAmount; i++)
+        rowAmount = Mathf.CeilToInt((float)listEquipment.Count / 3f);
+        foreach (VSEquipment equipment in listEquipment)
         {
-            GameObject rowTemp = Instantiate(EquipmentRowPrefab, EquipmentContent.transform);
-            //rowTemp.GetComponent<RectTransform>().sizeDelta = new Vector2(EquipmentContent.GetComponent<RectTransform>().sizeDelta.x, rowTemp.GetComponent<RectTransform>().sizeDelta.y);
-            int itemNumber = 0;
-            while (itemNumber < MaxCardPerRow && i * MaxCardPerRow + itemNumber < cardAmount)
-            {
-                GameObject equipmentCard = Instantiate(EquipmentCardPrefab, rowTemp.transform);
-                equipmentCard.GetComponent<VSEquipmentCard>().Set(listEquipment[i * MaxCardPerRow + itemNumber]);
-                itemNumber++;
-            }
+            GameObject equipmentCard = Instantiate(EquipmentCardPrefab, EquipmentContent.transform);
+            equipmentCard.GetComponent<VSEquipmentCard>().Set(equipment);
         }
         //Resize EquipmentContent
         EquipmentContent.GetComponent<RectTransform>().sizeDelta = _equipmentContentSizeDefault;
@@ -68,9 +64,7 @@ public class VSInventoryUIController : MonoBehaviour
 
     public void ShowEquipmentByIndex(int index)
     {
-        int rowIndex = index / MaxCardPerRow;
-        int cardIndex = index % MaxCardPerRow;
-        EquipmentContent.transform.GetChild(rowIndex).GetChild(cardIndex).GetComponent<VSEquipmentCard>().MainButton.onClick?.Invoke();
+        EquipmentContent.transform.GetChild(index).GetComponent<VSEquipmentCard>().MainButton.onClick?.Invoke();
     }
 
     public void Search(string name)

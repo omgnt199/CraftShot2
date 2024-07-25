@@ -99,8 +99,10 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\Scripts\Explosive.cs" />
+    <Compile Include="Assets\Scripts\Cheat\Cheat.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\Scripts\DailyTask\DailyTaskObserver.cs" />
+    <Compile Include="Assets\Scripts\UI\ShopEquipmentCard.cs" />
     <Compile Include="Assets\Scripts\Zone\VSZoneManager.cs" />
     <Compile Include="Assets\Epic Toon FX\Scripts\ETFXRotation.cs" />
     <Compile Include="Assets\Scripts\Character\Damageable.cs" />
@@ -132,6 +134,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\TimedObjectActivator.cs" />
     <Compile Include="Assets\Scripts\Player\MouseLookAround.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerEquipmentInfo.cs" />
     <Compile Include="Assets\Scripts\MiniGameEnum.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\ForcedReset.cs" />
     <Compile Include="Assets\Scripts\Camera\VSWeaponCameraBehavior.cs" />
@@ -170,6 +173,7 @@
     <Compile Include="Assets\Adjust\Unity\AdjustAttribution.cs" />
     <Compile Include="Assets\Scripts\Inventory\VSInventoryUIController.cs" />
     <Compile Include="Assets\Pixel Arsenal\Demo\Scripts\PixelArsenalSceneSelect.cs" />
+    <Compile Include="Assets\Scripts\UI\ShopContainerUI.cs" />
     <Compile Include="Assets\Scripts\UI\VSZoneUIOverlay.cs" />
     <Compile Include="Assets\Pixel Arsenal\Demo\Scripts\PixelArsenalDragMouseOrbit.cs" />
     <Compile Include="Assets\Scripts\Common\Commons.cs" />
@@ -205,6 +209,7 @@
     <Compile Include="Assets\Scripts\MiniGameVersionUpdate.cs" />
     <Compile Include="Assets\Scripts\Scriptable\SerializableScriptableObject.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerEventListener.cs" />
+    <Compile Include="Assets\Scripts\UI\StorePopUpUI.cs" />
     <Compile Include="Assets\Scripts\Event\VoidEventChanelSO.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\2D\Scripts\Platformer2DUserControl.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonUserControl.cs" />
@@ -260,6 +265,7 @@
     <Compile Include="Assets\Scripts\UI\SkinSpinUI.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\EventSystemChecker.cs" />
     <Compile Include="Assets\Scripts\VSLookAtCamera.cs" />
+    <Compile Include="Assets\Scripts\RotateEffect.cs" />
     <Compile Include="Assets\Scripts\LoadingScene.cs" />
     <Compile Include="Assets\Scripts\Equipment\Nade\VSNade.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Characters\ThirdPersonCharacter\Scripts\AICharacterControl.cs" />
@@ -360,6 +366,7 @@
     <Compile Include="Assets\Scripts\ItemPower\SpeedItemPowerSO.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\Scripts\ParticleSystemMultiplier.cs" />
     <Compile Include="Assets\Scripts\Team\Team.cs" />
+    <Compile Include="Assets\Scripts\FixSkinnedMesh.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
     <Compile Include="Assets\Scripts\Equipment\Weapon\VSWeaponRecoil.cs" />
     <Compile Include="Assets\Pixel Arsenal\Scripts\PixelArsenalBeamStatic.cs" />

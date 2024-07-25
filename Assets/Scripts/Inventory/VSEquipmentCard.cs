@@ -25,7 +25,7 @@ public class VSEquipmentCard : MonoBehaviour
         Equipment = equipment;
         Name.text = equipment.Name;
         Icon.sprite = equipment.Icon;
-        Icon.SetNativeSize();
+        //Icon.SetNativeSize();
 
         if (equipment.Type == VSEquipmentType.PrimaryWeapon || equipment.Type == VSEquipmentType.SecondaryWeapon)
         {

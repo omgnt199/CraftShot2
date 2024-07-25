@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-
 public class VSEquipment : ScriptableObject
 {
     public VSEquipmentPool Pool;
@@ -11,6 +10,8 @@ public class VSEquipment : ScriptableObject
     public string Name;
     public Sprite Icon;
     public GameObject Model;
+    public CurrencyType Currency;
+    public int Price;
 #if UNITY_EDITOR
     [Button]
     public void InitializePool()

@@ -20,6 +20,7 @@ public static class DataManager
         BinaryFormatter bf = new BinaryFormatter();
         string path = PersistentDataPath + "/";
         Directory.CreateDirectory(path);
+        Debug.Log(path + fileName);
         // clear file content first
         if (File.Exists(path + fileName))
         {

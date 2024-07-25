@@ -20,6 +20,6 @@ public static class PlayerGlobalInfo
     {
         PlayerName = PlayerPrefs.GetString("PlayerName");
         CurrencyData.Load();
+
     }
-    
 }
