@@ -15,12 +15,26 @@ public class VSEquipmentStatUI : MonoBehaviour
     public TextMeshProUGUI MoreInfo;
 
     private VSEquipment _currentEquipent;
+    private void OnEnable()
+    {
+        Reset();
+    }
+    public void Reset()
+    {
+        foreach (Transform item in WeaponStat.transform) Destroy(item.gameObject);
+        Name.text = string.Empty;
+        MainBtn.onClick.RemoveAllListeners();
+        Icon.enabled = false;
+        MoreInfo.text = string.Empty;
+        _currentEquipent = null;
+    }
 
     public void Show(VSEquipment equipment, List<VSStatics> statics)
     {
 
         WeaponStat.SetActive(true);
         MoreInfo.gameObject.SetActive(false);
+        Icon.enabled = true;
 
         Name.text = equipment.Name;
         _currentEquipent = equipment;
@@ -40,7 +54,7 @@ public class VSEquipmentStatUI : MonoBehaviour
 
         WeaponStat.SetActive(false);
         MoreInfo.gameObject.SetActive(true);
-
+        Icon.enabled = true;
         _currentEquipent = equipment;
         Name.text = equipment.Name;
         Icon.sprite = _currentEquipent.Icon;
@@ -49,6 +63,7 @@ public class VSEquipmentStatUI : MonoBehaviour
 
     public void Equip()
     {
+        if (_currentEquipent == null) return;
         if (_currentEquipent.Type == VSEquipmentType.PrimaryWeapon)
             PlayerPrefs.SetString("VSPrimaryWeaponUsing", _currentEquipent.Name);
         else if (_currentEquipent.Type == VSEquipmentType.SecondaryWeapon)

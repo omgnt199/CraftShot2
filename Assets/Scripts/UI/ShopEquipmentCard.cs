@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ShopEquipmentCard : MonoBehaviour
 {
     public VSEquipment Equipment;
-
+    public Image BorderIcon;
     public Image Icon;
     public TextMeshProUGUI Price;
     public Image CurrencyIcon;
@@ -18,9 +18,18 @@ public class ShopEquipmentCard : MonoBehaviour
     public Button MainButton;
     public Button BuyButton;
     public List<VSStatics> Statics => _statics;
-
+    public void OnSelected()
+    {
+        BorderIcon.gameObject.SetActive(true);
+        foreach (Transform item in transform.parent)
+        {
+            if (!item.gameObject.Equals(gameObject))
+                item.gameObject.GetComponent<ShopEquipmentCard>().BorderIcon.gameObject.SetActive(false);
+        }
+    }
     public void Set(VSEquipment equipment)
     {
+
         Equipment = equipment;
         Icon.sprite = equipment.Icon;
         Price.text = Equipment.Price.ToString();

@@ -67,13 +67,13 @@ public class ShopContainerUI : MonoBehaviour
                 tempList = EquipmentPool.GetEquipmentListByType(VSEquipmentType.SupportWeapon);
                 break;
             case ShopEquipementType.Nade:
-                tempList =  EquipmentPool.GetEquipmentListByType(VSEquipmentType.Nade);
+                tempList = EquipmentPool.GetEquipmentListByType(VSEquipmentType.Nade);
                 break;
             case ShopEquipementType.Character:
-                tempList =  EquipmentPool.GetEquipmentListByType(VSEquipmentType.Character);
+                tempList = EquipmentPool.GetEquipmentListByType(VSEquipmentType.Character);
                 break;
         }
-        foreach(var item in tempList)
+        foreach (var item in tempList)
         {
             if (!PlayerEquipmentInfo.EquipmentSOList.Contains(item)) listEquipment.Add(item);
         }
@@ -102,19 +102,27 @@ public class ShopContainerUI : MonoBehaviour
         foreach (var tab in EquipmentTab)
             tab.Value.GetComponent<Image>().color = tab.Key == type ? new Color32(255, 255, 255, 255) : new Color32(255, 255, 255, 0);
 
-        EquipmentContent.transform.GetChild(0).GetComponent<Button>().onClick?.Invoke();
+        EquipmentContent.transform.GetChild(0)?.GetComponent<Button>().onClick?.Invoke();
     }
     public void Search(string name)
     {
+
         foreach (Transform equipment in EquipmentContent.transform)
             equipment.gameObject.SetActive(IsContainString(equipment.GetComponent<ShopEquipmentCard>().Equipment.Name, name));
     }
     bool IsContainString(string str1, string str2)
     {
-        foreach (var c in str2)
+        if (str2.Length > str1.Length) return false;
+        for (int i = 0; i < str2.Length; i++)
         {
-            if (!str1.Contains(char.ToLower(c)) && !str1.Contains(char.ToUpper(c))) return false;
+            if (char.ToLower(str2[i]) != char.ToLower(str1[i]) && char.ToUpper(str2[i]) != char.ToUpper(str1[i])) 
+                return false;
         }
+
+        //foreach (var c in str2)
+        //{
+        //    if (!str1.Contains(char.ToLower(c)) && !str1.Contains(char.ToUpper(c))) return false;
+        //}
         return true;
     }
 

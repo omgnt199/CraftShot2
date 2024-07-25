@@ -19,9 +19,14 @@ public class LoadOutUI : MonoBehaviour
     public void Load()
     {
         PrimaryWeaponImg.sprite = GlobalData.Instance.EquipmentPool.GetEquipmentByName(PlayerPrefs.GetString("VSPrimaryWeaponUsing"))?.Icon;
+        PrimaryWeaponImg.enabled = PrimaryWeaponImg.sprite != null;
         SecondaryWeaponImg.sprite = GlobalData.Instance.EquipmentPool.GetEquipmentByName(PlayerPrefs.GetString("VSSecondaryWeaponUsing"))?.Icon;
+        SecondaryWeaponImg.enabled = SecondaryWeaponImg.sprite != null;
         SupportWeaponImg.sprite = GlobalData.Instance.EquipmentPool.GetEquipmentByName(PlayerPrefs.GetString("VSSupportWeaponUsing"))?.Icon;
+        SupportWeaponImg.enabled = SupportWeaponImg.sprite != null;
         NadeImg.sprite = GlobalData.Instance.EquipmentPool.GetEquipmentByName(PlayerPrefs.GetString("VSNadeUsing"))?.Icon;
+        NadeImg.enabled = NadeImg.sprite != null;
         CharacterSkinImg.sprite = GlobalData.Instance.EquipmentPool.GetEquipmentByName(PlayerPrefs.GetString("VSCharacterSkinUsing"))?.Icon;
+        CharacterSkinImg.enabled = CharacterSkinImg.sprite != null;
     }
 }

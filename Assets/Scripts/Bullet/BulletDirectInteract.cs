@@ -58,6 +58,6 @@ public class BulletDirectInteract : BulletInteract
         //    _Bullet.SpawnDecal(collision.contacts[0]);
 
         Destroy(GetComponent<BulletDirectInteract>());
-        _Bullet.Deactive();
+        _Bullet.Rb.velocity = Vector3.zero;
     }
 }

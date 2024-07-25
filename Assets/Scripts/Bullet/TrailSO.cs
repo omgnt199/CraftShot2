@@ -8,4 +8,5 @@ public class TrailSO : ScriptableObject
     [Range(0, 1f)]
     public float TrailMinVertextDistance;
     public Gradient TrailGradientColor;
+    public AnimationCurve TrailAnimationCurve;
 }

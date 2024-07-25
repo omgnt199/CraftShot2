@@ -29,7 +29,7 @@ public class VSInventoryUIController : MonoBehaviour
     private void OnEnable()
     {
         LoadInventory(_equipmentType);
-        ShowEquipmentByIndex(0);
+        Commons.WaitNextFrame(this, () => ShowEquipmentByIndex(0));
     }
 
     public void SetEquipementType(string equipementType) => _equipmentType = Commons.ToEnum<VSEquipmentType>(equipementType);
@@ -64,7 +64,7 @@ public class VSInventoryUIController : MonoBehaviour
 
     public void ShowEquipmentByIndex(int index)
     {
-        EquipmentContent.transform.GetChild(index).GetComponent<VSEquipmentCard>().MainButton.onClick?.Invoke();
+        EquipmentContent.transform.GetChild(index)?.GetComponent<VSEquipmentCard>().MainButton.onClick?.Invoke();
     }
 
     public void Search(string name)
@@ -82,10 +82,17 @@ public class VSInventoryUIController : MonoBehaviour
     }
     bool IsContainString(string str1, string str2)
     {
-        foreach (var c in str2)
+        if (str2.Length > str1.Length) return false;
+        for (int i = 0; i < str2.Length; i++)
         {
-            if (!str1.Contains(char.ToLower(c)) && !str1.Contains(char.ToUpper(c))) return false;
+            if (char.ToLower(str2[i]) != char.ToLower(str1[i]) && char.ToUpper(str2[i]) != char.ToUpper(str1[i]))
+                return false;
         }
+
+        //foreach (var c in str2)
+        //{
+        //    if (!str1.Contains(char.ToLower(c)) && !str1.Contains(char.ToUpper(c))) return false;
+        //}
         return true;
     }
 }

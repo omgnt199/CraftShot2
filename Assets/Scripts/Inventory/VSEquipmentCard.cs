@@ -12,6 +12,7 @@ public class VSEquipmentCard : MonoBehaviour
 
     public TextMeshProUGUI Name;
     public Image Icon;
+    public Image BorderIcon;
 
     public GameObject Equipped;
 
@@ -19,7 +20,15 @@ public class VSEquipmentCard : MonoBehaviour
     private string _Info;
     public Button MainButton;
     public List<VSStatics> Statics => _statics;
-
+    public void OnSelected()
+    {
+        BorderIcon.gameObject.SetActive(true);
+        foreach (Transform item in transform.parent)
+        {
+            if (!item.gameObject.Equals(gameObject))
+                item.gameObject.GetComponent<VSEquipmentCard>().BorderIcon.gameObject.SetActive(false);
+        }
+    }
     public void Set(VSEquipment equipment)
     {
         Equipment = equipment;
@@ -49,7 +58,7 @@ public class VSEquipmentCard : MonoBehaviour
             _Info = ((VSSupportWeapon)equipment).Info;
 
             if (equipment.Name == PlayerPrefs.GetString("VSSupportWeaponUsing")) Equipped.SetActive(true);
-            MainButton.onClick.AddListener(() => VSInventoryUIController.Instance.EquipmentStatUI.Show(equipment,_Info));
+            MainButton.onClick.AddListener(() => VSInventoryUIController.Instance.EquipmentStatUI.Show(equipment, _Info));
         }
     }
 

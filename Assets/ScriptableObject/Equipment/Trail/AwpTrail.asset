@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee39742a37cbd194faf26b212b6b9665, type: 3}
   m_Name: AwpTrail
   m_EditorClassIdentifier: 
-  LifeTime: 0.1
+  LifeTime: 0.3
   TrailMinVertextDistance: 0
   TrailGradientColor:
     serializedVersion: 2
@@ -44,3 +44,27 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
+  TrailAnimationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.3
+      inSlope: -0.20000002
+      outSlope: -0.20000002
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.1
+      inSlope: -0.20000002
+      outSlope: -0.20000002
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

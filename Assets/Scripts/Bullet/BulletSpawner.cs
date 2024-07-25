@@ -22,6 +22,7 @@ public class BulletSpawner : MonoBehaviour
             BulletTrail.time = gun.Bullet.BulletTrail.LifeTime;
             BulletTrail.minVertexDistance = gun.Bullet.BulletTrail.TrailMinVertextDistance;
             BulletTrail.colorGradient = gun.Bullet.BulletTrail.TrailGradientColor;
+            BulletTrail.widthCurve = gun.Bullet.BulletTrail.TrailAnimationCurve;
         }
 
         if (gun.Bullet.Particle != null)

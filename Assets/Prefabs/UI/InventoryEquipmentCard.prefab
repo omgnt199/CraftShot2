@@ -122,7 +122,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4732515762903361123}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7253713780455774779}
+        m_TargetAssemblyTypeName: VSEquipmentCard, Assembly-CSharp
+        m_MethodName: OnSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7253713780455774779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,6 +150,7 @@ MonoBehaviour:
   Equipment: {fileID: 0}
   Name: {fileID: 7959384957512054737}
   Icon: {fileID: 5067962270952573982}
+  BorderIcon: {fileID: 8153043936203993362}
   Equipped: {fileID: 2185281654838508300}
   MainButton: {fileID: 4452215597302134933}
 --- !u!1 &439185037694232273
@@ -650,7 +663,7 @@ GameObject:
   - component: {fileID: 7592103183426203260}
   - component: {fileID: 8153043936203993362}
   m_Layer: 5
-  m_Name: Icon (1)
+  m_Name: BorderIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
