@@ -48,9 +48,9 @@ public class VSBotController : MonoBehaviour
 
     [Header("Script")]
     public VSPlayerInfo BotInfo;
-    public VSPlayerControlAnimator controlAnim;
-
+    public BotControlAnimator ControlAnimator;
     [Header("Costume")]
+    public Transform SkinModelLocate;
     //public CostumeController costume;
 
     Collider[] hitcolliders;
@@ -68,10 +68,6 @@ public class VSBotController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.speed = 10f;
 
-        foreach (var zone in GameObject.FindGameObjectsWithTag("Zone"))
-        {
-            ZonePoints.Add(zone.transform);
-        }
     }
     private void OnEnable()
     {
@@ -121,15 +117,14 @@ public class VSBotController : MonoBehaviour
             {
                 _timerReact = TimeReact;
                 // Check Enemy In Attack Range
-                float radius = 20f;
-                hitcolliders = Physics.OverlapSphere(transform.position, radius, MaskAttack);
+                hitcolliders = Physics.OverlapSphere(transform.position, attackRange, MaskAttack);
                 minDistance = 1000f;
                 foreach (var collider in hitcolliders)
                 {
                     GameObject temp = collider.gameObject;
                     if (!GameObject.ReferenceEquals(temp, gameObject))
                     {
-                        if (LayerMask.LayerToName(temp.layer).Equals("Player",System.StringComparison.Ordinal) || LayerMask.LayerToName(temp.layer).Equals("Enemy", System.StringComparison.Ordinal))
+                        if (LayerMask.LayerToName(temp.layer).Equals("Player", System.StringComparison.Ordinal) || LayerMask.LayerToName(temp.layer).Equals("Enemy", System.StringComparison.Ordinal))
                         {
                             float distance = (transform.position - temp.transform.position).magnitude;
                             if (distance <= minDistance)
@@ -148,7 +143,7 @@ public class VSBotController : MonoBehaviour
             {
                 if (BotInfo.Team != closestObj.GetComponent<VSPlayerInfo>().Team)
                 {
-                    LayerMask maskCheck = LayerMask.GetMask("Barrier", "Border", "Ground");
+                    LayerMask maskCheck = LayerMask.GetMask("Barrier", "Border", "Ground", "ObstacleLayer");
                     if (!Physics.Raycast(transform.position, (-transform.position + closestObj.transform.position).normalized, (transform.position - closestObj.transform.position).magnitude, maskCheck))
                     {
                         if (!isAlreadyAttack)
@@ -167,7 +162,7 @@ public class VSBotController : MonoBehaviour
         if (isInZone() && VSGlobals.MODE == "Domination")
         {
             agent.SetDestination(transform.position);
-            controlAnim.Idle();
+            ControlAnimator.Idle();
         }
 
     }
@@ -202,7 +197,7 @@ public class VSBotController : MonoBehaviour
                 }
             }
         }
-        else if(VSGlobals.MODE == "Deathmatch")
+        else if (VSGlobals.MODE == "Deathmatch")
         {
             for (int i = 0; i < 30; i++)
             {
@@ -217,7 +212,7 @@ public class VSBotController : MonoBehaviour
         }
 
         agent.SetDestination(walkPoint);
-        controlAnim.Run();
+        ControlAnimator.Idle();
     }
     bool IsReachingWalkPoint()
     {
@@ -226,7 +221,7 @@ public class VSBotController : MonoBehaviour
         if (agent.remainingDistance < 4f) return true;
         else return false;
     }
-    
+
     void Attack()
     {
         isAlreadyAttack = true;
@@ -235,10 +230,11 @@ public class VSBotController : MonoBehaviour
         if (chanceThrowNade <= 3) ThrowNade();
         //
         agent.SetDestination(transform.position);
-        controlAnim.Idle();
+        ControlAnimator.Idle();
     }
     void Shoot()
     {
+        ControlAnimator.Shoot();
         //Shoot bullet
         shootVfx.Spawn();
         SoundManager.EnableBulletSound(GunUsing.Bullet.BulletSound);
@@ -333,5 +329,11 @@ public class VSBotController : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public void SetCharacterSkin(GameObject skinPrefab)
+    {
+        GameObject skin = Instantiate(skinPrefab, SkinModelLocate);
+        ControlAnimator.Controller = skin.GetComponent<Animator>();
     }
 }

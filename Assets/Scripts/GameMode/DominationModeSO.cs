@@ -84,6 +84,7 @@ public class DominationModeSO : GameModeSO
         {
             GameObject bot = Instantiate(BotPrefab, _mapPick.FirstTeamSpawn.transform.GetChild(i).position, Quaternion.identity);
             bot.GetComponent<VSBotController>().ZonePoints = new List<Transform>(_mapPick.ZonesPositionDominationMode);
+            bot.GetComponent<VSBotController>().SetCharacterSkin(GlobalData.Instance.EquipmentPool.GetEquipmentByName("SkinPolice").Model);
             TeamAlly.AddMember(bot);
             GameManager.Instance.PlayerList.Add(bot);
         }
@@ -95,6 +96,7 @@ public class DominationModeSO : GameModeSO
         {
             GameObject bot = Instantiate(BotPrefab, _mapPick.SecondTeamSpawn.transform.GetChild(i).position, Quaternion.identity);
             bot.GetComponent<VSBotController>().ZonePoints = new List<Transform>(_mapPick.ZonesPositionDominationMode);
+            bot.GetComponent<VSBotController>().SetCharacterSkin(GlobalData.Instance.EquipmentPool.GetEquipmentByName("SkinThief").Model);
             TeamEnemy.AddMember(bot);
             GameManager.Instance.PlayerList.Add(bot);
         }

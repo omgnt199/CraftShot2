@@ -1,5 +1,7 @@
+using Assets.Scripts.Common;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BulletDirectInteract : BulletInteract
@@ -59,5 +61,6 @@ public class BulletDirectInteract : BulletInteract
 
         Destroy(GetComponent<BulletDirectInteract>());
         _Bullet.Rb.velocity = Vector3.zero;
+        Commons.SetTimeout(this, 0.2f, () => _Bullet.Deactive());
     }
 }

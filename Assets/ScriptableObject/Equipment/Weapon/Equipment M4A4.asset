@@ -17,6 +17,8 @@ MonoBehaviour:
   Name: M4A4
   Icon: {fileID: 21300000, guid: 5e02e5eb10fef414284f843ee54795e1, type: 3}
   Model: {fileID: 3758498215304043619, guid: 2911372d9c3acef4eac109604887d2c6, type: 3}
+  OnlyModel: {fileID: 6085766669382246285, guid: 1fe71f671e5f0444bb8efa1ed869d359,
+    type: 3}
   Currency: 1
   Price: 0
   Magazine: 30

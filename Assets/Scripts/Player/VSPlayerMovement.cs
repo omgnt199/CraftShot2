@@ -100,7 +100,7 @@ public class VSPlayerMovement : MonoBehaviour
         characterController.Move(_moveInput * MoveSpeed * Time.deltaTime);
 
         //SuperJump
-        if(Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.G))
         {
             SuperJump();
         }
@@ -110,7 +110,7 @@ public class VSPlayerMovement : MonoBehaviour
         //Anim/FootStep
         if (_moveInput.magnitude == 0)
         {
-            
+
             MainCamera.transform.localPosition = Vector3.Lerp(MainCamera.transform.localPosition, new Vector3(MainCamera.transform.localPosition.x, _cameraYDefault, MainCamera.transform.localPosition.z), Time.deltaTime * 12f);
             controlAnimator.Idle();
             SoundManager.DisableFootStepSound();
@@ -147,7 +147,7 @@ public class VSPlayerMovement : MonoBehaviour
 
     public void Jump()
     {
-        if(!_isJumping)
+        if (!_isJumping)
         {
             _isJumping = true;
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * Gravity);
@@ -161,16 +161,20 @@ public class VSPlayerMovement : MonoBehaviour
         _flyMotion = MainCamera.transform.forward * 2.5f;
         _moveInput = _flyMotion;
     }
-    void EnterDashMode()
+    public void EnterDashMode()
     {
-        SoundManager.EnableDashSound();
-        _isDashing = true;
-        LineSpeedVfx.SendEvent("OnPlay");
-        DOTween.To(() => characterController.height, height => characterController.height = height, DEFAULT_CHARACTER_HEIGHT / 2f, DashTime);
-        DOTween.To(() => MainCamera.fieldOfView, fov => MainCamera.fieldOfView = fov, DASH_FOV, 0.2f);
-        OnCrouch();
-        //_dashMotion = moveInput == Vector3.zero ? transform.forward * 2.5f : moveInput * 2.5f;
-        _dashMotion = MainCamera.transform.forward * 2.5f;
+        if (!_isDashing)
+        {
+
+            SoundManager.EnableDashSound();
+            _isDashing = true;
+            LineSpeedVfx.SendEvent("OnPlay");
+            DOTween.To(() => characterController.height, height => characterController.height = height, DEFAULT_CHARACTER_HEIGHT / 2f, DashTime);
+            DOTween.To(() => MainCamera.fieldOfView, fov => MainCamera.fieldOfView = fov, DASH_FOV, 0.2f);
+            OnCrouch();
+            //_dashMotion = moveInput == Vector3.zero ? transform.forward * 2.5f : moveInput * 2.5f;
+            _dashMotion = MainCamera.transform.forward * 2.5f;
+        }
     }
     void HandleDash()
     {
@@ -215,7 +219,7 @@ public class VSPlayerMovement : MonoBehaviour
         //Dash input
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            if (!_isDashing) EnterDashMode();
+            EnterDashMode();
         }
         if (Input.GetKeyDown(KeyCode.F))
         {
@@ -230,9 +234,9 @@ public class VSPlayerMovement : MonoBehaviour
     void OffCrouch()
     {
         SkinModel.transform.localScale = skinModelScaleStart;
-        characterController.height =  DEFAULT_CHARACTER_HEIGHT;
+        characterController.height = DEFAULT_CHARACTER_HEIGHT;
     }
-    public void SetMoveSpeed(float value) => MoveSpeed = value; 
+    public void SetMoveSpeed(float value) => MoveSpeed = value;
     public void SpeedOnWalking()
     {
         MoveSpeed = WalkSpeed;

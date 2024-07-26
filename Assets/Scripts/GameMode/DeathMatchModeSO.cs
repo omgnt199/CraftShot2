@@ -51,6 +51,7 @@ public class DeathMatchModeSO : GameModeSO
         for (int i = 1; i <= teamDeathmatch.Size - 1; i++)
         {
             GameObject bot = Instantiate(BotPrefab, _mapPick.DeathmatchSpawn.GetChild(i).position, Quaternion.identity);
+            bot.GetComponent<VSBotController>().SetCharacterSkin(GlobalData.Instance.EquipmentPool.GetRandomEquipmentByType(VSEquipmentType.Character).Model);
             GameManager.Instance.PlayerList.Add(bot);
             teamDeathmatch.AddMember(bot);
         }

@@ -11,34 +11,30 @@ public class VSEquipmentStatUI : MonoBehaviour
     public GameObject StatCardPrefab;
     public TextMeshProUGUI Name;
     public Button MainBtn;
-    public Image Icon;
     public TextMeshProUGUI MoreInfo;
-
+    public Transform OnlySkinLocate;
     private VSEquipment _currentEquipent;
     private void OnEnable()
     {
-        Reset();
+
     }
     public void Reset()
     {
         foreach (Transform item in WeaponStat.transform) Destroy(item.gameObject);
         Name.text = string.Empty;
         MainBtn.onClick.RemoveAllListeners();
-        Icon.enabled = false;
         MoreInfo.text = string.Empty;
         _currentEquipent = null;
     }
 
     public void Show(VSEquipment equipment, List<VSStatics> statics)
     {
-
+        Reset();
         WeaponStat.SetActive(true);
         MoreInfo.gameObject.SetActive(false);
-        Icon.enabled = true;
 
         Name.text = equipment.Name;
         _currentEquipent = equipment;
-        Icon.sprite = _currentEquipent.Icon;
 
         foreach (Transform stat in WeaponStat.transform) Destroy(stat.gameObject);
 
@@ -47,20 +43,31 @@ public class VSEquipmentStatUI : MonoBehaviour
             GameObject card = Instantiate(StatCardPrefab, WeaponStat.transform);
             card.GetComponent<VSStaticCard>().Set(stat.Name, stat.Unit, stat.Rate);
         }
+
+        if (OnlySkinLocate.transform.childCount > 0) foreach (Transform item in OnlySkinLocate) Destroy(item.gameObject);
+        Instantiate(equipment.OnlyModel, OnlySkinLocate);
     }
 
     public void Show(VSEquipment equipment, string info)
     {
-
+        Reset();
         WeaponStat.SetActive(false);
         MoreInfo.gameObject.SetActive(true);
-        Icon.enabled = true;
         _currentEquipent = equipment;
         Name.text = equipment.Name;
-        Icon.sprite = _currentEquipent.Icon;
         MoreInfo.text = info;
+
+        if (OnlySkinLocate.transform.childCount > 0) foreach (Transform item in OnlySkinLocate) Destroy(item.gameObject);
+        Instantiate(equipment.OnlyModel, OnlySkinLocate);
     }
 
+    public void ShowCharacterSkin(VSEquipment equipment)
+    {
+        Reset();
+        Name.text = equipment.Name;
+        if (OnlySkinLocate.transform.childCount > 0) foreach (Transform item in OnlySkinLocate) Destroy(item.gameObject);
+        Instantiate(equipment.OnlyModel, OnlySkinLocate);
+    }
     public void Equip()
     {
         if (_currentEquipent == null) return;

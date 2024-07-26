@@ -10,6 +10,7 @@ public class VSEquipment : ScriptableObject
     public string Name;
     public Sprite Icon;
     public GameObject Model;
+    public GameObject OnlyModel;
     public CurrencyType Currency;
     public int Price;
 #if UNITY_EDITOR

@@ -60,6 +60,10 @@ public class VSEquipmentCard : MonoBehaviour
             if (equipment.Name == PlayerPrefs.GetString("VSSupportWeaponUsing")) Equipped.SetActive(true);
             MainButton.onClick.AddListener(() => VSInventoryUIController.Instance.EquipmentStatUI.Show(equipment, _Info));
         }
+        else if (equipment.Type == VSEquipmentType.Character)
+        {
+            MainButton.onClick.AddListener(() => VSInventoryUIController.Instance.EquipmentStatUI.ShowCharacterSkin(equipment));
+        }
     }
 
 }

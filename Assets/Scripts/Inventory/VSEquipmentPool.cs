@@ -24,4 +24,10 @@ public class VSEquipmentPool : ScriptableObject
         }
         return null;
     }
+
+    public VSEquipment GetRandomEquipmentByType(VSEquipmentType type)
+    {
+        List<VSEquipment> equipments = GetEquipmentListByType(type);
+        return equipments[new System.Random().Next(equipments.Count)];
+    }
 }

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7d9aa3bcc15bdb43ab25519bb4bcfc9, type: 3}
+  m_Name: Equipment SkinThief
+  m_EditorClassIdentifier: 
+  Pool: {fileID: 11400000, guid: a868d2e5287e24a41bc4bfb4c18d30f1, type: 2}
+  Type: 4
+  Name: SkinThief
+  Icon: {fileID: 21300000, guid: 6c07e24c3061a124fbeb7daf37ac4774, type: 3}
+  Model: {fileID: 5795563615772424904, guid: affb8b185c48baf4ab5842f556de23d4, type: 3}
+  OnlyModel: {fileID: 6532946048221232596, guid: 6a0e272a19d08bc498341ac4a80d4824,
+    type: 3}
+  Currency: 1
+  Price: 0
