@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{E6A97134-DE17-BE1E-BB66-D4755EE24D8D}</ProjectGuid>
+    <ProjectGuid>{FDDB5B04-1655-330E-8832-714ACCD37453}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\AnimatorUtility.cs" />
     <Compile Include="Assets\Scripts\MiniGamesSettingPopUpUI.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
+    <Compile Include="Assets\Scripts\Event\IntEventChanelSO.cs" />
     <Compile Include="Assets\Scripts\UI\MainUI.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\ObjectResetter.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustEventFailure.cs" />
@@ -825,14 +826,6 @@
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Android.Types">
@@ -1706,19 +1699,19 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{06A0E5E4-BC07-655E-32C5-AEA01F10EED2}</Project>
+      <Project>{5DE84A35-B411-E4C0-2DE4-8DF7C8315001}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
     <ProjectReference Include="AttributesSamples.csproj">
-      <Project>{5DCA6400-64CB-6C04-33C3-8A7FD937A49F}</Project>
+      <Project>{13515719-7254-386E-7E7E-909AE6D80E58}</Project>
       <Name>AttributesSamples</Name>
     </ProjectReference>
     <ProjectReference Include="EditorAttributes.Editor.csproj">
-      <Project>{3D815281-A0A6-01A3-6167-0088E9A77570}</Project>
+      <Project>{CBD4CC1D-499C-F698-6BE7-90C3D2F2DF01}</Project>
       <Name>EditorAttributes.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="EditorAttributes.csproj">
-      <Project>{FA14F52F-60BB-1B3B-57ED-EFACDD645FB6}</Project>
+      <Project>{BA9F285E-8E58-1D69-0592-2FBA5F55A9DE}</Project>
       <Name>EditorAttributes</Name>
     </ProjectReference>
   </ItemGroup>

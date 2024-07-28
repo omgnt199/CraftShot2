@@ -501,7 +501,8 @@ public class VSPlayerControlWeapon : MonoBehaviour
             {
                 CrossHairUI.color = Color.red;
                 GameObject hitCharacter = hit.collider.gameObject;
-                if (_playerInfo.Team != hitCharacter.GetComponentInParent<VSPlayerInfo>().Team && !hitCharacter.GetComponentInParent<VSPlayerInfo>().gameObject.CompareTag("Player"))
+                if (_playerInfo.Team != hitCharacter.GetComponentInParent<VSPlayerInfo>().Team 
+                    && !hitCharacter.GetComponentInParent<VSPlayerInfo>().gameObject.CompareTag("Player"))
                 {
                     if (!_isAttackPressed) OnAutoAim();
                     else Recoil_Script.OffAim();

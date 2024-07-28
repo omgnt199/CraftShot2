@@ -44,7 +44,7 @@ public class VSBotController : MonoBehaviour
     [Header("Zone")]
     public List<Transform> ZonePoints;
     private Transform zoneStaying;
-    private float zoneRadius = 2f;
+    private float zoneRadius = 4f;
 
     [Header("Script")]
     public VSPlayerInfo BotInfo;
@@ -161,8 +161,11 @@ public class VSBotController : MonoBehaviour
         //In Zone?
         if (isInZone() && VSGlobals.MODE == "Domination")
         {
-            agent.SetDestination(transform.position);
-            ControlAnimator.Idle();
+            if (zoneStaying.GetComponent<VSZoneController>().TeamOccupying != PlayerInfo.Team.TeamSide)
+            {
+                agent.SetDestination(transform.position);
+                ControlAnimator.Idle();
+            }
         }
 
     }

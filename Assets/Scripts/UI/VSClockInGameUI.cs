@@ -11,40 +11,32 @@ public class VSClockInGameUI : MonoBehaviour
     private int m, s;
     private string sT, mT;
     bool isTimeout = false;
-    // Start is called before the first frame update
-    void Start()
+
+    [SerializeField] private CounterSO _counterConfig;
+    [SerializeField] private IntEventChanelSO _updateCounterUIEvent;
+    private void OnEnable()
     {
-        
+        UpdateUI(_counterConfig.InitialTime);
+        _updateCounterUIEvent.OnEventRaised += UpdateUI;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        if (!GameManager.Instance.IsEndGame)
-        {
-            if (GameTime == 0)
-            {
-                GameManager.Instance.OnEndGame();
-                isTimeout = true;
-            }
-            if (!isTimeout)
-            {
-                timer += Time.deltaTime;
-                if (timer >= 1f)
-                {
-                    GameTime--;
-                    m = GameTime / 60;
-                    s = GameTime % 60;
-                    mT = "00";
-                    sT = "00";
-                    if (m / 10 < 1) mT = "0" + m.ToString();
-                    else mT = m.ToString();
-                    if (s / 10 < 1) sT = "0" + s.ToString();
-                    else sT = s.ToString();
-                    clockText.text = mT + ":" + sT;
-                    timer = 0;
-                }
-            }
-        }
+        _updateCounterUIEvent.OnEventRaised -= UpdateUI;
     }
+
+    void UpdateUI(int currentTimeInt)
+    {
+        m = currentTimeInt / 60;
+        s = currentTimeInt % 60;
+        mT = "00";
+        sT = "00";
+        if (m / 10 < 1) mT = "0" + m.ToString();
+        else mT = m.ToString();
+        if (s / 10 < 1) sT = "0" + s.ToString();
+        else sT = s.ToString();
+        clockText.text = mT + ":" + sT;
+        timer = 0;
+    }
+
 }

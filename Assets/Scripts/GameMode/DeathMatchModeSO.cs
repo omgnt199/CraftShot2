@@ -6,8 +6,8 @@ public class DeathMatchModeSO : GameModeSO
 {
     public int ModeTime;
     public GameObject BotPrefab;
-    [SerializeField] private CounterSO _Counter;
-    [SerializeField] private VoidEventChannelSO _updateCounterUIEvent;
+    [SerializeField] private CounterSO _counterConfig;
+    [SerializeField] private IntEventChanelSO _updateCounterUIEvent;
 
     private GameObject _mainPlayer;
     private Map _mapPick;
@@ -18,8 +18,8 @@ public class DeathMatchModeSO : GameModeSO
         _mapPick = GameManager.Instance.MapPick;
         _mapPick.DeactiveZone();
         SpawnDeathMatch();
-        _Counter.SetInitialTime(ModeTime);
-        _Counter.SetCurrentTime(ModeTime);
+        _counterConfig.SetInitialTime(ModeTime);
+        _counterConfig.SetCurrentTime(ModeTime);
         VSInGameUIScript.instance.LoadUIDeathMatchMode();
     }
 
@@ -27,7 +27,7 @@ public class DeathMatchModeSO : GameModeSO
     public override void UpdateMode()
     {
         UpdateCounter();
-        if (_Counter.CurrentTime == 0) EndMode();
+        if (_counterConfig.CurrentTime == 0) EndMode();
     }
     public override void EndMode()
     {
@@ -39,8 +39,8 @@ public class DeathMatchModeSO : GameModeSO
         if (timer >= 1f)
         {
             timer = 0f;
-            _Counter.UpdateCurrentTime(1);
-            _updateCounterUIEvent.RaiseEvent();
+            _counterConfig.UpdateCurrentTime(1);
+            _updateCounterUIEvent.RaiseEvent(_counterConfig.CurrentTime);
         }
     }
     public void SpawnDeathMatch()

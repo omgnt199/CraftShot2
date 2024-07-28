@@ -8,12 +8,20 @@ public class BotControlAnimator : MonoBehaviour
 
     public void Shoot()
     {
-        Controller?.SetBool("IsIdle", false);
-        Controller?.SetBool("IsShoot", true);
+        if (Controller != null)
+        {
+
+            Controller.SetBool("IsIdle", false);
+            Controller.SetBool("IsShoot", true);
+        }
     }
     public void Idle()
     {
-        Controller?.SetBool("IsIdle", true);
-        Controller?.SetBool("IsShoot", false);
+        if (Controller != null)
+        {
+
+            Controller.SetBool("IsIdle", true);
+            Controller.SetBool("IsShoot", false);
+        }
     }
 }

@@ -21,11 +21,11 @@ RenderSettings:
   m_FogDensity: 0.015
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
+  m_AmbientSkyColor: {r: 0.5396226, g: 0.5396226, b: 0.5396226, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 1
@@ -17266,6 +17266,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clockText: {fileID: 679142267}
   GameTime: 180
+  _counterConfig: {fileID: 11400000, guid: a994b01bda0de4043a4b3509a140b15d, type: 2}
+  _updateCounterUIEvent: {fileID: 11400000, guid: 963dc92bc05dc404e9045c317f0a03b6,
+    type: 2}
 --- !u!1 &681060897
 GameObject:
   m_ObjectHideFlags: 0
@@ -44683,7 +44686,7 @@ MonoBehaviour:
     type: 2}
   _heathBar: {fileID: 1257530270}
   _heathBarText: {fileID: 566521370}
-  _UIHeathUpdate: {fileID: 11400000, guid: ca07657a6c956f44bad22b0074bca458, type: 2}
+  _UIHeathUpdate: {fileID: 11400000, guid: f28cd25198759b74c809b39cec22b796, type: 2}
 --- !u!1 &1261020795 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3137722172632951806, guid: 8cca5a99c6dca4c46ae34bad89cd866b,
