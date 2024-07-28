@@ -55,6 +55,10 @@ public class ShopEquipmentCard : MonoBehaviour
             _Info = ((VSSupportWeapon)equipment).Info;
             MainButton.onClick.AddListener(() => ShopContainerUI.Instance.EquipmentStatUI.Show(equipment, _Info));
         }
+        else if(equipment.Type == VSEquipmentType.Character)
+        {
+            MainButton.onClick.AddListener(() => ShopContainerUI.Instance.EquipmentStatUI.ShowCharacterSkin(equipment));
+        } 
     }
 
     public void Buy()

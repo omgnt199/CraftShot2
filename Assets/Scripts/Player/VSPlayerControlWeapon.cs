@@ -119,6 +119,8 @@ public class VSPlayerControlWeapon : MonoBehaviour
         if (_attackState == VSAttackState.Shoot && GunUsing.CrossHair == VSCrossHair.Rifle && _isAutoAimMode) HandleAutoAim();
         //AttackTimer which count time(s) delay between 2 consecutive attacks
         AttackTimer();
+
+        if (_isAttackPressed) Attack();
     }
     void AttackTimer()
     {
@@ -136,7 +138,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
         //Attack input
         if (Input.GetMouseButton(0))
         {
-            Attack();
+            _isAttackPressed = true;
         }
         else if (Input.GetMouseButtonUp(0)) StopAttack();
         //Aim input
@@ -162,9 +164,10 @@ public class VSPlayerControlWeapon : MonoBehaviour
     }
 
     public void SetAttackState(VSAttackState state) => _attackState = state;
+
+    public void SetAttackPress(bool value) => _isAttackPressed = value;
     public void Attack()
     {
-        _isAttackPressed = true;
 
         switch (_attackState)
         {

@@ -24,7 +24,7 @@ public class SetUpCamera : MonoBehaviour
     {
         SetUpGunCamera();
         SetUpLargeMapCanera();
-        SetUpMiniMapCamera();
+        //SetUpMiniMapCamera();
         SetUpNavCamera();
     }
     private void Start()

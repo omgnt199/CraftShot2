@@ -1,5 +1,7 @@
+using Assets.Scripts.Common;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class BulletExplosionInteract : BulletInteract
@@ -14,7 +16,8 @@ public class BulletExplosionInteract : BulletInteract
         if (WhoShoot.GetComponent<VSPlayerControlWeapon>() != null) gunUsing = WhoShoot.GetComponent<VSPlayerControlWeapon>().GunUsing;
         else gunUsing = WhoShoot.GetComponent<VSBotController>().GunUsing;
         //Explosion VFX
-        Instantiate(gunUsing.Bullet.BulletExplosion, collision.contacts[0].point, Quaternion.LookRotation(collision.contacts[0].normal));
+        GameObject explostionVfx = Instantiate(gunUsing.Bullet.BulletExplosion, collision.contacts[0].point, Quaternion.LookRotation(collision.contacts[0].normal));
+        explostionVfx.transform.position += 0.02f * collision.contacts[0].normal;
         //Calculated Damage
         Collider[] hitcolliders;
         LayerMask MaskAttack = LayerMask.GetMask("Player", "Enemy");
@@ -49,6 +52,7 @@ public class BulletExplosionInteract : BulletInteract
         }
 
         Destroy(GetComponent<BulletExplosionInteract>());
+        _Bullet.Rb.velocity = Vector3.zero;
         _Bullet.Deactive();
     }
 }

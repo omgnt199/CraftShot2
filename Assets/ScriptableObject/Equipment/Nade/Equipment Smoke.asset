@@ -17,6 +17,10 @@ MonoBehaviour:
   Name: Smoke
   Icon: {fileID: 21300000, guid: f689bc1417ffa60469af403d14f65440, type: 3}
   Model: {fileID: 5032693500780643305, guid: fd4e52704741fb649abf0b6b93b3aff3, type: 3}
+  OnlyModel: {fileID: 4677820661376849540, guid: 5576af2f8b75fde45addda12cbe70fcd,
+    type: 3}
+  Currency: 0
+  Price: 0
   NadeType: 1
   ExplosionRadius: 4
   Duration: 15

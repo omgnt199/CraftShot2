@@ -9,16 +9,19 @@ public class SkinSpinUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public float deltaRotateY = 5f;
     private Vector2 beginDragPos;
     private Vector2 currentDragPos, lastDragPos;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    public bool IsAutoRotate;
+    bool isDragging = false;
 
     // Update is called once per frame
     void Update()
     {
-
+        if (IsAutoRotate)
+        {
+            if (!isDragging)
+            {
+                SkinSpinedLocate.transform.eulerAngles = SkinSpinedLocate.transform.eulerAngles + new Vector3(0, deltaRotateY * Time.deltaTime * 10f, 0);
+            }
+        }
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -28,6 +31,7 @@ public class SkinSpinUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
     public void OnDrag(PointerEventData eventData)
     {
+        isDragging = true;
         currentDragPos = eventData.position;
         if (currentDragPos.x < lastDragPos.x)
         {
@@ -44,6 +48,6 @@ public class SkinSpinUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
     public void OnEndDrag(PointerEventData eventData)
     {
-
+        isDragging = false;
     }
 }

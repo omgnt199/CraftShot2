@@ -131,42 +131,6 @@ public class GameManager : MonoBehaviour
         LargeMapCamera.orthographicSize = _mapPick.LargeMapCameraSize;
         VSInGameUIScript.instance.SetLargeMapImage(_mapPick.LargeMapSprite);
     }
-    public void SpawnDeathMatch()
-    {
-        Team teamDeathmatch = new Team(VSTeamSide.NoSide, 10, 0);
-        _mainPlayer.transform.position = DeathMatchSpawn.GetChild(UnityEngine.Random.Range(0, DeathMatchSpawn.childCount)).position;
-        _playerList.Add(_mainPlayer);
-        teamDeathmatch.AddMember(_mainPlayer);
-        for (int i = 1; i <= teamDeathmatch.Size - 1; i++)
-        {
-            GameObject bot = Instantiate(BotPrefab, DeathMatchSpawn.GetChild(i).position, Quaternion.identity);
-            _playerList.Add(bot);
-            teamDeathmatch.AddMember(bot);
-        }
-    }
-    //public void SpawnTeamAlly()
-    //{
-    //    _teamAlly.AddMember(_mainPlayer);
-    //    _mainPlayer.transform.position = TeamASpawn.transform.GetChild(0).position;
-    //    for (int i = 1; i <= _teamAlly.Size - 1; i++)
-    //    {
-    //        GameObject bot = Instantiate(BotPrefab, TeamASpawn.transform.GetChild(i).position, Quaternion.identity);
-    //        bot.GetComponent<VSBotController>().ZonePoints = new List<Transform>(_mapPick.ZonesPositionDominationMode);
-    //        _teamAlly.AddMember(bot);
-    //        _playerList.Add(bot);
-    //    }
-    //}
-
-    //public void SpawnTeamEnemy()
-    //{
-    //    for (int i = 0; i < _teamEnemy.Size; i++)
-    //    {
-    //        GameObject bot = Instantiate(BotPrefab, TeamBSpawn.transform.GetChild(i).position, Quaternion.identity);
-    //        bot.GetComponent<VSBotController>().ZonePoints = new List<Transform>(_mapPick.ZonesPositionDominationMode);
-    //        _teamEnemy.AddMember(bot);
-    //        _playerList.Add(bot);
-    //    }
-    //}
     public void LoadPlayerEquipment()
     {
         string primaryWPName = PlayerPrefs.GetString("VSPrimaryWeaponUsing");
@@ -223,14 +187,19 @@ public class GameManager : MonoBehaviour
         else player.transform.position = _mapPick.DeathmatchSpawn.GetChild(UnityEngine.Random.Range(0, _mapPick.DeathmatchSpawn.childCount)).position;
         player.SetActive(true);
         player.GetComponent<VSPlayerInfo>().HP = 100;
-        player.GetComponent<CharacterController>().height = 3f;
         if (player.gameObject.CompareTag("Player"))
         {
             DeathCamera.SetActive(false);
+            player.GetComponent<CharacterController>().height = 3f;
             player.GetComponent<VSPlayerController>().ResetWeapon();
+            player.GetComponent<VSPlayerController>().Anim.Idle();
             VSInGameUIScript.instance.LoadPlayerAfterReviveUI();
         }
-        else player.GetComponent<VSBotController>().SearchWalkPoint();
+        else
+        {
+            player.GetComponent<VSBotController>().ControlAnimator.Idle();
+            player.GetComponent<VSBotController>().SearchWalkPoint();
+        }
     }
     public void UpdateTeamScore(VSTeamSide team, int scoreBonus)
     {

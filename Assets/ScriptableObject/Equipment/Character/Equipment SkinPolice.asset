@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7d9aa3bcc15bdb43ab25519bb4bcfc9, type: 3}
+  m_Name: Equipment SkinPolice
+  m_EditorClassIdentifier: 
+  Pool: {fileID: 11400000, guid: a868d2e5287e24a41bc4bfb4c18d30f1, type: 2}
+  Type: 4
+  Name: SkinPolice
+  Icon: {fileID: 21300000, guid: 6c07e24c3061a124fbeb7daf37ac4774, type: 3}
+  Model: {fileID: 7185577230427039870, guid: 670e7103cd71d3f468a030110351dc72, type: 3}
+  OnlyModel: {fileID: 5028003203569973596, guid: dc1e21d34ee19014fa664ca97b503be2,
+    type: 3}
+  Currency: 1
+  Price: 0
