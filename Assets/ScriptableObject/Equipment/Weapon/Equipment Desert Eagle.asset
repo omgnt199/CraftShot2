@@ -19,6 +19,10 @@ MonoBehaviour:
   Model: {fileID: 4563763770096757383, guid: f47ec3de028c1e44c85fd4667237d829, type: 3}
   OnlyModel: {fileID: 727118315125153821, guid: 30124893de0150d43a09003e31542124,
     type: 3}
+  ModelForBot: {fileID: 4101724112826846785, guid: af4fd587aae4b4b4bac84062a8bd7b4c,
+    type: 3}
+  AnimatorControllerForBot: {fileID: 22100000, guid: 65b8d247f42dee8478b397d01c972e57,
+    type: 2}
   Currency: 1
   Price: 0
   Magazine: 7

@@ -22,10 +22,10 @@ public class SetUpCamera : MonoBehaviour
     private RenderTexture _navMapTexture;
     private void Awake()
     {
-        SetUpGunCamera();
-        SetUpLargeMapCanera();
+        //SetUpGunCamera();
+        //SetUpLargeMapCanera();
         //SetUpMiniMapCamera();
-        SetUpNavCamera();
+        //SetUpNavCamera();
     }
     private void Start()
     {

@@ -178,7 +178,9 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(PowerPool.GetRandomItemPower().Prefab, player.transform.position + new Vector3(0, 1f, 0), Quaternion.LookRotation(Vector3.up));
         }
+
         yield return new WaitForSeconds(_reviveDelayTime);
+
         if (Mode == "Domination")
         {
             if (player.GetComponent<VSPlayerInfo>().Team.TeamSide == VSTeamSide.TeamAlly) player.transform.position = _mapPick.FirstTeamSpawn.GetChild(UnityEngine.Random.Range(0, _teamMembers)).position;
@@ -190,7 +192,7 @@ public class GameManager : MonoBehaviour
         if (player.gameObject.CompareTag("Player"))
         {
             DeathCamera.SetActive(false);
-            player.GetComponent<CharacterController>().height = 3f;
+            player.GetComponent<CharacterController>().height = 2.6f;
             player.GetComponent<VSPlayerController>().ResetWeapon();
             player.GetComponent<VSPlayerController>().Anim.Idle();
             VSInGameUIScript.instance.LoadPlayerAfterReviveUI();

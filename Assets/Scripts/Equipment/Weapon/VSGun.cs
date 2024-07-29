@@ -22,4 +22,5 @@ public class VSGun : VSEquipment
     public int DamageToHandLeg;
     public Sprite GunKillIcon;
     public BulletSO Bullet;
+
 }

@@ -88,12 +88,12 @@ public class VSPlayerMovement : MonoBehaviour
         }
 
         //Fly?
-        if (_isFly) HandleFLy();
-        else
-        {
-            //Gravity = Mathf.Lerp(Gravity, -19.87f, Time.deltaTime * 2f);
-            //MoveSpeed = Mathf.Lerp(MoveSpeed, WalkSpeed, Time.deltaTime * 2f);
-        }
+        //if (_isFly) HandleFLy();
+        //else
+        //{
+        //    //Gravity = Mathf.Lerp(Gravity, -19.87f, Time.deltaTime * 2f);
+        //    //MoveSpeed = Mathf.Lerp(MoveSpeed, WalkSpeed, Time.deltaTime * 2f);
+        //}
         //Dash?
         if (_isDashing) HandleDash();
 

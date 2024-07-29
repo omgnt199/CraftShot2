@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{FDDB5B04-1655-330E-8832-714ACCD37453}</ProjectGuid>
+    <ProjectGuid>{E6A97134-DE17-BE1E-BB66-D4755EE24D8D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -79,9 +79,9 @@
     <Compile Include="Assets\MT Assets\Easy Mesh Combiner\Libraries\MTAssets Mathematics\MTAssetsMathematics.cs" />
     <Compile Include="Assets\Scripts\GameMode\IModeState.cs" />
     <Compile Include="Assets\Scripts\AnimatorUtility.cs" />
-    <Compile Include="Assets\Scripts\MiniGamesSettingPopUpUI.cs" />
-    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
     <Compile Include="Assets\Scripts\Event\IntEventChanelSO.cs" />
+    <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
+    <Compile Include="Assets\Scripts\MiniGamesSettingPopUpUI.cs" />
     <Compile Include="Assets\Scripts\UI\MainUI.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\ObjectResetter.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustEventFailure.cs" />
@@ -218,6 +218,7 @@
     <Compile Include="Assets\Scripts\Enemy\Bot\VSBotControlWeapon.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Scripts\MiniGamesMoneyUIScript.cs" />
+    <Compile Include="Assets\Scripts\UI\SettingMenuUI.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Cameras\Scripts\TargetFieldOfView.cs" />
     <Compile Include="Assets\Adjust\Android\AdjustAndroid.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustThirdPartySharing.cs" />
@@ -349,6 +350,7 @@
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\CameraRefocus.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\CrossPlatformInput\Scripts\ButtonHandler.cs" />
     <Compile Include="Assets\Scripts\UI\VSClockInGameUI.cs" />
+    <Compile Include="Assets\Scripts\Scriptable\SettingSystem\GameSettingSO.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\LerpControlledBob.cs" />
     <Compile Include="Assets\Scripts\CountDown.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\CrossPlatformInput\Scripts\TouchPad.cs" />
@@ -371,6 +373,7 @@
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
     <Compile Include="Assets\Scripts\Equipment\Weapon\VSWeaponRecoil.cs" />
     <Compile Include="Assets\Pixel Arsenal\Scripts\PixelArsenalBeamStatic.cs" />
+    <Compile Include="Assets\Scripts\GunHolder.cs" />
     <Compile Include="Assets\Scripts\VSMuzzle.cs" />
     <Compile Include="Assets\Scripts\Player\VSPlayerControlWeapon.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\VFX Library\UICanvasManager.cs" />
@@ -407,28 +410,37 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Pixel Arsenal\Demo\Scenes\README.txt" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
+    <None Include="Assets\Firebase\Plugins\x86_64\FirebaseCppFirestore.dll" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Effects\Projectors\Shaders\ProjectorMultiply.shader" />
     <None Include="Assets\Epic Toon FX\Prefabs\Combat\Combat FX.txt" />
+    <None Include="Assets\Firebase\Plugins\Firebase.Analytics.dll" />
     <None Include="Assets\Adjust\Android\AdjustAndroidManifest.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\Epic Toon FX\Changelog.txt" />
+    <None Include="Assets\Firebase\Plugins\iOS\Firebase.Analytics.dll" />
     <None Include="Assets\Adjust\Windows\W81\Win81Interface.dll" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Effects\Projectors\Guidelines.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
     <None Include="Assets\Adjust\Windows\WindowsPcl.dll" />
     <None Include="Assets\Adjust\Windows\Stubs\Win10Interface.dll" />
+    <None Include="Assets\Firebase\Plugins\Firebase.App.dll" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\Adjust\Windows\WS\AdjustWS.dll" />
     <None Include="Assets\Adjust\Windows\WU10\Win10Interface.dll" />
+    <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-firestore-unity\maven-metadata.xml" />
+    <None Include="Assets\Firebase\Plugins\x86_64\FirebaseCppAnalytics.dll" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
+    <None Include="Assets\Firebase\Plugins\iOS\Firebase.Firestore.dll" />
     <None Include="Assets\Adjust\Windows\WS\WinWsInterface.dll" />
     <None Include="Assets\#NVJOB Name Generator\license_unity.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\Firebase\Plugins\Firebase.TaskExtension.dll" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Cameras\CameraGuidelines.txt" />
     <None Include="Assets\MT Assets\Easy Mesh Combiner\List Of Changes.txt" />
+    <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-app-unity\maven-metadata.xml" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Test\TestPattern.shader" />
     <None Include="Assets\#NVJOB Name Generator\Examples\Example 1\People Avatars\Designed by.txt" />
@@ -444,6 +456,7 @@
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
+    <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-analytics-unity\maven-metadata.xml" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularSmooth.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
@@ -452,24 +465,33 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\#NVJOB Name Generator\license_nvjob.txt" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
+    <None Include="Assets\Firebase\Plugins\Firebase.Crashlytics.dll" />
     <None Include="Assets\Adjust\Windows\Stubs\Win81Interface.dll" />
+    <None Include="Assets\MaxSdk\Mediation\MediationAdapters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\Adjust\Windows\WU10\AdjustUAP10.dll" />
+    <None Include="Assets\Firebase\Plugins\Firebase.Firestore.dll" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Effects\ImageEffects\Readme.txt" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
+    <None Include="Assets\Firebase\Plugins\iOS\Firebase.Crashlytics.dll" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
     <None Include="Assets\MT Assets\Easy Mesh Combiner\Third-Party Assets.txt" />
+    <None Include="Assets\Firebase\Plugins\Firebase.Platform.dll" />
+    <None Include="Assets\Firebase\Plugins\x86_64\FirebaseCppApp-12_1_0.dll" />
     <None Include="Assets\Adjust\Windows\Newtonsoft.Json.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-crashlytics-unity\maven-metadata.xml" />
     <None Include="Assets\Adjust\Windows\W81\AdjustWP81.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\Firebase\Plugins\Google.MiniJson.dll" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\Pixel Arsenal\Pixel Arsenal - Readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\Firebase\Plugins\iOS\Firebase.App.dll" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Fonts\OpenSans\License!.txt" />
@@ -796,6 +818,10 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Firebase.Analytics">
+      <HintPath>Assets\Firebase\Plugins\Firebase.Analytics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Collections.LowLevel.ILSupport">
       <HintPath>Library\PackageCache\com.unity.collections@2.1.4\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
       <Private>False</Private>
@@ -808,8 +834,20 @@
       <HintPath>Assets\Adjust\Windows\Stubs\Win10Interface.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Firebase.App">
+      <HintPath>Assets\Firebase\Plugins\Firebase.App.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Firebase.Firestore">
+      <HintPath>Assets\Firebase\Plugins\Firebase.Firestore.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="WinWsInterface">
       <HintPath>Assets\Adjust\Windows\Stubs\WinWsInterface.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Firebase.TaskExtension">
+      <HintPath>Assets\Firebase\Plugins\Firebase.TaskExtension.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="DOTween">
@@ -820,12 +858,32 @@
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.2\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Firebase.Crashlytics">
+      <HintPath>Assets\Firebase\Plugins\Firebase.Crashlytics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Firebase.Platform">
+      <HintPath>Assets\Firebase\Plugins\Firebase.Platform.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Google.MiniJson">
+      <HintPath>Assets\Firebase\Plugins\Google.MiniJson.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Android.Types">
@@ -1699,20 +1757,28 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{5DE84A35-B411-E4C0-2DE4-8DF7C8315001}</Project>
+      <Project>{06A0E5E4-BC07-655E-32C5-AEA01F10EED2}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
     <ProjectReference Include="AttributesSamples.csproj">
-      <Project>{13515719-7254-386E-7E7E-909AE6D80E58}</Project>
+      <Project>{5DCA6400-64CB-6C04-33C3-8A7FD937A49F}</Project>
       <Name>AttributesSamples</Name>
     </ProjectReference>
+    <ProjectReference Include="MaxSdk.Scripts.csproj">
+      <Project>{436B9550-259F-D112-D571-32698C5E3BFD}</Project>
+      <Name>MaxSdk.Scripts</Name>
+    </ProjectReference>
     <ProjectReference Include="EditorAttributes.Editor.csproj">
-      <Project>{CBD4CC1D-499C-F698-6BE7-90C3D2F2DF01}</Project>
+      <Project>{3D815281-A0A6-01A3-6167-0088E9A77570}</Project>
       <Name>EditorAttributes.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="EditorAttributes.csproj">
-      <Project>{BA9F285E-8E58-1D69-0592-2FBA5F55A9DE}</Project>
+      <Project>{FA14F52F-60BB-1B3B-57ED-EFACDD645FB6}</Project>
       <Name>EditorAttributes</Name>
+    </ProjectReference>
+    <ProjectReference Include="MaxSdk.Scripts.IntegrationManager.Editor.csproj">
+      <Project>{8703D636-BD92-6E05-E6A3-5101D0B089AA}</Project>
+      <Name>MaxSdk.Scripts.IntegrationManager.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

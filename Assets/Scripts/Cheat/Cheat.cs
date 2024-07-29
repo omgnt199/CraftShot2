@@ -13,4 +13,10 @@ public class Cheat : MonoBehaviour
         CurrencyData.UpdateCurrency(CurrencyType.Coin, Coin);
         CurrencyData.UpdateCurrency(CurrencyType.Diamond, Diamond);
     }
+
+    public void CheatCurrency(CurrencyType type ,int value)
+    {
+        CurrencyData.UpdateCurrency(type, value);
+        CurrencyData.UpdateCurrency(type, value);
+    }
 }

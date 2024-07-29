@@ -57,6 +57,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19813052, guid: dfc7f93dc23405f4e8f962740046f567, type: 3}
+      propertyPath: stopAction
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 19813052, guid: dfc7f93dc23405f4e8f962740046f567, type: 3}
       propertyPath: moveWithTransform
       value: 0
       objectReference: {fileID: 0}

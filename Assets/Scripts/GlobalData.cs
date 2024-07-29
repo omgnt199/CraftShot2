@@ -9,9 +9,11 @@ public class GlobalData : Singleton<GlobalData>
     public TimePlayManager TimePlayManager;
     public VSEquipmentPool EquipmentPool;
     public VSDailyTaskManager DailyTaskManager;
+    public GameSettingSO GameSettingSO;
     public static float CurrentTimeApplication;
     public bool IsNewDay = false;
 
+    [SerializeField] private Cheat _Cheat;
     private int _dailyTaskAmount = 4;
     public override void Awake()
     {
@@ -26,8 +28,11 @@ public class GlobalData : Singleton<GlobalData>
         PlayerGlobalInfo.Load();
         if (PlayerPrefs.GetInt("FirstOpenApp") != 1)
         {
+            _Cheat.CheatCurrency(CurrencyType.Coin, 10000);
+            _Cheat.CheatCurrency(CurrencyType.Diamond, 10000);
             LoadEquipmentOnFirstOpen();
             PlayerPrefs.SetInt("FirstOpenApp", 1);
+
         }
         PlayerEquipmentInfo.Load();
 

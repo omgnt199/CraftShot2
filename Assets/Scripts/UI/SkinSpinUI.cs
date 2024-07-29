@@ -23,6 +23,8 @@ public class SkinSpinUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             }
         }
     }
+
+    public void Reset() => SkinSpinedLocate.transform.eulerAngles = new Vector3(0, 180f, 0);
     public void OnBeginDrag(PointerEventData eventData)
     {
         beginDragPos = eventData.position;

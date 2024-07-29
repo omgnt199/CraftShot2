@@ -23,9 +23,9 @@ public class VSBotController : MonoBehaviour
     public LayerMask MaskAttack;
     public float attackRange;
     public float sightDistance;
-    private float fireSpeed = 0.3f;
+    private float fireSpeed = 0.4f;
     private float fireTimer = 0f;
-    private float timeCheckAttack = 4f;
+    private float timeCheckAttack = 3f;
     private bool isAlreadyAttack = false;
     public GameObject BulletDecalPrefab;
 
@@ -62,8 +62,8 @@ public class VSBotController : MonoBehaviour
 
     private void Awake()
     {
-        //GunUsing = (VSGun)VSGameManager.Instance.EquipmentPool.GetEquipmentByID("VSP-03");
-        EquipGun(GunUsing);
+        GunUsing = (VSGun)GlobalData.Instance.EquipmentPool.GetRandomEquipmentByType(VSEquipmentType.PrimaryWeapon);
+        //fireSpeed = 0.4f;
         bulletPool = BulletPool.instance;
         agent = GetComponent<NavMeshAgent>();
         agent.speed = 10f;
@@ -144,7 +144,7 @@ public class VSBotController : MonoBehaviour
                 if (BotInfo.Team != closestObj.GetComponent<VSPlayerInfo>().Team)
                 {
                     LayerMask maskCheck = LayerMask.GetMask("Barrier", "Border", "Ground", "ObstacleLayer");
-                    if (!Physics.Raycast(transform.position, (-transform.position + closestObj.transform.position).normalized, (transform.position - closestObj.transform.position).magnitude, maskCheck))
+                    if (!Physics.Raycast(transform.position + new Vector3(0, 2f, 0), (-transform.position + closestObj.transform.position).normalized, (transform.position - closestObj.transform.position).magnitude, maskCheck))
                     {
                         if (!isAlreadyAttack)
                         {
@@ -168,15 +168,6 @@ public class VSBotController : MonoBehaviour
             }
         }
 
-    }
-    void EquipGun(VSGun gun)
-    {
-        if (gun == null) return;
-
-        firePower = gun.FirePower;
-        fireSpeed = gun.FireSpeed;
-        WeaponRecoil.SetRecoil(1f, 6f);
-        firePoint = GetComponentInChildren<VSMuzzle>().transform;
     }
     public void SearchWalkPoint()
     {
@@ -233,7 +224,7 @@ public class VSBotController : MonoBehaviour
         if (chanceThrowNade <= 3) ThrowNade();
         //
         agent.SetDestination(transform.position);
-        ControlAnimator.Idle();
+        //ControlAnimator.Idle();
     }
     void Shoot()
     {
@@ -246,12 +237,12 @@ public class VSBotController : MonoBehaviour
         //Check Raycast hit
         LayerMask mask = LayerMask.GetMask("BodyPart", "Barrier", "Border", "Ground", "Smoke", "ObstacleLayer");
         Vector3 startPosition = fpCamera.transform.position;
-
-        Physics.Raycast(startPosition, fpCamera.transform.forward, out RaycastHit hit, Mathf.Infinity, mask);
+        Vector3 direction = (closestObj.transform.position - transform.position).normalized;
+        Physics.Raycast(startPosition, direction, out RaycastHit hit, Mathf.Infinity, mask);
         //Cheat Bullet's velocity = Vector between RaycastHit's point and FirePoint
         Vector3 bulletVelocity;
         //if (hit.point != Vector3.zero) bulletVelocity = (hit.point - fpCamera.position).normalized * firePower;
-        bulletVelocity = fpCamera.forward * firePower;
+        bulletVelocity = direction * firePower;
         BulletPool.instance.PickFromPool(gameObject, GunUsing, firePoint.position, bulletVelocity);
         //CheckRaycastHit(mask, startPosition);
     }
@@ -333,10 +324,23 @@ public class VSBotController : MonoBehaviour
         }
         return false;
     }
+    void EquipGun(VSGun gun)
+    {
+        if (gun == null) return;
 
+        firePower = gun.FirePower;
+        fireSpeed = gun.FireSpeed * 5f;
+        WeaponRecoil.SetRecoil(gun.RecoilAmountX, gun.RecoilAmountY);
+
+        GameObject gunHolder = GetComponentInChildren<GunHolder>().gameObject;
+        Instantiate(GunUsing.ModelForBot, gunHolder.transform);
+    }
     public void SetCharacterSkin(GameObject skinPrefab)
     {
         GameObject skin = Instantiate(skinPrefab, SkinModelLocate);
+        EquipGun(GunUsing);
+        firePoint = GetComponentInChildren<VSMuzzle>().transform;
+        skin.GetComponent<Animator>().runtimeAnimatorController = GunUsing.AnimatorControllerForBot;
         ControlAnimator.Controller = skin.GetComponent<Animator>();
     }
 }

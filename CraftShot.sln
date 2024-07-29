@@ -7,11 +7,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditorAttributes.Editor", "EditorAttributes.Editor.csproj", "{3D815281-A0A6-01A3-6167-0088E9A77570}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxSdk.Scripts", "MaxSdk.Scripts.csproj", "{436B9550-259F-D112-D571-32698C5E3BFD}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditorAttributes", "EditorAttributes.csproj", "{FA14F52F-60BB-1B3B-57ED-EFACDD645FB6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{06A0E5E4-BC07-655E-32C5-AEA01F10EED2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{52F40C1F-9FD4-952B-685C-DDA29D1A7462}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxSdk.Scripts.IntegrationManager.Editor", "MaxSdk.Scripts.IntegrationManager.Editor.csproj", "{8703D636-BD92-6E05-E6A3-5101D0B089AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +35,10 @@ Global
 		{3D815281-A0A6-01A3-6167-0088E9A77570}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D815281-A0A6-01A3-6167-0088E9A77570}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D815281-A0A6-01A3-6167-0088E9A77570}.Release|Any CPU.Build.0 = Release|Any CPU
+		{436B9550-259F-D112-D571-32698C5E3BFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{436B9550-259F-D112-D571-32698C5E3BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{436B9550-259F-D112-D571-32698C5E3BFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{436B9550-259F-D112-D571-32698C5E3BFD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FA14F52F-60BB-1B3B-57ED-EFACDD645FB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FA14F52F-60BB-1B3B-57ED-EFACDD645FB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA14F52F-60BB-1B3B-57ED-EFACDD645FB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -43,6 +51,10 @@ Global
 		{52F40C1F-9FD4-952B-685C-DDA29D1A7462}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52F40C1F-9FD4-952B-685C-DDA29D1A7462}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52F40C1F-9FD4-952B-685C-DDA29D1A7462}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8703D636-BD92-6E05-E6A3-5101D0B089AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8703D636-BD92-6E05-E6A3-5101D0B089AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8703D636-BD92-6E05-E6A3-5101D0B089AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8703D636-BD92-6E05-E6A3-5101D0B089AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

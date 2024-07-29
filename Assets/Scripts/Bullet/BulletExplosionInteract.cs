@@ -36,6 +36,9 @@ public class BulletExplosionInteract : BulletInteract
                 if (distanceFromVictimToExplosion <= gunUsing.Bullet.ExplosionRadius && distanceFromVictimToExplosion > gunUsing.Bullet.ExplosionRadius / 2f) damage = 30;
                 else if (distanceFromVictimToExplosion <= 2) damage = 50;
                 victimInfo.UpdateHP(-damage);
+
+                victim.GetComponent<Damageable>().SpawnTakeDamageVFX(collision.contacts[0]);
+
                 if (victimInfo.HP <= 0)
                 {
                     victimInfo.OnDeath();

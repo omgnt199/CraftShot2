@@ -1,3 +1,4 @@
+using Assets.Scripts.Common;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class BulletSpawner : MonoBehaviour
     public TrailRenderer BulletTrail;
     private GameObject _bulletParticle;
     private GameObject _bulletExplosionPrefab;
+    private GameObject _bulletDecal;
     private VSGun _gunUsing;
     public void Activate(GameObject whoShoot, VSGun gun, Vector3 muzzlePos, Vector3 velocity)
     {
@@ -33,13 +35,13 @@ public class BulletSpawner : MonoBehaviour
         }
         else BulletTrail.gameObject.SetActive(true);
 
-        BulletDecal = gun.Bullet.BulletDecal != null? gun.Bullet.BulletDecal : null;
+        BulletDecal = gun.Bullet.BulletDecal != null ? gun.Bullet.BulletDecal : null;
         _bulletExplosionPrefab = gun.Bullet.BulletExplosion != null ? gun.Bullet.BulletExplosion : null;
         //
         GetComponent<CapsuleCollider>().radius = gun.Bullet.BulletRadius;
         //
         if (gun.Bullet.InteractType == BulletInteractType.Direct) gameObject.AddComponent<BulletDirectInteract>();
-        else if(gun.Bullet.InteractType == BulletInteractType.Explosion) gameObject.AddComponent<BulletExplosionInteract>();
+        else if (gun.Bullet.InteractType == BulletInteractType.Explosion) gameObject.AddComponent<BulletExplosionInteract>();
         //
         transform.position = muzzlePos;
         transform.forward = velocity;
@@ -56,16 +58,14 @@ public class BulletSpawner : MonoBehaviour
     {
         BulletPool.instance.AddToPool(this);
         StopAllCoroutines();
-        gameObject.SetActive(false);
         if (_bulletParticle != null) Destroy(_bulletParticle);
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
+        if (_bulletDecal != null) Destroy(_bulletDecal);
+        gameObject.SetActive(false);
     }
     public void SpawnDecal(ContactPoint hit)
     {
-        GameObject decal = Instantiate(BulletDecal, hit.point, Quaternion.LookRotation(hit.normal));
-        decal.transform.position += 0.02f * hit.normal;
+        _bulletDecal = Instantiate(BulletDecal, hit.point, Quaternion.LookRotation(hit.normal));
+        _bulletDecal.transform.position += 0.02f * hit.normal;
     }
 
 }

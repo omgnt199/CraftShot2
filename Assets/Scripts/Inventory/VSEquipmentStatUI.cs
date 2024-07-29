@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class VSEquipmentStatUI : MonoBehaviour
 {
-
+    public SkinSpinUI SkinSpin;
     public GameObject WeaponStat;
     public GameObject StatCardPrefab;
     public TextMeshProUGUI Name;
@@ -20,6 +20,7 @@ public class VSEquipmentStatUI : MonoBehaviour
     }
     public void Reset()
     {
+        SkinSpin.Reset();
         foreach (Transform item in WeaponStat.transform) Destroy(item.gameObject);
         Name.text = string.Empty;
         MainBtn.onClick.RemoveAllListeners();

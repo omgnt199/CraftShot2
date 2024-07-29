@@ -56,11 +56,12 @@ public class BulletDirectInteract : BulletInteract
             if (_Bullet.BulletDecal != null)
                 _Bullet.SpawnDecal(collision.contacts[0]);
         }
-        //if (_Bullet.BulletDecal != null)
-        //    _Bullet.SpawnDecal(collision.contacts[0]);
 
         Destroy(GetComponent<BulletDirectInteract>());
         _Bullet.Rb.velocity = Vector3.zero;
-        Commons.SetTimeout(this, 0.2f, () => _Bullet.Deactive());
+        Commons.SetTimeout(_Bullet, 0.2f, () =>
+        {
+            _Bullet.Deactive();
+        });
     }
 }

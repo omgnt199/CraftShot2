@@ -11,6 +11,8 @@ public class VSEquipment : ScriptableObject
     public Sprite Icon;
     public GameObject Model;
     public GameObject OnlyModel;
+    public GameObject ModelForBot;
+    public AnimatorOverrideController AnimatorControllerForBot;
     public CurrencyType Currency;
     public int Price;
 #if UNITY_EDITOR

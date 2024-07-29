@@ -16,4 +16,4 @@ MonoBehaviour:
   PowerType: 1
   Duration: 5
   Prefab: {fileID: 4977025152110460145, guid: 473a533ad62ee3b45896e99ad64abfc8, type: 3}
-  SpeedMutiply: 2.5
+  SpeedMutiply: 1.5

@@ -19,6 +19,10 @@ public class DominationModeSO : GameModeSO
     private float timer = 0;
 
     public UnityAction<VSTeamSide, int> OnUpdateTeamScore;
+    private void OnEnable()
+    {
+        
+    }
 
     public override void EnterMode()
     {

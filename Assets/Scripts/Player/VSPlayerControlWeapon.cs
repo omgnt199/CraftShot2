@@ -98,6 +98,10 @@ public class VSPlayerControlWeapon : MonoBehaviour
     {
         _fireTimer = 0;
     }
+    private void OnDisable()
+    {
+        
+    }
 
     // Update is called once per frame
     void Update()
@@ -128,7 +132,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
         if (_attackState == VSAttackState.Shoot) _fireTimer = Mathf.Max(0f, _fireTimer - Time.deltaTime);
 
         //Knife Attack Timer
-        if (_attackState == VSAttackState.Knife) _knifeAttackTimer = Mathf.Min(_knifeAttackTimer + Time.deltaTime, _knifeAttackDelay);
+        if (_attackState == VSAttackState.Knife) _knifeAttackTimer = Mathf.Max(0, _knifeAttackTimer - Time.deltaTime);
 
     }
     void MyInput()
@@ -180,9 +184,9 @@ public class VSPlayerControlWeapon : MonoBehaviour
                 }
                 break;
             case VSAttackState.Knife:
-                if (_knifeAttackTimer >= _knifeAttackDelay)
+                if (_knifeAttackTimer == 0)
                 {
-                    _knifeAttackTimer = 0;
+                    _knifeAttackTimer = _knifeAttackDelay;
                     KnifeAttack();
                 }
                 break;
@@ -229,7 +233,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
             //Cheat Bullet's velocity = Vector between RaycastHit's point and FirePoint
             Vector3 bulletVelocity;
             if (hit.point != Vector3.zero) bulletVelocity = (hit.point - _firePoint.position).normalized * _firePower;
-            else bulletVelocity = _fpCamera.forward * _firePower;
+            else bulletVelocity = _firePoint.forward * _firePower;
             BulletPool.instance.PickFromPool(gameObject, GunUsing, _firePoint.position, bulletVelocity);
             //Is Sniper?
             if (CrossHairUsing == VSCrossHair.Sniper)
@@ -501,8 +505,8 @@ public class VSPlayerControlWeapon : MonoBehaviour
             {
                 CrossHairUI.color = Color.red;
                 GameObject hitCharacter = hit.collider.gameObject;
-                if (_playerInfo.Team != hitCharacter.GetComponentInParent<VSPlayerInfo>().Team 
-                    && !hitCharacter.GetComponentInParent<VSPlayerInfo>().gameObject.CompareTag("Player"))
+                if (_playerInfo.Team != hitCharacter.GetComponentInParent<VSPlayerInfo>().Team
+                    && !hitCharacter.GetComponentInParent<VSPlayerInfo>().gameObject == gameObject)
                 {
                     if (!_isAttackPressed) OnAutoAim();
                     else Recoil_Script.OffAim();

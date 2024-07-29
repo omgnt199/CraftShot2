@@ -16,6 +16,8 @@ public class Damageable : MonoBehaviour
 
     [SerializeField] private GameObject _takeDamageVFX;
     [SerializeField] private Material _takeDamageMat;
+
+    [SerializeField] private GameObject _skinLocate;
     private List<List<Material>> _originMat = new List<List<Material>>();
 
     public bool IsDead { get; set; }
@@ -30,6 +32,15 @@ public class Damageable : MonoBehaviour
         }
         _currentHealth.SetMaxHealth(_healthConfig.InitialHealth);
         _currentHealth.SetCurrentHealth(_healthConfig.InitialHealth);
+    }
+
+    private void OnDisable()
+    {
+        if (IsInvoking("TurnOffTakeMat"))
+        {
+            CancelInvoke("TurnOffTakeMat");
+            TurnOffTakeMat();
+        }
     }
 
     public void ReceiveDamage(int damage)
