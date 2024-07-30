@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a662500f1aae9824bbe8ef7cfe604ac8, type: 3}
   m_Name: M4A4 Kill Task
   m_EditorClassIdentifier: 
-  ID: T-03
   TaskInfo: Get kills with "M4A4"
-  RewardType: 1
-  RewardValue: 150
+  CurrencyReward:
+  - CurrencyType: 1
+    RewardValue: 125
+  - CurrencyType: 0
+    RewardValue: 20
   GoalValue: 10
   AchivedValue: 0
   IsCompleted: 0
+  IsClaimed: 0
   EventName: KillByGun
   Gun: {fileID: 11400000, guid: 58a3cbf8ffab81449a950fcc166cc230, type: 2}

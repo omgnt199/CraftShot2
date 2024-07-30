@@ -108,7 +108,7 @@ public class VSZoneController : MonoBehaviour
                 if (!MembersAllyInZone.Contains(member))
                     MembersAllyInZone.Add(member);
             }
-            else
+            else if (member.GetComponent<VSPlayerInfo>().Team.TeamSide == VSTeamSide.TeamEnemy)
             {
                 if (!MembersEnemyInZone.Contains(member))
                     MembersEnemyInZone.Add(member);
@@ -119,9 +119,9 @@ public class VSZoneController : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         //
-        GameObject member = other.gameObject;
+        GameObject member = other.GetComponentInParent<VSPlayerInfo>().gameObject;
         if (member.GetComponent<VSPlayerInfo>().Team.TeamSide == VSTeamSide.TeamAlly) MembersAllyInZone.Remove(member);
-        else MembersEnemyInZone.Remove(member);
+        else if (member.GetComponent<VSPlayerInfo>().Team.TeamSide == VSTeamSide.TeamEnemy) MembersEnemyInZone.Remove(member);
         //
     }
 

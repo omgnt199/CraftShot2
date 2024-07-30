@@ -696,3 +696,5 @@ MonoBehaviour:
     type: 3}
   MainButton: {fileID: -3568504445574990821}
   BuyButton: {fileID: 9046946211528518078}
+  _unlockEquipmentEvent: {fileID: 11400000, guid: 7bf2a97d0e889e3428afdec0ea39f248,
+    type: 2}

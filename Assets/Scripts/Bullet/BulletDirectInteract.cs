@@ -17,7 +17,7 @@ public class BulletDirectInteract : BulletInteract
             VSPlayerInfo victim = collision.gameObject.GetComponentInParent<VSPlayerInfo>();
             VSPlayerInfo whoShootInfo = WhoShoot.GetComponent<VSPlayerInfo>();
             VSGun gunUsing;
-            if (whoShootInfo.Team != victim.Team)
+            if (whoShootInfo.Team != victim.Team && victim.gameObject != whoShootInfo.gameObject)
             {
                 if (WhoShoot.GetComponent<VSPlayerControlWeapon>() != null) gunUsing = WhoShoot.GetComponent<VSPlayerControlWeapon>().GunUsing;
                 else gunUsing = WhoShoot.GetComponent<VSBotController>().GunUsing;

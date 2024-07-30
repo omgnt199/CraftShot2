@@ -100,7 +100,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
     }
     private void OnDisable()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -229,7 +229,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
             ////Check Raycast hit
             LayerMask mask = LayerMask.GetMask("BodyPart", "Barrier", "Ground", "ObstacleLayer");
             Vector3 startPosition = _fpCamera.transform.position;
-            Physics.Raycast(startPosition, _fpCamera.transform.forward, out RaycastHit hit, Mathf.Infinity, mask);
+            Physics.Raycast(startPosition + _fpCamera.transform.forward * 2f, _fpCamera.transform.forward, out RaycastHit hit, Mathf.Infinity, mask);
             //Cheat Bullet's velocity = Vector between RaycastHit's point and FirePoint
             Vector3 bulletVelocity;
             if (hit.point != Vector3.zero) bulletVelocity = (hit.point - _firePoint.position).normalized * _firePower;
@@ -499,14 +499,13 @@ public class VSPlayerControlWeapon : MonoBehaviour
     }
     void HandleAutoAim()
     {
-        if (Physics.Raycast(_fpCamera.position, _fpCamera.transform.forward, out RaycastHit hit, Mathf.Infinity, _aimMask))
+        if (Physics.Raycast(_fpCamera.position + _fpCamera.transform.forward * 2f, _fpCamera.transform.forward, out RaycastHit hit, Mathf.Infinity, _aimMask))
         {
             if (LayerMask.LayerToName(hit.collider.gameObject.layer) == "BodyPart")
             {
                 CrossHairUI.color = Color.red;
                 GameObject hitCharacter = hit.collider.gameObject;
-                if (_playerInfo.Team != hitCharacter.GetComponentInParent<VSPlayerInfo>().Team
-                    && !hitCharacter.GetComponentInParent<VSPlayerInfo>().gameObject == gameObject)
+                if (_playerInfo.Team != hitCharacter.GetComponentInParent<VSPlayerInfo>().Team)
                 {
                     if (!_isAttackPressed) OnAutoAim();
                     else Recoil_Script.OffAim();

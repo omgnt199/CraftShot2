@@ -15,7 +15,6 @@ public class VSDailyTaskManager : ScriptableObject
     private int _taskAmount;
     private bool _isRegister = false;
     private string _fileSaveName = "dailyTaskData.dat";
-    public static UnityEvent<VSDailyTask> OnAnyTaskCompleted = new UnityEvent<VSDailyTask>();
     private void Awake()
     {
         DailyTaskToday = new List<VSDailyTask>();

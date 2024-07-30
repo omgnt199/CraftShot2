@@ -10,21 +10,25 @@ public class CurrencyVisualizer : MonoBehaviour
     public TextMeshProUGUI Coin;
     public TextMeshProUGUI Diamond;
 
+    private Dictionary<CurrencyType, TextMeshProUGUI> _currencyVisualizerDict = new Dictionary<CurrencyType, TextMeshProUGUI>();
+    private void Awake()
+    {
+        _currencyVisualizerDict.Add(CurrencyType.Coin, Coin);
+        _currencyVisualizerDict.Add(CurrencyType.Diamond, Diamond);
+    }
+
     private void OnEnable()
     {
         Coin.text = PlayerPrefs.GetInt("Player" + CurrencyType.Coin).ToString();
         Diamond.text = PlayerPrefs.GetInt("Player" + CurrencyType.Diamond).ToString();
-        CurrencyData.CurrencyChange += OnChangeCurrency;
+        CurrencyData.EconomyCurrencyChange += OnChangeCurrency;
     }
     private void OnDisable()
     {
-        CurrencyData.CurrencyChange -= OnChangeCurrency;
+        CurrencyData.EconomyCurrencyChange -= OnChangeCurrency;
     }
-    public void OnChangeCurrency()
+    public void OnChangeCurrency(CurrencyType type, int currencyValue)
     {
-        int coinValue = CurrencyData.GetCurrencyValue(CurrencyType.Coin);
-        int diamondValue = CurrencyData.GetCurrencyValue(CurrencyType.Diamond);
-        DOTween.To(() => int.Parse(Coin.text), coin => Coin.text = coin.ToString(), coinValue, 0.5f);
-        DOTween.To(() => int.Parse(Diamond.text), diamond => Diamond.text = diamond.ToString(), diamondValue, 0.5f);
+        DOTween.To(() => int.Parse(_currencyVisualizerDict[type].text), value => _currencyVisualizerDict[type].text = value.ToString(), currencyValue, 0.5f);
     }
 }

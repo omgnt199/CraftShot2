@@ -59,6 +59,7 @@ public static class DataManager
             file = File.Open(path, FileMode.Open);
             BinaryFormatter bf = new BinaryFormatter();
             file.Position = 0;
+            Debug.Log(path);
             return (T)bf.Deserialize(file);
         }
         catch (System.Exception e)

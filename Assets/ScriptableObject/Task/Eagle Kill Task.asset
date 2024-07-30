@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: Eagle Kill Task
   m_EditorClassIdentifier: 
   TaskInfo: Get kills with "Desert Eagle"
-  RewardType: 1
-  RewardValue: 200
+  CurrencyReward:
+  - CurrencyType: 1
+    RewardValue: 150
+  - CurrencyType: 0
+    RewardValue: 25
   GoalValue: 6
   AchivedValue: 6
   IsCompleted: 1

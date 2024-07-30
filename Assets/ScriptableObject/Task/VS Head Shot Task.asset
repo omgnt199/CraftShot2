@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: VS Head Shot Task
   m_EditorClassIdentifier: 
   TaskInfo: Get  "Headshots"
-  RewardType: 2
-  RewardValue: 10
+  CurrencyReward:
+  - CurrencyType: 1
+    RewardValue: 250
+  - CurrencyType: 0
+    RewardValue: 30
   GoalValue: 10
   AchivedValue: 10
   IsCompleted: 1

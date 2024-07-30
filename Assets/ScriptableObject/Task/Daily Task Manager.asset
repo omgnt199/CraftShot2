@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Daily Task Manager
   m_EditorClassIdentifier: 
   DailyTaskToday:
-  - {fileID: 11400000, guid: c7bc48597c96c6547a8e125d80463a50, type: 2}
   - {fileID: 11400000, guid: 73c07a3790c1d994882fabb1975ef40f, type: 2}
-  - {fileID: 11400000, guid: dbe8405ad5da32c439346b2246d2dde8, type: 2}
+  - {fileID: 11400000, guid: 9f0efe3e0d80d204393cb1dbdb79e7db, type: 2}
   - {fileID: 11400000, guid: 9d45bbf637d1e2341af4ffe886fae8a5, type: 2}
+  - {fileID: 11400000, guid: dbe8405ad5da32c439346b2246d2dde8, type: 2}
+  - {fileID: 11400000, guid: 4e2d4619ddabd4f41a0e375b45e66c88, type: 2}
   TaskPool: {fileID: 11400000, guid: 912548695c48b3548ae0da60372cc2b1, type: 2}

@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: PlasmaGun Kill Task
   m_EditorClassIdentifier: 
   TaskInfo: Get kills with "PlasmaGun"
-  RewardType: 1
-  RewardValue: 150
+  CurrencyReward:
+  - CurrencyType: 1
+    RewardValue: 200
+  - CurrencyType: 0
+    RewardValue: 25
   GoalValue: 8
   AchivedValue: 0
   IsCompleted: 0

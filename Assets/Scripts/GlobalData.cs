@@ -25,15 +25,16 @@ public class GlobalData : Singleton<GlobalData>
     }
     void LoadData()
     {
-        PlayerGlobalInfo.Load();
         if (PlayerPrefs.GetInt("FirstOpenApp") != 1)
         {
             _Cheat.CheatCurrency(CurrencyType.Coin, 10000);
             _Cheat.CheatCurrency(CurrencyType.Diamond, 10000);
             LoadEquipmentOnFirstOpen();
+            PlayerPrefs.SetString("PlayerName", "Guest");
+            PlayerPrefs.SetInt("PlayerLevel", 1);
             PlayerPrefs.SetInt("FirstOpenApp", 1);
-
         }
+        PlayerGlobalInfo.Load();
         PlayerEquipmentInfo.Load();
 
         CheckNewDay();

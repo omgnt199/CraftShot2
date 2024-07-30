@@ -87,6 +87,7 @@ public class Damageable : MonoBehaviour
     }
     void TurnOnTakeMat()
     {
+        _originMat = new List<List<Material>>();
         foreach (SkinnedMeshRenderer mesh in GetComponentsInChildren<SkinnedMeshRenderer>())
         {
             //mesh.shadowCastingMode = ShadowCastingMode.Off;

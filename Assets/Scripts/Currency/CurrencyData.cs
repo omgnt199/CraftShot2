@@ -6,7 +6,8 @@ using UnityEngine.Events;
 public static class CurrencyData
 {
     public static Dictionary<CurrencyType, int> currencyData;
-    public static UnityAction CurrencyChange;
+    public static UnityAction<CurrencyType, int> EconomyCurrencyChange;
+    public static UnityAction<int> ExpCurrencyChange;
 
     public static void Load()
     {
@@ -24,6 +25,7 @@ public static class CurrencyData
     {
         currencyData[type] += delta;
         PlayerPrefs.SetInt("Player" + type.ToString(), currencyData[type]);
-        CurrencyChange?.Invoke();
+        if (type != CurrencyType.Exp) EconomyCurrencyChange?.Invoke(type, currencyData[type]);
+        else ExpCurrencyChange?.Invoke(currencyData[type]);
     }
 }

@@ -18,6 +18,8 @@ public class ShopEquipmentCard : MonoBehaviour
     public Button MainButton;
     public Button BuyButton;
     public List<VSStatics> Statics => _statics;
+
+    [SerializeField] private EquipmentEventChanelSO _unlockEquipmentEvent;
     public void OnSelected()
     {
         BorderIcon.gameObject.SetActive(true);
@@ -69,6 +71,9 @@ public class ShopEquipmentCard : MonoBehaviour
             PlayerEquipmentInfo.Add(Equipment.Name);
             PlayerEquipmentInfo.Save();
             BuyButton.gameObject.SetActive(false);
+
+            GlobalUI.Instance.ShowPopUp("BuyEquipment");
+            _unlockEquipmentEvent.RaiseEvent(Equipment);
         }
     }
 }

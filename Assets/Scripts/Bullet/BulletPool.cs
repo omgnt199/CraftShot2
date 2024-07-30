@@ -16,7 +16,7 @@ public class BulletPool : MonoBehaviour
     void Start()
     {
         availableBullets = new List<BulletSpawner>();
-        for(int i = 1; i <= PoolSize; i++)
+        for (int i = 1; i <= PoolSize; i++)
         {
             BulletSpawner b = Instantiate(BulletPrefab, transform).GetComponent<BulletSpawner>();
             b.gameObject.SetActive(false);
@@ -24,11 +24,18 @@ public class BulletPool : MonoBehaviour
         }
     }
 
-    public void PickFromPool(GameObject whoShoot,VSGun gun,Vector3 position, Vector3 velocity)
+    public void PickFromPool(GameObject whoShoot, VSGun gun, Vector3 position, Vector3 velocity)
     {
         //Debug.Log("PickBullet");
         if (availableBullets.Count < 1) return;
         availableBullets[0].Activate(whoShoot, gun, position, velocity);
+        availableBullets.RemoveAt(0);
+    }
+    public void PickFromPool(VSGun gun, Vector3 position, Vector3 velocity)
+    {
+        //Debug.Log("PickBullet");
+        if (availableBullets.Count < 1) return;
+        availableBullets[0].Activate(gun, position, velocity);
         availableBullets.RemoveAt(0);
     }
     public void AddToPool(BulletSpawner bullet)

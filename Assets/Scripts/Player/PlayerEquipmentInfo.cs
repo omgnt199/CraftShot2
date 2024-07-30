@@ -11,7 +11,6 @@ public static class PlayerEquipmentInfo
     {
         get
         {
-            Debug.Log("Get EquipmentSOList");
             List<VSEquipment> list = new List<VSEquipment>();
             foreach (var item in EquipmentList)
             {

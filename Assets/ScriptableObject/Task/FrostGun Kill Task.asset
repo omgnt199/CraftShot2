@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: FrostGun Kill Task
   m_EditorClassIdentifier: 
   TaskInfo: Get kills with "FrostGun"
-  RewardType: 1
-  RewardValue: 150
+  CurrencyReward:
+  - CurrencyType: 1
+    RewardValue: 150
+  - CurrencyType: 0
+    RewardValue: 25
   GoalValue: 10
   AchivedValue: 0
   IsCompleted: 0

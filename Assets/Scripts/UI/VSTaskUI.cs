@@ -19,17 +19,25 @@ public class VSTaskUI : MonoBehaviour
     {
         Task = task;
         TaskInfoText.text = Task.TaskInfo;
-        TaskRewardValueText.text = Task.RewardValue.ToString();
+        foreach (var reward in Task.CurrencyReward)
+        {
+            if (reward.CurrencyType != CurrencyType.Exp)
+            {
+                TaskRewardValueText.text = reward.RewardValue.ToString();
+                if (reward.CurrencyType == CurrencyType.Coin) TaskCurrencyRewardImg.sprite = CoinCurrencyIcon;
+                else if (reward.CurrencyType == CurrencyType.Diamond) TaskCurrencyRewardImg.sprite = DiamondCurrencyIcon;
+                break;
+            }
+        }
+
         TaskProgressText.text = Task.AchivedValue.ToString() + "/" + Task.GoalValue.ToString();
         TaskBarImg.fillAmount = (float)Task.AchivedValue / (float)Task.GoalValue;
-        if (Task.RewardType == CurrencyType.Coin) TaskCurrencyRewardImg.sprite = CoinCurrencyIcon;
-        else if (Task.RewardType == CurrencyType.Diamond) TaskCurrencyRewardImg.sprite = DiamondCurrencyIcon;
     }
     public void ClaimReward()
     {
         if (Task.IsCompleted)
         {
-            CurrencyData.UpdateCurrency(Task.RewardType, Task.RewardValue);
+            foreach (var reward in Task.CurrencyReward) CurrencyData.UpdateCurrency(reward.CurrencyType, reward.RewardValue);
             DailyTaskObserver.OnAnyDailyTaskClaimed(Task);
             VSDailyTaskPopUpUI.Instance.LoadTaskUI();
         }
