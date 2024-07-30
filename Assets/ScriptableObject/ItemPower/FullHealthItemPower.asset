@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: FullHealthItemPower
   m_EditorClassIdentifier: 
   Name: HealthPower
+  PowerType: 0
+  Duration: 0
   Prefab: {fileID: 2940086539418916113, guid: f1a2968c0fb9777428c08ebeb51c4019, type: 3}
   RestoreAmount: 100
+  PowerUpParticleUI: {fileID: 2102944976993675483, guid: cf41f856456205d479487abb80e03332,
+    type: 3}

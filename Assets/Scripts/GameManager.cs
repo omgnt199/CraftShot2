@@ -177,7 +177,8 @@ public class GameManager : MonoBehaviour
         else
         {
             float chanceDrop = UnityEngine.Random.Range(0, 1f);
-            if (chanceDrop <= 0.2f) Instantiate(PowerPool.GetRandomItemPower().Prefab, player.transform.position + new Vector3(0, 1f, 0), Quaternion.LookRotation(Vector3.up));
+            //if (chanceDrop <= 0.2f) 
+                Instantiate(PowerPool.GetRandomItemPower().Prefab, player.transform.position + new Vector3(0, 1f, 0), Quaternion.LookRotation(Vector3.up));
         }
 
         yield return new WaitForSeconds(_reviveDelayTime);

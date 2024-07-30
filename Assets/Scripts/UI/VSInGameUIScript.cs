@@ -74,9 +74,11 @@ public class VSInGameUIScript : MonoBehaviour
     }
     public void UpdatePlayerHPUI(int hp)
     {
-        HealthTxt.text = hp + "/100";
-        HealthBar.GetComponent<Image>().fillAmount = (float)Mathf.Max(0, hp) / 100f;
+        HealthTxt.text = hp.ToString();
+        if (DOTween.IsTweening(HealthBar.GetComponent<Image>())) HealthBar.GetComponent<Image>().DOKill();
+        HealthBar.GetComponent<Image>().DOFillAmount((float)Mathf.Max(0, hp) / 100f, 0.5f);
     }
+
     public void ShowReloadingPopUp() => ReloadingPopUp.SetActive(true);
     public void HideRelaodingPopUp() => ReloadingPopUp.SetActive(false);
     public void ShowOutOfAmmoPopUp()

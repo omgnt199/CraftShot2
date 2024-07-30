@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: AmmoItemPower
   m_EditorClassIdentifier: 
   Name: Ammo
+  PowerType: 0
+  Duration: 0
   Prefab: {fileID: 3036788447495324619, guid: 99a698a14aa507142b457d4afc9bf8b3, type: 3}
+  PowerUpParticleUI: {fileID: 1673214798928421204, guid: 00808f3c1b5f01b45a8d11915386e4f1,
+    type: 3}

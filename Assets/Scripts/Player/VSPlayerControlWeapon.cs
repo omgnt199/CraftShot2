@@ -301,7 +301,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
                 //Calculate damage
                 int dam = 0;
                 Vector3 hitPoint = hit.point;
-                Debug.Log(Vector3.Angle(victim.transform.forward, transform.forward));
+                //Debug.Log(Vector3.Angle(victim.transform.forward, transform.forward));
                 if (Vector3.Angle(victim.transform.forward, transform.forward) >= 75f && Vector3.Angle(victim.transform.forward, transform.forward) <= 180f) dam = KnifeUsing.DamageFace;
                 else if (Vector3.Angle(victim.transform.forward, transform.forward) < 75f) dam = KnifeUsing.DamageBack;
                 //

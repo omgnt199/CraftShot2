@@ -21,12 +21,12 @@ public class Damageable : MonoBehaviour
     private List<List<Material>> _originMat = new List<List<Material>>();
 
     public bool IsDead { get; set; }
-    public bool GetHit {  get; set; }
+    public bool GetHit { get; set; }
 
     public UnityAction OnDie;
     private void Awake()
     {
-        if(_currentHealth == null)
+        if (_currentHealth == null)
         {
             _currentHealth = ScriptableObject.CreateInstance<HealthSO>();
         }
@@ -50,7 +50,7 @@ public class Damageable : MonoBehaviour
 
         _currentHealth.InflictDamage(damage);
         if (_updateHealthUI != null) _updateHealthUI.RaiseEvent();
-        if(_takeDamageUI != null) _takeDamageUI.RaiseEvent();
+        if (_takeDamageUI != null) _takeDamageUI.RaiseEvent();
 
         if (_currentHealth.CurrentHeath <= 0)
         {
@@ -77,13 +77,11 @@ public class Damageable : MonoBehaviour
     public void SpawnTakeDamageVFX(ContactPoint hitPoint)
     {
         Instantiate(_takeDamageVFX, hitPoint.point, Quaternion.LookRotation(hitPoint.normal));
-        TurnOnTakeMat();
-        if (IsInvoking("TurnOffTakeMat"))
+        if (!IsInvoking("TurnOffTakeMat"))
         {
-            CancelInvoke("TurnOffTakeMat");
+            TurnOnTakeMat();
             Invoke("TurnOffTakeMat", 0.2f);
         }
-        else Invoke("TurnOffTakeMat", 0.2f);
     }
     void TurnOnTakeMat()
     {
