@@ -44,7 +44,7 @@ public class BulletDirectInteract : BulletInteract
                     if (WhoShoot.gameObject.CompareTag("Player"))
                     {
                         if (killType != KillType.None) PlayerEventListener.RaiseSpecialKillEvent(killType);
-                        else PlayerEventListener.RaiseKillByEvent();
+                        PlayerEventListener.RaiseKillByEvent();
                     }
                 }
                 //Show damage UI

@@ -12,7 +12,7 @@ public class VSTouchLookAround : MonoBehaviour
     [SerializeField] private float moveInputDeadZone;
 
     // Touch detection
-    private int  rightFingerId;
+    private int rightFingerId;
     private float halfScreenWidth;
 
     // Camera control
@@ -117,5 +117,8 @@ public class VSTouchLookAround : MonoBehaviour
     private void OnDisable()
     {
         transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        lookInput = Vector2.zero;
+        cameraPitch = 0f;
+        cameraTransform.localRotation = Quaternion.Euler(0, 0, 0);
     }
 }

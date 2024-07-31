@@ -30,7 +30,7 @@ MonoBehaviour:
   FirePower: 175
   FireSpeed: 0.15
   TimeReload: 2
-  RecoilAmountX: 3
+  RecoilAmountX: 4
   RecoilAmountY: 2
   CrossHair: 0
   DamageToHead: 30

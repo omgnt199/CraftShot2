@@ -28,10 +28,10 @@ MonoBehaviour:
   Magazine: 30
   TotalAmmo: 600
   FirePower: 150
-  FireSpeed: 0.2
-  TimeReload: 1
-  RecoilAmountX: 3
-  RecoilAmountY: 2
+  FireSpeed: 1
+  TimeReload: 2
+  RecoilAmountX: 16
+  RecoilAmountY: 0
   CrossHair: 0
   DamageToHead: 60
   DamageToBody: 30

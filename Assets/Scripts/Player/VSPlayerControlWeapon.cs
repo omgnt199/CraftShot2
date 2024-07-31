@@ -450,7 +450,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
         _isAutoAim = false;
         _isShooting = false;
         _fireTimer = 0;
-        Recoil_Script.ReturnSpeed = 3f;
+        Recoil_Script.ReturnSpeed = 1f;
         controlAnimator.WeaponAnimator.SetBool("IsShoot", false);
         controlAnimator.WeaponAnimator.SetFloat("Spray", 0f);
 

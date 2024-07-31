@@ -25,6 +25,7 @@ public static class PlayerGlobalInfo
         set
         {
             _Level = value;
+            PlayerPrefs.SetInt("PlayerLevel", _Level);
             UpdatePlayerLevel?.Invoke(_Level);
         }
     }
@@ -33,11 +34,5 @@ public static class PlayerGlobalInfo
         CurrencyData.Load();
         Name = PlayerPrefs.GetString("PlayerName");
         Level = PlayerPrefs.GetInt("PlayerLevel");
-    }
-
-    // Exp = 50/3 * ( x^3 - 6x^2 + 17x - 12 )  with x is Level
-    public static int TotalExpToLevelUp(int level)
-    {
-        return Mathf.FloorToInt(50 * (Mathf.Pow(level, 3) - 6 * Mathf.Pow(level, 2) + 17 * level - 12) / 3);
     }
 }

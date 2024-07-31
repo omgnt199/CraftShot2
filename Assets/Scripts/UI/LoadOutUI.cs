@@ -11,11 +11,27 @@ public class LoadOutUI : MonoBehaviour
     [SerializeField] private Image SupportWeaponImg;
     [SerializeField] private Image NadeImg;
 
+    [SerializeField] private Transform SkinLocate;
+    [SerializeField] private EquipmentEventChanelSO _equipEquipmentLoadOut;
+    private void Awake()
+    {
+        AttachEquipmentToSkin(GlobalData.Instance.EquipmentPool.GetEquipmentByName(PlayerPrefs.GetString("VSPrimaryWeaponUsing")));
+        _equipEquipmentLoadOut.OnEventRaised += AttachEquipmentToSkin;
+    }
+
     private void OnEnable()
     {
         Load();
     }
 
+    void AttachEquipmentToSkin(VSEquipment equipment)
+    {
+        //Debug.Log(SkinLocate);
+        Transform gunHolder = SkinLocate.gameObject.GetComponentInChildren<GunHolder>().gameObject.transform;
+        if (gunHolder.childCount == 1) Destroy(gunHolder.GetChild(0).gameObject);
+        SkinLocate.GetComponentInChildren<Animator>().runtimeAnimatorController = equipment.AnimatorControllerForBot;
+        Instantiate(equipment.ModelForBot, gunHolder);
+    }
     public void Load()
     {
         PrimaryWeaponImg.sprite = GlobalData.Instance.EquipmentPool.GetEquipmentByName(PlayerPrefs.GetString("VSPrimaryWeaponUsing"))?.Icon;

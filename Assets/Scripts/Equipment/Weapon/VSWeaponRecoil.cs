@@ -39,10 +39,10 @@ public class VSWeaponRecoil : MonoBehaviour
     }
     public void OnAim()
     {
-        ReturnSpeed = 8f;
+        ReturnSpeed = 2f;
     }
     public void OffAim()
     {
-        ReturnSpeed = 3f;
+        ReturnSpeed = 1f;
     }
 }

@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.Events;
+
 public static class DailyTaskObserver
 {
     public static List<VSDailyTask> DailyTaskToObserver;
 
+    public static UnityAction AnyTaskClaimed;
     public static void SetDailyTaskToObserver(List<VSDailyTask> taskList)
     {
         DailyTaskToObserver = new List<VSDailyTask>();
@@ -22,5 +25,6 @@ public static class DailyTaskObserver
     {
         task.IsClaimed = true;
         DailyTaskToObserver.Remove(task);
+        AnyTaskClaimed?.Invoke();
     }
 }

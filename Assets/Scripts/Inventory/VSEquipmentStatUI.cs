@@ -14,6 +14,7 @@ public class VSEquipmentStatUI : MonoBehaviour
     public TextMeshProUGUI MoreInfo;
     public Transform OnlySkinLocate;
     private VSEquipment _currentEquipent;
+    [SerializeField] private EquipmentEventChanelSO _equipEquipmentLoadOut;
     private void OnEnable()
     {
 
@@ -83,6 +84,8 @@ public class VSEquipmentStatUI : MonoBehaviour
         else if (_currentEquipent.Type == VSEquipmentType.Character)
             PlayerPrefs.SetString("VSCharacterSkinUsing", _currentEquipent.Name);
         VSInventoryUIController.Instance.ReloadWhenEquip();
+        if (_currentEquipent.Type == VSEquipmentType.PrimaryWeapon || _currentEquipent.Type == VSEquipmentType.SecondaryWeapon)
+            _equipEquipmentLoadOut.RaiseEvent(_currentEquipent);
     }
 
     public void ToLoadOut()

@@ -25,8 +25,6 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public Transform TeamASpawn;
     [HideInInspector] public Transform TeamBSpawn;
     [HideInInspector] public Transform DeathMatchSpawn;
-    private Team _teamAlly;
-    private Team _teamEnemy;
     private const int _teamMembers = 5;
     private const int _deathMatchMembers = 10;
 
@@ -88,10 +86,7 @@ public class GameManager : MonoBehaviour
     void Init()
     {
         _playerList = new List<GameObject>();
-        _teamAlly = new Team(VSTeamSide.TeamAlly, 5, 0);
-        _teamEnemy = new Team(VSTeamSide.TeamEnemy, 5, 0);
         PlayerEventListener.MainPlayer = _mainPlayer;
-
         _playerList.Add(_mainPlayer);
     }
     void UpdateGameState(VSGameState newState)
@@ -205,13 +200,6 @@ public class GameManager : MonoBehaviour
             player.GetComponent<VSBotController>().SearchWalkPoint();
         }
     }
-    public void UpdateTeamScore(VSTeamSide team, int scoreBonus)
-    {
-        if (team == VSTeamSide.TeamAlly) _teamAlly.Score = Mathf.Min(_teamAlly.Score + scoreBonus, VSGlobals.DOMINATION_MAX_SCORE);
-        else _teamEnemy.Score = Mathf.Min(_teamEnemy.Score + scoreBonus, VSGlobals.DOMINATION_MAX_SCORE);
-        VSInGameUIScript.instance.UpdateTeamScoreBar(_teamAlly.Score, _teamEnemy.Score);
-    }
-
     public void OnEndGame()
     {
         _isEndGame = true;

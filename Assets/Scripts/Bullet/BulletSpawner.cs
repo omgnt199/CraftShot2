@@ -60,6 +60,12 @@ public class BulletSpawner : MonoBehaviour
             BulletTrail.minVertexDistance = gun.Bullet.BulletTrail.TrailMinVertextDistance;
             BulletTrail.colorGradient = gun.Bullet.BulletTrail.TrailGradientColor;
             BulletTrail.widthCurve = gun.Bullet.BulletTrail.TrailAnimationCurve;
+            Debug.Log(gun.Bullet.BulletTrail.TrailMaterial.Count);
+            if (gun.Bullet.BulletTrail.TrailMaterial.Count > 0)
+            {
+                Debug.Log("Change TrailMaterial");
+                BulletTrail.SetMaterials(gun.Bullet.BulletTrail.TrailMaterial);
+            }
         }
 
         if (gun.Bullet.Particle != null)

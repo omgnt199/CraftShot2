@@ -26,6 +26,9 @@ public static class CurrencyData
         currencyData[type] += delta;
         PlayerPrefs.SetInt("Player" + type.ToString(), currencyData[type]);
         if (type != CurrencyType.Exp) EconomyCurrencyChange?.Invoke(type, currencyData[type]);
-        else ExpCurrencyChange?.Invoke(currencyData[type]);
+        else
+        {
+            ExpCurrencyChange?.Invoke(currencyData[type]);
+        }
     }
 }
