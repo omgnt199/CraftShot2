@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\UI\HomeUI.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\FPSCounter.cs" />
     <Compile Include="Assets\Scripts\Currency\Currency.cs" />
+    <Compile Include="Assets\CarExplosion.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXEffectController.cs" />
     <Compile Include="Assets\#NVJOB Name Generator\Examples\Example 0\OneNameExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
@@ -403,6 +404,7 @@
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Characters\FirstPersonCharacter\Scripts\RigidbodyFirstPersonController.cs" />
     <Compile Include="Assets\Scripts\UI\HealthBarUI.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustAppStoreSubscription.cs" />
+    <Compile Include="Assets\Scripts\Player\HeadGlitch.cs" />
     <Compile Include="Assets\Scripts\Effect\LightUIEffect.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\2D\Scripts\Camera2DFollow.cs" />

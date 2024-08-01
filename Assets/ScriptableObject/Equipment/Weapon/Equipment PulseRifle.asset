@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29923e7e63c6eb7429f9a8920e76bf36, type: 3}
+  m_Name: Equipment PulseRifle
+  m_EditorClassIdentifier: 
+  Pool: {fileID: 11400000, guid: a868d2e5287e24a41bc4bfb4c18d30f1, type: 2}
+  Type: 0
+  Name: PulseRifle
+  Icon: {fileID: 21300000, guid: 1539350544df13441bbe1922ab5fb944, type: 3}
+  Model: {fileID: 7610999424615744679, guid: 0eef913e98cabf443ba610299cac4605, type: 3}
+  OnlyModel: {fileID: 7465338085308435957, guid: 85e20cb32de07514dad308fa864c2f47,
+    type: 3}
+  ModelForBot: {fileID: 374362513742922611, guid: 27f45a716ff416343b998d4d94c75a4e,
+    type: 3}
+  AnimatorControllerForBot: {fileID: 22100000, guid: 4c63e338fd355dd4b9e202b0c6f4992b,
+    type: 2}
+  Currency: 1
+  Price: 0
+  Magazine: 30
+  TotalAmmo: 300
+  FirePower: 300
+  FireSpeed: 0.15
+  TimeReload: 1.5
+  RecoilAmountX: 6
+  RecoilAmountY: 2.5
+  CrossHair: 0
+  DamageToHead: 28
+  DamageToBody: 15
+  DamageToHandLeg: 10
+  GunKillIcon: {fileID: 21300000, guid: ccf91a9d1baf7d744a44ff0f534d6c71, type: 3}
+  Bullet: {fileID: 11400000, guid: e4a8de5035bf0484d887f2d725550f37, type: 2}

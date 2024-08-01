@@ -64,7 +64,8 @@ public class VSInventoryUIController : MonoBehaviour
 
     public void ShowEquipmentByIndex(int index)
     {
-        EquipmentContent.transform.GetChild(index)?.GetComponent<VSEquipmentCard>().MainButton.onClick?.Invoke();
+        if (EquipmentContent.transform.childCount > 0)
+            EquipmentContent.transform.GetChild(index).GetComponent<VSEquipmentCard>().MainButton.onClick?.Invoke();
     }
 
     public void Search(string name)

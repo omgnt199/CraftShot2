@@ -1,3 +1,4 @@
+using Assets.Scripts.Common;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -102,7 +103,11 @@ public class ShopContainerUI : MonoBehaviour
         foreach (var tab in EquipmentTab)
             tab.Value.GetComponent<Image>().color = tab.Key == type ? new Color32(255, 255, 255, 255) : new Color32(255, 255, 255, 0);
 
-        EquipmentContent.transform.GetChild(0)?.GetComponent<Button>().onClick?.Invoke();
+        Commons.WaitNextFrame(this, () =>
+        {
+            if (EquipmentContent.transform.childCount > 0)
+                EquipmentContent.transform.GetChild(0).GetComponent<Button>().onClick.Invoke();
+        });
     }
     public void Search(string name)
     {
@@ -115,7 +120,7 @@ public class ShopContainerUI : MonoBehaviour
         if (str2.Length > str1.Length) return false;
         for (int i = 0; i < str2.Length; i++)
         {
-            if (char.ToLower(str2[i]) != char.ToLower(str1[i]) && char.ToUpper(str2[i]) != char.ToUpper(str1[i])) 
+            if (char.ToLower(str2[i]) != char.ToLower(str1[i]) && char.ToUpper(str2[i]) != char.ToUpper(str1[i]))
                 return false;
         }
 
