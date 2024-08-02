@@ -77,7 +77,7 @@ public class ShopEquipmentCard : MonoBehaviour
             GlobalUI.Instance.ShowPopUp("BuyEquipment");
             _unlockEquipmentEvent.RaiseEvent(Equipment);
         }
-        else GlobalUI.Instance.ShowPopUp("ShopCurrency");
+        //else GlobalUI.Instance.ShowPopUp("ShopCurrency");
     }
 
 }

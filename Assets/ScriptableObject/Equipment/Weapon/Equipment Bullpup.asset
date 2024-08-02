@@ -17,10 +17,14 @@ MonoBehaviour:
   Name: Bullpup
   Icon: {fileID: 21300000, guid: 1539350544df13441bbe1922ab5fb944, type: 3}
   Model: {fileID: 1232396830896206336, guid: 428f9a27d5471094d9608d6efc2577ac, type: 3}
+  OnlyModel: {fileID: 0}
+  ModelForBot: {fileID: 0}
+  AnimatorControllerForBot: {fileID: 0}
   Currency: 1
   Price: 500
+  LevelUnlock: 0
   Magazine: 30
-  TotalAmmo: 300
+  TotalAmmo: 60
   FirePower: 300
   FireSpeed: 0.15
   TimeReload: 1.5

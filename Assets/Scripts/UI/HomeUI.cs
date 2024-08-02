@@ -31,6 +31,7 @@ public class HomeUI : MonoBehaviour,IPopUp
 
     public void ShowPopUp(string popupName)
     {
+        ServiceManager.ShowInter();
         var popup = Instance._dictPopUpName[popupName];
         popup.SetActive(true);
         popup.transform.SetAsLastSibling();

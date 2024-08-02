@@ -23,4 +23,4 @@ MonoBehaviour:
   IsCompleted: 0
   IsClaimed: 0
   EventName: KillByGun
-  Gun: {fileID: 11400000, guid: 8f5dc73c2b1553d44ba30dc50190a37d, type: 2}
+  Gun: {fileID: 11400000, guid: 594d87800480ed944ab269c5d598c99f, type: 2}

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class GlobalData : Singleton<GlobalData>
 {
+    public ServiceManager serviceManager;
     public TimePlayManager TimePlayManager;
     public VSEquipmentPool EquipmentPool;
     public VSDailyTaskManager DailyTaskManager;
@@ -25,12 +26,15 @@ public class GlobalData : Singleton<GlobalData>
     }
     void LoadData()
     {
+        CurrencyData.Load();
         if (PlayerPrefs.GetInt("FirstOpenApp") != 1)
         {
             LoadEquipmentOnFirstOpen();
             PlayerPrefs.SetString("PlayerName", "Guest");
             PlayerPrefs.SetInt("PlayerLevel", 1);
             PlayerPrefs.SetInt("FirstOpenApp", 1);
+            CurrencyData.UpdateCurrency(CurrencyType.Coin, 200);
+            CurrencyData.UpdateCurrency(CurrencyType.Diamond, 5);
         }
         PlayerGlobalInfo.Load();
         PlayerEquipmentInfo.Load();
@@ -41,6 +45,8 @@ public class GlobalData : Singleton<GlobalData>
         DailyTaskManager.LoadDailyTaskToday();
 
         TimePlayManager.Initialize();
+
+        serviceManager?.Init();
     }
     private void Update()
     {

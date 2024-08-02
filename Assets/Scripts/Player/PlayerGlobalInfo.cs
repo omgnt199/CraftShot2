@@ -31,7 +31,6 @@ public static class PlayerGlobalInfo
     }
     public static void Load()
     {
-        CurrencyData.Load();
         Name = PlayerPrefs.GetString("PlayerName");
         Level = PlayerPrefs.GetInt("PlayerLevel");
     }

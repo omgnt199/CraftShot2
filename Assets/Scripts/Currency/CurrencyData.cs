@@ -28,6 +28,7 @@ public static class CurrencyData
         if (type != CurrencyType.Exp) EconomyCurrencyChange?.Invoke(type, currencyData[type]);
         else
         {
+            while (ExperienceSystem.IsCanLevelUp()) ExperienceSystem.LevelUp();
             ExpCurrencyChange?.Invoke(currencyData[type]);
         }
     }

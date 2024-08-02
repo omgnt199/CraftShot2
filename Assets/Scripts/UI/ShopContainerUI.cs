@@ -91,8 +91,12 @@ public class ShopContainerUI : MonoBehaviour
         _listEquipment = GetListEquipmentByShopType(type);
         foreach (var equipment in _listEquipment)
         {
-            GameObject equipmentCard = Instantiate(EquipmentCardPrefab, EquipmentContent.transform);
-            equipmentCard.GetComponent<ShopEquipmentCard>().Set(equipment);
+            if (equipment.Price != -1)
+            {
+
+                GameObject equipmentCard = Instantiate(EquipmentCardPrefab, EquipmentContent.transform);
+                equipmentCard.GetComponent<ShopEquipmentCard>().Set(equipment);
+            }
         }
         //Resize EquipmentContent
         EquipmentContent.GetComponent<RectTransform>().sizeDelta = _equipmentContentSizeDefault;

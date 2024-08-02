@@ -121,7 +121,6 @@ public class VSInGameUIScript : MonoBehaviour
     public void LoadUIEndGame()
     {
         LeaderBoardPopUp.SetActive(true);
-        ReplayBtn.gameObject.SetActive(true);
         VSScoreBoardUI.Instance.SetWinLose();
 
     }
@@ -131,8 +130,7 @@ public class VSInGameUIScript : MonoBehaviour
         LeaderBoardPopUp.SetActive(false);
         if (GameManager.Instance.IsEndGame)
         {
-            //ServiceManager.ShowInter();
-            SceneManager.LoadScene("VoxelStrikeGamePlay");
+            
         }
     }
     public void LoadPLayerDeadUI()

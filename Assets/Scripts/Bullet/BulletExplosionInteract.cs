@@ -31,6 +31,8 @@ public class BulletExplosionInteract : BulletInteract
                 continue;
             }
 
+            if (hit.gameObject.layer == LayerMask.NameToLayer("ObstacleLayer")) continue;
+
             //if (WhoShoot.Equals(hit.gameObject)) continue;
             VSPlayerInfo whoShootInfo = WhoShoot.GetComponent<VSPlayerInfo>();
             GameObject victim = hit.gameObject;

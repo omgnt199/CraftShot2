@@ -48,8 +48,6 @@ public class BackgroundBotBehavior : MonoBehaviour
             isReachingEndPos = true;
             isAnim = true;
             transform.eulerAngles = new Vector3(0, Random.Range(-45f, 45f), 0);
-            ControlAnimator.SetBool("IsIdle", false);
-            ControlAnimator.SetBool("IsShoot", true);
             ShootBehaviour();
             Commons.SetTimeout(this, Random.Range(1.5f, 2.5f), () =>
             {

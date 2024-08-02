@@ -10,6 +10,23 @@
       },
       "hash": "6d8dee0b0628aab66753bc3d72f1cd6575a854b8"
     },
+    "com.google.ads.mobile": {
+      "version": "9.2.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.google.external-dependency-manager": "1.2.181",
+        "com.unity.modules.androidjni": "1.0.0"
+      },
+      "url": "https://package.openupm.com"
+    },
+    "com.google.external-dependency-manager": {
+      "version": "1.2.181",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
     "com.sandrofigo.voxreader": {
       "version": "4.1.1",
       "depth": 0,

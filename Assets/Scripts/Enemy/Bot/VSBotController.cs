@@ -179,7 +179,7 @@ public class VSBotController : MonoBehaviour
         int chance = Random.Range(1, 100);
         if (VSGlobals.MODE == "Domination")
         {
-            if (chance % 2 == 0 && ZonePoints.Count != 0) walkPoint = ZonePoints[Random.Range(0, ZonePoints.Count)].position;
+            if (chance % 2 == 0 && ZonePoints.Count != 0) walkPoint = ZonePoints[new System.Random().Next(ZonePoints.Count)].position;
             else if (chance % 2 != 0)
             {
                 for (int i = 0; i < 30; i++)

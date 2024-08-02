@@ -15,7 +15,7 @@ MonoBehaviour:
   Pool: {fileID: 11400000, guid: a868d2e5287e24a41bc4bfb4c18d30f1, type: 2}
   Type: 0
   Name: Vengeance
-  Icon: {fileID: 21300000, guid: 1539350544df13441bbe1922ab5fb944, type: 3}
+  Icon: {fileID: 21300000, guid: 72f7aeb60a86d6b42880ecaf01839d5e, type: 3}
   Model: {fileID: 8067455312764263087, guid: db68233c666c83349ba84775678a3b4f, type: 3}
   OnlyModel: {fileID: 3566250505611179324, guid: f36b820677304384781e2c880675902f,
     type: 3}
@@ -24,9 +24,10 @@ MonoBehaviour:
   AnimatorControllerForBot: {fileID: 22100000, guid: 4c63e338fd355dd4b9e202b0c6f4992b,
     type: 2}
   Currency: 1
-  Price: 0
+  Price: 2000
+  LevelUnlock: 0
   Magazine: 30
-  TotalAmmo: 300
+  TotalAmmo: 60
   FirePower: 300
   FireSpeed: 0.15
   TimeReload: 1.5

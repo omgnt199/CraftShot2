@@ -15,7 +15,7 @@ MonoBehaviour:
   Pool: {fileID: 11400000, guid: a868d2e5287e24a41bc4bfb4c18d30f1, type: 2}
   Type: 0
   Name: PulseRifle
-  Icon: {fileID: 21300000, guid: 1539350544df13441bbe1922ab5fb944, type: 3}
+  Icon: {fileID: 21300000, guid: 677823090e9bbf6499fa2bb6d4889ddf, type: 3}
   Model: {fileID: 7610999424615744679, guid: 0eef913e98cabf443ba610299cac4605, type: 3}
   OnlyModel: {fileID: 7465338085308435957, guid: 85e20cb32de07514dad308fa864c2f47,
     type: 3}
@@ -24,9 +24,10 @@ MonoBehaviour:
   AnimatorControllerForBot: {fileID: 22100000, guid: 4c63e338fd355dd4b9e202b0c6f4992b,
     type: 2}
   Currency: 1
-  Price: 0
+  Price: 2000
+  LevelUnlock: 0
   Magazine: 30
-  TotalAmmo: 300
+  TotalAmmo: 60
   FirePower: 300
   FireSpeed: 0.15
   TimeReload: 1.5
