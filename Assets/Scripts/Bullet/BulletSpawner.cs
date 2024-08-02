@@ -13,11 +13,10 @@ public class BulletSpawner : MonoBehaviour
     private GameObject _bulletParticle;
     private GameObject _bulletExplosionPrefab;
     private GameObject _bulletDecal;
-    private VSGun _gunUsing;
-    public void Activate(GameObject whoShoot, VSGun gun, Vector3 muzzlePos, Vector3 velocity)
+
+
+    private void SetupBulletBehavior(VSGun gun, Vector3 muzzlePos, Vector3 velocity)
     {
-        WhoShoot = whoShoot;
-        _gunUsing = gun;
         //Set trail
         if (gun.Bullet.BulletTrail != null)
         {
@@ -33,7 +32,13 @@ public class BulletSpawner : MonoBehaviour
             _bulletParticle.SetActive(true);
             BulletTrail.gameObject.SetActive(false);
         }
-        else BulletTrail.gameObject.SetActive(true);
+        else
+        {
+
+            //if (WhoShoot.CompareTag("Player") && WhoShoot.GetComponent<VSPlayerControlWeapon>().HeadGlitch.IsGlitch) BulletTrail.gameObject.SetActive(false);
+            //else
+            BulletTrail.gameObject.SetActive(true);
+        }
 
         BulletDecal = gun.Bullet.BulletDecal != null ? gun.Bullet.BulletDecal : null;
         _bulletExplosionPrefab = gun.Bullet.BulletExplosion != null ? gun.Bullet.BulletExplosion : null;
@@ -50,45 +55,24 @@ public class BulletSpawner : MonoBehaviour
         StartCoroutine(Decay());
     }
 
+
+    public void Activate(GameObject whoShoot, VSGun gun, Vector3 muzzlePos, Vector3 velocity, int layer)
+    {
+        gameObject.layer = layer;
+
+        WhoShoot = whoShoot;
+        SetupBulletBehavior(gun, muzzlePos, velocity);
+    }
+
+    public void Activate(GameObject whoShoot, VSGun gun, Vector3 muzzlePos, Vector3 velocity)
+    {
+        WhoShoot = whoShoot;
+        SetupBulletBehavior(gun, muzzlePos, velocity);
+    }
+
     public void Activate(VSGun gun, Vector3 muzzlePos, Vector3 velocity)
     {
-        _gunUsing = gun;
-        //Set trail
-        if (gun.Bullet.BulletTrail != null)
-        {
-            BulletTrail.time = gun.Bullet.BulletTrail.LifeTime;
-            BulletTrail.minVertexDistance = gun.Bullet.BulletTrail.TrailMinVertextDistance;
-            BulletTrail.colorGradient = gun.Bullet.BulletTrail.TrailGradientColor;
-            BulletTrail.widthCurve = gun.Bullet.BulletTrail.TrailAnimationCurve;
-            Debug.Log(gun.Bullet.BulletTrail.TrailMaterial.Count);
-            if (gun.Bullet.BulletTrail.TrailMaterial.Count > 0)
-            {
-                Debug.Log("Change TrailMaterial");
-                BulletTrail.SetMaterials(gun.Bullet.BulletTrail.TrailMaterial);
-            }
-        }
-
-        if (gun.Bullet.Particle != null)
-        {
-            _bulletParticle = Instantiate(gun.Bullet.Particle, transform);
-            _bulletParticle.SetActive(true);
-            BulletTrail.gameObject.SetActive(false);
-        }
-        else BulletTrail.gameObject.SetActive(true);
-
-        BulletDecal = gun.Bullet.BulletDecal != null ? gun.Bullet.BulletDecal : null;
-        _bulletExplosionPrefab = gun.Bullet.BulletExplosion != null ? gun.Bullet.BulletExplosion : null;
-        //
-        GetComponent<CapsuleCollider>().radius = gun.Bullet.BulletRadius;
-        //
-        if (gun.Bullet.InteractType == BulletInteractType.Direct) gameObject.AddComponent<BulletDirectInteract>();
-        else if (gun.Bullet.InteractType == BulletInteractType.Explosion) gameObject.AddComponent<BulletExplosionInteract>();
-        //
-        transform.position = muzzlePos;
-        transform.forward = velocity;
-        Rb.velocity = velocity;
-        gameObject.SetActive(true);
-        StartCoroutine(Decay());
+        SetupBulletBehavior(gun, muzzlePos, velocity);
     }
     private IEnumerator Decay()
     {

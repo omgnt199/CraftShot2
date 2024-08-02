@@ -67,6 +67,7 @@ public class DominationModeSO : GameModeSO
     public override void EndMode()
     {
         OnUpdateTeamScore -= UpdateTeamScore;
+        _updateCounterUIEvent.OnEventRaised = null;
         GameManager.Instance.OnEndGame();
     }
     void UpdateCounter()

@@ -19,5 +19,7 @@ MonoBehaviour:
   Model: {fileID: 5795563615772424904, guid: affb8b185c48baf4ab5842f556de23d4, type: 3}
   OnlyModel: {fileID: 6532946048221232596, guid: 6a0e272a19d08bc498341ac4a80d4824,
     type: 3}
+  ModelForBot: {fileID: 0}
+  AnimatorControllerForBot: {fileID: 0}
   Currency: 1
-  Price: 0
+  Price: -1

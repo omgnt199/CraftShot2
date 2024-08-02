@@ -72,23 +72,37 @@
     <Compile Include="Assets\MT Assets\Easy Mesh Combiner\Editor\Greetings.cs" />
     <Compile Include="Assets\Adjust\Editor\AdjustCustomEditor.cs" />
     <Compile Include="Assets\MT Assets\Easy Mesh Combiner\Editor\MeshCombinerTool.cs" />
+    <Compile Include="Assets\PathCreator\Examples\Scripts\Editor\PathSceneToolEditor.cs" />
     <Compile Include="Assets\Adjust\Editor\AdjustEditor.cs" />
     <Compile Include="Assets\MT Assets\Easy Mesh Combiner\Editor\Menu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ExternalDependencyManager\Editor\external-dependency-manager_version-1.2.181_manifest.txt" />
+    <None Include="Assets\Firebase\Editor\RemoteConfigDependencies.xml" />
+    <None Include="Assets\MaxSdk\Mediation\Mintegral\Editor\Dependencies.xml" />
     <None Include="Assets\ExternalDependencyManager\Editor\1.2.181\Google.JarResolver.dll" />
     <None Include="Assets\MaxSdk\AppLovin\Editor\Dependencies.xml" />
     <None Include="Assets\Firebase\Editor\FirebaseAnalytics_version-12.1.0_manifest.txt" />
+    <None Include="Assets\MaxSdk\Mediation\Google\Editor\Dependencies.xml" />
     <None Include="Assets\Firebase\Editor\FirebaseFirestore_version-12.1.0_manifest.txt" />
     <None Include="Assets\Firebase\Editor\Firebase.Crashlytics.Editor.dll" />
+    <None Include="Assets\Firebase\Editor\FirebaseRemoteConfig_version-12.1.0_manifest.txt" />
+    <None Include="Assets\MaxSdk\Mediation\Yandex\Editor\Dependencies.xml" />
+    <None Include="Assets\MaxSdk\Mediation\ByteDance\Editor\Dependencies.xml" />
     <None Include="Assets\ExternalDependencyManager\Editor\1.2.181\Google.VersionHandlerImpl.dll" />
     <None Include="Assets\Firebase\Editor\FirebaseCrashlytics_version-12.1.0_manifest.txt" />
+    <None Include="Assets\MaxSdk\Mediation\IronSource\Editor\Dependencies.xml" />
+    <None Include="Assets\MaxSdk\Mediation\UnityAds\Editor\Dependencies.xml" />
     <None Include="Assets\ExternalDependencyManager\Editor\Google.VersionHandler.dll" />
     <None Include="Assets\Firebase\Editor\FirestoreDependencies.xml" />
     <None Include="Assets\Firebase\Editor\AppDependencies.xml" />
+    <None Include="Assets\MaxSdk\Mediation\InMobi\Editor\Dependencies.xml" />
+    <None Include="Assets\MaxSdk\Mediation\Vungle\Editor\Dependencies.xml" />
     <None Include="Assets\Firebase\Editor\AnalyticsDependencies.xml" />
+    <None Include="Assets\MaxSdk\Mediation\Fyber\Editor\Dependencies.xml" />
     <None Include="Assets\ExternalDependencyManager\Editor\1.2.181\Google.IOSResolver.dll" />
+    <None Include="Assets\MaxSdk\Mediation\Facebook\Editor\Dependencies.xml" />
+    <None Include="Assets\MaxSdk\Mediation\GoogleAdManager\Editor\Dependencies.xml" />
     <None Include="Assets\Firebase\Editor\CrashlyticsDependencies.xml" />
     <None Include="Assets\ExternalDependencyManager\Editor\1.2.181\Google.PackageManagerResolver.dll" />
     <None Include="Assets\Firebase\Editor\Firebase.Editor.dll" />
@@ -450,6 +464,10 @@
       <HintPath>Assets\Firebase\Plugins\Firebase.Analytics.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="GoogleMobileAds.Common">
+      <HintPath>Library\PackageCache\com.google.ads.mobile@9.2.0\GoogleMobileAds\GoogleMobileAds.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Collections.LowLevel.ILSupport">
       <HintPath>Library\PackageCache\com.unity.collections@2.1.4\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
       <Private>False</Private>
@@ -460,6 +478,10 @@
     </Reference>
     <Reference Include="Google.JarResolver">
       <HintPath>Assets\ExternalDependencyManager\Editor\1.2.181\Google.JarResolver.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GoogleMobileAds">
+      <HintPath>Library\PackageCache\com.google.ads.mobile@9.2.0\GoogleMobileAds\GoogleMobileAds.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="unityplastic">
@@ -476,6 +498,10 @@
     </Reference>
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@2.3.1\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Firebase.RemoteConfig">
+      <HintPath>Assets\Firebase\Plugins\Firebase.RemoteConfig.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Firebase.Firestore">
@@ -498,6 +524,10 @@
       <HintPath>Assets\Firebase\Plugins\Firebase.TaskExtension.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="GoogleMobileAds.Core">
+      <HintPath>Library\PackageCache\com.google.ads.mobile@9.2.0\GoogleMobileAds\GoogleMobileAds.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="log4netPlastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@2.3.1\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
       <Private>False</Private>
@@ -518,6 +548,14 @@
       <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="GoogleMobileAds.Ump.Unity">
+      <HintPath>Library\PackageCache\com.google.ads.mobile@9.2.0\GoogleMobileAds\GoogleMobileAds.Ump.Unity.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GoogleMobileAds.Ump">
+      <HintPath>Library\PackageCache\com.google.ads.mobile@9.2.0\GoogleMobileAds\GoogleMobileAds.Ump.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Google.VersionHandler">
       <HintPath>Assets\ExternalDependencyManager\Editor\Google.VersionHandler.dll</HintPath>
       <Private>False</Private>
@@ -528,6 +566,10 @@
     </Reference>
     <Reference Include="Firebase.Crashlytics">
       <HintPath>Assets\Firebase\Plugins\Firebase.Crashlytics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GoogleMobileAds.Unity">
+      <HintPath>Library\PackageCache\com.google.ads.mobile@9.2.0\GoogleMobileAds\GoogleMobileAds.Unity.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
@@ -1086,6 +1128,10 @@
       <HintPath>Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="GoogleMobileAds.Editor">
+      <HintPath>Library\ScriptAssemblies\GoogleMobileAds.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.2D.IK.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
       <Private>False</Private>
@@ -1456,9 +1502,17 @@
       <Project>{13515719-7254-386E-7E7E-909AE6D80E58}</Project>
       <Name>AttributesSamples</Name>
     </ProjectReference>
+    <ProjectReference Include="PathCreatorEditor.csproj">
+      <Project>{B2203969-C3DF-B276-D5B3-CD0A73E45CE7}</Project>
+      <Name>PathCreatorEditor</Name>
+    </ProjectReference>
     <ProjectReference Include="MaxSdk.Scripts.csproj">
       <Project>{7D29CAD8-F592-09B9-8111-DD2B54ADB75F}</Project>
       <Name>MaxSdk.Scripts</Name>
+    </ProjectReference>
+    <ProjectReference Include="PathCreator.csproj">
+      <Project>{0B7F26CF-E340-4B4B-B61A-86748E7C01BD}</Project>
+      <Name>PathCreator</Name>
     </ProjectReference>
     <ProjectReference Include="EditorAttributes.Editor.csproj">
       <Project>{CBD4CC1D-499C-F698-6BE7-90C3D2F2DF01}</Project>

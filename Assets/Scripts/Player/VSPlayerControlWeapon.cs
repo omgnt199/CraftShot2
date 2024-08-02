@@ -36,6 +36,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
     [SerializeField] private LayerMask _aimMask;
     [SerializeField] private GameObject BulletDecalVfx;
     [SerializeField] private GameObject BloodVfx;
+    [SerializeField] private LayerMask _bulletLayer;
     private bool _isShooting;
     private bool _isReloading = false;
     private bool _isAutoAim = false;
@@ -73,6 +74,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
     private float _knifeAttackDelay = 0.5f;
     private float _knifeAttackTimer = 0;
 
+
     //Constt
     private const float DEFEAULT_FOV = 60f;
     private const float AIM_FOV = 45f;
@@ -83,6 +85,10 @@ public class VSPlayerControlWeapon : MonoBehaviour
 
     private bool _isAutoAimMode = true;
     public GameObject Vfx_shoot;
+
+    [Header("GlitchProblem")]
+    public HeadGlitch HeadGlitch;
+
     //Getter/Setter
     public int Magazine { get => _Magazine; }
     public int TotalAmmo { get => _totalAmmo; }
@@ -110,7 +116,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
 #if UNITY_EDITOR
         MyInput();
 #endif
-        if (Physics.Raycast(_fpCamera.position, _fpCamera.transform.forward, out RaycastHit hit, Mathf.Infinity, _aimMask))
+        if (Physics.Raycast(_fpCamera.position + _fpCamera.transform.forward, _fpCamera.transform.forward, out RaycastHit hit, Mathf.Infinity, _aimMask))
         {
             if (LayerMask.LayerToName(hit.collider.gameObject.layer) == "BodyPart")
             {
@@ -228,13 +234,20 @@ public class VSPlayerControlWeapon : MonoBehaviour
             _playerSoundManager.EnableBulletSound(GunUsing.Bullet.BulletSound);
             ////Check Raycast hit
             LayerMask mask = LayerMask.GetMask("BodyPart", "Barrier", "Ground", "ObstacleLayer");
-            Vector3 startPosition = _fpCamera.transform.position;
-            Physics.Raycast(startPosition + _fpCamera.transform.forward * 2f, _fpCamera.transform.forward, out RaycastHit hit, Mathf.Infinity, mask);
+            Vector3 startPosition = _fpCamera.position;
+            Physics.Raycast(startPosition + _fpCamera.forward, _fpCamera.forward, out RaycastHit hit, Mathf.Infinity, mask);
             //Cheat Bullet's velocity = Vector between RaycastHit's point and FirePoint
             Vector3 bulletVelocity;
             if (hit.point != Vector3.zero) bulletVelocity = (hit.point - _firePoint.position).normalized * _firePower;
             else bulletVelocity = _firePoint.forward * _firePower;
-            BulletPool.instance.PickFromPool(gameObject, GunUsing, _firePoint.position, bulletVelocity);
+
+            if (HeadGlitch.IsGlitch)
+            {
+                Debug.Log("weapon glitch");
+                BulletPool.instance.PickFromPool(gameObject, GunUsing, _fpCamera.position + _fpCamera.forward, _fpCamera.forward * _firePower, LayerMask.NameToLayer("BulletPlayer"));
+            }
+            else BulletPool.instance.PickFromPool(gameObject, GunUsing, _firePoint.position, bulletVelocity);
+
             //Is Sniper?
             if (CrossHairUsing == VSCrossHair.Sniper)
             {
@@ -250,35 +263,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
         }
     }
 
-    private void HitPlayer(RaycastHit hit)
-    {
-        VSPlayerInfo victim = hit.collider.gameObject.GetComponentInParent<VSPlayerInfo>();
-        if (GetComponent<VSPlayerInfo>().Team != victim.Team)
-        {
-            //Blood Vfx
-            Instantiate(BloodVfx, hit.point, Quaternion.identity);
-            //Calculate damage
-            int dam = 0;
-            if (hit.collider.CompareTag(VSBodyPart.Body.ToString())) dam = GunUsing.DamageToBody;
-            else if (hit.collider.CompareTag(VSBodyPart.Leg.ToString()) || hit.collider.CompareTag(VSBodyPart.Hand.ToString())) dam = GunUsing.DamageToHandLeg;
-            else dam = GunUsing.DamageToHead;
-            victim.UpdateHP(-dam);
-            if (victim.HP <= 0)
-            {
-                //Update player's kills
-                _playerInfo.Kills++;
-                //Show kill report
-                KillType killType = KillType.None;
-                if (hit.collider.CompareTag(VSBodyPart.Head.ToString())) killType = KillType.HeadShot;
-                VSInGameUIScript.instance.ShowKillReport(_playerInfo.Name, _playerInfo.Team.TeamSide, victim.Name, victim.Team.TeamSide, GunUsing.GunKillIcon, killType);
-                victim.OnDeath();
-                //'Kill' Event trigger
-                Kill(killType);
-            }
-            //Show damage UI
-            VSInGameUIScript.instance.ShowDamgeScore(dam);
-        }
-    }
+
     void Kill(KillType type)
     {
         if (type != KillType.None) PlayerEventListener.RaiseSpecialKillEvent(type);
@@ -499,7 +484,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
     }
     void HandleAutoAim()
     {
-        if (Physics.Raycast(_fpCamera.position + _fpCamera.transform.forward * 2f, _fpCamera.transform.forward, out RaycastHit hit, Mathf.Infinity, _aimMask))
+        if (Physics.Raycast(_fpCamera.position + _fpCamera.transform.forward, _fpCamera.transform.forward, out RaycastHit hit, Mathf.Infinity, _aimMask))
         {
             if (LayerMask.LayerToName(hit.collider.gameObject.layer) == "BodyPart")
             {

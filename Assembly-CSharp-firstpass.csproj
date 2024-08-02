@@ -400,6 +400,10 @@
       <HintPath>Assets\Firebase\Plugins\Firebase.Analytics.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="GoogleMobileAds.Common">
+      <HintPath>Library\PackageCache\com.google.ads.mobile@9.2.0\GoogleMobileAds\GoogleMobileAds.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Collections.LowLevel.ILSupport">
       <HintPath>Library\PackageCache\com.unity.collections@2.1.4\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
       <Private>False</Private>
@@ -408,12 +412,20 @@
       <HintPath>Assets\Adjust\Windows\Stubs\Win81Interface.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="GoogleMobileAds">
+      <HintPath>Library\PackageCache\com.google.ads.mobile@9.2.0\GoogleMobileAds\GoogleMobileAds.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Win10Interface">
       <HintPath>Assets\Adjust\Windows\Stubs\Win10Interface.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Firebase.App">
       <HintPath>Assets\Firebase\Plugins\Firebase.App.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Firebase.RemoteConfig">
+      <HintPath>Assets\Firebase\Plugins\Firebase.RemoteConfig.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Firebase.Firestore">
@@ -428,8 +440,20 @@
       <HintPath>Assets\Firebase\Plugins\Firebase.TaskExtension.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="GoogleMobileAds.Core">
+      <HintPath>Library\PackageCache\com.google.ads.mobile@9.2.0\GoogleMobileAds\GoogleMobileAds.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="DOTween">
       <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GoogleMobileAds.Ump.Unity">
+      <HintPath>Library\PackageCache\com.google.ads.mobile@9.2.0\GoogleMobileAds\GoogleMobileAds.Ump.Unity.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GoogleMobileAds.Ump">
+      <HintPath>Library\PackageCache\com.google.ads.mobile@9.2.0\GoogleMobileAds\GoogleMobileAds.Ump.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
@@ -438,6 +462,10 @@
     </Reference>
     <Reference Include="Firebase.Crashlytics">
       <HintPath>Assets\Firebase\Plugins\Firebase.Crashlytics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GoogleMobileAds.Unity">
+      <HintPath>Library\PackageCache\com.google.ads.mobile@9.2.0\GoogleMobileAds\GoogleMobileAds.Unity.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
@@ -968,6 +996,10 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="GoogleMobileAds.Editor">
+      <HintPath>Library\ScriptAssemblies\GoogleMobileAds.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.2D.IK.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
       <Private>False</Private>
@@ -1330,9 +1362,17 @@
       <Project>{13515719-7254-386E-7E7E-909AE6D80E58}</Project>
       <Name>AttributesSamples</Name>
     </ProjectReference>
+    <ProjectReference Include="PathCreatorEditor.csproj">
+      <Project>{B2203969-C3DF-B276-D5B3-CD0A73E45CE7}</Project>
+      <Name>PathCreatorEditor</Name>
+    </ProjectReference>
     <ProjectReference Include="MaxSdk.Scripts.csproj">
       <Project>{7D29CAD8-F592-09B9-8111-DD2B54ADB75F}</Project>
       <Name>MaxSdk.Scripts</Name>
+    </ProjectReference>
+    <ProjectReference Include="PathCreator.csproj">
+      <Project>{0B7F26CF-E340-4B4B-B61A-86748E7C01BD}</Project>
+      <Name>PathCreator</Name>
     </ProjectReference>
     <ProjectReference Include="EditorAttributes.Editor.csproj">
       <Project>{CBD4CC1D-499C-F698-6BE7-90C3D2F2DF01}</Project>

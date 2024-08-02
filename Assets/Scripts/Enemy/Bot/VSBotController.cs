@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using DG.Tweening;
+using Unity.Burst.Intrinsics;
+using Assets.Scripts.Common;
+
 public class VSBotController : MonoBehaviour
 {
     private NavMeshAgent agent;
@@ -176,7 +179,7 @@ public class VSBotController : MonoBehaviour
         int chance = Random.Range(1, 100);
         if (VSGlobals.MODE == "Domination")
         {
-            if (chance % 2 == 0 && ZonePoints.Count != 0) walkPoint = ZonePoints[Random.Range(0, ZonePoints.Count)].position;
+            if (chance % 2 == 0 && ZonePoints.Count != 0) walkPoint = ZonePoints[new System.Random().Next(ZonePoints.Count)].position;
             else if (chance % 2 != 0)
             {
                 for (int i = 0; i < 30; i++)
@@ -235,7 +238,7 @@ public class VSBotController : MonoBehaviour
         //Recoil
         WeaponRecoil.Recoil();
         //Check Raycast hit
-        LayerMask mask = LayerMask.GetMask("BodyPart", "Barrier", "Border", "Ground", "Smoke", "ObstacleLayer");
+        LayerMask mask = LayerMask.GetMask("BodyPart", "Barrier", "Border", "Ground", "Smoke", "ObstacleLayer", "MainPlayerBodyPart");
         Vector3 startPosition = fpCamera.transform.position;
         Vector3 direction = (closestObj.transform.position - transform.position).normalized;
         Physics.Raycast(startPosition, direction, out RaycastHit hit, Mathf.Infinity, mask);
@@ -243,7 +246,7 @@ public class VSBotController : MonoBehaviour
         Vector3 bulletVelocity;
         //if (hit.point != Vector3.zero) bulletVelocity = (hit.point - fpCamera.position).normalized * firePower;
         bulletVelocity = direction * firePower;
-        BulletPool.instance.PickFromPool(gameObject, GunUsing, firePoint.position, bulletVelocity);
+        BulletPool.instance.PickFromPool(gameObject, GunUsing, firePoint.position, bulletVelocity, LayerMask.NameToLayer("BulletBot"));
         //CheckRaycastHit(mask, startPosition);
     }
 

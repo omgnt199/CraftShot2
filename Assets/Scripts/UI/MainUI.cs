@@ -29,6 +29,7 @@ public class MainUI : MonoBehaviour
     }
     public void ShowHidePopUp(string popupName)
     {
+        ServiceManager.ShowInter();
         var popup = Instance._dictPopUpName[popupName];
         popup.SetActive(!popup.activeSelf);
     }

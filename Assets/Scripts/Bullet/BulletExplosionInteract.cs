@@ -20,14 +20,24 @@ public class BulletExplosionInteract : BulletInteract
         explostionVfx.transform.position += 0.02f * collision.contacts[0].normal;
         //Calculated Damage
         Collider[] hitcolliders;
-        LayerMask MaskAttack = LayerMask.GetMask("Player", "Enemy");
+        LayerMask MaskAttack = LayerMask.GetMask("Player", "Enemy", "ObstacleLayer");
         hitcolliders = Physics.OverlapSphere(transform.position, gunUsing.Bullet.ExplosionRadius, MaskAttack);
-
+        List<GameObject> victimCheckedList = new List<GameObject>();
         foreach (var hit in hitcolliders)
         {
+            if(hit.gameObject.GetComponent<CarExplosion>()!= null)
+            {
+                hit.gameObject.GetComponent<CarExplosion>().Explosion();
+                continue;
+            }
+
+            if (hit.gameObject.layer == LayerMask.NameToLayer("ObstacleLayer")) continue;
+
             //if (WhoShoot.Equals(hit.gameObject)) continue;
             VSPlayerInfo whoShootInfo = WhoShoot.GetComponent<VSPlayerInfo>();
             GameObject victim = hit.gameObject;
+            if (victimCheckedList.Contains(victim)) continue;
+            else victimCheckedList.Add(victim);
             VSPlayerInfo victimInfo = victim.GetComponent<VSPlayerInfo>();
             if (victimInfo.Team != whoShootInfo.Team)
             {

@@ -25,8 +25,9 @@ MonoBehaviour:
     type: 2}
   Currency: 2
   Price: 100
+  LevelUnlock: 0
   Magazine: 10
-  TotalAmmo: 600
+  TotalAmmo: 60
   FirePower: 100
   FireSpeed: 1
   TimeReload: 2

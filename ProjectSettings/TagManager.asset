@@ -40,11 +40,11 @@ TagManager:
   - UI
   - Player
   - PreviewImageOnly
-  - GuideBox
+  - IgnoreBulletForce
   - InteractLayer
   - ObstacleLayer
-  - Mob
-  - DebugSystem
+  - WeaponObstacle
+  - MainPlayerBodyPart
   - Border
   - Barrier
   - ItemPower
@@ -53,13 +53,13 @@ TagManager:
   - UICamera
   - Weapon
   - Enemy
-  - Bullet
+  - BulletPlayer
   - BodyPart
   - Zone
   - Aimed
   - Radar
   - Effect
-  - Other
+  - BulletBot
   - WeaponLayer
   - Smoke
   - LineSpeed

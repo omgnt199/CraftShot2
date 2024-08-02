@@ -23,10 +23,11 @@ public class VSScoreBoardUI : MonoBehaviour
     [SerializeField] private GameObject LeafTable;
     [SerializeField] private GameObject RightTable;
     [SerializeField] private GameObject WinLose;
+    [SerializeField] private GameObject RewardPopUp;
     //Text
     [SerializeField] private TextMeshProUGUI TabText;
-    [SerializeField] private TextMeshProUGUI WinLoseTxt;
-    [SerializeField] private TextMeshProUGUI CoinRewardTxt;
+    [SerializeField] private GameObject WinTitle;
+    [SerializeField] private GameObject LoseTitle;
     //Sprite
     [SerializeField] private Sprite _mainPlayerBarSprite;
     [SerializeField] private Sprite _defaultPlayerBarSprite;
@@ -34,12 +35,17 @@ public class VSScoreBoardUI : MonoBehaviour
     [SerializeField] private Sprite _enemyTeamBarSprite;
     //Image
     [SerializeField] private Image _rightTeamBarImg;
+
+    //
+    [SerializeField] private Button _playerButton;
     //
     private Dictionary<VSPlayerInfo, int> _playerTeamAValue;
     private Dictionary<VSPlayerInfo, int> _playerTeamBValue;
     private Dictionary<VSPlayerInfo, int> _playerValue;
     private string _Mode;
     private int _playerRankInDeathmatchMode;
+
+    public int PlayerRankInDeathmatchMode => _playerRankInDeathmatchMode;
 
 
 
@@ -61,7 +67,7 @@ public class VSScoreBoardUI : MonoBehaviour
             _rightTeamBarImg.sprite = _allyTeamBarSprite;
         }
 
-        foreach(var player in GameManager.Instance.PlayerList)
+        foreach (var player in GameManager.Instance.PlayerList)
         {
             PlayerList.Add(player.GetComponent<VSPlayerInfo>());
             if (player.GetComponent<VSPlayerInfo>().Team.TeamSide == VSTeamSide.TeamAlly) PlayersTeamA.Add(player.GetComponent<VSPlayerInfo>());
@@ -139,7 +145,7 @@ public class VSScoreBoardUI : MonoBehaviour
 
                     int indexTable = 1;
                     int indexPlayer = 0;
-                    foreach(var it in _playerValue.OrderByDescending(pair => pair.Value))
+                    foreach (var it in _playerValue.OrderByDescending(pair => pair.Value))
                     {
                         if (indexPlayer < 5)
                         {
@@ -175,51 +181,27 @@ public class VSScoreBoardUI : MonoBehaviour
                 }
 
         }
-      
+
 
     }
 
     public void SetWinLose()
     {
-        if(_Mode == "Domination")
+        if (_Mode == "Domination")
         {
-            WinLose.SetActive(true);
-            if (GameManager.Instance.Teamwin.TeamSide == VSTeamSide.TeamAlly)
-            {
-                WinLoseTxt.text = "VICTORY";
-                WinLoseTxt.color = new Color32(0, 209, 255, 255);
-                CoinRewardTxt.text = "+150";
-                //CurrencyData.UpdateCurrency(Currency.Coin, 150);
-            }
-            else if (GameManager.Instance.Teamwin.TeamSide == VSTeamSide.TeamEnemy)
-            {
-                WinLoseTxt.text = "LOSE";
-                WinLoseTxt.color = new Color32(200, 93, 84, 255);
-                CoinRewardTxt.text = "+30";
-                //CurrencyData.UpdateCurrency(Currency.Coin, 30);
-            }
+            if (GameManager.Instance.Teamwin.TeamSide == VSTeamSide.TeamAlly) WinTitle.SetActive(true);
+            else if (GameManager.Instance.Teamwin.TeamSide == VSTeamSide.TeamEnemy) LoseTitle.SetActive(true);
         }
-        else if(_Mode == "Deathmatch")
+        else if (_Mode == "Deathmatch")
         {
-            WinLose.SetActive(true);
-            if(_playerRankInDeathmatchMode == 1)
-            {
-                WinLoseTxt.text = "VICTORY";
-                WinLoseTxt.color = new Color32(0, 209, 255, 255);
-                CoinRewardTxt.text = "+150";
-                //CurrencyData.UpdateCurrency(Currency.Coin, 150);
-            }
-            else if(_playerRankInDeathmatchMode > 1)
-            {
-                int coinReward;
-                if (_playerRankInDeathmatchMode >= 6) coinReward = 10 * (10 - _playerRankInDeathmatchMode + 1);
-                else coinReward = 50 + (5 - _playerRankInDeathmatchMode + 1) * 20;
-                WinLoseTxt.text = "LOSE ";
-                WinLoseTxt.color = new Color32(200, 93, 84, 255);
-                CoinRewardTxt.text = "+" + coinReward.ToString();
-                //CurrencyData.UpdateCurrency(Currency.Coin, coinReward);
-            }
+            if (_playerRankInDeathmatchMode <= 3) WinTitle.SetActive(true);
+            else LoseTitle.SetActive(true);
         }
+        _playerButton.onClick.AddListener(ShowRewardPopUp);
     }
-
+    public void ShowRewardPopUp()
+    {
+        gameObject.SetActive(false);
+        RewardPopUp.SetActive(true);
+    }
 }

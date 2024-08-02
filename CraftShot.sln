@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditorAttributes.Editor", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxSdk.Scripts", "MaxSdk.Scripts.csproj", "{436B9550-259F-D112-D571-32698C5E3BFD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PathCreator", "PathCreator.csproj", "{0B7F26CF-E340-4B4B-B61A-86748E7C01BD}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditorAttributes", "EditorAttributes.csproj", "{FA14F52F-60BB-1B3B-57ED-EFACDD645FB6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{06A0E5E4-BC07-655E-32C5-AEA01F10EED2}"
@@ -16,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{52F40C1F-9FD4-952B-685C-DDA29D1A7462}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxSdk.Scripts.IntegrationManager.Editor", "MaxSdk.Scripts.IntegrationManager.Editor.csproj", "{8703D636-BD92-6E05-E6A3-5101D0B089AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PathCreatorEditor", "PathCreatorEditor.csproj", "{B2203969-C3DF-B276-D5B3-CD0A73E45CE7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,10 @@ Global
 		{436B9550-259F-D112-D571-32698C5E3BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{436B9550-259F-D112-D571-32698C5E3BFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{436B9550-259F-D112-D571-32698C5E3BFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B7F26CF-E340-4B4B-B61A-86748E7C01BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B7F26CF-E340-4B4B-B61A-86748E7C01BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B7F26CF-E340-4B4B-B61A-86748E7C01BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B7F26CF-E340-4B4B-B61A-86748E7C01BD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FA14F52F-60BB-1B3B-57ED-EFACDD645FB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FA14F52F-60BB-1B3B-57ED-EFACDD645FB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA14F52F-60BB-1B3B-57ED-EFACDD645FB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -55,6 +63,10 @@ Global
 		{8703D636-BD92-6E05-E6A3-5101D0B089AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8703D636-BD92-6E05-E6A3-5101D0B089AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8703D636-BD92-6E05-E6A3-5101D0B089AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2203969-C3DF-B276-D5B3-CD0A73E45CE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2203969-C3DF-B276-D5B3-CD0A73E45CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2203969-C3DF-B276-D5B3-CD0A73E45CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2203969-C3DF-B276-D5B3-CD0A73E45CE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

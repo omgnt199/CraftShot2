@@ -31,6 +31,7 @@ public class DeathMatchModeSO : GameModeSO
     }
     public override void EndMode()
     {
+        _updateCounterUIEvent.OnEventRaised = null;
         GameManager.Instance.OnEndGame();
     }
     void UpdateCounter()

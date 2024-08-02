@@ -43,24 +43,24 @@ public class ShopEquipmentCard : MonoBehaviour
             _statics.Add(new VSStatics("Damage", ((VSGun)equipment).DamageToHead.ToString(), ((VSGun)equipment).DamageToHead / 100f));
             _statics.Add(new VSStatics("Fire rate", ((VSGun)equipment).FireSpeed.ToString() + "/s", 1f / ((VSGun)equipment).FireSpeed / 10f));
             _statics.Add(new VSStatics("Reload time", ((VSGun)equipment).TimeReload.ToString() + "s", 1f / ((VSGun)equipment).TimeReload / 2f));
-            MainButton.onClick.AddListener(() => ShopContainerUI.Instance.EquipmentStatUI.Show(Equipment, _statics));
+            MainButton.onClick.AddListener(() => ShopContainerUI.Instance.EquipmentStatUI.ShowInShop(Equipment, _statics));
         }
         else if (equipment.Type == VSEquipmentType.Nade)
         {
             _statics.Add(new VSStatics("Radius", ((VSNade)equipment).ExplosionRadius.ToString(), ((VSNade)equipment).ExplosionRadius / 5f));
             _statics.Add(new VSStatics("Damage", ((VSNade)equipment).Maxdamage.ToString(), ((VSNade)equipment).Maxdamage / 100f));
 
-            MainButton.onClick.AddListener(() => ShopContainerUI.Instance.EquipmentStatUI.Show(Equipment, _statics));
+            MainButton.onClick.AddListener(() => ShopContainerUI.Instance.EquipmentStatUI.ShowInShop(Equipment, _statics));
         }
         else if (equipment.Type == VSEquipmentType.SupportWeapon)
         {
             _Info = ((VSSupportWeapon)equipment).Info;
-            MainButton.onClick.AddListener(() => ShopContainerUI.Instance.EquipmentStatUI.Show(equipment, _Info));
+            MainButton.onClick.AddListener(() => ShopContainerUI.Instance.EquipmentStatUI.ShowInShop(equipment, _Info));
         }
-        else if(equipment.Type == VSEquipmentType.Character)
+        else if (equipment.Type == VSEquipmentType.Character)
         {
-            MainButton.onClick.AddListener(() => ShopContainerUI.Instance.EquipmentStatUI.ShowCharacterSkin(equipment));
-        } 
+            MainButton.onClick.AddListener(() => ShopContainerUI.Instance.EquipmentStatUI.ShowCharacterSkinInShop(equipment));
+        }
     }
 
     public void Buy()
@@ -72,8 +72,12 @@ public class ShopEquipmentCard : MonoBehaviour
             PlayerEquipmentInfo.Save();
             BuyButton.gameObject.SetActive(false);
 
+            ShopContainerUI.Instance.EquipmentStatUI.LoadMainButtonBehaviorInShop(Equipment);
+
             GlobalUI.Instance.ShowPopUp("BuyEquipment");
             _unlockEquipmentEvent.RaiseEvent(Equipment);
         }
+        //else GlobalUI.Instance.ShowPopUp("ShopCurrency");
     }
+
 }

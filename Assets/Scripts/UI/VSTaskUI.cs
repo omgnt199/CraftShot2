@@ -37,10 +37,11 @@ public class VSTaskUI : MonoBehaviour
     {
         if (Task.IsCompleted)
         {
+            ServiceManager.ShowInter();
             foreach (var reward in Task.CurrencyReward) CurrencyData.UpdateCurrency(reward.CurrencyType, reward.RewardValue);
             DailyTaskObserver.OnAnyDailyTaskClaimed(Task);
             VSDailyTaskPopUpUI.Instance.LoadTaskUI();
-            while (ExperienceSystem.IsCanLevelUp()) ExperienceSystem.LevelUp();
+            //while (ExperienceSystem.IsCanLevelUp()) ExperienceSystem.LevelUp();
             PlayerProfileUI.instance.UpdateExpBarUI(CurrencyData.GetCurrencyValue(CurrencyType.Exp));
         }
     }

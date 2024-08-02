@@ -38,6 +38,14 @@ public class BulletPool : MonoBehaviour
         availableBullets[0].Activate(gun, position, velocity);
         availableBullets.RemoveAt(0);
     }
+    public void PickFromPool(GameObject whoShoot, VSGun gun, Vector3 position, Vector3 velocity, int layer)
+    {
+        //Debug.Log("PickBullet");
+        if (availableBullets.Count < 1) return;
+        availableBullets[0].Activate(whoShoot, gun, position, velocity, layer);
+        availableBullets.RemoveAt(0);
+    }
+
     public void AddToPool(BulletSpawner bullet)
     {
         if (!availableBullets.Contains(bullet)) availableBullets.Add(bullet);

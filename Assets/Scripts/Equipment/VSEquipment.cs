@@ -15,6 +15,7 @@ public class VSEquipment : ScriptableObject
     public AnimatorOverrideController AnimatorControllerForBot;
     public CurrencyType Currency;
     public int Price;
+    public int LevelUnlock;
 #if UNITY_EDITOR
     [Button]
     public void InitializePool()

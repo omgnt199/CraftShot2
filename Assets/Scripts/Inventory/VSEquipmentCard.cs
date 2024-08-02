@@ -48,23 +48,23 @@ public class VSEquipmentCard : MonoBehaviour
             _statics.Add(new VSStatics("Damage", ((VSGun)equipment).DamageToHead.ToString(), ((VSGun)equipment).DamageToHead / 100f));
             _statics.Add(new VSStatics("Fire rate", ((VSGun)equipment).FireSpeed.ToString() + "/s", 1f / ((VSGun)equipment).FireSpeed / 10f));
             _statics.Add(new VSStatics("Reload time", ((VSGun)equipment).TimeReload.ToString() + "s", 1f / ((VSGun)equipment).TimeReload / 2f));
-            MainButton.onClick.AddListener(() => VSInventoryUIController.Instance.EquipmentStatUI.Show(Equipment, _statics));
+            MainButton.onClick.AddListener(() => VSInventoryUIController.Instance.EquipmentStatUI.ShowInInventory(Equipment, _statics));
         }
         else if (equipment.Type == VSEquipmentType.Nade)
         {
             _statics.Add(new VSStatics("Radius", ((VSNade)equipment).ExplosionRadius.ToString(), ((VSNade)equipment).ExplosionRadius / 5f));
             _statics.Add(new VSStatics("Damage", ((VSNade)equipment).Maxdamage.ToString(), ((VSNade)equipment).Maxdamage / 100f));
 
-            MainButton.onClick.AddListener(() => VSInventoryUIController.Instance.EquipmentStatUI.Show(Equipment, _statics));
+            MainButton.onClick.AddListener(() => VSInventoryUIController.Instance.EquipmentStatUI.ShowInInventory(Equipment, _statics));
         }
         else if (equipment.Type == VSEquipmentType.SupportWeapon)
         {
             _Info = ((VSSupportWeapon)equipment).Info;
-            MainButton.onClick.AddListener(() => VSInventoryUIController.Instance.EquipmentStatUI.Show(equipment, _Info));
+            MainButton.onClick.AddListener(() => VSInventoryUIController.Instance.EquipmentStatUI.ShowInInventory(equipment, _Info));
         }
         else if (equipment.Type == VSEquipmentType.Character)
         {
-            MainButton.onClick.AddListener(() => VSInventoryUIController.Instance.EquipmentStatUI.ShowCharacterSkin(equipment));
+            MainButton.onClick.AddListener(() => VSInventoryUIController.Instance.EquipmentStatUI.ShowCharacterSkinInInventory(equipment));
         }
     }
 

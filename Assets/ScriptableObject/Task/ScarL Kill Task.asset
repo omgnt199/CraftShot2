@@ -17,10 +17,10 @@ MonoBehaviour:
   - CurrencyType: 1
     RewardValue: 125
   - CurrencyType: 0
-    RewardValue: 100
+    RewardValue: 20
   GoalValue: 10
-  AchivedValue: 0
-  IsCompleted: 0
-  IsClaimed: 0
+  AchivedValue: 10
+  IsCompleted: 1
+  IsClaimed: 1
   EventName: KillByGun
   Gun: {fileID: 11400000, guid: 0c92cb2ef3e4e654fbf61ef8b5d9856b, type: 2}

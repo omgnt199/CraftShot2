@@ -17,7 +17,7 @@ MonoBehaviour:
   - CurrencyType: 1
     RewardValue: 125
   - CurrencyType: 0
-    RewardValue: 300
+    RewardValue: 20
   GoalValue: 10
   AchivedValue: 10
   IsCompleted: 1

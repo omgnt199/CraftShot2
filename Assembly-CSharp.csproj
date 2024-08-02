@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\UI\HomeUI.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\FPSCounter.cs" />
     <Compile Include="Assets\Scripts\Currency\Currency.cs" />
+    <Compile Include="Assets\CarExplosion.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXEffectController.cs" />
     <Compile Include="Assets\#NVJOB Name Generator\Examples\Example 0\OneNameExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
     <Compile Include="Assets\Scripts\MiniGamesSettingPopUpUI.cs" />
     <Compile Include="Assets\Scripts\UI\MainUI.cs" />
+    <Compile Include="Assets\PathCreator\Examples\Scripts\PathSceneTool.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\ObjectResetter.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustEventFailure.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
@@ -106,8 +108,8 @@
     <Compile Include="Assets\Scripts\DailyTask\DailyTaskObserver.cs" />
     <Compile Include="Assets\Scripts\UI\ShopEquipmentCard.cs" />
     <Compile Include="Assets\Scripts\Zone\VSZoneManager.cs" />
-    <Compile Include="Assets\Epic Toon FX\Scripts\ETFXRotation.cs" />
     <Compile Include="Assets\Scripts\Character\Damageable.cs" />
+    <Compile Include="Assets\Epic Toon FX\Scripts\ETFXRotation.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\Scripts\ExplosionFireAndDebris.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\FOVKick.cs" />
@@ -144,8 +146,10 @@
     <Compile Include="Assets\Scripts\Camera\VSWeaponCameraBehavior.cs" />
     <Compile Include="Assets\Scripts\Inventory\VSStatics.cs" />
     <Compile Include="Assets\MT Assets\Easy Mesh Combiner\DemoScene\Scripts\EnviromentMovement.cs" />
+    <Compile Include="Assets\Scripts\Service\RemoteConfigLoader.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Scripts\EventListener.cs" />
+    <Compile Include="Assets\Scripts\UI\RewardPopUpUI.cs" />
     <Compile Include="Assets\Scripts\Enemy\Bot\BotControlAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
@@ -196,12 +200,14 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\ItemPower\ItemPowerInteract.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\Scripts\FireLight.cs" />
+    <Compile Include="Assets\Scripts\Service\ApplovinAds.cs" />
     <Compile Include="Assets\Scripts\GlobalSound.cs" />
     <Compile Include="Assets\MT Assets\Easy Mesh Combiner\Libraries\MTAssets Editor UI\MTAssetsEditorUi.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustUrlStrategy.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXEffectControllerPooled.cs" />
     <Compile Include="Assets\Scripts\Player\VSCrossHairController.cs" />
     <Compile Include="Assets\Scripts\Character\HealthConfigSO.cs" />
+    <Compile Include="Assets\PathCreator\Examples\Scripts\RoadMeshCreator.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\Scripts\Hose.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
     <Compile Include="Assets\Scripts\Zone\VSZoneController.cs" />
@@ -217,6 +223,7 @@
     <Compile Include="Assets\Scripts\UI\StorePopUpUI.cs" />
     <Compile Include="Assets\Scripts\Event\VoidEventChanelSO.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\2D\Scripts\Platformer2DUserControl.cs" />
+    <Compile Include="Assets\PathCreator\Examples\Scripts\PathSpawner.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonUserControl.cs" />
     <Compile Include="Assets\Scripts\Enemy\Bot\VSBotControlWeapon.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
@@ -230,10 +237,12 @@
     <Compile Include="Assets\Epic Toon FX\Scripts\ETFXPitchRandomizer.cs" />
     <Compile Include="Assets\Scripts\Equipment\Weapon\VSShootVfx.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs" />
+    <Compile Include="Assets\Scripts\Service\BannerState.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustEnvironment.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\Scripts\SmokeParticles.cs" />
     <Compile Include="Assets\Scripts\Camera\LargeMapNavCam.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Cameras\Scripts\HandHeldCam.cs" />
+    <Compile Include="Assets\Scripts\Service\BannerHolder.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\FollowTarget.cs" />
     <Compile Include="Assets\Scripts\Effect\VSTrail.cs" />
     <Compile Include="Assets\Scripts\Bullet\BulletInteract.cs" />
@@ -242,6 +251,8 @@
     <Compile Include="Assets\Scripts\Player\ImovementInput.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Cameras\Scripts\AbstractTargetFollower.cs" />
     <Compile Include="Assets\Scripts\GameMode\GameModePoolSO.cs" />
+    <Compile Include="Assets\Scripts\Service\AdConfig.cs" />
+    <Compile Include="Assets\PathCreator\Examples\Scripts\PathPlacer.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\WaypointCircuit.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustPlayStoreSubscription.cs" />
     <Compile Include="Assets\Pixel Arsenal\Demo\Scripts\PixelArsenalBeamScript.cs" />
@@ -308,6 +319,7 @@
     <Compile Include="Assets\Scripts\VSEnum.cs" />
     <Compile Include="Assets\Scripts\DailyTask\VSHeadShotTask.cs" />
     <Compile Include="Assets\Scripts\FireCurveProjectile.cs" />
+    <Compile Include="Assets\Scripts\Service\ServiceManager.cs" />
     <Compile Include="Assets\Scripts\ExperienceSystem.cs" />
     <Compile Include="Assets\Scripts\GameMode\DominationModeSO.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\MobileInput.cs" />
@@ -321,6 +333,7 @@
     <Compile Include="Assets\MT Assets\Easy Mesh Combiner\DemoScene\Scripts\CombineInRuntimeDemo.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\Scripts\Event\EventChanelSO.cs" />
+    <Compile Include="Assets\PathCreator\Examples\Scripts\PathFollower.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerSoundManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
@@ -349,6 +362,7 @@
     <Compile Include="Assets\Scripts\ItemPower\ItemPowerSO.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCharacter.cs" />
     <Compile Include="Assets\Pixel Arsenal\Demo\Scripts\PixelArsenalProjectileScript.cs" />
+    <Compile Include="Assets\Scripts\EnvironmentSetup.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Scripts\HUD.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustAppStorePurchase.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
@@ -381,6 +395,7 @@
     <Compile Include="Assets\Pixel Arsenal\Scripts\PixelArsenalBeamStatic.cs" />
     <Compile Include="Assets\Scripts\GunHolder.cs" />
     <Compile Include="Assets\Scripts\VSMuzzle.cs" />
+    <Compile Include="Assets\PathCreator\Examples\Scripts\GeneratePathExample.cs" />
     <Compile Include="Assets\Scripts\Player\VSPlayerControlWeapon.cs" />
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\VFX Library\UICanvasManager.cs" />
     <Compile Include="Assets\Scripts\UI\VSKillReportUI.cs" />
@@ -403,6 +418,7 @@
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Characters\FirstPersonCharacter\Scripts\RigidbodyFirstPersonController.cs" />
     <Compile Include="Assets\Scripts\UI\HealthBarUI.cs" />
     <Compile Include="Assets\Adjust\Unity\AdjustAppStoreSubscription.cs" />
+    <Compile Include="Assets\Scripts\Player\HeadGlitch.cs" />
     <Compile Include="Assets\Scripts\Effect\LightUIEffect.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\2D\Scripts\Camera2DFollow.cs" />
@@ -438,6 +454,8 @@
     <None Include="Assets\Adjust\Windows\WS\AdjustWS.dll" />
     <None Include="Assets\Adjust\Windows\WU10\Win10Interface.dll" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-firestore-unity\maven-metadata.xml" />
+    <None Include="Assets\Firebase\Plugins\x86_64\FirebaseCppAnalytics.dll" />
+    <None Include="Assets\Firebase\Plugins\iOS\Firebase.RemoteConfig.dll" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
     <None Include="Assets\Firebase\Plugins\iOS\Firebase.Firestore.dll" />
     <None Include="Assets\Adjust\Windows\WS\WinWsInterface.dll" />
@@ -461,6 +479,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-config-unity\maven-metadata.xml" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-analytics-unity\maven-metadata.xml" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularSmooth.shader" />
@@ -478,6 +497,7 @@
     <None Include="Assets\Adjust\Windows\WU10\AdjustUAP10.dll" />
     <None Include="Assets\Firebase\Plugins\Firebase.Firestore.dll" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Effects\ImageEffects\Readme.txt" />
+    <None Include="Assets\GoogleMobileAds\link.xml" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
     <None Include="Assets\Firebase\Plugins\iOS\Firebase.Crashlytics.dll" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
@@ -487,6 +507,9 @@
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
     <None Include="Assets\MT Assets\Easy Mesh Combiner\Third-Party Assets.txt" />
     <None Include="Assets\Firebase\Plugins\Firebase.Platform.dll" />
+    <None Include="Assets\Firebase\Plugins\x86_64\FirebaseCppRemoteConfig.dll" />
+    <None Include="Assets\Firebase\Plugins\x86_64\FirebaseCppApp-12_1_0.dll" />
+    <None Include="Assets\Firebase\Plugins\Firebase.RemoteConfig.dll" />
     <None Include="Assets\Adjust\Windows\Newtonsoft.Json.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-crashlytics-unity\maven-metadata.xml" />
@@ -827,6 +850,10 @@
       <HintPath>Assets\Firebase\Plugins\Firebase.Analytics.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="GoogleMobileAds.Common">
+      <HintPath>Library\PackageCache\com.google.ads.mobile@9.2.0\GoogleMobileAds\GoogleMobileAds.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Collections.LowLevel.ILSupport">
       <HintPath>Library\PackageCache\com.unity.collections@2.1.4\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
       <Private>False</Private>
@@ -835,12 +862,20 @@
       <HintPath>Assets\Adjust\Windows\Stubs\Win81Interface.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="GoogleMobileAds">
+      <HintPath>Library\PackageCache\com.google.ads.mobile@9.2.0\GoogleMobileAds\GoogleMobileAds.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Win10Interface">
       <HintPath>Assets\Adjust\Windows\Stubs\Win10Interface.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Firebase.App">
       <HintPath>Assets\Firebase\Plugins\Firebase.App.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Firebase.RemoteConfig">
+      <HintPath>Assets\Firebase\Plugins\Firebase.RemoteConfig.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Firebase.Firestore">
@@ -855,8 +890,20 @@
       <HintPath>Assets\Firebase\Plugins\Firebase.TaskExtension.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="GoogleMobileAds.Core">
+      <HintPath>Library\PackageCache\com.google.ads.mobile@9.2.0\GoogleMobileAds\GoogleMobileAds.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="DOTween">
       <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GoogleMobileAds.Ump.Unity">
+      <HintPath>Library\PackageCache\com.google.ads.mobile@9.2.0\GoogleMobileAds\GoogleMobileAds.Ump.Unity.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GoogleMobileAds.Ump">
+      <HintPath>Library\PackageCache\com.google.ads.mobile@9.2.0\GoogleMobileAds\GoogleMobileAds.Ump.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
@@ -865,6 +912,10 @@
     </Reference>
     <Reference Include="Firebase.Crashlytics">
       <HintPath>Assets\Firebase\Plugins\Firebase.Crashlytics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GoogleMobileAds.Unity">
+      <HintPath>Library\PackageCache\com.google.ads.mobile@9.2.0\GoogleMobileAds\GoogleMobileAds.Unity.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
@@ -1395,6 +1446,10 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="GoogleMobileAds.Editor">
+      <HintPath>Library\ScriptAssemblies\GoogleMobileAds.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.2D.IK.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
       <Private>False</Private>
@@ -1761,9 +1816,17 @@
       <Project>{13515719-7254-386E-7E7E-909AE6D80E58}</Project>
       <Name>AttributesSamples</Name>
     </ProjectReference>
+    <ProjectReference Include="PathCreatorEditor.csproj">
+      <Project>{B2203969-C3DF-B276-D5B3-CD0A73E45CE7}</Project>
+      <Name>PathCreatorEditor</Name>
+    </ProjectReference>
     <ProjectReference Include="MaxSdk.Scripts.csproj">
       <Project>{7D29CAD8-F592-09B9-8111-DD2B54ADB75F}</Project>
       <Name>MaxSdk.Scripts</Name>
+    </ProjectReference>
+    <ProjectReference Include="PathCreator.csproj">
+      <Project>{0B7F26CF-E340-4B4B-B61A-86748E7C01BD}</Project>
+      <Name>PathCreator</Name>
     </ProjectReference>
     <ProjectReference Include="EditorAttributes.Editor.csproj">
       <Project>{CBD4CC1D-499C-F698-6BE7-90C3D2F2DF01}</Project>
