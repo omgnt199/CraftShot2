@@ -8,4 +8,5 @@ public abstract class GameModeSO : ScriptableObject
     public abstract void EnterMode();
     public abstract void UpdateMode();
     public abstract void EndMode();
+    public abstract void Revive(GameObject player);
 }

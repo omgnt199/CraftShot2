@@ -1,3 +1,4 @@
+using Assets.Scripts.Character;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,12 +33,10 @@ public class VSMolotovHandle : VSNadeHandle
                         GameObject victim = hit.gameObject;
                         VSPlayerInfo victimInfo = victim.GetComponent<VSPlayerInfo>();
                         int damage = NadeUsing.DamageOverTime;
-                        victimInfo.UpdateHP(-damage);
+                        victim.GetComponent<Damageable>().ReceiveDamage(damage,WhoThrow.gameObject);
                         if (damage > 0 && WhoThrow.gameObject.CompareTag("Player")) VSInGameUIScript.instance.ShowDamgeScore(damage);
-                        if (damage > 0 && victim.CompareTag("Player")) VSInGameUIScript.instance.ShowTakeDamagePopUp((WhoThrow.transform.position - victim.transform.position).normalized);
-                        if (victimInfo.HP <= 0)
+                        if (victimInfo.HP.CurrentHeath <= 0)
                         {
-                            victimInfo.OnDeath();
                             VSInGameUIScript.instance.ShowKillReport(WhoThrow.GetComponent<VSPlayerInfo>().Name, WhoThrow.GetComponent<VSPlayerInfo>().Team.TeamSide, victim.GetComponent<VSPlayerInfo>().Name, victimInfo.Team.TeamSide, NadeUsing.NadeKillIcon, KillType.None);
                             if (WhoThrow.Team == victimInfo.Team) WhoThrow.Kills--;
                             else WhoThrow.Kills++;

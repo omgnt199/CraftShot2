@@ -1,3 +1,4 @@
+using Assets.Scripts.Character;
 using Assets.Scripts.Common;
 using System.Collections;
 using System.Collections.Generic;
@@ -45,14 +46,13 @@ public class BulletExplosionInteract : BulletInteract
                 float distanceFromVictimToExplosion = Vector3.Distance(victim.transform.position, transform.position);
                 if (distanceFromVictimToExplosion <= gunUsing.Bullet.ExplosionRadius && distanceFromVictimToExplosion > gunUsing.Bullet.ExplosionRadius / 2f) damage = 30;
                 else if (distanceFromVictimToExplosion <= 2) damage = 50;
-                victimInfo.UpdateHP(-damage);
+                //victimInfo.UpdateHP(-damage);
 
+                victim.GetComponent<Damageable>().ReceiveDamage(damage,WhoShoot);
                 victim.GetComponent<Damageable>().SpawnTakeDamageVFX(collision.contacts[0]);
 
-                if (victimInfo.HP <= 0)
+                if (victimInfo.HP.CurrentHeath <= 0)
                 {
-                    victimInfo.OnDeath();
-
                     VSInGameUIScript.instance.ShowKillReport(whoShootInfo.Name, whoShootInfo.Team.TeamSide, victimInfo.Name, victimInfo.Team.TeamSide, gunUsing.GunKillIcon, KillType.None);
                     if (whoShootInfo.Team == victimInfo.Team) whoShootInfo.Kills--;
                     else whoShootInfo.Kills++;
@@ -60,7 +60,6 @@ public class BulletExplosionInteract : BulletInteract
                     if (WhoShoot.gameObject.CompareTag("Player")) PlayerEventListener.RaiseKillByEvent();
                 }
                 if (damage > 0 && WhoShoot.gameObject.CompareTag("Player")) VSInGameUIScript.instance.ShowDamgeScore(damage);
-                else if (damage > 0 && victim.CompareTag("Player")) VSInGameUIScript.instance.ShowTakeDamagePopUp((victim.transform.position - WhoShoot.transform.position).normalized);
             }
         }
 

@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
 using System;
+using Assets.Scripts.Character;
 
 
 public enum VSAttackState
@@ -243,7 +244,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
 
             if (HeadGlitch.IsGlitch)
             {
-                Debug.Log("weapon glitch");
+                //Debug.Log("weapon glitch");
                 BulletPool.instance.PickFromPool(gameObject, GunUsing, _fpCamera.position + _fpCamera.forward, _fpCamera.forward * _firePower, LayerMask.NameToLayer("BulletPlayer"));
             }
             else BulletPool.instance.PickFromPool(gameObject, GunUsing, _firePoint.position, bulletVelocity);
@@ -290,12 +291,11 @@ public class VSPlayerControlWeapon : MonoBehaviour
                 if (Vector3.Angle(victim.transform.forward, transform.forward) >= 75f && Vector3.Angle(victim.transform.forward, transform.forward) <= 180f) dam = KnifeUsing.DamageFace;
                 else if (Vector3.Angle(victim.transform.forward, transform.forward) < 75f) dam = KnifeUsing.DamageBack;
                 //
-                victim.UpdateHP(-dam);
+                victim.GetComponent<Damageable>().ReceiveDamage(dam, gameObject);
                 VSInGameUIScript.instance.ShowDamgeScore(dam);
-                if (victim.HP <= 0)
+                if (victim.HP.CurrentHeath <= 0)
                 {
                     _playerInfo.Kills++;
-                    victim.OnDeath();
                     VSInGameUIScript.instance.ShowKillReport(_playerInfo.Name, _playerInfo.Team.TeamSide, victim.Name, victim.Team.TeamSide, KnifeUsing.KnifeKillIcon, KillType.None);
                 }
 

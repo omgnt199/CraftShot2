@@ -21,7 +21,7 @@ public class HealthSO : ScriptableObject
 
     public void InflictDamage(int DamageValue)
     {
-        _currentHealth = Mathf.Min(0,_currentHealth - DamageValue);
+        _currentHealth = Mathf.Max(0, _currentHealth - DamageValue);
     }
 
     public void RestoreHealth(int HealthValue)

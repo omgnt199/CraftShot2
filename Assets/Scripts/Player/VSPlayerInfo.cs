@@ -8,7 +8,7 @@ public class VSPlayerInfo : MonoBehaviour
 {
     [Header("Player Info")]
     public string Name;
-    public int HP = 100;
+    public HealthSO HP;
     public int Kills = 0;
     public int Deaths = 0;
     public int Points = 0;
@@ -58,25 +58,25 @@ public class VSPlayerInfo : MonoBehaviour
             }
         }
     }
-    public void UpdateHP(int delta)
-    {
-        HP = Mathf.Max(HP + delta, 0);
-        if(gameObject.CompareTag("Player"))
-        {
-            VSInGameUIScript.instance.UpdatePlayerHPUI(HP);
-        }
-    }
-    public void SetCurrentHP(int value)
-    {
-        HP = value;
-        if (gameObject.CompareTag("Player"))
-        {
-            VSInGameUIScript.instance.UpdatePlayerHPUI(HP);
-        }
-    }
-    public void OnDeath()
-    {
-        Deaths++;
-        GameManager.Instance.OnOnePlayerDead(gameObject);
-    }
+    //public void UpdateHP(int delta)
+    //{
+    //    HP = Mathf.Max(HP + delta, 0);
+    //    if(gameObject.CompareTag("Player"))
+    //    {
+    //        VSInGameUIScript.instance.UpdatePlayerHPUI(HP);
+    //    }
+    //}
+    //public void SetCurrentHP(int value)
+    //{
+    //    HP = value;
+    //    if (gameObject.CompareTag("Player"))
+    //    {
+    //        VSInGameUIScript.instance.UpdatePlayerHPUI(HP);
+    //    }
+    //}
+    //public void OnDeath()
+    //{
+    //    Deaths++;
+    //    GameManager.Instance.OnOnePlayerDead(gameObject);
+    //}
 }

@@ -1,3 +1,4 @@
+using Assets.Scripts.Character;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -56,5 +57,11 @@ public class DeathMatchModeSO : GameModeSO
             GameManager.Instance.PlayerList.Add(bot);
             teamDeathmatch.AddMember(bot);
         }
+    }
+
+    public override void Revive(GameObject player)
+    {
+        player.transform.position = _mapPick.DeathmatchSpawn.GetChild(UnityEngine.Random.Range(0, _mapPick.DeathmatchSpawn.childCount)).position;
+        player.GetComponent<Damageable>().Revive();
     }
 }

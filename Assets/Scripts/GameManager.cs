@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> PlayerList { get => _playerList; }
     public bool IsEndGame { get => _isEndGame; }
     public Map MapPick => _mapPick;
+    public GameModeSO CurrentMode => _currentMode;
     private void Awake()
     {
         Instance = this;
@@ -132,10 +133,12 @@ public class GameManager : MonoBehaviour
         string secondaryWPName = PlayerPrefs.GetString("VSSecondaryWeaponUsing");
         string supportWPName = PlayerPrefs.GetString("VSSupportWeaponUsing");
         string nadeName = PlayerPrefs.GetString("VSNadeUsing");
+
         VSGun primaryWP;
         VSGun secondaryWP;
         VSSupportWeapon supportWP;
         VSNade nadeWP;
+
         if (primaryWPName == null || primaryWPName == "")
         {
             primaryWP = (VSGun)EquipmentPool.GetEquipmentByName("Scar");
@@ -161,44 +164,9 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator DelayRevive(GameObject player)
     {
-        //Remove member in zones
-        foreach (Transform zone in Zones) zone.GetComponent<VSZoneController>().RemoveMemberInZoneWhenDead(player);
-        player.SetActive(false);
-        if (player.gameObject.CompareTag("Player"))
-        {
-            DeathCamera.SetActive(true);
-            VSInGameUIScript.instance.LoadPLayerDeadUI();
-        }
-        else
-        {
-            float chanceDrop = UnityEngine.Random.Range(0, 1f);
-            if (chanceDrop <= 0.25f)
-                Instantiate(PowerPool.GetRandomItemPower().Prefab, player.transform.position + new Vector3(0, 1f, 0), Quaternion.LookRotation(Vector3.up));
-        }
-
         yield return new WaitForSeconds(_reviveDelayTime);
+        _currentMode.Revive(player);
 
-        if (Mode == "Domination")
-        {
-            if (player.GetComponent<VSPlayerInfo>().Team.TeamSide == VSTeamSide.TeamAlly) player.transform.position = _mapPick.FirstTeamSpawn.GetChild(UnityEngine.Random.Range(0, _teamMembers)).position;
-            else player.transform.position = _mapPick.SecondTeamSpawn.GetChild(UnityEngine.Random.Range(0, _teamMembers)).position;
-        }
-        else player.transform.position = _mapPick.DeathmatchSpawn.GetChild(UnityEngine.Random.Range(0, _mapPick.DeathmatchSpawn.childCount)).position;
-        player.SetActive(true);
-        player.GetComponent<VSPlayerInfo>().HP = 100;
-        if (player.gameObject.CompareTag("Player"))
-        {
-            DeathCamera.SetActive(false);
-            player.GetComponent<CharacterController>().height = 2.6f;
-            player.GetComponent<VSPlayerController>().ResetWeapon();
-            player.GetComponent<VSPlayerController>().Anim.Idle();
-            VSInGameUIScript.instance.LoadPlayerAfterReviveUI();
-        }
-        else
-        {
-            player.GetComponent<VSBotController>().ControlAnimator.Idle();
-            player.GetComponent<VSBotController>().SearchWalkPoint();
-        }
     }
     public void OnEndGame()
     {

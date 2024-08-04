@@ -52,7 +52,7 @@ public class VSPlayerMovement : MonoBehaviour
     private bool _isFly = false;
 
 
-    private const float DEFAULT_CHARACTER_HEIGHT = 2.6f;
+    private const float DEFAULT_CHARACTER_HEIGHT = 3f;
     private const float DEFAULT_FOV = 60f;
     private const float RUNNING_FOV = 65f;
     private const float DASH_FOV = 75f;

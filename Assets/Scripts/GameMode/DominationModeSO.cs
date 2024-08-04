@@ -1,8 +1,9 @@
+using Assets.Scripts.Character;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-[CreateAssetMenu(fileName = "DominationMode",menuName ="ScriptableObject/GameMode/Domination")]
+[CreateAssetMenu(fileName = "DominationMode", menuName = "ScriptableObject/GameMode/Domination")]
 public class DominationModeSO : GameModeSO
 {
     public int ModeTime;
@@ -21,7 +22,7 @@ public class DominationModeSO : GameModeSO
     public UnityAction<VSTeamSide, int> OnUpdateTeamScore;
     private void OnEnable()
     {
-        
+
     }
 
     public override void EnterMode()
@@ -111,5 +112,13 @@ public class DominationModeSO : GameModeSO
         if (team == VSTeamSide.TeamAlly) TeamAlly.Score = Mathf.Min(TeamAlly.Score + scoreBonus, TargetScore);
         else TeamEnemy.Score = Mathf.Min(TeamEnemy.Score + scoreBonus, TargetScore);
         VSInGameUIScript.instance.UpdateTeamScoreBar(TeamAlly.Score, TeamEnemy.Score);
+    }
+
+    public override void Revive(GameObject player)
+    {
+        if (player.GetComponent<VSPlayerInfo>().Team == TeamAlly) player.transform.position = _mapPick.FirstTeamSpawn.GetChild(UnityEngine.Random.Range(0, TeamAlly.Size)).position;
+        else player.transform.position = _mapPick.SecondTeamSpawn.GetChild(Random.Range(0, TeamEnemy.Size)).position;
+
+        player.GetComponent<Damageable>().Revive();
     }
 }

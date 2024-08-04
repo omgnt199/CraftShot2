@@ -9,7 +9,7 @@ using Assets.Scripts.Common;
 
 public class VSBotController : MonoBehaviour
 {
-    private NavMeshAgent agent;
+    public NavMeshAgent agent;
     private Vector3 walkPoint;
     private Vector3 distanceToWalkPoint;
     private bool isReachingWalkPoint = true;
@@ -101,7 +101,7 @@ public class VSBotController : MonoBehaviour
             if (timeCheckAttack <= 0)
             {
                 isAlreadyAttack = false;
-                timeCheckAttack = 2f;
+                timeCheckAttack = 1f;
                 closestObj = null;
             }
             else
@@ -250,57 +250,12 @@ public class VSBotController : MonoBehaviour
         //CheckRaycastHit(mask, startPosition);
     }
 
-    private void CheckRaycastHit(LayerMask mask, Vector3 startPosition)
-    {
-        if (Physics.Raycast(startPosition, fpCamera.transform.forward, out RaycastHit hit, Mathf.Infinity, mask))
-        {
-            if (LayerMask.LayerToName(hit.collider.gameObject.layer) == "BodyPart")
-            {
-                HitOtherPlayer(hit);
-            }
-            else
-            {
-                SpawnDecal(hit);
-            }
-        }
-    }
 
     private void SpawnDecal(RaycastHit hit)
     {
         //Decal on surface
         GameObject decal = Instantiate(BulletDecalPrefab, hit.point, Quaternion.LookRotation(hit.normal));
         decal.transform.position += 0.1f * hit.normal;
-    }
-
-    private void HitOtherPlayer(RaycastHit hit)
-    {
-        VSPlayerInfo victim = hit.collider.gameObject.GetComponentInParent<VSPlayerInfo>();
-        if (PlayerInfo.Team != victim.Team)
-        {
-            //Calculate damage
-            int dam = 0;
-            if (hit.collider.CompareTag(VSBodyPart.Body.ToString())) dam = 15;
-            else if (hit.collider.CompareTag(VSBodyPart.Leg.ToString()) || hit.collider.CompareTag(VSBodyPart.Hand.ToString())) dam = 10;
-            else dam = 20;
-            victim.UpdateHP(-dam);
-            //Show Popup When MainPlayer take damage
-            if (victim.HP > 0 && victim.gameObject.CompareTag("Player"))
-            {
-                VSInGameUIScript.instance.ShowTakeDamagePopUp((transform.position - victim.transform.position).normalized);
-            }
-            //Check victim death?
-            if (victim.HP <= 0)
-            {
-                //Update player's kills
-                BotInfo.Kills++;
-
-                //Show kill report
-                KillType specialKill = KillType.None;
-                if (hit.collider.CompareTag(VSBodyPart.Head.ToString())) specialKill = KillType.HeadShot;
-                VSInGameUIScript.instance.ShowKillReport(BotInfo.Name, BotInfo.Team.TeamSide, victim.Name, victim.Team.TeamSide, GunUsing.GunKillIcon, specialKill);
-                victim.OnDeath();
-            }
-        }
     }
 
     void ThrowNade()

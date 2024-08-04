@@ -1,119 +1,85 @@
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-using Unity.Burst.CompilerServices;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Rendering;
 
-public class Damageable : MonoBehaviour
+namespace Assets.Scripts.Character
 {
-    [SerializeField] private HealthConfigSO _healthConfig;
-    [SerializeField] private HealthSO _currentHealth;
-
-    [SerializeField] private VoidEventChannelSO _updateHealthUI = default;
-    [SerializeField] private VoidEventChannelSO _takeDamageUI = default;
-    [SerializeField] private VoidEventChannelSO _deathEvent = default;
-
-    [SerializeField] private GameObject _takeDamageVFX;
-    [SerializeField] private Material _takeDamageMat;
-
-    [SerializeField] private GameObject _skinLocate;
-    private List<List<Material>> _originMat = new List<List<Material>>();
-
-    public bool IsDead { get; set; }
-    public bool GetHit { get; set; }
-
-    public UnityAction OnDie;
-    private void Awake()
+    public abstract class Damageable : MonoBehaviour
     {
-        if (_currentHealth == null)
+        public VSPlayerInfo _Info;
+
+        public HealthConfigSO HealthConfig;
+        public HealthSO CurrentHealth;
+
+        public VoidEventChannelSO DeathEvent = default;
+
+        public GameObject TakeDamageVFX;
+        public Material TakeDamageMat;
+
+        public GameObject _skinLocate;
+        private List<List<Material>> _originMat = new List<List<Material>>();
+
+        public bool IsDead { get; set; }
+        public bool GetHit { get; set; }
+
+        private void OnDisable()
         {
-            _currentHealth = ScriptableObject.CreateInstance<HealthSO>();
-        }
-        _currentHealth.SetMaxHealth(_healthConfig.InitialHealth);
-        _currentHealth.SetCurrentHealth(_healthConfig.InitialHealth);
-    }
-
-    private void OnDisable()
-    {
-        if (IsInvoking("TurnOffTakeMat"))
-        {
-            CancelInvoke("TurnOffTakeMat");
-            TurnOffTakeMat();
-        }
-    }
-
-    public void ReceiveDamage(int damage)
-    {
-        if (IsDead) return;
-        GetHit = true;
-
-        _currentHealth.InflictDamage(damage);
-        if (_updateHealthUI != null) _updateHealthUI.RaiseEvent();
-        if (_takeDamageUI != null) _takeDamageUI.RaiseEvent();
-
-        if (_currentHealth.CurrentHeath <= 0)
-        {
-            IsDead = true;
-
-            if (OnDie != null)
-                OnDie.Invoke();
-
-            if (_deathEvent != null)
-                _deathEvent.RaiseEvent();
-
-        }
-    }
-    void Revive()
-    {
-        if (_currentHealth != null)
-        {
-            _currentHealth.SetCurrentHealth(_healthConfig.InitialHealth);
-        }
-        if (_updateHealthUI != null) _updateHealthUI.RaiseEvent();
-        IsDead = false;
-    }
-
-    public void SpawnTakeDamageVFX(ContactPoint hitPoint)
-    {
-        Instantiate(_takeDamageVFX, hitPoint.point, Quaternion.LookRotation(hitPoint.normal));
-        if (!IsInvoking("TurnOffTakeMat"))
-        {
-            TurnOnTakeMat();
-            Invoke("TurnOffTakeMat", 0.2f);
-        }
-    }
-    void TurnOnTakeMat()
-    {
-        _originMat = new List<List<Material>>();
-        foreach (SkinnedMeshRenderer mesh in GetComponentsInChildren<SkinnedMeshRenderer>())
-        {
-            //mesh.shadowCastingMode = ShadowCastingMode.Off;
-            List<Material> takeDamMats = new List<Material>();
-            List<Material> tempMatList = new List<Material>();
-            for (int i = 0; i < mesh.materials.Length; i++)
+            if (IsInvoking("TurnOffTakeMat"))
             {
-                tempMatList.Add(mesh.materials[i]);
-                takeDamMats.Add(_takeDamageMat);
+                CancelInvoke("TurnOffTakeMat");
+                TurnOffTakeMat();
             }
-            _originMat.Add(tempMatList);
-            mesh.SetMaterials(takeDamMats);
         }
-    }
 
-    void TurnOffTakeMat()
-    {
-        SkinnedMeshRenderer[] meshRenderers = GetComponentsInChildren<SkinnedMeshRenderer>();
-        int N = meshRenderers.Length;
-        for (int i = 0; i < N; i++)
+
+        public abstract void ReceiveDamage(int damage, GameObject byWho);
+        public abstract void Revive();
+
+        public void SpawnTakeDamageVFX(ContactPoint hitPoint)
         {
-            //meshRenderers[i].shadowCastingMode = ShadowCastingMode.On;
-            List<Material> tempOriginMats = new List<Material>();
-            for (int j = 0; j < meshRenderers[i].materials.Length; j++)
+            Instantiate(TakeDamageVFX, hitPoint.point, Quaternion.LookRotation(hitPoint.normal));
+            if (!IsInvoking("TurnOffTakeMat"))
             {
-                tempOriginMats.Add(_originMat[i][j]);
+                TurnOnTakeMat();
+                Invoke("TurnOffTakeMat", 0.2f);
             }
-            meshRenderers[i].SetMaterials(tempOriginMats);
+        }
+        void TurnOnTakeMat()
+        {
+            _originMat = new List<List<Material>>();
+            foreach (SkinnedMeshRenderer mesh in GetComponentsInChildren<SkinnedMeshRenderer>())
+            {
+                //mesh.shadowCastingMode = ShadowCastingMode.Off;
+                List<Material> takeDamMats = new List<Material>();
+                List<Material> tempMatList = new List<Material>();
+                for (int i = 0; i < mesh.materials.Length; i++)
+                {
+                    tempMatList.Add(mesh.materials[i]);
+                    takeDamMats.Add(TakeDamageMat);
+                }
+                _originMat.Add(tempMatList);
+                mesh.SetMaterials(takeDamMats);
+            }
+        }
+
+        void TurnOffTakeMat()
+        {
+            SkinnedMeshRenderer[] meshRenderers = GetComponentsInChildren<SkinnedMeshRenderer>();
+            int N = meshRenderers.Length;
+            for (int i = 0; i < N; i++)
+            {
+                //meshRenderers[i].shadowCastingMode = ShadowCastingMode.On;
+                List<Material> tempOriginMats = new List<Material>();
+                for (int j = 0; j < meshRenderers[i].materials.Length; j++)
+                {
+                    tempOriginMats.Add(_originMat[i][j]);
+                }
+                meshRenderers[i].SetMaterials(tempOriginMats);
+            }
         }
     }
 }

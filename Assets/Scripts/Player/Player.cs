@@ -5,5 +5,5 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [Header("Script")]
-    public Damageable PlayerDamagable;
+    public PlayerDamageable PlayerDamagable;
 }

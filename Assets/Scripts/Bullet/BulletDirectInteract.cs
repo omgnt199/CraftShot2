@@ -1,3 +1,4 @@
+using Assets.Scripts.Character;
 using Assets.Scripts.Common;
 using System.Collections;
 using System.Collections.Generic;
@@ -27,11 +28,10 @@ public class BulletDirectInteract : BulletInteract
                 if (collision.gameObject.CompareTag(VSBodyPart.Body.ToString())) dam = gunUsing.DamageToBody;
                 else if (collision.gameObject.CompareTag(VSBodyPart.Leg.ToString()) || collision.gameObject.CompareTag(VSBodyPart.Hand.ToString())) dam = gunUsing.DamageToHandLeg;
                 else dam = gunUsing.DamageToHead;
+                victim.GetComponent<Damageable>().ReceiveDamage(dam,WhoShoot);
                 victim.GetComponent<Damageable>().SpawnTakeDamageVFX(collision.contacts[0]);
-                if (victim.gameObject.CompareTag("Player"))
-                    VSInGameUIScript.instance.ShowTakeDamagePopUp((transform.position - victim.transform.position).normalized);
-                victim.UpdateHP(-dam);
-                if (victim.HP <= 0)
+
+                if (victim.HP.CurrentHeath <= 0)
                 {
                     //Update player's kills
                     whoShootInfo.Kills++;
@@ -39,7 +39,6 @@ public class BulletDirectInteract : BulletInteract
                     KillType killType = KillType.None;
                     if (collision.gameObject.CompareTag(VSBodyPart.Head.ToString())) killType = KillType.HeadShot;
                     VSInGameUIScript.instance.ShowKillReport(whoShootInfo.Name, whoShootInfo.Team.TeamSide, victim.Name, victim.Team.TeamSide, gunUsing.GunKillIcon, killType);
-                    victim.OnDeath();
                     //'Kill' Event trigger
                     if (WhoShoot.gameObject.CompareTag("Player"))
                     {

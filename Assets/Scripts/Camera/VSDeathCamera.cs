@@ -3,12 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VSDeathCamera : Singleton<VSDeathCamera>
+public class VSDeathCamera : MonoBehaviour
 {
-    public CinemachineVirtualCamera VirtualCamera;
-    public void SetTarget(Transform target)
+    public static VSDeathCamera Instance;
+    public CinemachineVirtualCamera DeathCam;
+    private void Awake()
     {
-        VirtualCamera.Follow = target;
-        VirtualCamera.LookAt = target;
+        Instance = this;
+    }
+    public void SetTarget(Vector3 pos, Transform target)
+    {
+        DeathCam.gameObject.transform.position = pos + new Vector3(0, 15f, 0);
+        DeathCam.LookAt = target;
     }
 }

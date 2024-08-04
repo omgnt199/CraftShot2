@@ -41,9 +41,20 @@ public class VSInGameUIScript : MonoBehaviour
     public RectTransform rect;
     public GameObject DamageScorePrefab;
 
+    [Header("Event")]
+    [SerializeField] private VoidEventChannelSO _playerTakeDamamgeUI;
+
     private void Awake()
     {
         instance = this;
+    }
+    private void OnEnable()
+    {
+        _playerTakeDamamgeUI.OnEventRaised += ShowTakeDamagePopUp;
+    }
+    private void OnDisable()
+    {
+        _playerTakeDamamgeUI.OnEventRaised -= ShowTakeDamagePopUp;
     }
     public void LoadUIDominationMode()
     {
@@ -110,12 +121,7 @@ public class VSInGameUIScript : MonoBehaviour
         report.transform.SetSiblingIndex(0);
     }
 
-    public void ShowTakeDamagePopUp(Vector2 nav)
-    {
-        TakeDamagePopUp.SetActive(true);
-        //GameObject navobj = Instantiate(TakeDamageNavPrefab, TakeDamagePopUp.transform);
-        //navobj.GetComponent<RectTransform>().anchoredPosition = -nav * 400f;
-    }
+    public void ShowTakeDamagePopUp() => TakeDamagePopUp.SetActive(true);
     public void HideTakeDamagePopUp() => TakeDamagePopUp.SetActive(false);
 
     public void LoadUIEndGame()

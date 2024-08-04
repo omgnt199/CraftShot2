@@ -120,8 +120,7 @@ public class VSZoneController : MonoBehaviour
     {
         //
         GameObject member = other.GetComponentInParent<VSPlayerInfo>().gameObject;
-        if (member.GetComponent<VSPlayerInfo>().Team.TeamSide == VSTeamSide.TeamAlly) MembersAllyInZone.Remove(member);
-        else if (member.GetComponent<VSPlayerInfo>().Team.TeamSide == VSTeamSide.TeamEnemy) MembersEnemyInZone.Remove(member);
+        RemoveMemberInZoneWhenDead(member);
         //
     }
 

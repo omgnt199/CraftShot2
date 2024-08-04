@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -29,7 +30,7 @@ public class HealthBarUI : MonoBehaviour
     }
     void UpdateHeathBar()
     {
-        _heathBarText.text = _playerHealth.CurrentHeath.ToString();
-        _heathBar.fillAmount = (float)_playerHealth.CurrentHeath / (float)_playerHealth.MaxHeath;
+        _heathBarText.text = _playerHealth.CurrentHeath.ToString() + "/" + _playerHealth.MaxHeath.ToString();
+        _heathBar.DOFillAmount((float)_playerHealth.CurrentHeath / (float)_playerHealth.MaxHeath, 0.4f);
     }
 }

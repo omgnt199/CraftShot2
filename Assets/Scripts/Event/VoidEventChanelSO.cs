@@ -14,7 +14,7 @@ public class VoidEventChannelSO : SerializableScriptableObject
 
     public void RaiseEvent()
     {
-        if (OnEventRaised != null)
-            OnEventRaised.Invoke();
+
+        OnEventRaised?.Invoke();
     }
 }

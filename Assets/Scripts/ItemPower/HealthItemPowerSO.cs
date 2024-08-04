@@ -8,8 +8,7 @@ public class HealthItemPowerSO : ItemPowerSO
     public GameObject PowerUpParticleUI;
     public override void Apply(GameObject Player)
     {
-        Player.GetComponent<VSPlayerInfo>().SetCurrentHP(RestoreAmount);
-        GameObject mainCanvas = GameObject.Find("MainCanvas");
+        Player.GetComponent<VSPlayerInfo>().HP.RestoreHealth(RestoreAmount);
         Instantiate(PowerUpParticleUI);
     }
 
