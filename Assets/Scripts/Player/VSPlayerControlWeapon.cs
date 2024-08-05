@@ -68,8 +68,8 @@ public class VSPlayerControlWeapon : MonoBehaviour
     public LineRenderer ProjectileTrajectoryNade;
     public float LinePoints;
     public float TimeBetweenPoint;
-    private float _currentThrowUpForce = 0;
-    private float _currentThrowForwardForce = 0;
+    private float _currentThrowUpForce;
+    private float _currentThrowForwardForce;
     [Header("Support")]
     public VSSupportWeapon KnifeUsing;
     private float _knifeAttackDelay = 0.5f;
@@ -104,6 +104,8 @@ public class VSPlayerControlWeapon : MonoBehaviour
     void Start()
     {
         _fireTimer = 0;
+        _currentThrowUpForce = ThrowUpForce;
+        _currentThrowForwardForce = ThrowForwardForce;
     }
     private void OnDisable()
     {
@@ -213,8 +215,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
                 Shoot();
             }
             if (!controlAnimator.WeaponAnimator.GetBool("IsAim")) controlAnimator.WeaponAnimator.SetBool("IsIdle", true);
-            controlAnimator.WeaponAnimator.SetBool("IsShoot", false);
-            controlAnimator.WeaponAnimator.SetFloat("Spray", 0f);
+            controlAnimator.StopShoot();
         }
     }
     public void Shoot()
@@ -236,12 +237,13 @@ public class VSPlayerControlWeapon : MonoBehaviour
             ////Check Raycast hit
             LayerMask mask = LayerMask.GetMask("BodyPart", "Barrier", "Ground", "ObstacleLayer");
             Vector3 startPosition = _fpCamera.position;
-            Physics.Raycast(startPosition + _fpCamera.forward, _fpCamera.forward, out RaycastHit hit, Mathf.Infinity, mask);
+            bool isHitSomething = Physics.Raycast(startPosition + _fpCamera.forward, _fpCamera.forward, out RaycastHit hit, Mathf.Infinity, mask);
             //Cheat Bullet's velocity = Vector between RaycastHit's point and FirePoint
             Vector3 bulletVelocity;
-            if (hit.point != Vector3.zero) bulletVelocity = (hit.point - _firePoint.position).normalized * _firePower;
+            if (isHitSomething) bulletVelocity = (hit.point - _firePoint.position).normalized * _firePower;
             else bulletVelocity = _firePoint.forward * _firePower;
 
+            //HeadGlicth Problem
             if (HeadGlitch.IsGlitch)
             {
                 //Debug.Log("weapon glitch");
@@ -258,8 +260,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
         //Out of ammo
         if (_currentMagazine == 0 && _currentAmmo > 0)
         {
-            controlAnimator.WeaponAnimator.SetBool("IsShoot", false);
-            controlAnimator.WeaponAnimator.SetFloat("Spray", 0f);
+            controlAnimator.StopShoot();
             Reload();
         }
     }
@@ -276,7 +277,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
         //Check Raycast hit
         LayerMask mask = LayerMask.GetMask("Player", "Enemy");
         Vector3 startPosition = _fpCamera.transform.position;
-        if (Physics.Raycast(startPosition, _fpCamera.transform.forward, out RaycastHit hit, 1f, mask))
+        if (Physics.Raycast(startPosition, _fpCamera.transform.forward, out RaycastHit hit, 2f, mask))
         {
             if (hit.collider.gameObject.Equals(gameObject)) return;
             VSPlayerInfo victim = hit.collider.gameObject.GetComponent<VSPlayerInfo>();
@@ -314,7 +315,8 @@ public class VSPlayerControlWeapon : MonoBehaviour
             _nadeAmount--;
             VSInGameUIScript.instance.UpdateNadeUI(_nadeAmount);
         }
-        _currentThrowUpForce = _currentThrowForwardForce = 0;
+        //_currentThrowUpForce = 0;
+        //_currentThrowForwardForce = 0;
     }
     public void HandleAim()
     {
@@ -436,8 +438,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
         _isShooting = false;
         _fireTimer = 0;
         Recoil_Script.ReturnSpeed = 1f;
-        controlAnimator.WeaponAnimator.SetBool("IsShoot", false);
-        controlAnimator.WeaponAnimator.SetFloat("Spray", 0f);
+        controlAnimator.StopShoot();
 
     }
 
@@ -478,8 +479,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
             _isAutoAim = false;
             _isShooting = false;
             Recoil_Script.OnAim();
-            controlAnimator.WeaponAnimator.SetBool("IsShoot", false);
-            controlAnimator.WeaponAnimator.SetFloat("Spray", 0f);
+            controlAnimator.StopShoot();
         }
     }
     void HandleAutoAim()
@@ -520,7 +520,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
             point.y = startPosition.y + startVelocity.y * time + (Physics.gravity.y / 2f * time * time);
             ProjectileTrajectoryNade.SetPosition(i, point);
 
-            LayerMask mask = LayerMask.GetMask("Ground", "Barrier", "ObstacleLayer", "Floor");
+            LayerMask mask = LayerMask.GetMask("Ground", "Barrier", "ObstacleLayer", "Floor", "Player", "WeaponObstacle");
             Vector3 lastPosition = ProjectileTrajectoryNade.GetPosition(i - 1);
             if (Physics.Raycast(lastPosition, (point - lastPosition).normalized, out RaycastHit hit, (point - lastPosition).magnitude, mask))
             {

@@ -16,16 +16,19 @@ MonoBehaviour:
   Type: 3
   Name: Molotov
   Icon: {fileID: 21300000, guid: f689bc1417ffa60469af403d14f65440, type: 3}
-  Model: {fileID: 6234304446030230178, guid: 79a5999e4d1753249b810515970697af, type: 3}
-  OnlyModel: {fileID: 4677820661376849540, guid: 5576af2f8b75fde45addda12cbe70fcd,
+  Model: {fileID: 3650299069044468208, guid: 4c756a877876dbb4fa11ad8d11a13425, type: 3}
+  OnlyModel: {fileID: 7804910117172299751, guid: 395b709349c1d1147b56ecb3ce4f0fb9,
     type: 3}
+  ModelForBot: {fileID: 0}
+  AnimatorControllerForBot: {fileID: 0}
   Currency: 0
   Price: 0
+  LevelUnlock: 0
   NadeType: 2
   ExplosionRadius: 7
   Duration: 5
   Maxdamage: 0
   Mindamage: 0
   DamageOverTime: 10
-  Quantity: 100
+  Quantity: 3
   NadeKillIcon: {fileID: 21300000, guid: 34876a4f2d7ea514d8f87845c82a6b05, type: 3}

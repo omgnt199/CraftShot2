@@ -194,5 +194,4 @@ public class VSPlayerController : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Tab)) VSInGameUIScript.instance.ShowLeaderBoardPopUp();
         else if (Input.GetKeyDown(KeyCode.M)) VSInGameUIScript.instance.ShowHideLargeMap();
     }
-
 }

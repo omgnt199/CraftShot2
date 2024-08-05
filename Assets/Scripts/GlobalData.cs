@@ -32,9 +32,10 @@ public class GlobalData : Singleton<GlobalData>
             LoadEquipmentOnFirstOpen();
             PlayerPrefs.SetString("PlayerName", "Guest");
             PlayerPrefs.SetInt("PlayerLevel", 1);
-            PlayerPrefs.SetInt("FirstOpenApp", 1);
             CurrencyData.UpdateCurrency(CurrencyType.Coin, 200);
             CurrencyData.UpdateCurrency(CurrencyType.Diamond, 5);
+
+            PlayerPrefs.SetInt("FirstOpenApp", 1);
         }
         PlayerGlobalInfo.Load();
         PlayerEquipmentInfo.Load();

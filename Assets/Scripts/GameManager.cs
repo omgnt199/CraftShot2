@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Unity.Burst.Intrinsics;
+using Assets.Scripts.Common;
+
 public enum VSGameState
 {
     Enter,
@@ -66,8 +69,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameState = VSGameState.Enter;
-        UpdateGameState(VSGameState.Enter);
+
+
+
     }
 
     // Update is called once per frame
@@ -89,6 +93,9 @@ public class GameManager : MonoBehaviour
         _playerList = new List<GameObject>();
         PlayerEventListener.MainPlayer = _mainPlayer;
         _playerList.Add(_mainPlayer);
+        SetUpMapPick();
+        GameState = VSGameState.Enter;
+        UpdateGameState(VSGameState.Enter);
     }
     void UpdateGameState(VSGameState newState)
     {
@@ -97,7 +104,6 @@ public class GameManager : MonoBehaviour
         {
             case VSGameState.Enter:
                 LoadPlayerEquipment();
-                SetUpMapPick();
                 LoadMode(VSGlobals.MODE);
                 break;
             case VSGameState.Victory:
@@ -125,7 +131,7 @@ public class GameManager : MonoBehaviour
         Zones = new List<Transform>(_mapPick.ZonesPositionDominationMode);
         LargeMapCamera.transform.localPosition = _mapPick.LargeMapCameraPosition;
         LargeMapCamera.orthographicSize = _mapPick.LargeMapCameraSize;
-        VSInGameUIScript.instance.SetLargeMapImage(_mapPick.LargeMapSprite);
+        //VSInGameUIScript.instance.SetLargeMapImage(_mapPick.LargeMapSprite);
     }
     public void LoadPlayerEquipment()
     {

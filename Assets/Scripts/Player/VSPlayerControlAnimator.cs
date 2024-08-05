@@ -34,25 +34,39 @@ public class VSPlayerControlAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void Knife() => WeaponAnimator.Play("KnifeAttack");
+
+    public void StopShoot()
+    {
+        WeaponAnimator.SetBool("IsRunning", true);
+        WeaponAnimator.SetBool("IsShoot", false);
+        if (HasParameter("Spray", WeaponAnimator))
+        {
+            WeaponAnimator.SetFloat("Spray", 0);
+        }
+    }
     public void Shoot()
     {
-        WeaponAnimator.SetBool("IsIdle", false);
+        WeaponAnimator.SetBool("IsRunning", false);
         WeaponAnimator.SetBool("IsShoot", true);
-        float spray = WeaponAnimator.GetFloat("Spray");
-        spray += Time.deltaTime * 10f;
-        WeaponAnimator.SetFloat("Spray", spray);
+        if (HasParameter("Spray", WeaponAnimator))
+        {
+
+            float spray = WeaponAnimator.GetFloat("Spray");
+            spray += Time.deltaTime * 10f;
+            WeaponAnimator.SetFloat("Spray", spray);
+        }
     }
     public void Run()
     {
-        ModelAnimator.SetBool("IsModelRunning", true);
+        ModelAnimator.SetBool("IsIdle", true);
         WeaponAnimator.SetBool("IsRunning", true);
     }
     public void Idle()
     {
-        ModelAnimator.SetBool("IsModelRunning", false);
+        ModelAnimator.SetBool("IsIdle", false);
         WeaponAnimator.SetBool("IsRunning", false);
     }
     public void OnAim()
@@ -70,5 +84,15 @@ public class VSPlayerControlAnimator : MonoBehaviour
     {
         ModelAnimator.Rebind();
         WeaponAnimator.Rebind();
+    }
+
+    public bool HasParameter(string paramName, Animator animator)
+    {
+        foreach (AnimatorControllerParameter param in animator.parameters)
+        {
+            if (param.name == paramName)
+                return true;
+        }
+        return false;
     }
 }

@@ -42,17 +42,21 @@ public class VSPlayerMovement : MonoBehaviour
     Vector3 skinModelScaleStart;
     [Header("Dash")]
     public VisualEffect LineSpeedVfx;
-    public float DashTime;
+    public DashConfigSO dashConfig;
+    private int _currentDashStack;
+    private float _dashStackTimer = 0;
     private Vector3 _dashMotion;
     private float _dashTimer = 0;
     private bool _isDashing = false;
+    [SerializeField] private IntEventChanelSO _updateDashUI;
+    [SerializeField] private FloatEventChanelSO _updateDashCooldownUI;
     [Header("Fly")]
     public float FlySpeed;
     private Vector3 _flyMotion;
     private bool _isFly = false;
 
 
-    private const float DEFAULT_CHARACTER_HEIGHT = 3f;
+    private const float DEFAULT_CHARACTER_HEIGHT = 2.6f;
     private const float DEFAULT_FOV = 60f;
     private const float RUNNING_FOV = 65f;
     private const float DASH_FOV = 75f;
@@ -64,6 +68,8 @@ public class VSPlayerMovement : MonoBehaviour
         skinModelScaleStart = SkinModel.transform.localScale;
         _currentSpeed = MoveSpeed;
         LineSpeedVfx.SendEvent("OnStop");
+
+        _currentDashStack = dashConfig.DashStack;
     }
 
     // Update is called once per frame
@@ -71,6 +77,9 @@ public class VSPlayerMovement : MonoBehaviour
     {
         MyInput();
         Move();
+
+
+        DashStackCoolDown();
     }
     void Move()
     {
@@ -163,17 +172,20 @@ public class VSPlayerMovement : MonoBehaviour
     }
     public void EnterDashMode()
     {
+        if (_currentDashStack == 0) return;
         if (!_isDashing)
         {
 
             SoundManager.EnableDashSound();
             _isDashing = true;
             LineSpeedVfx.SendEvent("OnPlay");
-            DOTween.To(() => characterController.height, height => characterController.height = height, DEFAULT_CHARACTER_HEIGHT / 2f, DashTime);
+            DOTween.To(() => characterController.height, height => characterController.height = height, DEFAULT_CHARACTER_HEIGHT / 2f, dashConfig.DashTime);
             DOTween.To(() => MainCamera.fieldOfView, fov => MainCamera.fieldOfView = fov, DASH_FOV, 0.2f);
             OnCrouch();
             //_dashMotion = moveInput == Vector3.zero ? transform.forward * 2.5f : moveInput * 2.5f;
             _dashMotion = MainCamera.transform.forward * 2.5f;
+            _currentDashStack = Mathf.Max(0, _currentDashStack - 1);
+            _updateDashUI.OnEventRaised(_currentDashStack);
         }
     }
     void HandleDash()
@@ -181,14 +193,37 @@ public class VSPlayerMovement : MonoBehaviour
         _dashTimer += Time.deltaTime;
         if (!_isFly) _moveInput = _dashMotion;
         else _moveInput += _dashMotion;
-        if (_dashTimer >= DashTime)
+        if (_dashTimer >= dashConfig.DashTime)
         {
             LineSpeedVfx.SendEvent("OnStop");
             _dashTimer = 0;
             _isDashing = false;
             SkinModel.transform.localScale = skinModelScaleStart;
-            DOTween.To(() => characterController.height, height => characterController.height = height, DEFAULT_CHARACTER_HEIGHT, DashTime / 2f);
+            DOTween.To(() => characterController.height, height => characterController.height = height, DEFAULT_CHARACTER_HEIGHT, dashConfig.DashTime / 2f);
             DOTween.To(() => MainCamera.fieldOfView, fov => MainCamera.fieldOfView = fov, DEFAULT_FOV, 0.2f);
+        }
+    }
+
+    void DashStackCoolDown()
+    {
+        if (_currentDashStack < dashConfig.DashStack)
+        {
+            if (_dashStackTimer < dashConfig.DashStackCooldown)
+            {
+                _dashStackTimer += Time.deltaTime;
+                _updateDashCooldownUI.OnEventRaised(_dashStackTimer);
+            }
+            else
+            {
+                _dashStackTimer = 0;
+                _currentDashStack = Mathf.Min(_currentDashStack + 1, dashConfig.DashStack);
+                _updateDashUI.OnEventRaised(_currentDashStack);
+            }
+        }
+        else
+        {
+            _dashStackTimer = 0;
+            _updateDashCooldownUI.OnEventRaised(dashConfig.DashStackCooldown);
         }
     }
     void MyInput()
@@ -249,4 +284,5 @@ public class VSPlayerMovement : MonoBehaviour
     {
         MoveSpeed = AimingSpeed;
     }
+    public void ResetCharacterHeight() => characterController.height = DEFAULT_CHARACTER_HEIGHT;
 }

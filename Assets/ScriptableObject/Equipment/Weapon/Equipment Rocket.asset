@@ -26,8 +26,8 @@ MonoBehaviour:
   Currency: 2
   Price: 100
   LevelUnlock: 0
-  Magazine: 30
-  TotalAmmo: 60
+  Magazine: 15
+  TotalAmmo: 45
   FirePower: 150
   FireSpeed: 1
   TimeReload: 2

@@ -12,7 +12,7 @@ public class HeadGlitch : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(" Weapon glitch " + other.gameObject.name);
+        //Debug.Log(" Weapon glitch " + other.gameObject.name);
         IsGlitch = true;
     }
     private void OnTriggerStay(Collider other)

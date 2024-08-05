@@ -12,7 +12,7 @@ public class LoadOutUI : MonoBehaviour
     [SerializeField] private Image NadeImg;
 
     [SerializeField] private Transform SkinLocate;
-    [SerializeField] private Transform _gunHolder;
+    [SerializeField] private GameObject _gunHolder;
     [SerializeField] private EquipmentEventChanelSO _equipEquipmentLoadOut;
     private void Awake()
     {
@@ -27,10 +27,13 @@ public class LoadOutUI : MonoBehaviour
 
     void AttachEquipmentToSkin(VSEquipment equipment)
     {
-        //Debug.Log(SkinLocate);
-        if (_gunHolder.childCount == 1) Destroy(_gunHolder.GetChild(0).gameObject);
+        Debug.Log(_gunHolder);
+        if (_gunHolder.transform.childCount > 0)
+        {
+            foreach(Transform item in _gunHolder.transform) Destroy(item.gameObject);
+        }
         SkinLocate.GetComponentInChildren<Animator>().runtimeAnimatorController = equipment.AnimatorControllerForBot;
-        Instantiate(equipment.ModelForBot, _gunHolder);
+        Instantiate(equipment.ModelForBot, _gunHolder.transform);
     }
     public void Load()
     {

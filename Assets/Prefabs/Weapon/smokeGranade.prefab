@@ -93,9 +93,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6574644985301396871}
-  - component: {fileID: 4710287551024264091}
   - component: {fileID: 8759656477301381831}
   - component: {fileID: 8718525737879435864}
+  - component: {fileID: 1446298299457206353}
   m_Layer: 17
   m_Name: smokeGranade
   m_TagString: Untagged
@@ -112,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 5032693500780643305}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.6312218, y: 5.45, z: 71.13}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -121,27 +121,6 @@ Transform:
   - {fileID: 8713466766739040288}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4710287551024264091
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5032693500780643305}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.40866494, y: 0.8533807, z: 0.3930893}
-  m_Center: {x: -0.002656579, y: -0.07330966, z: -0.0005302429}
 --- !u!54 &8759656477301381831
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -150,9 +129,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5032693500780643305}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.5
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.01
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -166,9 +145,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!114 &8718525737879435864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,6 +165,29 @@ MonoBehaviour:
   VfxPrefab: {fileID: 2295984869308603759, guid: 81552115a75ae9346a3d3bf3820e25d4,
     type: 3}
   DelayTimeExplosion: 3
+--- !u!136 &1446298299457206353
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5032693500780643305}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.22627857
+  m_Height: 0.91495776
+  m_Direction: 1
+  m_Center: {x: -0.001242876, y: -0.07662916, z: -0.020477295}
 --- !u!1 &7771472232449695852
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,6 +24,7 @@ public class VSGrenadeHanle : VSNadeHandle
                 victim.GetComponent<CarExplosion>().Explosion();
                 continue;
             }
+            if (victim.layer == LayerMask.NameToLayer("ObstacleLayer")) continue;
             VSPlayerInfo victimInfo = victim.GetComponent<VSPlayerInfo>();
             int damage = 0;
             if (Vector3.Distance(victim.transform.position, transform.position) <= NadeUsing.ExplosionRadius && Vector3.Distance(victim.transform.position, transform.position) > NadeUsing.ExplosionRadius / 2f) damage = 30;

@@ -6,6 +6,7 @@ using UnityEngine.AI;
 using DG.Tweening;
 using Unity.Burst.Intrinsics;
 using Assets.Scripts.Common;
+using Assets.Scripts.Character;
 
 public class VSBotController : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class VSBotController : MonoBehaviour
     [Header("Scripts")]
     public VSPlayerInfo PlayerInfo;
     public VSWeaponRecoil WeaponRecoil;
+    public BotDamageable botDamageable;
     public PlayerSoundManager SoundManager;
     [Header("AI")]
     public float TimeReact;
@@ -87,89 +89,94 @@ public class VSBotController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Reach walkpoint?
-        isReachingWalkPoint = IsReachingWalkPoint();
-        if (isReachingWalkPoint)
+        if (!botDamageable.IsDead)
         {
-            if (!isAlreadyAttack)
-                SearchWalkPoint();
-        }
-        //attacking?
-        if (isAlreadyAttack)
-        {
-            timeCheckAttack -= Time.deltaTime;
-            if (timeCheckAttack <= 0)
+
+            //Reach walkpoint?
+            isReachingWalkPoint = IsReachingWalkPoint();
+            if (isReachingWalkPoint)
             {
-                isAlreadyAttack = false;
-                timeCheckAttack = 1f;
-                closestObj = null;
+                if (!isAlreadyAttack)
+                    SearchWalkPoint();
+            }
+            //attacking?
+            if (isAlreadyAttack)
+            {
+                timeCheckAttack -= Time.deltaTime;
+                if (timeCheckAttack <= 0)
+                {
+                    isAlreadyAttack = false;
+                    timeCheckAttack = 1f;
+                    closestObj = null;
+                }
+                else
+                {
+                    fireTimer += Time.deltaTime;
+                    if (fireTimer >= fireSpeed)
+                    {
+                        fireTimer = 0f;
+                        Shoot();
+                    }
+                }
             }
             else
             {
-                fireTimer += Time.deltaTime;
-                if (fireTimer >= fireSpeed)
+                if (_timerReact <= 0)
                 {
-                    fireTimer = 0f;
-                    Shoot();
-                }
-            }
-        }
-        else
-        {
-            if (_timerReact <= 0)
-            {
-                _timerReact = TimeReact;
-                // Check Enemy In Attack Range
-                hitcolliders = Physics.OverlapSphere(transform.position, attackRange, MaskAttack);
-                minDistance = 1000f;
-                foreach (var collider in hitcolliders)
-                {
-                    GameObject temp = collider.gameObject;
-                    if (!GameObject.ReferenceEquals(temp, gameObject))
+                    _timerReact = TimeReact;
+                    // Check Enemy In Attack Range
+                    hitcolliders = Physics.OverlapSphere(transform.position, attackRange, MaskAttack);
+                    minDistance = 1000f;
+                    foreach (var collider in hitcolliders)
                     {
-                        if (LayerMask.LayerToName(temp.layer).Equals("Player", System.StringComparison.Ordinal) || LayerMask.LayerToName(temp.layer).Equals("Enemy", System.StringComparison.Ordinal))
+                        GameObject temp = collider.gameObject;
+                        if (!GameObject.ReferenceEquals(temp, gameObject))
                         {
-                            float distance = (transform.position - temp.transform.position).magnitude;
-                            if (distance <= minDistance)
+                            if (LayerMask.LayerToName(temp.layer).Equals("Player", System.StringComparison.Ordinal) || LayerMask.LayerToName(temp.layer).Equals("Enemy", System.StringComparison.Ordinal))
                             {
-                                closestObj = temp;
-                                minDistance = distance;
-                                break;
+                                float distance = (transform.position - temp.transform.position).magnitude;
+                                if (distance <= minDistance)
+                                {
+                                    closestObj = temp;
+                                    minDistance = distance;
+                                    break;
+                                }
                             }
                         }
                     }
                 }
-            }
-            else _timerReact -= Time.deltaTime;
-            //Have enemy in range
-            if (closestObj != null)
-            {
-                if (BotInfo.Team != closestObj.GetComponent<VSPlayerInfo>().Team)
+                else _timerReact -= Time.deltaTime;
+                //Have enemy in range
+                if (closestObj != null)
                 {
-                    LayerMask maskCheck = LayerMask.GetMask("Barrier", "Border", "Ground", "ObstacleLayer");
-                    if (!Physics.Raycast(transform.position + new Vector3(0, 2f, 0), (-transform.position + closestObj.transform.position).normalized, (transform.position - closestObj.transform.position).magnitude, maskCheck))
+                    if (BotInfo.Team != closestObj.GetComponent<VSPlayerInfo>().Team)
                     {
-                        if (!isAlreadyAttack)
+                        LayerMask maskCheck = LayerMask.GetMask("Barrier", "Border", "Ground", "ObstacleLayer");
+                        if (!Physics.Raycast(transform.position + new Vector3(0, 2f, 0), (-transform.position + closestObj.transform.position).normalized, (transform.position - closestObj.transform.position).magnitude, maskCheck))
                         {
-                            transform.DOLookAt(closestObj.transform.position, 0.2f);
-                            attackPosition = closestObj.transform.position;
-                            Attack();
+                            if (!isAlreadyAttack)
+                            {
+                                transform.DOLookAt(closestObj.transform.position, 0.2f);
+                                attackPosition = closestObj.transform.position;
+                                Attack();
+                            }
                         }
                     }
                 }
+                else agent.SetDestination(walkPoint);
             }
-            else agent.SetDestination(walkPoint);
+
+            //In Zone?
+            if (isInZone() && VSGlobals.MODE == "Domination")
+            {
+                if (zoneStaying.GetComponent<VSZoneController>().TeamOccupying != PlayerInfo.Team.TeamSide)
+                {
+                    agent.SetDestination(transform.position);
+                    ControlAnimator.Idle();
+                }
+            }
         }
 
-        //In Zone?
-        if (isInZone() && VSGlobals.MODE == "Domination")
-        {
-            if (zoneStaying.GetComponent<VSZoneController>().TeamOccupying != PlayerInfo.Team.TeamSide)
-            {
-                agent.SetDestination(transform.position);
-                ControlAnimator.Idle();
-            }
-        }
 
     }
     public void SearchWalkPoint()
@@ -179,7 +186,11 @@ public class VSBotController : MonoBehaviour
         int chance = Random.Range(1, 100);
         if (VSGlobals.MODE == "Domination")
         {
-            if (chance % 2 == 0 && ZonePoints.Count != 0) walkPoint = ZonePoints[new System.Random().Next(ZonePoints.Count)].position;
+            if (chance % 2 == 0 && ZonePoints.Count != 0)
+            {
+                Transform zone = ZonePoints[new System.Random().Next(ZonePoints.Count)];
+                walkPoint = zone.position;
+            }
             else if (chance % 2 != 0)
             {
                 for (int i = 0; i < 30; i++)
@@ -215,7 +226,7 @@ public class VSBotController : MonoBehaviour
     {
         //distanceToWalkPoint = transform.position - walkPoint;
 
-        if (agent.remainingDistance < 4f) return true;
+        if (agent.remainingDistance <= 2f) return true;
         else return false;
     }
 

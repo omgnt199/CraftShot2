@@ -40,7 +40,7 @@ public class PlayerDamageable : Damageable
     public override void Revive()
     {
         CurrentHealth.SetCurrentHealth(100);
-        GetComponent<CharacterController>().height = 3f;
+        GetComponent<VSPlayerMovement>().ResetCharacterHeight();
         GetComponent<VSPlayerController>().ResetWeapon();
         GetComponent<VSPlayerController>().Anim.Idle();
         VSInGameUIScript.instance.LoadPlayerAfterReviveUI();

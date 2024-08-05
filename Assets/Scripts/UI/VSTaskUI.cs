@@ -35,14 +35,16 @@ public class VSTaskUI : MonoBehaviour
     }
     public void ClaimReward()
     {
-        if (Task.IsCompleted)
+        if (Task.IsCompleted && !Task.IsClaimed)
         {
             ServiceManager.ShowInter();
             foreach (var reward in Task.CurrencyReward) CurrencyData.UpdateCurrency(reward.CurrencyType, reward.RewardValue);
             DailyTaskObserver.OnAnyDailyTaskClaimed(Task);
-            VSDailyTaskPopUpUI.Instance.LoadTaskUI();
+            //VSDailyTaskPopUpUI.Instance.LoadTaskUI();
             //while (ExperienceSystem.IsCanLevelUp()) ExperienceSystem.LevelUp();
             PlayerProfileUI.instance.UpdateExpBarUI(CurrencyData.GetCurrencyValue(CurrencyType.Exp));
+
+            gameObject.SetActive(false);
         }
     }
 }

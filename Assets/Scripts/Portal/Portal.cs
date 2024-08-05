@@ -11,9 +11,8 @@ public class Portal : MonoBehaviour
     public bool IsPortaling = false;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && !IsPortaling)
         {
-            if (IsPortaling) return;
             Instantiate(TeleportVfx, transform.position, Quaternion.LookRotation(transform.forward));
             other.gameObject.transform.position = transform.position;
             other.gameObject.GetComponent<VSPlayerMovement>().enabled = false;
