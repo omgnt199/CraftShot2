@@ -26,6 +26,7 @@ public class VSInGameUIScript : MonoBehaviour
     public GameObject GunView;
     public GameObject TakeDamageNavPrefab;
     public GameObject LargeMapPopUp;
+    public GameObject InvciblePopUp;
     [Header("Image")]
     public Image TeamAScoreBarImg;
     public Image TeamBScoreBarImg;
@@ -127,16 +128,27 @@ public class VSInGameUIScript : MonoBehaviour
     public void LoadUIEndGame()
     {
         LeaderBoardPopUp.SetActive(true);
+        LeaderBoardPopUp.transform.localScale = Vector3.zero;
+        LeaderBoardPopUp.transform.DOScale(1f, 0.5f);
         VSScoreBoardUI.Instance.SetWinLose();
-
     }
-    public void ShowLeaderBoardPopUp() => LeaderBoardPopUp.SetActive(!LeaderBoardPopUp.activeSelf);
+    public void ShowHideLeaderBoardPopUp()
+    {
+        if (DOTween.IsTweening(LeaderBoardPopUp.transform)) return;
+        if (!LeaderBoardPopUp.activeSelf)
+        {
+            LeaderBoardPopUp.SetActive(true);
+            LeaderBoardPopUp.transform.localScale = Vector3.zero;
+            LeaderBoardPopUp.transform.DOScale(1f, 0.5f);
+        }
+        else LeaderBoardPopUp.transform.DOScale(0f, 0.5f).OnComplete(() => LeaderBoardPopUp.SetActive(false));
+    }
     public void HideEndLeaderBoardPopUp()
     {
         LeaderBoardPopUp.SetActive(false);
         if (GameManager.Instance.IsEndGame)
         {
-            
+
         }
     }
     public void LoadPLayerDeadUI()
@@ -159,4 +171,6 @@ public class VSInGameUIScript : MonoBehaviour
     }
     public void SetLargeMapImage(Sprite sprite) => LargeMapPopUp.transform.Find("MainMap").GetComponent<Image>().sprite = sprite;
     public void ShowHideLargeMap() => LargeMapPopUp.SetActive(!LargeMapPopUp.activeSelf);
+
+    public void ShowInvciblePopUp() => InvciblePopUp.SetActive(true);
 }

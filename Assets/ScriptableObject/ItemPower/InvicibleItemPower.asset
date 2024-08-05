@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0128f20d21aadef4bb8d69264cdef4a8, type: 3}
-  m_Name: Counter
+  m_Script: {fileID: 11500000, guid: 6d4445e38baee2049bdea6b8f624eeb9, type: 3}
+  m_Name: InvicibleItemPower
   m_EditorClassIdentifier: 
-  _initialTime: 180
-  _currentTime: -11
+  Name: Invicible
+  PowerType: 1
+  Duration: 5
+  Prefab: {fileID: 0}
+  InviciblePrefab: {fileID: 0}

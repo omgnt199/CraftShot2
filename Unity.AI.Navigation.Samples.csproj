@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{B179A96B-E29C-9B5B-8482-3B170A0DAE81}</ProjectGuid>
+    <ProjectGuid>{7D99247B-AE3D-C5B1-A0C2-3540A5CC8E4E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.AI.Navigation.Samples</AssemblyName>
@@ -410,10 +410,6 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Data\PlaybackEngines\AndroidPlayer\UnityEditor.Android.Extensions.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
       <Private>False</Private>
@@ -564,14 +560,6 @@
     </Reference>
     <Reference Include="Firebase.Editor">
       <HintPath>Assets\Firebase\Editor\Firebase.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Android.Types">
@@ -1101,7 +1089,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.AI.Navigation.Samples.Initialization.Editor.csproj">
-      <Project>{72ABA2EF-04EF-B825-BDAF-922B3A7BFD52}</Project>
+      <Project>{131BBBDC-ACA5-16C5-41E3-3FE54EABEFBB}</Project>
       <Name>Unity.AI.Navigation.Samples.Initialization.Editor</Name>
     </ProjectReference>
   </ItemGroup>

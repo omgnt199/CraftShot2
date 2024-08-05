@@ -157,6 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db09d7948824c6f45aa0face97401ac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DailyTaskManager: {fileID: 11400000, guid: 6a7a5013bb52067448150faa16bb749c, type: 2}
   TaskButtonImg: {fileID: 2009990326061638115}
   TaskCanClaimSprite: {fileID: 21300000, guid: 5f3bd5122d2acb74582d3ff991786ecb, type: 3}
   TaskCantClaimSprite: {fileID: 21300000, guid: f3ad1675aa2f2ba4099746e7dcd7c690,

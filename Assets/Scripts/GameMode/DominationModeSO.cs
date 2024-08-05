@@ -11,9 +11,6 @@ public class DominationModeSO : GameModeSO
     public Team TeamEnemy;
     public int TargetScore;
     public GameObject BotPrefab;
-    [SerializeField] private CounterSO _counterConfig;
-    [SerializeField] private IntEventChanelSO _updateCounterUIEvent;
-
     private GameObject _mainPlayer;
     private Map _mapPick;
     private Team _teamWin;
@@ -39,8 +36,8 @@ public class DominationModeSO : GameModeSO
         SpawnTeamEnemy();
         _mapPick.ActiveZone();
 
-        _counterConfig.SetInitialTime(ModeTime);
-        _counterConfig.SetCurrentTime(ModeTime);
+        CounterConfig.SetInitialTime(ModeTime);
+        CounterConfig.SetCurrentTime(ModeTime);
         VSInGameUIScript.instance.LoadUIDominationMode();
     }
     public override void UpdateMode()
@@ -57,7 +54,7 @@ public class DominationModeSO : GameModeSO
             EndMode();
         }
 
-        if (_counterConfig.CurrentTime == 0)
+        if (CounterConfig.CurrentTime == 0)
         {
             _teamWin = Mathf.Max(TeamAlly.Score, TeamEnemy.Score) == TeamAlly.Score ? TeamAlly : TeamEnemy;
             EndMode();
@@ -68,7 +65,7 @@ public class DominationModeSO : GameModeSO
     public override void EndMode()
     {
         OnUpdateTeamScore -= UpdateTeamScore;
-        _updateCounterUIEvent.OnEventRaised = null;
+        UpdateCounterUIEvent.OnEventRaised = null;
         GameManager.Instance.OnEndGame();
     }
     void UpdateCounter()
@@ -77,8 +74,9 @@ public class DominationModeSO : GameModeSO
         if (timer >= 1f)
         {
             timer = 0f;
-            _counterConfig.UpdateCurrentTime(1);
-            _updateCounterUIEvent.RaiseEvent(_counterConfig.CurrentTime);
+            CounterConfig.UpdateCurrentTime(1);
+            UpdateCounterUIEvent.RaiseEvent(CounterConfig.CurrentTime);
+            if (CounterConfig.CurrentTime == 10) TimeOverEvent.RaiseEvent();
         }
     }
 

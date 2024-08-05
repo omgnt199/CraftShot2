@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -14,15 +15,18 @@ public class VSClockInGameUI : MonoBehaviour
 
     [SerializeField] private CounterSO _counterConfig;
     [SerializeField] private IntEventChanelSO _updateCounterUIEvent;
+    [SerializeField] private VoidEventChannelSO _timeOverEvent;
     private void OnEnable()
     {
         UpdateUI(_counterConfig.InitialTime);
         _updateCounterUIEvent.OnEventRaised += UpdateUI;
+        _timeOverEvent.OnEventRaised += TimeOverEffect;
     }
 
     private void OnDisable()
     {
         _updateCounterUIEvent.OnEventRaised -= UpdateUI;
+        _timeOverEvent.OnEventRaised -= TimeOverEffect;
     }
 
     void UpdateUI(int currentTimeInt)
@@ -38,5 +42,9 @@ public class VSClockInGameUI : MonoBehaviour
         clockText.text = mT + ":" + sT;
         timer = 0;
     }
-
+    void TimeOverEffect()
+    {
+        clockText.gameObject.transform.DOScale(1.3f, 0.5f).SetLoops(20, LoopType.Yoyo);
+        clockText.DOColor(Color.red, 0.5f).SetLoops(20, LoopType.Yoyo); ;
+    }
 }

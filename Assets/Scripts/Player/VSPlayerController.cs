@@ -191,7 +191,7 @@ public class VSPlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1)) SelectPrimaryWeapon();
         else if (Input.GetKeyDown(KeyCode.Alpha2)) SelectSecondaryWeapon();
         else if (Input.GetKeyDown(KeyCode.Alpha3)) SelectSupportWeapon();
-        else if (Input.GetKeyDown(KeyCode.Tab)) VSInGameUIScript.instance.ShowLeaderBoardPopUp();
+        else if (Input.GetKeyDown(KeyCode.Tab)) VSInGameUIScript.instance.ShowHideLeaderBoardPopUp();
         else if (Input.GetKeyDown(KeyCode.M)) VSInGameUIScript.instance.ShowHideLargeMap();
     }
 }

@@ -106,7 +106,7 @@ public class VSBotController : MonoBehaviour
                 if (timeCheckAttack <= 0)
                 {
                     isAlreadyAttack = false;
-                    timeCheckAttack = 1f;
+                    timeCheckAttack = 3f;
                     closestObj = null;
                 }
                 else

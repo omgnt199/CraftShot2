@@ -7,7 +7,7 @@ public class FloatEventChanelSO : SerializableScriptableObject
 {
     public UnityAction<float> OnEventRaised;
 
-    public void RaiseEvent(int value)
+    public void RaiseEvent(float value)
     {
         if (OnEventRaised != null)
             OnEventRaised.Invoke(value);

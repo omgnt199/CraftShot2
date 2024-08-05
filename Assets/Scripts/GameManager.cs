@@ -177,8 +177,6 @@ public class GameManager : MonoBehaviour
     public void OnEndGame()
     {
         _isEndGame = true;
-        DeathCamera.SetActive(true);
-
         //Deactive player
         foreach (var player in _playerList) player.SetActive(false);
         VSInGameUIScript.instance.LoadUIEndGame();

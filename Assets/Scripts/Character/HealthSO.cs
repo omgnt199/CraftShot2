@@ -26,8 +26,6 @@ public class HealthSO : ScriptableObject
 
     public void RestoreHealth(int HealthValue)
     {
-        _currentHealth += HealthValue;
-        if (_currentHealth > _maxHealth)
-            _currentHealth = _maxHealth;
+        _currentHealth = Mathf.Min(MaxHeath, _currentHealth + HealthValue);
     }
 }

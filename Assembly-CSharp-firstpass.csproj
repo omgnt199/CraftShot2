@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{06A0E5E4-BC07-655E-32C5-AEA01F10EED2}</ProjectGuid>
+    <ProjectGuid>{5DE84A35-B411-E4C0-2DE4-8DF7C8315001}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
@@ -482,14 +482,6 @@
     </Reference>
     <Reference Include="Google.MiniJson">
       <HintPath>Assets\Firebase\Plugins\Google.MiniJson.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Android.Types">
@@ -1383,39 +1375,39 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="PathCreator.csproj">
-      <Project>{0B7F26CF-E340-4B4B-B61A-86748E7C01BD}</Project>
+      <Project>{857E15A1-E469-B4A0-1AD6-B4E19691FD55}</Project>
       <Name>PathCreator</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.AI.Navigation.Samples.Initialization.Editor.csproj">
-      <Project>{72ABA2EF-04EF-B825-BDAF-922B3A7BFD52}</Project>
+      <Project>{131BBBDC-ACA5-16C5-41E3-3FE54EABEFBB}</Project>
       <Name>Unity.AI.Navigation.Samples.Initialization.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="AttributesSamples.csproj">
-      <Project>{5DCA6400-64CB-6C04-33C3-8A7FD937A49F}</Project>
+      <Project>{13515719-7254-386E-7E7E-909AE6D80E58}</Project>
       <Name>AttributesSamples</Name>
     </ProjectReference>
     <ProjectReference Include="PathCreatorEditor.csproj">
-      <Project>{B2203969-C3DF-B276-D5B3-CD0A73E45CE7}</Project>
+      <Project>{1AF7342A-47A0-9110-AE11-FF3B7C5CD1D2}</Project>
       <Name>PathCreatorEditor</Name>
     </ProjectReference>
     <ProjectReference Include="MaxSdk.Scripts.csproj">
-      <Project>{436B9550-259F-D112-D571-32698C5E3BFD}</Project>
+      <Project>{7D29CAD8-F592-09B9-8111-DD2B54ADB75F}</Project>
       <Name>MaxSdk.Scripts</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.AI.Navigation.Samples.csproj">
-      <Project>{B179A96B-E29C-9B5B-8482-3B170A0DAE81}</Project>
+      <Project>{7D99247B-AE3D-C5B1-A0C2-3540A5CC8E4E}</Project>
       <Name>Unity.AI.Navigation.Samples</Name>
     </ProjectReference>
     <ProjectReference Include="EditorAttributes.Editor.csproj">
-      <Project>{3D815281-A0A6-01A3-6167-0088E9A77570}</Project>
+      <Project>{CBD4CC1D-499C-F698-6BE7-90C3D2F2DF01}</Project>
       <Name>EditorAttributes.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="EditorAttributes.csproj">
-      <Project>{FA14F52F-60BB-1B3B-57ED-EFACDD645FB6}</Project>
+      <Project>{BA9F285E-8E58-1D69-0592-2FBA5F55A9DE}</Project>
       <Name>EditorAttributes</Name>
     </ProjectReference>
     <ProjectReference Include="MaxSdk.Scripts.IntegrationManager.Editor.csproj">
-      <Project>{8703D636-BD92-6E05-E6A3-5101D0B089AA}</Project>
+      <Project>{7562C90C-C41A-288E-9A39-97CC841F9780}</Project>
       <Name>MaxSdk.Scripts.IntegrationManager.Editor</Name>
     </ProjectReference>
   </ItemGroup>
