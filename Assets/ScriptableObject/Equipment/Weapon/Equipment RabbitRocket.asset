@@ -38,4 +38,4 @@ MonoBehaviour:
   DamageToBody: 30
   DamageToHandLeg: 15
   GunKillIcon: {fileID: 21300000, guid: ccf91a9d1baf7d744a44ff0f534d6c71, type: 3}
-  Bullet: {fileID: 11400000, guid: d8d61182452c38d4bb600cdf7a82de56, type: 2}
+  Bullet: {fileID: 11400000, guid: b6b1a46937626a54fbdebfafab2604e3, type: 2}

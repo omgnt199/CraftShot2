@@ -91,6 +91,7 @@ public class VSBotController : MonoBehaviour
     {
         if (!botDamageable.IsDead)
         {
+            //if(agent.velocity != Vector3.zero) SoundManager.EnableFootStepSound();
 
             //Reach walkpoint?
             isReachingWalkPoint = IsReachingWalkPoint();
@@ -156,9 +157,13 @@ public class VSBotController : MonoBehaviour
                         {
                             if (!isAlreadyAttack)
                             {
-                                transform.DOLookAt(closestObj.transform.position, 0.2f);
+                                agent.SetDestination(transform.position);
                                 attackPosition = closestObj.transform.position;
-                                Attack();
+                                transform.DOLookAt(closestObj.transform.position, 0.2f).OnComplete(() =>
+                                {
+                                    isAlreadyAttack = true;
+                                    Attack();
+                                });
                             }
                         }
                     }
@@ -232,7 +237,6 @@ public class VSBotController : MonoBehaviour
 
     void Attack()
     {
-        isAlreadyAttack = true;
         //Throw Nade??
         int chanceThrowNade = Random.Range(1, 11);
         if (chanceThrowNade <= 3) ThrowNade();
@@ -251,7 +255,8 @@ public class VSBotController : MonoBehaviour
         //Check Raycast hit
         LayerMask mask = LayerMask.GetMask("BodyPart", "Barrier", "Border", "Ground", "Smoke", "ObstacleLayer", "MainPlayerBodyPart");
         Vector3 startPosition = fpCamera.transform.position;
-        Vector3 direction = (closestObj.transform.position - transform.position).normalized;
+        //Vector3 direction = (closestObj.transform.position - transform.position).normalized;
+        Vector3 direction = firePoint.forward;
         Physics.Raycast(startPosition, direction, out RaycastHit hit, Mathf.Infinity, mask);
         //Cheat Bullet's velocity = Vector between RaycastHit's point and FirePoint
         Vector3 bulletVelocity;
@@ -298,7 +303,7 @@ public class VSBotController : MonoBehaviour
         if (gun == null) return;
 
         firePower = gun.FirePower;
-        fireSpeed = gun.FireSpeed * 5f;
+        fireSpeed = gun.FireSpeed * 2f;
         WeaponRecoil.SetRecoil(gun.RecoilAmountX, gun.RecoilAmountY);
 
         GameObject gunHolder = GetComponentInChildren<GunHolder>().gameObject;

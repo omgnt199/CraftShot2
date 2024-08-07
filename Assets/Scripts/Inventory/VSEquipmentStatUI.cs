@@ -179,7 +179,7 @@ public class VSEquipmentStatUI : MonoBehaviour
             {
                 if (item.GetComponent<ShopEquipmentCard>().Equipment == _currentEquipent)
                 {
-                    item.GetComponent<ShopEquipmentCard>().MainButton.gameObject.SetActive(false);
+                    item.GetComponent<ShopEquipmentCard>().PurchaseOverlay.SetActive(true);
                     break;
                 }
             }
@@ -190,6 +190,11 @@ public class VSEquipmentStatUI : MonoBehaviour
 
             _unlockEquipmentEvent.RaiseEvent(_currentEquipent);
         }
-        else GlobalUI.Instance.ShowPopUp("ShopCurrency");
+        else
+        {
+            GlobalUI.Instance.ShowPopUp("NoticePopUp");
+            NoticePopUpUI.Instance.ShowDetailsOptions("Not Enough Gold", Color.yellow);
+        }
+        //else GlobalUI.Instance.ShowPopUp("ShopCurrency");
     }
 }

@@ -74,12 +74,12 @@ public class ShopContainerUI : MonoBehaviour
                 tempList = EquipmentPool.GetEquipmentListByType(VSEquipmentType.Character);
                 break;
         }
-        foreach (var item in tempList)
-        {
-            if (!PlayerEquipmentInfo.EquipmentSOList.Contains(item)) listEquipment.Add(item);
-        }
+        //foreach (var item in tempList)
+        //{
+        //    if (!PlayerEquipmentInfo.EquipmentSOList.Contains(item)) listEquipment.Add(item);
+        //}
 
-        return listEquipment;
+        return tempList;
     }
 
     public void UpdateTabWhenEquip() => Tab(_typeTabing);
@@ -102,7 +102,7 @@ public class ShopContainerUI : MonoBehaviour
         EquipmentContent.GetComponent<RectTransform>().sizeDelta = _equipmentContentSizeDefault;
         int N = _listEquipment.Count;
         int row = Mathf.CeilToInt((float)N / 4f);
-        if (row > 2) EquipmentContent.GetComponent<RectTransform>().sizeDelta += new Vector2(0, 350f * (row - 2));
+        if (row > 2) EquipmentContent.GetComponent<RectTransform>().sizeDelta += new Vector2(0, 400f * (row - 2));
         //Tab on/off
         foreach (var tab in EquipmentTab)
             tab.Value.GetComponent<Image>().color = tab.Key == type ? new Color32(255, 255, 255, 255) : new Color32(255, 255, 255, 0);

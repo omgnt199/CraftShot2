@@ -22,7 +22,7 @@ public class RewardPopUpUI : MonoBehaviour
     {
         if (GameManager.Instance.Mode == "Domination")
         {
-            if (GameManager.Instance.Teamwin.TeamSide == VSTeamSide.TeamAlly)
+            if (((DominationModeSO)GameManager.Instance.CurrentMode).TeamWin.TeamSide == VSTeamSide.TeamAlly)
             {
                 WinTitle.SetActive(true);
                 CoinRewardText.text = "+100";
@@ -31,7 +31,7 @@ public class RewardPopUpUI : MonoBehaviour
                 _coinReward = 100;
                 _expReward = 50;
             }
-            else if (GameManager.Instance.Teamwin.TeamSide == VSTeamSide.TeamEnemy)
+            else if (((DominationModeSO)GameManager.Instance.CurrentMode).TeamWin.TeamSide == VSTeamSide.TeamEnemy)
             {
                 LoseTitle.SetActive(true);
                 CoinRewardText.text = "+30";

@@ -17,6 +17,7 @@ public class DominationModeSO : GameModeSO
     private float timer = 0;
 
     public UnityAction<VSTeamSide, int> OnUpdateTeamScore;
+    public Team TeamWin => _teamWin;
     private void OnEnable()
     {
 

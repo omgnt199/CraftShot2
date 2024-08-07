@@ -65,7 +65,7 @@ public class BackgroundBotBehavior : MonoBehaviour
     {
         if (_gunUsing.Bullet.BulletTrail != null)
             _gunUsing.Bullet.BulletTrail.LifeTime = 0.05f;
-        bulletPool.PickFromPool(_gunUsing, Muzzle.position, Muzzle.up * _gunUsing.FirePower);
+        bulletPool.PickFromPool(_gunUsing, Muzzle.position, Muzzle.forward * _gunUsing.FirePower);
         Commons.SetTimeout(this, _gunUsing.FireSpeed, () =>
         {
             ShootBehaviour();

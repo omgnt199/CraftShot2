@@ -58,10 +58,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -1.73
       objectReference: {fileID: 0}
+    - target: {fileID: 4203269827363484450, guid: 2d2c037bcdfabe84b883425c620c28b0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203269827363484450, guid: 2d2c037bcdfabe84b883425c620c28b0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4203269827363484450, guid: 2d2c037bcdfabe84b883425c620c28b0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: 7326108420610804920, guid: 2d2c037bcdfabe84b883425c620c28b0,
         type: 3}
       propertyPath: m_Name
-      value: OnlyGunM4A$ForBot Variant
+      value: OnlyGunM4A4ForBot
       objectReference: {fileID: 0}
     - target: {fileID: 8919311728964958867, guid: 2d2c037bcdfabe84b883425c620c28b0,
         type: 3}

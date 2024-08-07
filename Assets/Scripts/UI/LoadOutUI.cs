@@ -11,28 +11,29 @@ public class LoadOutUI : MonoBehaviour
     [SerializeField] private Image SupportWeaponImg;
     [SerializeField] private Image NadeImg;
 
-    [SerializeField] private Transform SkinLocate;
-    [SerializeField] private GameObject _gunHolder;
+    public Transform SkinLocate;
+    public GameObject _gunHolder;
     [SerializeField] private EquipmentEventChanelSO _equipEquipmentLoadOut;
-    private void Awake()
-    {
-        AttachEquipmentToSkin(GlobalData.Instance.EquipmentPool.GetEquipmentByName(PlayerPrefs.GetString("VSPrimaryWeaponUsing")));
-        _equipEquipmentLoadOut.OnEventRaised += AttachEquipmentToSkin;
-    }
+
 
     private void OnEnable()
     {
+        AttachEquipmentToSkin(GlobalData.Instance.EquipmentPool.GetEquipmentByName(PlayerPrefs.GetString("VSPrimaryWeaponUsing")));
         Load();
+        _equipEquipmentLoadOut.OnEventRaised += AttachEquipmentToSkin;
     }
-
     void AttachEquipmentToSkin(VSEquipment equipment)
     {
-        Debug.Log(_gunHolder);
-        if (_gunHolder.transform.childCount > 0)
+        //Debug.Log(_gunHolder);
+        if (_gunHolder != null)
         {
-            foreach(Transform item in _gunHolder.transform) Destroy(item.gameObject);
+
+            if (_gunHolder.transform.childCount > 0)
+            {
+                foreach (Transform item in _gunHolder.transform) Destroy(item.gameObject);
+            }
         }
-        SkinLocate.GetComponentInChildren<Animator>().runtimeAnimatorController = equipment.AnimatorControllerForBot;
+        //SkinLocate.GetComponentInChildren<Animator>().runtimeAnimatorController = equipment.AnimatorControllerForBot;
         Instantiate(equipment.ModelForBot, _gunHolder.transform);
     }
     public void Load()

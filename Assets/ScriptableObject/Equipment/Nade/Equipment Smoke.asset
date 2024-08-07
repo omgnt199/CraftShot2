@@ -15,7 +15,7 @@ MonoBehaviour:
   Pool: {fileID: 11400000, guid: a868d2e5287e24a41bc4bfb4c18d30f1, type: 2}
   Type: 3
   Name: Smoke
-  Icon: {fileID: 21300000, guid: f689bc1417ffa60469af403d14f65440, type: 3}
+  Icon: {fileID: 21300000, guid: 3cc77cc029625e542bc99f01d619b4b1, type: 3}
   Model: {fileID: 5032693500780643305, guid: fd4e52704741fb649abf0b6b93b3aff3, type: 3}
   OnlyModel: {fileID: 8737290773542936532, guid: 2fa2c4e352ce38343ae3eb062bcf84a9,
     type: 3}

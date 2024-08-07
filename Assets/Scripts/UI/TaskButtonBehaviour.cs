@@ -23,7 +23,7 @@ public class TaskButtonBehaviour : MonoBehaviour
         TaskButtonImg.sprite = TaskCantClaimSprite;
         foreach (var item in DailyTaskManager.DailyTaskToday)
         {
-            Debug.Log(item.TaskInfo);
+            //Debug.Log(item.TaskInfo);
             if (item.IsCompleted && !item.IsClaimed)
             {
                 TaskButtonImg.sprite = TaskCanClaimSprite;

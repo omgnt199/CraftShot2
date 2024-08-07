@@ -16,6 +16,7 @@ namespace Assets.Scripts.Character
         public HealthSO CurrentHealth;
 
         public VoidEventChannelSO DeathEvent = default;
+        public VoidEventChannelSO ReviveEvent = default;
 
         public GameObject TakeDamageVFX;
         public Material TakeDamageMat;

@@ -17,6 +17,7 @@ public class ShopEquipmentCard : MonoBehaviour
     private string _Info;
     public Button MainButton;
     public Button BuyButton;
+    public GameObject PurchaseOverlay;
     public List<VSStatics> Statics => _statics;
 
     [SerializeField] private EquipmentEventChanelSO _unlockEquipmentEvent;
@@ -61,6 +62,8 @@ public class ShopEquipmentCard : MonoBehaviour
         {
             MainButton.onClick.AddListener(() => ShopContainerUI.Instance.EquipmentStatUI.ShowCharacterSkinInShop(equipment));
         }
+        if (PlayerEquipmentInfo.EquipmentSOList.Contains(equipment)) PurchaseOverlay.SetActive(true);
+        else PurchaseOverlay.SetActive(false);
     }
 
     public void Buy()
@@ -76,6 +79,13 @@ public class ShopEquipmentCard : MonoBehaviour
 
             GlobalUI.Instance.ShowPopUp("BuyEquipment");
             _unlockEquipmentEvent.RaiseEvent(Equipment);
+
+            PurchaseOverlay.SetActive(true);
+        }
+        else
+        {
+            GlobalUI.Instance.ShowPopUp("NoticePopUp");
+            NoticePopUpUI.Instance.ShowDetailsOptions("Not Enough Gold", Color.yellow);
         }
         //else GlobalUI.Instance.ShowPopUp("ShopCurrency");
     }

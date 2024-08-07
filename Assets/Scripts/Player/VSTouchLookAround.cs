@@ -47,7 +47,7 @@ public class VSTouchLookAround : MonoBehaviour
         if (rightFingerId != -1)
         {
             // Ony look around if the right finger is being tracked
-            Debug.Log("Rotating");
+            //Debug.Log("Rotating");
             LookAround();
         }
 

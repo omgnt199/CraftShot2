@@ -35,7 +35,7 @@ public class VSEquipmentCard : MonoBehaviour
         Equipment = equipment;
         Name.text = equipment.Name;
         Icon.sprite = equipment.Icon;
-        //Icon.SetNativeSize();
+        Icon.SetNativeSize();
 
         if (equipment.Name == PlayerPrefs.GetString("VSPrimaryWeaponUsing") || equipment.Name == PlayerPrefs.GetString("VSSecondaryWeaponUsing")
             || equipment.Name == PlayerPrefs.GetString("VSNadeUsing") || equipment.Name == PlayerPrefs.GetString("VSSupportWeaponUsing")

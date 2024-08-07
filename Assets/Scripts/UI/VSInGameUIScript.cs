@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class VSInGameUIScript : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class VSInGameUIScript : MonoBehaviour
     public GameObject TakeDamageNavPrefab;
     public GameObject LargeMapPopUp;
     public GameObject InvciblePopUp;
+    public GameObject LeaderBoardShadow;
     [Header("Image")]
     public Image TeamAScoreBarImg;
     public Image TeamBScoreBarImg;
@@ -127,9 +129,9 @@ public class VSInGameUIScript : MonoBehaviour
 
     public void LoadUIEndGame()
     {
+        LeaderBoardShadow.GetComponent<EventTrigger>().enabled = false;
         LeaderBoardPopUp.SetActive(true);
-        LeaderBoardPopUp.transform.localScale = Vector3.zero;
-        LeaderBoardPopUp.transform.DOScale(1f, 0.5f);
+        LeaderBoardPopUp.transform.localScale = Vector3.one;
         VSScoreBoardUI.Instance.SetWinLose();
     }
     public void ShowHideLeaderBoardPopUp()

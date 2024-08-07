@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class SetUpCamera : MonoBehaviour
 {
+    public static SetUpCamera Instance;
+
+    //DeathCamera
+    public Camera DeathCamera;
     //WeaponCamera
     public Camera WeaponCamera;
     public RawImage GunInGameView;
@@ -20,17 +24,41 @@ public class SetUpCamera : MonoBehaviour
     public Camera NavCamera;
     public RawImage NavImg;
     private RenderTexture _navMapTexture;
+
+    //Event
+    [SerializeField] private VoidEventChannelSO _playerDeathEvent;
+    [SerializeField] private VoidEventChannelSO _playerReviveEvent;
     private void Awake()
     {
-        //SetUpGunCamera();
-        //SetUpLargeMapCanera();
-        //SetUpMiniMapCamera();
-        //SetUpNavCamera();
+        Instance = this;
+
     }
-    private void Start()
+
+    private void OnEnable()
     {
-        //StartCoroutine(WaitForLargeMapRenderTexture());
+        _playerDeathEvent.OnEventRaised += TurnOnDeathCamera;
+        _playerReviveEvent.OnEventRaised += TurnOffDeathCamera;
     }
+
+    private void OnDisable()
+    {
+        _playerDeathEvent.OnEventRaised -= TurnOnDeathCamera;
+        _playerReviveEvent.OnEventRaised -= TurnOffDeathCamera;
+    }
+    public void TurnOnDeathCamera()
+    {
+        DeathCamera.gameObject.GetComponent<AudioListener>().enabled = true;
+        DeathCamera.enabled = true;
+    }
+    public void TurnOffDeathCamera()
+    {
+        DeathCamera.gameObject.GetComponent<AudioListener>().enabled = false;
+        DeathCamera.enabled = false;
+    }
+    public void TurnOnLargeMapCamera() => LargeMapCamera.enabled = true;
+    public void TurnOffLargeMapCamera() => LargeMapCamera.enabled = false;
+
+
     void SetUpGunCamera()
     {
         _gunTexture = new RenderTexture(Screen.currentResolution.width, Screen.currentResolution.height, 24);

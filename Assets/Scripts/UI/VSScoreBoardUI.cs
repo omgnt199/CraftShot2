@@ -22,7 +22,6 @@ public class VSScoreBoardUI : MonoBehaviour
     [Header("UI")]
     [SerializeField] private GameObject LeafTable;
     [SerializeField] private GameObject RightTable;
-    [SerializeField] private GameObject WinLose;
     [SerializeField] private GameObject RewardPopUp;
     //Text
     [SerializeField] private TextMeshProUGUI TabText;
@@ -189,8 +188,8 @@ public class VSScoreBoardUI : MonoBehaviour
     {
         if (_Mode == "Domination")
         {
-            if (GameManager.Instance.Teamwin.TeamSide == VSTeamSide.TeamAlly) WinTitle.SetActive(true);
-            else if (GameManager.Instance.Teamwin.TeamSide == VSTeamSide.TeamEnemy) LoseTitle.SetActive(true);
+            if (((DominationModeSO)GameManager.Instance.CurrentMode).TeamWin.TeamSide == VSTeamSide.TeamAlly) WinTitle.SetActive(true);
+            else if (((DominationModeSO)GameManager.Instance.CurrentMode).TeamWin.TeamSide == VSTeamSide.TeamEnemy) LoseTitle.SetActive(true);
         }
         else if (_Mode == "Deathmatch")
         {

@@ -54,13 +54,13 @@ public class PlayerDamageable : Damageable
 
         //Apply Invicible 
         _invciblePowerSO.Apply(gameObject);
-        Commons.SetTimeout(this, 3f, () => 
+        Commons.SetTimeout(this, 3f, () =>
         {
             _invciblePowerSO.Deactive();
         });
         VSInGameUIScript.instance.ShowInvciblePopUp();
         _applyInvicibilityForPlayer.RaiseEvent(3f);
-
+        ReviveEvent.RaiseEvent();
         IsDead = false;
     }
 

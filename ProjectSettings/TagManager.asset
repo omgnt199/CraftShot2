@@ -41,7 +41,7 @@ TagManager:
   - Player
   - PreviewImageOnly
   - IgnoreBulletForce
-  - InteractLayer
+  - Floor
   - ObstacleLayer
   - WeaponObstacle
   - MainPlayerBodyPart
@@ -63,7 +63,7 @@ TagManager:
   - WeaponLayer
   - Smoke
   - LineSpeed
-  - Floor
+  - RenderAbove
   m_SortingLayers:
   - name: Default
     uniqueID: 0

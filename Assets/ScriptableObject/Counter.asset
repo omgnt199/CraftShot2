@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Counter
   m_EditorClassIdentifier: 
   _initialTime: 180
-  _currentTime: -11
+  _currentTime: -3

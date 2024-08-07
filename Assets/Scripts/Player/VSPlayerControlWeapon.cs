@@ -241,7 +241,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
             //Cheat Bullet's velocity = Vector between RaycastHit's point and FirePoint
             Vector3 bulletVelocity;
             if (isHitSomething) bulletVelocity = (hit.point - _firePoint.position).normalized * _firePower;
-            else bulletVelocity = _firePoint.forward * _firePower;
+            else bulletVelocity = (_fpCamera.position + _fpCamera.forward * 100000f - _firePoint.position).normalized * _firePower;
 
             //HeadGlicth Problem
             if (HeadGlitch.IsGlitch)
@@ -277,7 +277,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
         //Check Raycast hit
         LayerMask mask = LayerMask.GetMask("Player", "Enemy");
         Vector3 startPosition = _fpCamera.transform.position;
-        if (Physics.Raycast(startPosition, _fpCamera.transform.forward, out RaycastHit hit, 2f, mask))
+        if (Physics.Raycast(startPosition, _fpCamera.transform.forward, out RaycastHit hit, 2.5f, mask))
         {
             if (hit.collider.gameObject.Equals(gameObject)) return;
             VSPlayerInfo victim = hit.collider.gameObject.GetComponent<VSPlayerInfo>();
@@ -503,8 +503,8 @@ public class VSPlayerControlWeapon : MonoBehaviour
 
     public void DrawNadeProjectileTrajectory()
     {
-        _currentThrowUpForce = Mathf.Lerp(_currentThrowUpForce, ThrowUpForce, Time.deltaTime * 2f);
-        _currentThrowForwardForce = Mathf.Lerp(_currentThrowForwardForce, ThrowForwardForce, Time.deltaTime * 2f);
+        //_currentThrowUpForce = Mathf.Lerp(_currentThrowUpForce, ThrowUpForce, Time.deltaTime * 2f);
+        //_currentThrowForwardForce = Mathf.Lerp(_currentThrowForwardForce, ThrowForwardForce, Time.deltaTime * 2f);
 
         ProjectileTrajectoryNade.enabled = true;
         ProjectileTrajectoryNade.positionCount = Mathf.CeilToInt(LinePoints / TimeBetweenPoint) + 1;

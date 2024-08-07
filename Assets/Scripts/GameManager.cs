@@ -176,6 +176,7 @@ public class GameManager : MonoBehaviour
     }
     public void OnEndGame()
     {
+        DeathCamera.GetComponent<Camera>().enabled = true;
         _isEndGame = true;
         //Deactive player
         foreach (var player in _playerList) player.SetActive(false);

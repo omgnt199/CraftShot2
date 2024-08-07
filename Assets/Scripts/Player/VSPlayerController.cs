@@ -32,7 +32,7 @@ public class VSPlayerController : MonoBehaviour
 
     //Getter
     public VSNade NadeUsing { get => _nadeInfo; }
-    
+
     public enum VSWeaponSlot
     {
         Primary,
@@ -192,6 +192,9 @@ public class VSPlayerController : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Alpha2)) SelectSecondaryWeapon();
         else if (Input.GetKeyDown(KeyCode.Alpha3)) SelectSupportWeapon();
         else if (Input.GetKeyDown(KeyCode.Tab)) VSInGameUIScript.instance.ShowHideLeaderBoardPopUp();
-        else if (Input.GetKeyDown(KeyCode.M)) VSInGameUIScript.instance.ShowHideLargeMap();
+        else if (Input.GetKeyDown(KeyCode.M))
+        {
+            VSInGameUIScript.instance.ShowHideLargeMap();
+        }
     }
 }

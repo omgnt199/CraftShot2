@@ -12,7 +12,6 @@ namespace Assets.Scripts.Character
 {
     public class BotDamageable : Damageable
     {
-        [SerializeField] private GameObject IgnoreBullet;
         private Rigidbody rb;
         private void Awake()
         {
@@ -34,23 +33,28 @@ namespace Assets.Scripts.Character
             {
                 _Info.Deaths++;
                 DeathEvent.RaiseEvent();
-                gameObject.SetActive(false);
+                //gameObject.SetActive(false);
+
+                GetComponentInChildren<BodyPartBehaviour>().IgnoreBulletForce();
+                gameObject.layer = LayerMask.NameToLayer("IgnoreBulletForce");
+
                 GetComponent<VSBotController>().agent.enabled = false;
                 GetComponent<VSBotController>().enabled = false;
+                GetComponent<VSBotController>().ControlAnimator.Controller.enabled = false;
                 IsDead = true;
 
-                //gameObject.layer = LayerMask.NameToLayer("IgnoreBulletForce");
-                //rb = gameObject.AddComponent<Rigidbody>();
+                rb = gameObject.AddComponent<Rigidbody>();
+                rb.mass = 5f;
                 //rb.interpolation = RigidbodyInterpolation.Interpolate;
-                //rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
-                //rb.AddForce(Vector3.up * 2f, ForceMode.Impulse);
+                rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
+                //rb.AddForceAtPosition((transform.position - (byWho.transform.position + new Vector3(0, -4f, 0))).normalized * 20f, transform.position, ForceMode.Impulse);
+                rb.AddForceAtPosition((transform.position - byWho.transform.position).normalized * 25f, transform.position + new Vector3(0, 2f, 0), ForceMode.Impulse);
+                rb.AddForceAtPosition((transform.position - byWho.transform.position).normalized * 25f, transform.position + new Vector3(0, 1.3f, 0), ForceMode.Impulse);
+                rb.AddForceAtPosition(transform.up * 30f, transform.position, ForceMode.Impulse);
 
-                //transform.DOJump(transform.position + new Vector3(UnityEngine.Random.Range(-20f, 20f), transform.position.y, UnityEngine.Random.Range(-20f, 20f)), 3f, 1, 3f);
-                //transform.DORotate(new Vector3(UnityEngine.Random.Range(0, 180f), UnityEngine.Random.Range(0f, 180f), UnityEngine.Random.Range(0, 180f)), 3f, RotateMode.FastBeyond360);
-                IgnoreBullet.SetActive(true);
-
+                //rb.AddExplosionForce(10f, transform.position, 1f, 5f);
                 int chanceToSpawnItemPower = UnityEngine.Random.Range(1, 101);
-                if (chanceToSpawnItemPower <= 25)
+                if (chanceToSpawnItemPower <= 35)
                 {
                     Instantiate(GameManager.Instance.PowerPool.GetRandomItemPower().Prefab, transform.position + new Vector3(0, 2f, 0), Quaternion.LookRotation(Vector3.up));
                 }
@@ -63,9 +67,13 @@ namespace Assets.Scripts.Character
 
         public override void Revive()
         {
-            IgnoreBullet.SetActive(false);
-            gameObject.SetActive(true);
 
+            gameObject.SetActive(true);
+            GetComponentInChildren<BodyPartBehaviour>().ApllyBulletForce();
+            gameObject.layer = LayerMask.NameToLayer("Enemy");
+            Destroy(rb);
+
+            GetComponent<VSBotController>().ControlAnimator.Controller.enabled = true;
             GetComponent<VSBotController>().agent.enabled = true;
             GetComponent<VSBotController>().enabled = true;
 
@@ -74,7 +82,6 @@ namespace Assets.Scripts.Character
             GetComponent<VSBotController>().ControlAnimator.Idle();
             GetComponent<VSBotController>().SearchWalkPoint();
 
-            //gameObject.layer = LayerMask.NameToLayer("Enemy");
             Destroy(rb);
             IsDead = false;
         }

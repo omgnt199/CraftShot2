@@ -15,7 +15,7 @@ MonoBehaviour:
   Pool: {fileID: 11400000, guid: a868d2e5287e24a41bc4bfb4c18d30f1, type: 2}
   Type: 3
   Name: Molotov
-  Icon: {fileID: 21300000, guid: f689bc1417ffa60469af403d14f65440, type: 3}
+  Icon: {fileID: 21300000, guid: 2d5e3c3e0d88f6a49bbcda06eda31d40, type: 3}
   Model: {fileID: 3650299069044468208, guid: 4c756a877876dbb4fa11ad8d11a13425, type: 3}
   OnlyModel: {fileID: 7804910117172299751, guid: 395b709349c1d1147b56ecb3ce4f0fb9,
     type: 3}

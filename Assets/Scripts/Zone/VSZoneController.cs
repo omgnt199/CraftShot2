@@ -15,7 +15,7 @@ public class VSZoneController : MonoBehaviour
     private float scoreOccupyTeamAlly = 0f;
     private float scoreOccupyTeamEnemy = 0f;
     private float zoneTimer = 0f;
-    private int scorePerSecond = 2;
+    private int scorePerSecond = 1;
 
     public Image[] ZoneImgTeamAlly;
     public Image[] ZoneImgTeamEnemy;
@@ -42,8 +42,8 @@ public class VSZoneController : MonoBehaviour
         if (!GameManager.Instance.IsEndGame)
         {
             //Caculate score (different score team) each team to occupy this zone
-            scoreOccupyTeamAlly += Time.deltaTime * Mathf.Min(3, (MembersAllyInZone.Count - MembersEnemyInZone.Count)) * 10f;
-            scoreOccupyTeamEnemy += Time.deltaTime * Mathf.Min(3, (MembersEnemyInZone.Count - MembersAllyInZone.Count)) * 10f;
+            scoreOccupyTeamAlly += Time.deltaTime * Mathf.Min(3, (MembersAllyInZone.Count - MembersEnemyInZone.Count)) * 5f;
+            scoreOccupyTeamEnemy += Time.deltaTime * Mathf.Min(3, (MembersEnemyInZone.Count - MembersAllyInZone.Count)) * 5f;
 
             //Determine team occupy this zone
             if (scoreOccupyTeamAlly < 0) scoreOccupyTeamAlly = 0;
