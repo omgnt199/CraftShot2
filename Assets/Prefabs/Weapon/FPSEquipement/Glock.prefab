@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3826181655149816450}
   - component: {fileID: 6393920176972701927}
   - component: {fileID: 4129929604930883210}
-  m_Layer: 19
+  m_Layer: 28
   m_Name: Glock
   m_TagString: Untagged
   m_Icon: {fileID: 0}

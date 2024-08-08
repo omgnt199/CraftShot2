@@ -33,8 +33,8 @@ public class LoadOutUI : MonoBehaviour
                 foreach (Transform item in _gunHolder.transform) Destroy(item.gameObject);
             }
         }
-        //SkinLocate.GetComponentInChildren<Animator>().runtimeAnimatorController = equipment.AnimatorControllerForBot;
         Instantiate(equipment.ModelForBot, _gunHolder.transform);
+        SkinLocate.GetComponentInChildren<Animator>().runtimeAnimatorController = equipment.AnimatorControllerForBot;
     }
     public void Load()
     {

@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id">
+  <string name="gcm_defaultSenderId" translatable="false">559216368760</string>
+  <string name="google_storage_bucket" translatable="false">we-craft-strike.appspot.com</string>
+  <string name="project_id" translatable="false">we-craft-strike</string>
+  <string name="google_api_key" translatable="false">AIzaSyB-F-ldN06jbP6nmial04jFn1x2y7xm0rY</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB-F-ldN06jbP6nmial04jFn1x2y7xm0rY</string>
+  <string name="google_app_id" translatable="false">1:559216368760:android:0bf5d3d7e2c7614d72218d</string>
+</resources>

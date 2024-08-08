@@ -232,7 +232,7 @@ public class VSPlayerControlWeapon : MonoBehaviour
             //Recoil
             Recoil_Script.Recoil();
             //Shoot vfx sfx
-            Vfx_shoot.GetComponent<VSShootVfx>().Spawn();
+            //Vfx_shoot.GetComponent<VSShootVfx>().Spawn();
             _playerSoundManager.EnableBulletSound(GunUsing.Bullet.BulletSound);
             ////Check Raycast hit
             LayerMask mask = LayerMask.GetMask("BodyPart", "Barrier", "Ground", "ObstacleLayer");

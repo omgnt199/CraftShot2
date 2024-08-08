@@ -31,6 +31,7 @@ namespace Assets.Scripts.Character
 
             if (CurrentHealth.CurrentHeath <= 0)
             {
+                IsDead = true;
                 _Info.Deaths++;
                 DeathEvent.RaiseEvent();
                 //gameObject.SetActive(false);
@@ -41,7 +42,6 @@ namespace Assets.Scripts.Character
                 GetComponent<VSBotController>().agent.enabled = false;
                 GetComponent<VSBotController>().enabled = false;
                 GetComponent<VSBotController>().ControlAnimator.Controller.enabled = false;
-                IsDead = true;
 
                 rb = gameObject.AddComponent<Rigidbody>();
                 rb.mass = 5f;

@@ -16,10 +16,13 @@ MonoBehaviour:
   Type: 0
   Name: Bullpup
   Icon: {fileID: 21300000, guid: 1539350544df13441bbe1922ab5fb944, type: 3}
-  Model: {fileID: 1232396830896206336, guid: 428f9a27d5471094d9608d6efc2577ac, type: 3}
-  OnlyModel: {fileID: 0}
-  ModelForBot: {fileID: 0}
-  AnimatorControllerForBot: {fileID: 0}
+  Model: {fileID: 5154960723940195665, guid: 428f9a27d5471094d9608d6efc2577ac, type: 3}
+  OnlyModel: {fileID: 4007596454592286437, guid: 6cc860cb4bb81ad44a1e72ba7d277d37,
+    type: 3}
+  ModelForBot: {fileID: 6404573811472036267, guid: c622f0dc4683b334eb1d1dd3e98b33e5,
+    type: 3}
+  AnimatorControllerForBot: {fileID: 22100000, guid: 4c63e338fd355dd4b9e202b0c6f4992b,
+    type: 2}
   Currency: 1
   Price: 500
   LevelUnlock: 0

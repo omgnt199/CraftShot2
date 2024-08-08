@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     [Header("Zones")]
     public List<Transform> Zones;
     [Header("Camera")]
-    public GameObject DeathCamera;
+    public Camera DeathCamera;
     public Camera LargeMapCamera;
     //MapPick
     private Map _mapPick;
@@ -176,7 +176,7 @@ public class GameManager : MonoBehaviour
     }
     public void OnEndGame()
     {
-        DeathCamera.GetComponent<Camera>().enabled = true;
+        DeathCamera.enabled = true;
         _isEndGame = true;
         //Deactive player
         foreach (var player in _playerList) player.SetActive(false);

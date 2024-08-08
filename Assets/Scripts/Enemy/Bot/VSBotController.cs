@@ -107,6 +107,8 @@ public class VSBotController : MonoBehaviour
                 if (timeCheckAttack <= 0)
                 {
                     isAlreadyAttack = false;
+                    _isReadyShot = false;
+                    agent.enabled = true;
                     timeCheckAttack = 3f;
                     closestObj = null;
                 }
@@ -115,8 +117,7 @@ public class VSBotController : MonoBehaviour
                     fireTimer += Time.deltaTime;
                     if (fireTimer >= fireSpeed)
                     {
-                        fireTimer = 0f;
-                        Shoot();
+                        if (_isReadyShot) Shoot();
                     }
                 }
             }
@@ -159,10 +160,11 @@ public class VSBotController : MonoBehaviour
                             {
                                 agent.SetDestination(transform.position);
                                 attackPosition = closestObj.transform.position;
+                                isAlreadyAttack = true;
+                                agent.enabled = false;
                                 transform.DOLookAt(closestObj.transform.position, 0.2f).OnComplete(() =>
                                 {
-                                    isAlreadyAttack = true;
-                                    Attack();
+                                    StartAttack();
                                 });
                             }
                         }
@@ -231,47 +233,41 @@ public class VSBotController : MonoBehaviour
     {
         //distanceToWalkPoint = transform.position - walkPoint;
 
-        if (agent.remainingDistance <= 2f) return true;
+        if (agent.enabled && agent.remainingDistance <= 2f) return true;
         else return false;
     }
 
-    void Attack()
+    void StartAttack()
     {
+        _isReadyShot = true;
         //Throw Nade??
         int chanceThrowNade = Random.Range(1, 11);
         if (chanceThrowNade <= 3) ThrowNade();
-        //
-        agent.SetDestination(transform.position);
+
         //ControlAnimator.Idle();
     }
     void Shoot()
     {
+        fireTimer = 0f;
         ControlAnimator.Shoot();
         //Shoot bullet
-        shootVfx.Spawn();
+        //shootVfx.Spawn();
         SoundManager.EnableBulletSound(GunUsing.Bullet.BulletSound);
         //Recoil
         WeaponRecoil.Recoil();
         //Check Raycast hit
-        LayerMask mask = LayerMask.GetMask("BodyPart", "Barrier", "Border", "Ground", "Smoke", "ObstacleLayer", "MainPlayerBodyPart");
+        LayerMask mask = LayerMask.GetMask("BodyPart", "Barrier", "Border", "Ground", "Smoke", "ObstacleLayer", "MainPlayerBodyPart", "Player", "Enemy");
         Vector3 startPosition = fpCamera.transform.position;
         //Vector3 direction = (closestObj.transform.position - transform.position).normalized;
-        Vector3 direction = firePoint.forward;
-        Physics.Raycast(startPosition, direction, out RaycastHit hit, Mathf.Infinity, mask);
+        Vector3 direction = fpCamera.forward;
+        bool isHitSomething = Physics.Raycast(startPosition, direction, out RaycastHit hit, Mathf.Infinity, mask);
         //Cheat Bullet's velocity = Vector between RaycastHit's point and FirePoint
         Vector3 bulletVelocity;
-        //if (hit.point != Vector3.zero) bulletVelocity = (hit.point - fpCamera.position).normalized * firePower;
-        bulletVelocity = direction * firePower;
+
+        if (isHitSomething) bulletVelocity = (hit.point - firePoint.position).normalized * firePower;
+        else bulletVelocity = firePoint.forward * firePower;
         BulletPool.instance.PickFromPool(gameObject, GunUsing, firePoint.position, bulletVelocity, LayerMask.NameToLayer("BulletBot"));
         //CheckRaycastHit(mask, startPosition);
-    }
-
-
-    private void SpawnDecal(RaycastHit hit)
-    {
-        //Decal on surface
-        GameObject decal = Instantiate(BulletDecalPrefab, hit.point, Quaternion.LookRotation(hit.normal));
-        decal.transform.position += 0.1f * hit.normal;
     }
 
     void ThrowNade()

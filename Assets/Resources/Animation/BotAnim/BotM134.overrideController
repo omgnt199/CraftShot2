@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BotM134
+  m_Controller: {fileID: 9100000, guid: a8d5212b859ce7c49b41f5f54d3ab357, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: -7083362782340736113, guid: 5318eef11888a8146a58ef57862c1781,
+      type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 966f183dc340f7649b168a013325870c, type: 2}
+  - m_OriginalClip: {fileID: 2647608990834620644, guid: 5318eef11888a8146a58ef57862c1781,
+      type: 3}
+    m_OverrideClip: {fileID: 160904040599098204, guid: efa564288daceee469d53ff8e5a1aab7,
+      type: 3}

@@ -13,7 +13,7 @@ public class BulletDirectInteract : BulletInteract
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (LayerMask.LayerToName(collision.gameObject.layer) == "BodyPart")
+        if (LayerMask.LayerToName(collision.gameObject.layer) == "BodyPart" || LayerMask.LayerToName(collision.gameObject.layer) == "MainPlayerBodyPart")
         {
             VSPlayerInfo victim = collision.gameObject.GetComponentInParent<VSPlayerInfo>();
             VSPlayerInfo whoShootInfo = WhoShoot.GetComponent<VSPlayerInfo>();
@@ -28,7 +28,7 @@ public class BulletDirectInteract : BulletInteract
                 if (collision.gameObject.CompareTag(VSBodyPart.Body.ToString())) dam = gunUsing.DamageToBody;
                 else if (collision.gameObject.CompareTag(VSBodyPart.Leg.ToString()) || collision.gameObject.CompareTag(VSBodyPart.Hand.ToString())) dam = gunUsing.DamageToHandLeg;
                 else dam = gunUsing.DamageToHead;
-                victim.GetComponent<Damageable>().ReceiveDamage(dam,WhoShoot);
+                victim.GetComponent<Damageable>().ReceiveDamage(dam, WhoShoot);
                 victim.GetComponent<Damageable>().SpawnTakeDamageVFX(collision.contacts[0]);
 
                 if (victim.HP.CurrentHeath <= 0)

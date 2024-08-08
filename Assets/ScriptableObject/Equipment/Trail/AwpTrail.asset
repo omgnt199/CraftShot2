@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee39742a37cbd194faf26b212b6b9665, type: 3}
   m_Name: AwpTrail
   m_EditorClassIdentifier: 
-  LifeTime: 0.3
+  LifeTime: 0.2
   TrailMinVertextDistance: 0
   TrailGradientColor:
     serializedVersion: 2
@@ -68,3 +68,4 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  TrailMaterial: []

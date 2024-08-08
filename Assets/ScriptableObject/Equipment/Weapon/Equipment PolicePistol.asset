@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29923e7e63c6eb7429f9a8920e76bf36, type: 3}
+  m_Name: Equipment PolicePistol
+  m_EditorClassIdentifier: 
+  Pool: {fileID: 11400000, guid: a868d2e5287e24a41bc4bfb4c18d30f1, type: 2}
+  Type: 1
+  Name: PolicePistol
+  Icon: {fileID: 21300000, guid: 8d112cf2f84595b44b880cfd2e3a5ee8, type: 3}
+  Model: {fileID: 179723250592435308, guid: bef50e15a65521745b17ba770f62bbd1, type: 3}
+  OnlyModel: {fileID: 4571165624667635796, guid: be65a050ac69b534aad44135c917272a,
+    type: 3}
+  ModelForBot: {fileID: 4101724112826846785, guid: af4fd587aae4b4b4bac84062a8bd7b4c,
+    type: 3}
+  AnimatorControllerForBot: {fileID: 22100000, guid: 65b8d247f42dee8478b397d01c972e57,
+    type: 2}
+  Currency: 1
+  Price: 0
+  LevelUnlock: 0
+  Magazine: 12
+  TotalAmmo: 48
+  FirePower: 300
+  FireSpeed: 0.25
+  TimeReload: 1
+  RecoilAmountX: 6
+  RecoilAmountY: 0
+  CrossHair: 0
+  DamageToHead: 35
+  DamageToBody: 25
+  DamageToHandLeg: 15
+  GunKillIcon: {fileID: 21300000, guid: 906a38ad1a7d2a64f895f97a5775f7a1, type: 3}
+  Bullet: {fileID: 11400000, guid: 5efdd0477545bd240a7eb25628d36754, type: 2}

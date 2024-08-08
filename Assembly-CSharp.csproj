@@ -266,6 +266,7 @@
     <Compile Include="Assets\Adjust\Unity\AdjustPlayStoreSubscription.cs" />
     <Compile Include="Assets\Pixel Arsenal\Demo\Scripts\PixelArsenalBeamScript.cs" />
     <Compile Include="Assets\Scripts\GlobalData.cs" />
+    <Compile Include="Assets\Scripts\UI\DailyGiftItem.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\Scripts\Map\MapPool.cs" />
@@ -285,6 +286,7 @@
     <Compile Include="Assets\Scripts\UI\ArmoryPopUpUI.cs" />
     <Compile Include="Assets\Scripts\Inventory\VSEquipmentCard.cs" />
     <Compile Include="Assets\Scripts\Player\VSPlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\UI\DailyGiftController.cs" />
     <Compile Include="Assets\Scripts\Player\VSPlayerInfo.cs" />
     <Compile Include="Assets\Scripts\UserData\DESEncryption.cs" />
     <Compile Include="Assets\Scripts\Inventory\VSEquipmentStatUI.cs" />
@@ -292,6 +294,7 @@
     <Compile Include="Assets\Scripts\Enemy\Bot\VSBotController.cs" />
     <Compile Include="Assets\Scripts\UI\SkinSpinUI.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\EventSystemChecker.cs" />
+    <Compile Include="Assets\M134Gun.cs" />
     <Compile Include="Assets\Scripts\VSLookAtCamera.cs" />
     <Compile Include="Assets\Scripts\RotateEffect.cs" />
     <Compile Include="Assets\Scripts\LoadingScene.cs" />

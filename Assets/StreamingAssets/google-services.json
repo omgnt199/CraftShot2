@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "559216368760",
+    "project_id": "we-craft-strike",
+    "storage_bucket": "we-craft-strike.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:559216368760:android:0bf5d3d7e2c7614d72218d",
+        "android_client_info": {
+          "package_name": "com.wecraft.fps"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-F-ldN06jbP6nmial04jFn1x2y7xm0rY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

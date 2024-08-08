@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6276983639870427347}
   - component: {fileID: 4774763176749984657}
   - component: {fileID: 720366957073949898}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: SniperRifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
