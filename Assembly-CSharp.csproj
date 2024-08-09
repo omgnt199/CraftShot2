@@ -60,6 +60,7 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\DailyGift\Day7Gift.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Scripts\UI\HomeUI.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\FPSCounter.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Assets\Epic Toon FX\Demo\Scripts\ETFXEffectController.cs" />
     <Compile Include="Assets\#NVJOB Name Generator\Examples\Example 0\OneNameExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
+    <Compile Include="Assets\Scripts\DailyGift\DailyGiftController.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Cameras\Scripts\PivotBasedCameraRig.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\SimpleMouseRotator.cs" />
     <Compile Include="Assets\Scripts\GridMapManager.cs" />
@@ -92,6 +94,7 @@
     <Compile Include="Assets\Scripts\Bullet\BulletSO.cs" />
     <Compile Include="Assets\Adjust\Unity\Adjust.cs" />
     <Compile Include="Assets\Scripts\MiniGameController.cs" />
+    <Compile Include="Assets\Scripts\DailyGift\DailyGiftItem.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\TimedObjectDestructor.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\Scripts\AfterburnerPhysicsForce.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
@@ -118,6 +121,7 @@
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\FOVKick.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Scripts\Health.cs" />
     <Compile Include="Assets\Scripts\ItemPower\InvicibleItemPowerSO.cs" />
+    <Compile Include="Assets\Scripts\UI\ResponsiveGridLayout.cs" />
     <Compile Include="Assets\Scripts\UI\UnlockEquipmentUI.cs" />
     <Compile Include="Assets\Scripts\UI\LoadOutUI.cs" />
     <Compile Include="Assets\Scripts\TestEffect.cs" />
@@ -141,6 +145,7 @@
     <Compile Include="Assets\Scripts\Inventory\VSStaticCard.cs" />
     <Compile Include="Assets\Scripts\PlayerScoreRow.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
+    <Compile Include="Assets\Scripts\UI\ReceiveItem.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Utility\TimedObjectActivator.cs" />
     <Compile Include="Assets\Scripts\Player\MouseLookAround.cs" />
@@ -266,7 +271,6 @@
     <Compile Include="Assets\Adjust\Unity\AdjustPlayStoreSubscription.cs" />
     <Compile Include="Assets\Pixel Arsenal\Demo\Scripts\PixelArsenalBeamScript.cs" />
     <Compile Include="Assets\Scripts\GlobalData.cs" />
-    <Compile Include="Assets\Scripts\UI\DailyGiftItem.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\Scripts\Map\MapPool.cs" />
@@ -286,7 +290,6 @@
     <Compile Include="Assets\Scripts\UI\ArmoryPopUpUI.cs" />
     <Compile Include="Assets\Scripts\Inventory\VSEquipmentCard.cs" />
     <Compile Include="Assets\Scripts\Player\VSPlayerMovement.cs" />
-    <Compile Include="Assets\Scripts\UI\DailyGiftController.cs" />
     <Compile Include="Assets\Scripts\Player\VSPlayerInfo.cs" />
     <Compile Include="Assets\Scripts\UserData\DESEncryption.cs" />
     <Compile Include="Assets\Scripts\Inventory\VSEquipmentStatUI.cs" />
@@ -402,6 +405,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Scripts\Scriptable\DashConfigSO.cs" />
     <Compile Include="Assets\Scripts\UI\VSReloadingTextEffect.cs" />
+    <Compile Include="Assets\Scripts\UI\ReceiveItemOverlay.cs" />
     <Compile Include="Assets\Scripts\ItemPower\SpeedItemPowerSO.cs" />
     <Compile Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\ParticleSystems\Scripts\ParticleSystemMultiplier.cs" />
     <Compile Include="Assets\Scripts\Team\Team.cs" />
@@ -426,6 +430,7 @@
     <Compile Include="Assets\Pixel Arsenal\Scripts\PixelArsenalRotation.cs" />
     <Compile Include="Assets\Scripts\GameMode\DeathMatchModeSO.cs" />
     <Compile Include="Assets\Scripts\Bullet\TrailSO.cs" />
+    <Compile Include="Assets\Scripts\ModelViewer.cs" />
     <Compile Include="Assets\Scripts\Cube.cs" />
     <Compile Include="Assets\Scripts\DailyTask\VSGunKillTask.cs" />
     <Compile Include="Assets\Scripts\UI\VSScoreBoardUI.cs" />
@@ -510,10 +515,10 @@
     <None Include="Assets\Firebase\Plugins\Firebase.Crashlytics.dll" />
     <None Include="Assets\Adjust\Windows\Stubs\Win81Interface.dll" />
     <None Include="Assets\MaxSdk\Mediation\MediationAdapters.txt" />
+    <None Include="Assets\GoogleMobileAds\link.xml" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\Adjust\Windows\WU10\AdjustUAP10.dll" />
     <None Include="Assets\Firebase\Plugins\Firebase.Firestore.dll" />
-    <None Include="Assets\GoogleMobileAds\link.xml" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Effects\ImageEffects\Readme.txt" />
     <None Include="Assets\VIRTI\VOXEL-Weapons\Example\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
     <None Include="Assets\Firebase\Plugins\iOS\Firebase.Crashlytics.dll" />

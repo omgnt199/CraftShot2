@@ -836,7 +836,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!1 &28231481
 GameObject:
@@ -7911,7 +7911,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!1 &372365135
 GameObject:
@@ -10126,7 +10126,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 482938666}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -12550,7 +12550,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!1 &631376244
 GameObject:
@@ -39450,7 +39450,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1011765600}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -51721,7 +51721,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1361994763}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.33918792, y: -0.3798961, z: 0.15212396, w: 0.84704715}
+  m_LocalRotation: {x: 0.3391879, y: -0.37989607, z: 0.15212394, w: 0.84704715}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -52053,7 +52053,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378970325}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -52435,7 +52435,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1380092034}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -58239,7 +58239,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  DeathCamera: {fileID: 1361994763}
+  DeathCamera: {fileID: 1361994767}
   LargeMapCamera: {fileID: 1955139477}
   ModePool: {fileID: 11400000, guid: 45603781e4fe3f74bb114fea440f2be9, type: 2}
   Mode: 
@@ -61978,7 +61978,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1873751067}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.33918792, y: -0.3798961, z: 0.15212396, w: 0.84704715}
+  m_LocalRotation: {x: 0.3391879, y: -0.37989607, z: 0.15212394, w: 0.84704715}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -70470,7 +70470,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!1 &1480506150969127451
 GameObject:
@@ -71007,7 +71007,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!1001 &1679442930967138398
 PrefabInstance:
@@ -79870,7 +79870,7 @@ PrefabInstance:
     - target: {fileID: 4149009440107075307, guid: 65d540ebe4f283949b2e6f48ae2a37c9,
         type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 1711275997
+      value: 1711276029
       objectReference: {fileID: 0}
     - target: {fileID: 4193803023895677383, guid: 65d540ebe4f283949b2e6f48ae2a37c9,
         type: 3}
@@ -79881,6 +79881,11 @@ PrefabInstance:
         type: 3}
       propertyPath: bottomAngleView
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708257660238130874, guid: 65d540ebe4f283949b2e6f48ae2a37c9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5155831312607201525, guid: 65d540ebe4f283949b2e6f48ae2a37c9,
         type: 3}
@@ -79935,7 +79940,7 @@ PrefabInstance:
     - target: {fileID: 5577298304864396192, guid: 65d540ebe4f283949b2e6f48ae2a37c9,
         type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 268435456
+      value: 268435488
       objectReference: {fileID: 0}
     - target: {fileID: 5718630944376936585, guid: 65d540ebe4f283949b2e6f48ae2a37c9,
         type: 3}
@@ -80155,6 +80160,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8375641506832452399, guid: 65d540ebe4f283949b2e6f48ae2a37c9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8786875116098635446, guid: 65d540ebe4f283949b2e6f48ae2a37c9,
         type: 3}
@@ -84969,7 +84979,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!1 &8330125491654870014
 GameObject:

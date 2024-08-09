@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e284cad5faf9143438f14023eeb762d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serviceManager: {fileID: 7453238158334023514}
   TimePlayManager: {fileID: 11400000, guid: 95e0a330fcf25a0448dfa346409ec21d, type: 2}
   EquipmentPool: {fileID: 11400000, guid: a868d2e5287e24a41bc4bfb4c18d30f1, type: 2}
   DailyTaskManager: {fileID: 0}
@@ -97,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interDelayTime: 46
-  minDelayApterReward: 30
+  minDelayAfterReward: 30
   isStaging: 0
 --- !u!1001 &1911000898999338905
 PrefabInstance:

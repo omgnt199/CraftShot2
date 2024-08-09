@@ -54,7 +54,7 @@ namespace Assets.Scripts.Character
 
                 //rb.AddExplosionForce(10f, transform.position, 1f, 5f);
                 int chanceToSpawnItemPower = UnityEngine.Random.Range(1, 101);
-                if (chanceToSpawnItemPower <= 35)
+                if (chanceToSpawnItemPower <= 20)
                 {
                     Instantiate(GameManager.Instance.PowerPool.GetRandomItemPower().Prefab, transform.position + new Vector3(0, 2f, 0), Quaternion.LookRotation(Vector3.up));
                 }

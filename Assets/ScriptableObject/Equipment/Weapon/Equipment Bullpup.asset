@@ -15,7 +15,7 @@ MonoBehaviour:
   Pool: {fileID: 11400000, guid: a868d2e5287e24a41bc4bfb4c18d30f1, type: 2}
   Type: 0
   Name: Bullpup
-  Icon: {fileID: 21300000, guid: 1539350544df13441bbe1922ab5fb944, type: 3}
+  Icon: {fileID: 21300000, guid: f52d41dbce8f5384da7d07d33b37cba7, type: 3}
   Model: {fileID: 5154960723940195665, guid: 428f9a27d5471094d9608d6efc2577ac, type: 3}
   OnlyModel: {fileID: 4007596454592286437, guid: 6cc860cb4bb81ad44a1e72ba7d277d37,
     type: 3}
@@ -24,7 +24,7 @@ MonoBehaviour:
   AnimatorControllerForBot: {fileID: 22100000, guid: 4c63e338fd355dd4b9e202b0c6f4992b,
     type: 2}
   Currency: 1
-  Price: 500
+  Price: 1500
   LevelUnlock: 0
   Magazine: 30
   TotalAmmo: 90

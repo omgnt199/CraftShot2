@@ -15,7 +15,7 @@ MonoBehaviour:
   Pool: {fileID: 11400000, guid: a868d2e5287e24a41bc4bfb4c18d30f1, type: 2}
   Type: 0
   Name: GranadeLauncher
-  Icon: {fileID: 21300000, guid: 5e02e5eb10fef414284f843ee54795e1, type: 3}
+  Icon: {fileID: 21300000, guid: 84ca79353fd98d84ead340d32859f0f8, type: 3}
   Model: {fileID: 6477393080976087863, guid: ee50843e01a81c04eb6c530a625b0411, type: 3}
   OnlyModel: {fileID: 1590387579811070553, guid: fd50bd4c4e7a5074ca4801536cc7f0bd,
     type: 3}
@@ -24,7 +24,7 @@ MonoBehaviour:
   AnimatorControllerForBot: {fileID: 22100000, guid: 4c63e338fd355dd4b9e202b0c6f4992b,
     type: 2}
   Currency: 1
-  Price: 0
+  Price: 2000
   LevelUnlock: 0
   Magazine: 15
   TotalAmmo: 60

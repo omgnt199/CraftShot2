@@ -1,3 +1,4 @@
+using GoogleMobileAds.Api;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,13 +17,17 @@ public class GlobalData : Singleton<GlobalData>
 
     [SerializeField] private Cheat _Cheat;
     private int _dailyTaskAmount = 4;
+
+
+    Queue<Action> jobs = new Queue<Action>();
     public override void Awake()
     {
         base.Awake();
-        LoadData();
+
     }
     private void Start()
     {
+        LoadData();
     }
     void LoadData()
     {
@@ -52,6 +57,15 @@ public class GlobalData : Singleton<GlobalData>
     private void Update()
     {
         CurrentTimeApplication = Time.time;
+
+        while (jobs.Count > 0)
+            jobs.Dequeue().Invoke();
+
+    }
+
+    internal void AddJob(Action newJob)
+    {
+        jobs.Enqueue(newJob);
     }
     private void OnApplicationQuit()
     {
@@ -70,6 +84,7 @@ public class GlobalData : Singleton<GlobalData>
             IsNewDay = true;
             PlayerPrefs.SetInt("d_Day", date.Day);
         }
+        //IsNewDay = true;
     }
     void LoadDataOnNewDay()
     {

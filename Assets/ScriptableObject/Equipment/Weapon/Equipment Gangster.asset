@@ -15,7 +15,7 @@ MonoBehaviour:
   Pool: {fileID: 11400000, guid: a868d2e5287e24a41bc4bfb4c18d30f1, type: 2}
   Type: 0
   Name: Gangster
-  Icon: {fileID: 21300000, guid: 677823090e9bbf6499fa2bb6d4889ddf, type: 3}
+  Icon: {fileID: 21300000, guid: 48c77ee6d0a7f174b9dc55d7b1731de0, type: 3}
   Model: {fileID: 4161119279185927912, guid: de55bf8563e22bb47b9a6dd66b8e3a48, type: 3}
   OnlyModel: {fileID: 2807705421602770628, guid: 084ed7fa4bba49548a459d73e89b49c0,
     type: 3}
@@ -24,7 +24,7 @@ MonoBehaviour:
   AnimatorControllerForBot: {fileID: 22100000, guid: 4c63e338fd355dd4b9e202b0c6f4992b,
     type: 2}
   Currency: 1
-  Price: 2000
+  Price: 1200
   LevelUnlock: 0
   Magazine: 45
   TotalAmmo: 135

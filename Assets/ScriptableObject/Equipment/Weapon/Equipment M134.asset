@@ -15,7 +15,7 @@ MonoBehaviour:
   Pool: {fileID: 11400000, guid: a868d2e5287e24a41bc4bfb4c18d30f1, type: 2}
   Type: 0
   Name: M134
-  Icon: {fileID: 21300000, guid: 5e02e5eb10fef414284f843ee54795e1, type: 3}
+  Icon: {fileID: 21300000, guid: 21492c39a1d69fe4a94327c01e5db52c, type: 3}
   Model: {fileID: 1773758372449949490, guid: ade19e7524e85994d84b33455c123f3d, type: 3}
   OnlyModel: {fileID: 9186292789723592095, guid: f6c40e697909c54439278c6083d0ba1b,
     type: 3}
@@ -24,7 +24,7 @@ MonoBehaviour:
   AnimatorControllerForBot: {fileID: 22100000, guid: 2663efce1350f4444a277c43bd399f4a,
     type: 2}
   Currency: 1
-  Price: 0
+  Price: 3500
   LevelUnlock: 0
   Magazine: 100
   TotalAmmo: 300

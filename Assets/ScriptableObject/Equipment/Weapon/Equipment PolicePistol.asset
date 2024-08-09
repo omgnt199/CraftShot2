@@ -15,7 +15,7 @@ MonoBehaviour:
   Pool: {fileID: 11400000, guid: a868d2e5287e24a41bc4bfb4c18d30f1, type: 2}
   Type: 1
   Name: PolicePistol
-  Icon: {fileID: 21300000, guid: 8d112cf2f84595b44b880cfd2e3a5ee8, type: 3}
+  Icon: {fileID: 21300000, guid: f562188eb8ff989479b3cd8c4cefbc9f, type: 3}
   Model: {fileID: 179723250592435308, guid: bef50e15a65521745b17ba770f62bbd1, type: 3}
   OnlyModel: {fileID: 4571165624667635796, guid: be65a050ac69b534aad44135c917272a,
     type: 3}
@@ -24,7 +24,7 @@ MonoBehaviour:
   AnimatorControllerForBot: {fileID: 22100000, guid: 65b8d247f42dee8478b397d01c972e57,
     type: 2}
   Currency: 1
-  Price: 0
+  Price: 1700
   LevelUnlock: 0
   Magazine: 12
   TotalAmmo: 48

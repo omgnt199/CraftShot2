@@ -26,7 +26,7 @@ public class BulletExplosionInteract : BulletInteract
         List<GameObject> victimCheckedList = new List<GameObject>();
         foreach (var hit in hitcolliders)
         {
-            if(hit.gameObject.GetComponent<CarExplosion>()!= null)
+            if (hit.gameObject.GetComponent<CarExplosion>() != null)
             {
                 hit.gameObject.GetComponent<CarExplosion>().Explosion();
                 continue;
@@ -44,11 +44,11 @@ public class BulletExplosionInteract : BulletInteract
             {
                 int damage = 0;
                 float distanceFromVictimToExplosion = Vector3.Distance(victim.transform.position, transform.position);
-                if (distanceFromVictimToExplosion <= gunUsing.Bullet.ExplosionRadius && distanceFromVictimToExplosion > gunUsing.Bullet.ExplosionRadius / 2f) damage = 30;
-                else if (distanceFromVictimToExplosion <= 2) damage = 50;
+                if (distanceFromVictimToExplosion <= gunUsing.Bullet.ExplosionRadius && distanceFromVictimToExplosion > gunUsing.Bullet.ExplosionRadius / 2f) damage = gunUsing.DamageToHead;
+                else if (distanceFromVictimToExplosion <= 2) damage = gunUsing.DamageToBody;
                 //victimInfo.UpdateHP(-damage);
 
-                victim.GetComponent<Damageable>().ReceiveDamage(damage,WhoShoot);
+                victim.GetComponent<Damageable>().ReceiveDamage(damage, WhoShoot);
                 victim.GetComponent<Damageable>().SpawnTakeDamageVFX(collision.contacts[0]);
 
                 if (victimInfo.HP.CurrentHeath <= 0)

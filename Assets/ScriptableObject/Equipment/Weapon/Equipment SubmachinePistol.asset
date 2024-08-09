@@ -15,7 +15,7 @@ MonoBehaviour:
   Pool: {fileID: 11400000, guid: a868d2e5287e24a41bc4bfb4c18d30f1, type: 2}
   Type: 1
   Name: SubmachinePistol
-  Icon: {fileID: 21300000, guid: 8d112cf2f84595b44b880cfd2e3a5ee8, type: 3}
+  Icon: {fileID: 21300000, guid: 7464f92981d29e7458dab827506cc7fd, type: 3}
   Model: {fileID: 6239394598939020156, guid: ca6a3734b008c8e44bc305860b321a2d, type: 3}
   OnlyModel: {fileID: 9196158364344454123, guid: 4c20ef6976c07fb44a35406559569da1,
     type: 3}
@@ -24,7 +24,7 @@ MonoBehaviour:
   AnimatorControllerForBot: {fileID: 22100000, guid: 65b8d247f42dee8478b397d01c972e57,
     type: 2}
   Currency: 1
-  Price: 0
+  Price: 1500
   LevelUnlock: 0
   Magazine: 15
   TotalAmmo: 45

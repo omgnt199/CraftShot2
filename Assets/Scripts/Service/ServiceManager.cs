@@ -189,6 +189,7 @@ public class ServiceManager : MonoBehaviour
         if (Instance.IsStaging)
         {
             Instance.SetTimeoutUnscaledTime(() => onReward?.Invoke(true), 1f);
+            Debug.Log("Show Reward");
             return true;
         }
         if (!applovinAds.IsRewardReady())

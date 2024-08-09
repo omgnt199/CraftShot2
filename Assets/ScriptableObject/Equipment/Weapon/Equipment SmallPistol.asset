@@ -15,7 +15,7 @@ MonoBehaviour:
   Pool: {fileID: 11400000, guid: a868d2e5287e24a41bc4bfb4c18d30f1, type: 2}
   Type: 1
   Name: SmallPistol
-  Icon: {fileID: 21300000, guid: 8d112cf2f84595b44b880cfd2e3a5ee8, type: 3}
+  Icon: {fileID: 21300000, guid: 1d28545db46bf274f8ee3e631a941155, type: 3}
   Model: {fileID: 7182913000341293226, guid: bb99d9a6c57026347b3e1f4427c3b025, type: 3}
   OnlyModel: {fileID: 1517237441819927994, guid: da7f0916fe42c4945b7f26456e9e801c,
     type: 3}
@@ -24,7 +24,7 @@ MonoBehaviour:
   AnimatorControllerForBot: {fileID: 22100000, guid: 65b8d247f42dee8478b397d01c972e57,
     type: 2}
   Currency: 1
-  Price: 0
+  Price: 1000
   LevelUnlock: 0
   Magazine: 12
   TotalAmmo: 48

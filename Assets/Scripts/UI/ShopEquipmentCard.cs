@@ -77,7 +77,7 @@ public class ShopEquipmentCard : MonoBehaviour
 
             ShopContainerUI.Instance.EquipmentStatUI.LoadMainButtonBehaviorInShop(Equipment);
 
-            GlobalUI.Instance.ShowPopUp("BuyEquipment");
+            GlobalUI.Instance.ShowPopUp("UnlockEquipment");
             _unlockEquipmentEvent.RaiseEvent(Equipment);
 
             PurchaseOverlay.SetActive(true);

@@ -7,6 +7,7 @@ public class SkinSpinUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 {
     [SerializeField] private GameObject SkinSpinedLocate;
     public float deltaRotateY = 5f;
+    public float sensitive = 10f;
     private Vector2 beginDragPos;
     private Vector2 currentDragPos, lastDragPos;
     public bool IsAutoRotate;
@@ -38,12 +39,12 @@ public class SkinSpinUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         if (currentDragPos.x < lastDragPos.x)
         {
             Vector3 currentRotate = SkinSpinedLocate.transform.eulerAngles;
-            SkinSpinedLocate.transform.eulerAngles = currentRotate + new Vector3(0, deltaRotateY, 0);
+            SkinSpinedLocate.transform.eulerAngles = currentRotate + new Vector3(0, deltaRotateY * sensitive, 0);
         }
         else
         {
             Vector3 currentRotate = SkinSpinedLocate.transform.eulerAngles;
-            SkinSpinedLocate.transform.eulerAngles = currentRotate + new Vector3(0, -deltaRotateY, 0);
+            SkinSpinedLocate.transform.eulerAngles = currentRotate + new Vector3(0, -deltaRotateY * sensitive, 0);
         }
         lastDragPos = currentDragPos;
     }

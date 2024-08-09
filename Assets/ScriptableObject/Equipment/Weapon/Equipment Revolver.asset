@@ -24,7 +24,7 @@ MonoBehaviour:
   AnimatorControllerForBot: {fileID: 22100000, guid: 65b8d247f42dee8478b397d01c972e57,
     type: 2}
   Currency: 1
-  Price: 0
+  Price: 1800
   LevelUnlock: 0
   Magazine: 8
   TotalAmmo: 32

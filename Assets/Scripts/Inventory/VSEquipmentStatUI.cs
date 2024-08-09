@@ -173,7 +173,7 @@ public class VSEquipmentStatUI : MonoBehaviour
             CurrencyData.UpdateCurrency(_currentEquipent.Currency, -_currentEquipent.Price);
             PlayerEquipmentInfo.Add(_currentEquipent.Name);
             PlayerEquipmentInfo.Save();
-            GlobalUI.Instance.ShowPopUp("BuyEquipment");
+            GlobalUI.Instance.ShowPopUp("UnlockEquipment");
 
             foreach (Transform item in ShopContainerUI.Instance.EquipmentContent.transform)
             {

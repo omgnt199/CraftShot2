@@ -15,7 +15,7 @@ MonoBehaviour:
   Pool: {fileID: 11400000, guid: a868d2e5287e24a41bc4bfb4c18d30f1, type: 2}
   Type: 1
   Name: Detective Revolver
-  Icon: {fileID: 21300000, guid: 8d112cf2f84595b44b880cfd2e3a5ee8, type: 3}
+  Icon: {fileID: 21300000, guid: e3e12fb53a6bac742aed5a8d57faef19, type: 3}
   Model: {fileID: 1204241869180555894, guid: b2180a3c366f93143a7fc2a3587573be, type: 3}
   OnlyModel: {fileID: 8145606534862363781, guid: 3a02a75ef5dd3a441ba868b15af26a3c,
     type: 3}
@@ -24,7 +24,7 @@ MonoBehaviour:
   AnimatorControllerForBot: {fileID: 22100000, guid: 65b8d247f42dee8478b397d01c972e57,
     type: 2}
   Currency: 1
-  Price: 0
+  Price: 1500
   LevelUnlock: 0
   Magazine: 8
   TotalAmmo: 48

@@ -1,8 +1,9 @@
+using Assets.Scripts.Common;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-public class HomeUI : MonoBehaviour,IPopUp
+public class HomeUI : MonoBehaviour, IPopUp
 {
     public static HomeUI Instance;
     [Header("PopUp")]
@@ -16,6 +17,13 @@ public class HomeUI : MonoBehaviour,IPopUp
     private void Start()
     {
         Init();
+        if (PlayerPrefs.GetString("DailyGift7Claimed") != "true")
+        {
+            Commons.SetTimeout(this, 1f, () =>
+            {
+                GlobalUI.Instance.ShowPopUp("DailyGiftPopUp");
+            });
+        }
     }
     void Init()
     {
